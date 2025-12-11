@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vokabeltrainer (PWA) – Final Build</title>
+  <title>Vokabeltrainer (PWA) – Central Final</title>
   <meta name="theme-color" content="#22c55e" />
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="icon" href="./icon-192.png" sizes="192x192" />
@@ -42,6 +42,15 @@
       <button id="resetAllBtn" class="secondary">Alles reset</button>
       <button id="installBtn" class="secondary">App installieren</button>
     </nav>
+
+    <!-- Central Sync Info (Admin) -->
+    <div id="centralInfo" class="muted hidden" style="margin-top:.25rem">
+      <small>Zentrale Liste: Version <strong id="centralVersion">–</strong> •
+        <label style="margin-left:.5rem"><input type="checkbox" id="forceCentral"> zentrale Liste erzwingen</label>
+        <button id="refreshCentral" class="secondary sm" style="margin-left:.5rem">Jetzt aktualisieren</button>
+      </small>
+    </div>
+
     <div id="updateBanner" class="update-banner hidden">
       Update verfügbar – <button id="reloadBtn">Neu laden</button>
     </div>

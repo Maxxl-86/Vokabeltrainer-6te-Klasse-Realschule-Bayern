@@ -1,0 +1,719 @@
+{
+  "version": "2025-12-11-02",
+  "units": {
+    "u1": [
+      {
+        "de": "Schule",
+        "en": "school"
+      },
+      {
+        "de": "Klassenzimmer",
+        "en": "classroom"
+      },
+      {
+        "de": "Tafel",
+        "en": "board"
+      },
+      {
+        "de": "Heft",
+        "en": "exercise book"
+      },
+      {
+        "de": "Bleistift",
+        "en": "pencil"
+      },
+      {
+        "de": "Radiergummi",
+        "en": "rubber"
+      },
+      {
+        "de": "Hausaufgaben",
+        "en": "homework"
+      },
+      {
+        "de": "Lehrer",
+        "en": "teacher"
+      },
+      {
+        "de": "Schüler",
+        "en": "student"
+      },
+      {
+        "de": "Pause",
+        "en": "break"
+      },
+      {
+        "de": "Stundenplan",
+        "en": "timetable"
+      },
+      {
+        "de": "Test",
+        "en": "test"
+      },
+      {
+        "de": "Note",
+        "en": "grade"
+      },
+      {
+        "de": "Schulhof",
+        "en": "school yard"
+      },
+      {
+        "de": "Bibliothek",
+        "en": "library"
+      },
+      {
+        "de": "Sporthalle",
+        "en": "gym"
+      },
+      {
+        "de": "Schulbus",
+        "en": "school bus"
+      },
+      {
+        "de": "Direktor",
+        "en": "principal"
+      },
+      {
+        "de": "Klausur",
+        "en": "exam"
+      },
+      {
+        "de": "AG / Klub",
+        "en": "club"
+      },
+      {
+        "de": "Aufsatz",
+        "en": "essay"
+      },
+      {
+        "de": "Arbeitsblatt",
+        "en": "worksheet"
+      },
+      {
+        "de": "Federetui",
+        "en": "pencil case"
+      },
+      {
+        "de": "Schulweg",
+        "en": "way to school"
+      },
+      {
+        "de": "Entschuldigung",
+        "en": "apology"
+      }
+    ],
+    "u2": [
+      {
+        "de": "Wochenende",
+        "en": "weekend"
+      },
+      {
+        "de": "Plan",
+        "en": "plan"
+      },
+      {
+        "de": "Zukunft",
+        "en": "future"
+      },
+      {
+        "de": "Terminkalender",
+        "en": "calendar"
+      },
+      {
+        "de": "Ziel",
+        "en": "goal"
+      },
+      {
+        "de": "Idee",
+        "en": "idea"
+      },
+      {
+        "de": "Treffen",
+        "en": "meeting"
+      },
+      {
+        "de": "Reise",
+        "en": "trip"
+      },
+      {
+        "de": "Ausflug",
+        "en": "excursion"
+      },
+      {
+        "de": "Projekt",
+        "en": "project"
+      },
+      {
+        "de": "Versprechen",
+        "en": "promise"
+      },
+      {
+        "de": "Vorhersage",
+        "en": "prediction"
+      },
+      {
+        "de": "Hoffnung",
+        "en": "hope"
+      },
+      {
+        "de": "Entscheidung",
+        "en": "decision"
+      },
+      {
+        "de": "Vorbereitung",
+        "en": "preparation"
+      },
+      {
+        "de": "Termin",
+        "en": "appointment"
+      },
+      {
+        "de": "Wunsch",
+        "en": "wish"
+      },
+      {
+        "de": "Liste",
+        "en": "list"
+      },
+      {
+        "de": "nächstes Jahr",
+        "en": "next year"
+      },
+      {
+        "de": "morgen",
+        "en": "tomorrow"
+      },
+      {
+        "de": "bald",
+        "en": "soon"
+      },
+      {
+        "de": "später",
+        "en": "later"
+      },
+      {
+        "de": "heute Abend",
+        "en": "tonight"
+      },
+      {
+        "de": "übermorgen",
+        "en": "the day after tomorrow"
+      }
+    ],
+    "u3": [
+      {
+        "de": "Stadt",
+        "en": "city"
+      },
+      {
+        "de": "Stadtplan",
+        "en": "city map"
+      },
+      {
+        "de": "Sehenswürdigkeit",
+        "en": "sight"
+      },
+      {
+        "de": "Museum",
+        "en": "museum"
+      },
+      {
+        "de": "Brücke",
+        "en": "bridge"
+      },
+      {
+        "de": "Fluss",
+        "en": "river"
+      },
+      {
+        "de": "Platz",
+        "en": "square"
+      },
+      {
+        "de": "Park",
+        "en": "park"
+      },
+      {
+        "de": "Rathaus",
+        "en": "town hall"
+      },
+      {
+        "de": "Bahnhof",
+        "en": "station"
+      },
+      {
+        "de": "U-Bahn",
+        "en": "underground"
+      },
+      {
+        "de": "Busfahrkarte",
+        "en": "bus ticket"
+      },
+      {
+        "de": "Tourist",
+        "en": "tourist"
+      },
+      {
+        "de": "Führung",
+        "en": "guided tour"
+      },
+      {
+        "de": "Aussicht",
+        "en": "view"
+      },
+      {
+        "de": "Schlange (Warteschlange)",
+        "en": "queue"
+      },
+      {
+        "de": "Eintritt",
+        "en": "admission"
+      },
+      {
+        "de": "Souvenir",
+        "en": "souvenir"
+      },
+      {
+        "de": "Fahrplan",
+        "en": "timetable"
+      },
+      {
+        "de": "Ampel",
+        "en": "traffic light"
+      },
+      {
+        "de": "Kreuzung",
+        "en": "junction"
+      },
+      {
+        "de": "Fußgängerzone",
+        "en": "pedestrian zone"
+      },
+      {
+        "de": "Postkarte",
+        "en": "postcard"
+      },
+      {
+        "de": "Fotografieren",
+        "en": "to take photos"
+      },
+      {
+        "de": "Wegbeschreibung",
+        "en": "directions"
+      }
+    ],
+    "u4": [
+      {
+        "de": "Wetter",
+        "en": "weather"
+      },
+      {
+        "de": "Sonne",
+        "en": "sun"
+      },
+      {
+        "de": "Regen",
+        "en": "rain"
+      },
+      {
+        "de": "Schnee",
+        "en": "snow"
+      },
+      {
+        "de": "Wind",
+        "en": "wind"
+      },
+      {
+        "de": "Wolke",
+        "en": "cloud"
+      },
+      {
+        "de": "Sturm",
+        "en": "storm"
+      },
+      {
+        "de": "Nebel",
+        "en": "fog"
+      },
+      {
+        "de": "warm",
+        "en": "warm"
+      },
+      {
+        "de": "kalt",
+        "en": "cold"
+      },
+      {
+        "de": "heiß",
+        "en": "hot"
+      },
+      {
+        "de": "kühl",
+        "en": "cool"
+      },
+      {
+        "de": "Frühling",
+        "en": "spring"
+      },
+      {
+        "de": "Sommer",
+        "en": "summer"
+      },
+      {
+        "de": "Herbst",
+        "en": "autumn"
+      },
+      {
+        "de": "Winter",
+        "en": "winter"
+      },
+      {
+        "de": "Jahreszeit",
+        "en": "season"
+      },
+      {
+        "de": "Temperatur",
+        "en": "temperature"
+      },
+      {
+        "de": "Vorhersage",
+        "en": "forecast"
+      },
+      {
+        "de": "Regenschirm",
+        "en": "umbrella"
+      },
+      {
+        "de": "Jacke",
+        "en": "jacket"
+      },
+      {
+        "de": "Stiefel",
+        "en": "boots"
+      },
+      {
+        "de": "Schneeanzug",
+        "en": "snowsuit"
+      },
+      {
+        "de": "Sonnencreme",
+        "en": "sunscreen"
+      },
+      {
+        "de": "Hitzewelle",
+        "en": "heatwave"
+      }
+    ],
+    "u5": [
+      {
+        "de": "Essen",
+        "en": "food"
+      },
+      {
+        "de": "Getränk",
+        "en": "drink"
+      },
+      {
+        "de": "Frühstück",
+        "en": "breakfast"
+      },
+      {
+        "de": "Mittagessen",
+        "en": "lunch"
+      },
+      {
+        "de": "Abendessen",
+        "en": "dinner"
+      },
+      {
+        "de": "Apfel",
+        "en": "apple"
+      },
+      {
+        "de": "Brot",
+        "en": "bread"
+      },
+      {
+        "de": "Butter",
+        "en": "butter"
+      },
+      {
+        "de": "Käse",
+        "en": "cheese"
+      },
+      {
+        "de": "Ei",
+        "en": "egg"
+      },
+      {
+        "de": "Milch",
+        "en": "milk"
+      },
+      {
+        "de": "Wasser",
+        "en": "water"
+      },
+      {
+        "de": "Saft",
+        "en": "juice"
+      },
+      {
+        "de": "Gemüse",
+        "en": "vegetables"
+      },
+      {
+        "de": "Obst",
+        "en": "fruit"
+      },
+      {
+        "de": "Salat",
+        "en": "salad"
+      },
+      {
+        "de": "Sandwich",
+        "en": "sandwich"
+      },
+      {
+        "de": "Suppe",
+        "en": "soup"
+      },
+      {
+        "de": "Pizza",
+        "en": "pizza"
+      },
+      {
+        "de": "Nudel(n)",
+        "en": "pasta"
+      },
+      {
+        "de": "Reis",
+        "en": "rice"
+      },
+      {
+        "de": "Zucker",
+        "en": "sugar"
+      },
+      {
+        "de": "Salz",
+        "en": "salt"
+      },
+      {
+        "de": "Pfeffer",
+        "en": "pepper"
+      },
+      {
+        "de": "kochen",
+        "en": "to cook"
+      },
+      {
+        "de": "backen",
+        "en": "to bake"
+      }
+    ],
+    "u6": [
+      {
+        "de": "Einkaufen",
+        "en": "shopping"
+      },
+      {
+        "de": "Geschäft",
+        "en": "shop"
+      },
+      {
+        "de": "Markt",
+        "en": "market"
+      },
+      {
+        "de": "Preis",
+        "en": "price"
+      },
+      {
+        "de": "billig",
+        "en": "cheap"
+      },
+      {
+        "de": "teuer",
+        "en": "expensive"
+      },
+      {
+        "de": "Geld",
+        "en": "money"
+      },
+      {
+        "de": "Wechselgeld",
+        "en": "change"
+      },
+      {
+        "de": "Rechnung",
+        "en": "bill"
+      },
+      {
+        "de": "Kassierer",
+        "en": "cashier"
+      },
+      {
+        "de": "Kunde",
+        "en": "customer"
+      },
+      {
+        "de": "Angebot",
+        "en": "offer"
+      },
+      {
+        "de": "Rabatt",
+        "en": "discount"
+      },
+      {
+        "de": "Größe",
+        "en": "size"
+      },
+      {
+        "de": "Quittung",
+        "en": "receipt"
+      },
+      {
+        "de": "Tüte",
+        "en": "bag"
+      },
+      {
+        "de": "Wunschliste",
+        "en": "wishlist"
+      },
+      {
+        "de": "Bestellung",
+        "en": "order"
+      },
+      {
+        "de": "Lieferung",
+        "en": "delivery"
+      },
+      {
+        "de": "Umtausch",
+        "en": "exchange"
+      },
+      {
+        "de": "Ausverkauf",
+        "en": "sale"
+      },
+      {
+        "de": "Kasse",
+        "en": "checkout"
+      },
+      {
+        "de": "Regal",
+        "en": "shelf"
+      },
+      {
+        "de": "Abteilung",
+        "en": "department"
+      },
+      {
+        "de": "Inventar",
+        "en": "stock"
+      }
+    ],
+    "u7": [
+      {
+        "de": "Hobby",
+        "en": "hobby"
+      },
+      {
+        "de": "Sport",
+        "en": "sport"
+      },
+      {
+        "de": "Fußball",
+        "en": "football"
+      },
+      {
+        "de": "Basketball",
+        "en": "basketball"
+      },
+      {
+        "de": "Schwimmen",
+        "en": "swimming"
+      },
+      {
+        "de": "Rad fahren",
+        "en": "to ride a bike"
+      },
+      {
+        "de": "Laufen",
+        "en": "running"
+      },
+      {
+        "de": "Wandern",
+        "en": "hiking"
+      },
+      {
+        "de": "Musik",
+        "en": "music"
+      },
+      {
+        "de": "tanzen",
+        "en": "to dance"
+      },
+      {
+        "de": "zeichnen",
+        "en": "to draw"
+      },
+      {
+        "de": "lesen",
+        "en": "to read"
+      },
+      {
+        "de": "fernsehen",
+        "en": "to watch TV"
+      },
+      {
+        "de": "spielen (Instrument)",
+        "en": "to play an instrument"
+      },
+      {
+        "de": "Konzert",
+        "en": "concert"
+      },
+      {
+        "de": "Training",
+        "en": "training"
+      },
+      {
+        "de": "Mannschaft",
+        "en": "team"
+      },
+      {
+        "de": "Spiel",
+        "en": "match"
+      },
+      {
+        "de": "Sieg",
+        "en": "victory"
+      },
+      {
+        "de": "Niederlage",
+        "en": "defeat"
+      },
+      {
+        "de": "Trainer",
+        "en": "coach"
+      },
+      {
+        "de": "Fan",
+        "en": "fan"
+      },
+      {
+        "de": "Stadion",
+        "en": "stadium"
+      },
+      {
+        "de": "Liga",
+        "en": "league"
+      },
+      {
+        "de": "Treffen",
+        "en": "meetup"
+      }
+    ]
+  }
+}
