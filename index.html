@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vokabeltrainer (PWA)</title>
+  <meta name="theme-color" content="#22c55e" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icon-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="./icon-512.png" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Vokabeltrainer</h1>
+    <div class="controls">
+      <label>
+        Block:
+        <select id="blockSelect"></select>
+      </label>
+      <label class="mode-toggle">
+        Modus:
+        <select id="modeSelect">
+          <option value="de2en">Deutsch → Englisch</option>
+          <option value="en2de">Englisch → Deutsch</option>
+        </select>
+      </label>
+      <label class="mc-toggle" title="Multiple Choice aktivieren">
+        <input type="checkbox" id="mcEnabled" checked /> Multiple Choice
+      </label>
+      <button id="nextBtn" class="primary">Start / Weiter</button>
+    </div>
+    <div id="updateBanner" class="update-banner hidden">
+      Update verfügbar – <button id="reloadBtn">Neu laden</button>
+    </div>
+  </header>
+
+  <main class="card">
+    <div class="question">
+      <div id="promptLabel" class="prompt-label">Frage</div>
+      <div id="promptText" class="prompt-text">Wähle einen Block und starte.</div>
+    </div>
+
+    <div id="mcArea" class="mc-area hidden">
+      <ul id="optionsList" class="options"></ul>
+    </div>
+
+    <div id="feedback" class="feedback"></div>
+
+    <aside class="stats">
+      <div>Block: <span id="currentBlockName">–</span></div>
+      <div>Richtig: <span id="statCorrect">0</span> | Falsch: <span id="statWrong">0</span></div>
+    </aside>
+  </main>
+
+  <footer class="foot">
+    <small>Offline-fähig (PWA) • © 2025</small>
+  </footer>
+
+  <script src="./app-inline.js"></script>
+</body>
+</html>
