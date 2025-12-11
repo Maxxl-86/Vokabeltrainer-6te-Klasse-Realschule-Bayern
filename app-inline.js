@@ -1,4 +1,4 @@
-// Vokabeltrainer (PWA) – App-Logik
+// Vokabeltrainer (PWA) – Fehlergewichtung + Anti-Repeat
 // Blöcke (Beispiel-Daten für 6. Klasse Realschule – bitte je nach Unterricht anpassen)
 const BLOCKS = [
   { id: 'school', name: 'School & Classroom', words: [
@@ -47,6 +47,7 @@ const els = {
   blockSelect: document.getElementById('blockSelect'),
   modeSelect: document.getElementById('modeSelect'),
   mcEnabled: document.getElementById('mcEnabled'),
+  weightedEnabled: document.getElementById('weightedEnabled'),
   nextBtn: document.getElementById('nextBtn'),
   promptLabel: document.getElementById('promptLabel'),
   promptText: document.getElementById('promptText'),
@@ -58,72 +59,140 @@ const els = {
   currentBlockName: document.getElementById('currentBlockName'),
   updateBanner: document.getElementById('updateBanner'),
   reloadBtn: document.getElementById('reloadBtn'),
+  weightInfo: document.getElementById('weightInfo'),
 };
 
-// Stats per Block (localStorage)
-const LS_KEY = 'vocab-trainer-stats-v1';
+// --- Stats in localStorage ---
+// Struktur: { blocks: {blockId:{correct,wrong}}, words: {blockId:{wordKey:{correct,wrong}}} }
+const LS_KEY = 'vocab-trainer-stats-v2';
 let stats = JSON.parse(localStorage.getItem(LS_KEY) || '{}');
+if (!stats.blocks) stats.blocks = {};
+if (!stats.words) stats.words = {};
+
 function initStats() {
   BLOCKS.forEach(b => {
-    if (!stats[b.id]) stats[b.id] = {correct:0, wrong:0};
+    if (!stats.blocks[b.id]) stats.blocks[b.id] = {correct:0, wrong:0};
+    if (!stats.words[b.id]) stats.words[b.id] = {};
+    b.words.forEach(w => {
+      const k = wordKey(w);
+      if (!stats.words[b.id][k]) stats.words[b.id][k] = {correct:0, wrong:0};
+    });
   });
-  localStorage.setItem(LS_KEY, JSON.stringify(stats));
+  saveStats();
 }
+
+function saveStats(){ localStorage.setItem(LS_KEY, JSON.stringify(stats)); }
+function wordKey(w){ return normalize(w.de)+'|'+normalize(w.en); }
 
 function updateStatsUI(blockId) {
-  const s = stats[blockId] || {correct:0, wrong:0};
+  const s = stats.blocks[blockId] || {correct:0, wrong:0};
   els.statCorrect.textContent = s.correct;
   els.statWrong.textContent = s.wrong;
+  els.weightInfo.textContent = els.weightedEnabled.checked ? 'aktiv' : 'aus';
 }
 
-function record(blockId, ok) {
-  const s = stats[blockId];
-  if (ok) s.correct++; else s.wrong++;
-  localStorage.setItem(LS_KEY, JSON.stringify(stats));
+function record(blockId, item, ok) {
+  const bs = stats.blocks[blockId];
+  const ws = stats.words[blockId][wordKey(item)];
+  if (ok) { bs.correct++; ws.correct++; } else { bs.wrong++; ws.wrong++; }
+  saveStats();
   updateStatsUI(blockId);
 }
 
-// UI Setup
-function fillBlocks() {
-  els.blockSelect.innerHTML = '';
-  BLOCKS.forEach(b => {
-    const opt = document.createElement('option');
-    opt.value = b.id; opt.textContent = b.name; els.blockSelect.appendChild(opt);
+// --- Anti-Repeat & Session-Queue ---
+const HISTORY_SIZE = 2;            // wie viele letzte Fragen vermeiden
+let lastPrompts = [];              // Merker der letzten Prompts
+let sessionQueue = [];             // Reihenfolge der Wörter pro Block (ohne Ersatz)
+let currentBlockId = null;
+
+function resetSessionQueue(block) {
+  currentBlockId = block.id;
+  // Gewichtung: dupliziere Wörter anhand Fehler-Historie
+  const weighted = [];
+  const useWeighted = !!els.weightedEnabled?.checked;
+  block.words.forEach(w => {
+    const k = wordKey(w);
+    const ws = stats.words[block.id][k] || {correct:0, wrong:0};
+    let weight = 1;
+    if (useWeighted) {
+      // einfache Gewichtsfunktion: Basis 1 + wrong - 0.5*correct, begrenzt 1..5
+      weight = Math.max(1, Math.min(5, 1 + ws.wrong - Math.floor(ws.correct * 0.5)));
+    }
+    for (let i=0;i<weight;i++) weighted.push(w);
   });
+  sessionQueue = shuffle(weighted);
+}
+
+function recentlyAsked(text) {
+  const norm = normalize(text);
+  return lastPrompts.some(t => normalize(t) === norm);
+}
+
+function pushHistory(text) {
+  lastPrompts.unshift(text);
+  if (lastPrompts.length > HISTORY_SIZE) lastPrompts.pop();
 }
 
 function shuffle(arr) { for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; } return arr; }
+function normalize(s) { return String(s || '').trim().toLowerCase(); }
 
-let currentQ = null; // {blockId, from, to, prompt, answer, options[]}
+let currentQ = null; // {blockId, from, to, prompt, answer, options[], item}
 
 function pickQuestion() {
   const blockId = els.blockSelect.value;
   const mode = els.modeSelect.value; // 'de2en' | 'en2de'
   const block = BLOCKS.find(b => b.id === blockId);
   if (!block) return null;
-  const pool = block.words;
-  const item = pool[Math.floor(Math.random()*pool.length)];
+
+  // Session initialisieren oder neu aufbauen bei Blockwechsel/geleerter Queue
+  if (!sessionQueue.length || currentBlockId !== blockId) {
+    resetSessionQueue(block);
+  }
+
+  // Kandidat wählen, Anti-Repeat beachten
+  let tries = Math.min(sessionQueue.length, 5);
+  let item = sessionQueue[0];
   const from = mode === 'de2en' ? 'de' : 'en';
-  const to = mode === 'de2en' ? 'en' : 'de';
+  const to   = mode === 'de2en' ? 'en' : 'de';
+
+  while (tries > 0 && item && recentlyAsked(item[from])) {
+    sessionQueue.push(sessionQueue.shift());
+    item = sessionQueue[0];
+    tries--;
+  }
+
+  // Konsumiere das Item
+  item = sessionQueue.shift();
+  if (!sessionQueue.length) resetSessionQueue(block);
+
   const prompt = item[from];
   const answer = item[to];
 
-  // Generate multiple-choice options (4 total)
+  // Multiple-Choice-Optionen bauen (4 total, ohne Antwort-Duplikate)
   let options = [answer];
-  const distractPool = shuffle([...pool.filter(w => w !== item).map(w => w[to])]);
+  const distractPool = shuffle(
+    block.words
+      .filter(w => w !== item)
+      .map(w => w[to])
+      .filter(w => normalize(w) !== normalize(answer))
+  );
   while (options.length < 4 && distractPool.length) options.push(distractPool.pop());
   options = shuffle(options);
 
-  currentQ = { blockId, from, to, prompt, answer, options };
+  currentQ = { blockId, from, to, prompt, answer, options, item };
   return currentQ;
 }
 
 function renderQuestion() {
   if (!currentQ) return;
-  els.currentBlockName.textContent = BLOCKS.find(b => b.id === currentQ.blockId)?.name || '–';
+  const block = BLOCKS.find(b => b.id === currentQ.blockId);
+  els.currentBlockName.textContent = block?.name || '–';
   els.promptLabel.textContent = currentQ.from === 'de' ? 'Deutsch' : 'Englisch';
   els.promptText.textContent = currentQ.prompt;
   els.feedback.textContent = '';
+
+  // Merker für Anti-Repeat aktualisieren
+  pushHistory(currentQ.prompt);
 
   if (els.mcEnabled.checked) {
     els.mcArea.classList.remove('hidden');
@@ -138,7 +207,7 @@ function renderQuestion() {
       els.optionsList.appendChild(li);
     });
   } else {
-    // Freitextmodus (einfach): Nutzer tippt Antwort in Prompt (Quick & Dirty)
+    // Freitextmodus (einfach)
     els.mcArea.classList.add('hidden');
     els.optionsList.innerHTML = '';
     els.promptText.innerHTML = `${currentQ.prompt}<br/><input id="freeInput" class="option-btn" placeholder="Antwort hier eingeben" />`;
@@ -152,14 +221,13 @@ function renderQuestion() {
 function onAnswer(selected) {
   const ok = normalize(selected) === normalize(currentQ.answer);
   els.feedback.textContent = ok ? '✅ Richtig!' : `❌ Falsch. Richtig: ${currentQ.answer}`;
-  record(currentQ.blockId, ok);
+  record(currentQ.blockId, currentQ.item, ok);
 }
-
-function normalize(s) { return String(s || '').trim().toLowerCase(); }
 
 // Events
 els.nextBtn.addEventListener('click', () => { pickQuestion(); renderQuestion(); });
-els.blockSelect.addEventListener('change', () => { updateStatsUI(els.blockSelect.value); });
+els.blockSelect.addEventListener('change', () => { updateStatsUI(els.blockSelect.value); resetSessionQueue(BLOCKS.find(b => b.id === els.blockSelect.value)); });
+els.weightedEnabled.addEventListener('change', () => { updateStatsUI(els.blockSelect.value); resetSessionQueue(BLOCKS.find(b => b.id === els.blockSelect.value)); });
 
 // Init
 fillBlocks();
@@ -169,7 +237,6 @@ updateStatsUI(els.blockSelect.value);
 // Service Worker Registration + Update-Banner
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./sw.js', { scope: './' }).then(reg => {
-    // Listen for updates
     if (reg.waiting) showUpdateBanner();
     reg.addEventListener('updatefound', () => {
       const newSW = reg.installing;
@@ -188,3 +255,12 @@ if ('serviceWorker' in navigator) {
 
 function showUpdateBanner() { els.updateBanner.classList.remove('hidden'); }
 els.reloadBtn.addEventListener('click', () => { window.location.reload(); });
+
+// --- UI Setup (nach allen Funktionen) ---
+function fillBlocks() {
+  els.blockSelect.innerHTML = '';
+  BLOCKS.forEach(b => {
+    const opt = document.createElement('option');
+    opt.value = b.id; opt.textContent = b.name; els.blockSelect.appendChild(opt);
+  });
+}

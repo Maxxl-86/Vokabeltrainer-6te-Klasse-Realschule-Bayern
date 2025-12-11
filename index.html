@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vokabeltrainer (PWA)</title>
+  <title>Vokabeltrainer (PWA) – Fehlergewichtung</title>
   <meta name="theme-color" content="#22c55e" />
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="icon" href="./icon-192.png" sizes="192x192" />
@@ -28,6 +28,9 @@
       <label class="mc-toggle" title="Multiple Choice aktivieren">
         <input type="checkbox" id="mcEnabled" checked /> Multiple Choice
       </label>
+      <label class="w-toggle" title="Fehlergewichtung aktivieren">
+        <input type="checkbox" id="weightedEnabled" checked /> Fehlergewichtung
+      </label>
       <button id="nextBtn" class="primary">Start / Weiter</button>
     </div>
     <div id="updateBanner" class="update-banner hidden">
@@ -50,6 +53,7 @@
     <aside class="stats">
       <div>Block: <span id="currentBlockName">–</span></div>
       <div>Richtig: <span id="statCorrect">0</span> | Falsch: <span id="statWrong">0</span></div>
+      <div class="muted">Gewichtung: <span id="weightInfo">aktiv</span> • Anti-Repeat</div>
     </aside>
   </main>
 

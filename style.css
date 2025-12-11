@@ -20,4 +20,5 @@ html, body { margin:0; padding:0; background:var(--bg); color:var(--fg); font-fa
 .option-btn:hover { background:#0e1a2f; }
 .feedback { margin-top: 0.75rem; min-height: 1.25rem; }
 .stats { margin-top: 1rem; color: var(--muted); display:flex; gap:1.25rem; }
+.muted { color: var(--muted); }
 .foot { text-align:center; padding:1rem; color:var(--muted); }

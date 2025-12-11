@@ -1,4 +1,4 @@
-// Vokabeltrainer PWA – Service Worker v1
+// Vokabeltrainer PWA – Service Worker v1 (Network-First)
 const CACHE_NAME = 'vocab-trainer-v1';
 const APP_SHELL = [
   './',
@@ -25,16 +25,12 @@ self.addEventListener('activate', (event) => {
   });
 });
 
-// Network-first for navigation & app shell, fallback to cache
 self.addEventListener('fetch', (event) => {
   const req = event.request;
   event.respondWith(
     fetch(req).then(res => {
-      // Optionally update cache
       const resClone = res.clone();
-      caches.open(CACHE_NAME).then(cache => {
-        cache.put(req, resClone);
-      });
+      caches.open(CACHE_NAME).then(cache => { cache.put(req, resClone); });
       return res;
     }).catch(() => caches.match(req))
   );
