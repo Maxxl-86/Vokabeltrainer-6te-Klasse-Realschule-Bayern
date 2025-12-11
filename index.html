@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vokabeltrainer (PWA) – Fehlergewichtung</title>
+  <title>Vokabeltrainer (PWA) – Multi-Mix & Install</title>
   <meta name="theme-color" content="#22c55e" />
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="icon" href="./icon-192.png" sizes="192x192" />
@@ -14,10 +14,17 @@
   <header class="app-header">
     <h1>Vokabeltrainer</h1>
     <div class="controls">
-      <label>
-        Block:
-        <select id="blockSelect"></select>
-      </label>
+      <div class="checklist-wrap">
+        <div class="checklist-head">
+          <strong>Blöcke wählen:</strong>
+          <div class="checklist-actions">
+            <button id="selectAllBtn" class="secondary">Alle</button>
+            <button id="clearAllBtn" class="secondary">Leeren</button>
+          </div>
+        </div>
+        <div id="blockChecklist" class="checklist"></div>
+      </div>
+
       <label class="mode-toggle">
         Modus:
         <select id="modeSelect">
@@ -25,14 +32,21 @@
           <option value="en2de">Englisch → Deutsch</option>
         </select>
       </label>
+
       <label class="mc-toggle" title="Multiple Choice aktivieren">
         <input type="checkbox" id="mcEnabled" checked /> Multiple Choice
       </label>
+
       <label class="w-toggle" title="Fehlergewichtung aktivieren">
         <input type="checkbox" id="weightedEnabled" checked /> Fehlergewichtung
       </label>
+
       <button id="nextBtn" class="primary">Start / Weiter</button>
+      <button id="resetSelectedBtn" class="secondary" title="Stats der ausgewählten Blöcke zurücksetzen">Auswahl reset</button>
+      <button id="resetAllBtn" class="secondary" title="Alle Stats zurücksetzen">Alles reset</button>
+      <button id="installBtn" class="secondary" title="App installieren">App installieren</button>
     </div>
+
     <div id="updateBanner" class="update-banner hidden">
       Update verfügbar – <button id="reloadBtn">Neu laden</button>
     </div>
@@ -41,7 +55,7 @@
   <main class="card">
     <div class="question">
       <div id="promptLabel" class="prompt-label">Frage</div>
-      <div id="promptText" class="prompt-text">Wähle einen Block und starte.</div>
+      <div id="promptText" class="prompt-text">Wähle mindestens einen Block und starte.</div>
     </div>
 
     <div id="mcArea" class="mc-area hidden">
@@ -51,9 +65,9 @@
     <div id="feedback" class="feedback"></div>
 
     <aside class="stats">
-      <div>Block: <span id="currentBlockName">–</span></div>
+      <div>Aktive Blöcke: <span id="currentBlocksLabel">–</span></div>
       <div>Richtig: <span id="statCorrect">0</span> | Falsch: <span id="statWrong">0</span></div>
-      <div class="muted">Gewichtung: <span id="weightInfo">aktiv</span> • Anti-Repeat</div>
+      <div class="muted">Gewichtung: <span id="weightInfo">aktiv</span> • Anti-Repeat • Install: <span id="installInfo">nicht installiert</span></div>
     </aside>
   </main>
 
