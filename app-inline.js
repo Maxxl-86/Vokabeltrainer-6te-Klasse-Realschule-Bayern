@@ -1,4 +1,5 @@
-// Vokabeltrainer (PWA) – CSV Import + Multi-Mix + Presets + Fehlergewichtung + Anti-Repeat + Reset
+// Vokabeltrainer (PWA) – Final Build
+// CSV Import + Multi-Mix + Presets + Fehlergewichtung + Anti-Repeat + Reset + PWA Install
 
 // --- Konfiguration ---
 const UNIT_META = [
