@@ -8,7 +8,7 @@ html, body { margin:0; padding:0; background:var(--bg); color:var(--fg); font-fa
 .controls select, .controls input[type=checkbox] { background:#0b1220; color:var(--fg); border:1px solid #374151; padding:0.35rem 0.5rem; border-radius:0.35rem; }
 .primary { background: var(--accent); color:#062e0a; border:none; padding:0.5rem 0.9rem; border-radius:0.45rem; font-weight:600; cursor:pointer; }
 .primary:hover { filter: brightness(1.05); }
-.secondary { background:transparent; color:var(--fg); border:1px solid #374151; padding:0.5rem 0.9rem; border-radius:0.45rem; cursor:pointer; }
+.secondary { background:transparent; color:var(--fg); border:1px solid #374151; padding:0.5rem 0.9rem; border-radius:0.45rem; cursor:pointer; text-decoration:none; }
 .secondary:hover { background:#0b1220; }
 .update-banner { background:#064e3b; color:#d1fae5; padding:0.4rem 0.6rem; border-radius:0.35rem; }
 .hidden { display:none; }
