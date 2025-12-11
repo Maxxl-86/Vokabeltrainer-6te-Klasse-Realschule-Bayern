@@ -1,34 +1,64 @@
-/* Basis-Layout */
-:root { --bg: #0f172a; --fg: #e5e7eb; --accent: #22c55e; --card: #111827; --muted:#9ca3af; }
-* { box-sizing: border-box; }
-html, body { margin:0; padding:0; background:var(--bg); color:var(--fg); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
-.app-header { padding: 1rem; border-bottom: 1px solid #1f2937; display:flex; align-items:flex-start; gap:0.6rem; flex-wrap:wrap; }
-.app-header h1 { margin:0; font-size:1.2rem; }
-.controls { display:flex; gap:0.5rem; align-items:flex-start; flex-wrap:wrap; }
-.controls select, .controls input[type=checkbox] { background:#0b1220; color:var(--fg); border:1px solid #374151; padding:0.35rem 0.5rem; border-radius:0.35rem; }
-.primary { background: var(--accent); color:#062e0a; border:none; padding:0.5rem 0.9rem; border-radius:0.45rem; font-weight:600; cursor:pointer; }
-.primary:hover { filter: brightness(1.05); }
-.secondary { background:transparent; color:var(--fg); border:1px solid #374151; padding:0.5rem 0.9rem; border-radius:0.45rem; cursor:pointer; text-decoration:none; }
-.secondary:hover { background:#0b1220; }
-.update-banner { background:#064e3b; color:#d1fae5; padding:0.4rem 0.6rem; border-radius:0.35rem; }
-.hidden { display:none; }
-.card { max-width: 980px; margin: 1.25rem auto; background: var(--card); border: 1px solid #1f2937; border-radius: 0.75rem; padding: 1rem; }
-.prompt-label { color: var(--muted); font-size:0.9rem; }
-.prompt-text { font-size: 1.6rem; margin-top: 0.25rem; }
-.mc-area { margin-top:1rem; }
-.options { list-style:none; margin:0; padding:0; display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:0.6rem; }
-.options li { background:#0b1220; border:1px solid #374151; border-radius:0.5rem; }
-.option-btn { width:100%; text-align:left; background:transparent; color:var(--fg); border:none; padding:0.75rem; cursor:pointer; font-size:1rem; }
-.option-btn:hover { background:#0e1a2f; }
-.feedback { margin-top: 0.75rem; min-height: 1.25rem; }
-.stats { margin-top: 1rem; color: var(--muted); display:flex; gap:1.25rem; flex-wrap:wrap; }
-.muted { color: var(--muted); }
-.foot { text-align:center; padding:1rem; color:var(--muted); }
+/* Dark theme + responsive layout */
+:root { --bg:#0f172a; --fg:#e5e7eb; --accent:#22c55e; --card:#111827; --muted:#9ca3af; --border:#1f2937; }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans","Helvetica Neue",Arial}
+
+/* Header */
+.app-header{padding:0.75rem 1rem;border-bottom:1px solid var(--border);display:flex;flex-direction:column;gap:0.5rem}
+.app-header h1{margin:0;font-size:1.15rem}
+.topbar{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.topbar select,.topbar input[type=checkbox]{background:#0b1220;color:var(--fg);border:1px solid #374151;padding:0.35rem 0.5rem;border-radius:0.35rem}
+.secondary{background:transparent;color:var(--fg);border:1px solid #374151;padding:0.45rem 0.7rem;border-radius:0.45rem;cursor:pointer;text-decoration:none}
+.secondary:hover{background:#0b1220}
+.secondary.sm{padding:0.35rem 0.6rem;font-size:0.85rem}
+.primary{background:var(--accent);color:#062e0a;border:none;padding:0.55rem 0.9rem;border-radius:0.6rem;font-weight:700;cursor:pointer}
+.primary:hover{filter:brightness(1.05)}
+.primary.big{font-size:1.15rem;padding:0.8rem 1.2rem}
+.update-banner{background:#064e3b;color:#d1fae5;padding:0.4rem 0.6rem;border-radius:0.35rem}
+.hidden{display:none}
+
+/* Layout: sidebar + content */
+.layout{display:grid;grid-template-columns:280px 1fr;gap:1rem;padding:1rem}
+.sidebar{display:flex;flex-direction:column;gap:1rem}
+.content{display:flex;flex-direction:column;gap:0.75rem}
 
 /* Checklist */
-.checklist-wrap { border:1px solid #1f2937; border-radius:0.5rem; padding:0.5rem; background:#0b1220; }
-.checklist-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:0.4rem; }
-.checklist-actions { display:flex; gap:0.4rem; }
-.checklist { display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:0.35rem; }
-.checklist label { display:flex; gap:0.5rem; align-items:center; background:#0e1a2f; border:1px solid #374151; padding:0.4rem 0.5rem; border-radius:0.4rem; cursor:pointer; }
-.checklist input { accent-color: var(--accent); }
+.checklist-wrap{border:1px solid var(--border);border-radius:0.6rem;padding:0.6rem;background:#0b1220}
+.checklist-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem}
+.checklist{display:grid;grid-template-columns:1fr;gap:0.4rem}
+.checklist label{display:flex;gap:0.5rem;align-items:center;background:#0e1a2f;border:1px solid #374151;padding:0.45rem 0.55rem;border-radius:0.45rem;cursor:pointer}
+.checklist input{accent-color:var(--accent)}
+
+/* Stats panel */
+.stats-panel{border:1px solid var(--border);border-radius:0.6rem;padding:0.6rem;background:#0b1220;color:var(--muted);display:flex;flex-direction:column;gap:0.35rem}
+
+/* Card */
+.card{background:var(--card);border:1px solid var(--border);border-radius:0.8rem;padding:1rem}
+.prompt-label{color:var(--muted);font-size:0.9rem}
+.prompt-text{font-size:1.7rem;margin-top:0.25rem}
+.mc-area{margin-top:1rem}
+.options{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.6rem}
+.options li{background:#0b1220;border:1px solid #374151;border-radius:0.5rem}
+.option-btn{width:100%;text-align:left;background:transparent;color:var(--fg);border:none;padding:0.75rem;cursor:pointer;font-size:1rem}
+.option-btn:hover{background:#0e1a2f}
+.feedback{margin-top:0.75rem;min-height:1.25rem}
+
+/* CTA row */
+.cta-row{display:flex;justify-content:center}
+
+/* Footer */
+.foot{text-align:center;padding:1rem;color:var(--muted)}
+
+/* Responsive: narrow screens */
+@media (max-width: 900px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{order:2}
+  .content{order:1}
+  .prompt-text{font-size:1.4rem}
+}
+
+/* Mobile: sticky bottom button */
+@media (max-width: 640px){
+  .cta-row{position:sticky;bottom:0;background:linear-gradient(180deg, rgba(17,24,39,0) 0%, rgba(17,24,39,0.85) 40%, rgba(17,24,39,0.95) 100%);padding:0.75rem;margin:0 -1rem}
+  .primary.big{width:100%}
+}
