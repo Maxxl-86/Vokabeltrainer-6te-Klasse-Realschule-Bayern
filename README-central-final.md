@@ -1,14 +1,17 @@
-# Vokabeltrainer – Central Final Build
+# Vokabeltrainer – Central Final FIX
 
-Dieses Paket ist fix & fertig: responsive App, CSV-Importer und zentrale Vokabelliste (u1..u7).
+Fertig zum Hochladen: responsive App, CSV-Importer und zentrale Vokabelliste (u1..u7).
 
 ## Einbau
-- Dateien ins Repo-Root hochladen (`index.html`, `style.css`, `app-inline.js`, `import.html`, `manifest.webmanifest`, `sw.js`, Icons, Ordner `vocab/`).
-- Commit → Seite öffnen → Update-Banner → Neu laden.
+1. Alle Dateien ins Repo-Root hochladen: `index.html`, `style.css`, `app-inline.js`, `import.html`, `manifest.webmanifest`, `sw.js`, `icon-192.png`, `icon-512.png`, Ordner `vocab/` mit `vocab.json`.
+2. Commit → Seite öffnen → Update-Banner → **Neu laden**.
 
 ## Zentrale Liste
-- `vocab/vocab.json` enthält ca. 175 Vokabelpaare.
-- Bei Änderungen **version** erhöhen (z. B. `2025-12-11-03`).
+- Datei: `./vocab/vocab.json` (Version: 2025-12-11-03)
+- Anpassung: Wörter je Unit ergänzen/ändern. **Versionstring erhöhen**.
 
 ## CSV-Import
-- `import.html` → CSV `unit;de;en` → Parsen → Zusammenführen/Ersetzen.
+- Seite `import.html`: CSV je Unit importieren (`unit;de;en`), **Zusammenführen** oder **Ersetzen**.
+
+## Lernlogik
+- Fehlergewichtung, Anti-Repeat, Presets (Unit-Spannen), freie Mehrfachauswahl.
