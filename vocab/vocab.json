@@ -1,5 +1,5 @@
 {
-  "version": "2025-12-12-v3",
+  "version": "2025-12-12-v4-no-u7",
   "units": {
     "u1": [
       {
@@ -503,10 +503,6 @@
       {
         "de": "Landkarte",
         "en": "map"
-      },
-      {
-        "de": "öffentlich",
-        "en": "public"
       },
       {
         "de": "privat",
@@ -1433,10 +1429,6 @@
         "en": "goody-goody"
       },
       {
-        "de": "verlegen",
-        "en": "embarrassed"
-      },
-      {
         "de": "Ingenieur",
         "en": "engineer"
       },
@@ -2136,7 +2128,6 @@
         "de": "klar",
         "en": "clear"
       }
-    ],
-    "u7": []
+    ]
   }
 }
