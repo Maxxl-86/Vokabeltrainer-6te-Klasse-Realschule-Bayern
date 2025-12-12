@@ -34,39 +34,12 @@
       </label>
     </div>
   </header>
-
   <main id="app-root">
-    <section class="blocks">
-      <h2>Blöcke wählen</h2>
-      <div class="block-actions">
-        <button id="selectAllBtn">Alle</button>
-        <button id="clearAllBtn">Leeren</button>
-      </div>
-      <div id="blockChecklist" class="checklist" aria-label="Blöcke">
-        <label><input type="checkbox" value="u1" checked> Unit 1</label>
-        <label><input type="checkbox" value="u2"> Unit 2</label>
-        <label><input type="checkbox" value="u3"> Unit 3</label>
-        <label><input type="checkbox" value="u4"> Unit 4</label>
-        <label><input type="checkbox" value="u5"> Unit 5</label>
-        <label><input type="checkbox" value="u6"> Unit 6</label>
-      </div>
-      <div class="stats">
-        <div>Aktive Blöcke: <span id="currentBlocksLabel">Unit 1</span></div>
-        <div>Richtig: <span id="statCorrect">0</span> · Falsch: <span id="statWrong">0</span></div>
-        <div>Gewichtung: <span id="weightInfo">aktiv</span></div>
-      </div>
-      <div class="reset-actions">
-        <button id="resetSelectedBtn">Auswahl reset</button>
-        <button id="resetAllBtn">Alles reset</button>
-      </div>
-    </section>
-
+    <!-- Blocks-Section wird bei Bedarf von app-inline.js automatisch injiziert -->
     <section class="card">
       <div><span id="promptLabel">Deutsch</span></div>
       <div id="promptText">Wähle mindestens einen Block und starte.</div>
-      <div id="mcArea" class="mc hidden">
-        <ul id="optionsList"></ul>
-      </div>
+      <div id="mcArea" class="mc hidden"><ul id="optionsList"></ul></div>
       <div id="feedback" class="feedback"></div>
       <div id="hintArea" class="hint hidden"></div>
       <div class="actions">
@@ -75,13 +48,11 @@
       </div>
     </section>
   </main>
-
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js').catch(console.error);
     }
   </script>
-  <script src="seed.js"></script>
   <script src="app-inline.js"></script>
 </body>
 </html>
