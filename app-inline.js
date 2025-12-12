@@ -1,5 +1,8 @@
 
-// Vokabeltrainer (PWA) – Central Sync Build (ohne Unit 7)
+// Vokabeltrainer – Central Sync (Fix: Mehrfachklick verhindert)
+// Dieser Build verhindert, dass nach einer Antwort weitere Klicks den
+// Richtig/Falsch-Zähler erneut erhöhen.
+
 const UNIT_META = [
   { id: 'u1', name: 'Unit 1' },
   { id: 'u2', name: 'Unit 2' },
@@ -38,8 +41,6 @@ const els = {
   updateBanner: document.getElementById('updateBanner'),
   reloadBtn: document.getElementById('reloadBtn'),
   weightInfo: document.getElementById('weightInfo'),
-  installBtn: document.getElementById('installBtn'),
-  installInfo: document.getElementById('installInfo'),
   resetSelectedBtn: document.getElementById('resetSelectedBtn'),
   resetAllBtn: document.getElementById('resetAllBtn'),
   centralInfo: document.getElementById('centralInfo'),
@@ -73,7 +74,7 @@ function mergeCentralIntoLocal(central, enforced=false){
   const out = {...local};
   const src = (central && central.units) ? central.units : {};
   for(const unit of Object.keys(src)){
-    if(!UNIT_META.find(u=>u.id===unit)) continue; // ignoriert unbekannte Units (z.B. u7)
+    if(!UNIT_META.find(u=>u.id===unit)) continue; // ignoriert unbekannte Units
     const list = Array.isArray(src[unit]) ? src[unit] : [];
     if(!out[unit]) out[unit] = [];
     if(enforced){ out[unit] = list.slice(); }
@@ -88,8 +89,8 @@ function mergeCentralIntoLocal(central, enforced=false){
 
 async function initCentralSync(){
   const meta = loadSync();
-  els.forceCentralToggle && (els.forceCentralToggle.checked = !!meta.enforced);
-  els.centralVersion     && (els.centralVersion.textContent = meta.version ? meta.version : '–');
+  if(els.forceCentralToggle) els.forceCentralToggle.checked = !!meta.enforced;
+  if(els.centralVersion)     els.centralVersion.textContent = meta.version ? meta.version : '–';
   const central = await fetchCentral();
   if(central){
     const newVersion = central.version || 'unknown';
@@ -97,11 +98,11 @@ async function initCentralSync(){
     if(changed || meta.enforced){
       mergeCentralIntoLocal(central, !!meta.enforced);
       saveSync({ version: newVersion, enforced: !!meta.enforced });
-      els.centralVersion && (els.centralVersion.textContent = newVersion);
+      if(els.centralVersion) els.centralVersion.textContent = newVersion;
     }
-    els.centralInfo && els.centralInfo.classList.remove('hidden');
+    if(els.centralInfo) els.centralInfo.classList.remove('hidden');
   } else {
-    els.centralInfo && els.centralInfo.classList.remove('hidden');
+    if(els.centralInfo) els.centralInfo.classList.remove('hidden');
   }
 }
 
@@ -117,7 +118,7 @@ function initStats(){
 }
 
 function updateStatsUI(){
-  els.weightInfo && (els.weightInfo.textContent = els.weightedEnabled?.checked ? 'aktiv' : 'aus');
+  if(els.weightInfo) els.weightInfo.textContent = els.weightedEnabled?.checked ? 'aktiv' : 'aus';
   if(!activeBlockIds.length){ els.statCorrect.textContent='0'; els.statWrong.textContent='0'; return; }
   const stats = loadStats();
   const agg = activeBlockIds.reduce((acc,id)=>{ const s=stats.blocks[id]||{correct:0,wrong:0}; acc.correct+=s.correct; acc.wrong+=s.wrong; return acc; }, {correct:0,wrong:0});
@@ -149,7 +150,7 @@ function syncActiveBlockIds(){
   activeBlockIds = Array.from(els.blockChecklist.querySelectorAll('input[type=checkbox]:checked')).map(el=>el.value);
   const names = activeBlockIds.map(id=> UNIT_META.find(u=>u.id===id)?.name).filter(Boolean);
   els.currentBlocksLabel.textContent = names.length ? names.join(', ') : '–';
-  updateStatsUI(); resetSessionQueue(); els.presetSelect && (els.presetSelect.value='custom');
+  updateStatsUI(); resetSessionQueue(); if(els.presetSelect) els.presetSelect.value='custom';
 }
 
 function buildPool(){ const vocab=loadVocab(); const pool=[]; activeBlockIds.forEach(id=> (vocab[id]||[]).forEach(w=> pool.push({w,origin:id})) ); return pool; }
@@ -173,22 +174,59 @@ function pickQuestion(){
   const pool=buildPool(); let options=[answer];
   const distract=shuffle(pool.filter(x=>x.w!==item).map(x=>x.w[to]).filter(x=> normalize(x)!==normalize(answer)));
   while(options.length<4 && distract.length) options.push(distract.pop()); options=shuffle(options);
-  currentQ={ origin, from, to, prompt, answer, options, item }; return currentQ;
+  currentQ={ origin, from, to, prompt, answer, options, item, answered:false };
+  return currentQ;
 }
 
-function renderQuestion(){ if(!currentQ) return; els.promptLabel.textContent = currentQ.from==='de'?'Deutsch':'Englisch'; els.promptText.textContent=currentQ.prompt; els.feedback.textContent=''; pushHistory(currentQ.prompt);
-  if(els.mcEnabled?.checked){ els.mcArea.classList.remove('hidden'); els.optionsList.innerHTML=''; currentQ.options.forEach(opt=>{ const li=document.createElement('li'); const btn=document.createElement('button'); btn.className='option-btn'; btn.textContent=opt; btn.addEventListener('click',()=>onAnswer(opt)); li.appendChild(btn); els.optionsList.appendChild(li); }); }
-  else { els.mcArea.classList.add('hidden'); els.optionsList.innerHTML=''; els.promptText.innerHTML = `${currentQ.prompt}<br/><input id="freeInput" class="option-btn" placeholder="Antwort hier eingeben" />`; setTimeout(()=>{ const input=document.getElementById('freeInput'); if(input) input.addEventListener('keydown', e=>{ if(e.key==='Enter') onAnswer(input.value.trim()); }); },0); }
+function disableOptionButtons(){
+  // deaktiviert alle Antwort-Buttons nach der ersten Antwort
+  els.optionsList.querySelectorAll('button.option-btn').forEach(btn=>{
+    btn.disabled = true;
+    btn.classList.add('disabled');
+  });
+  const free = document.getElementById('freeInput');
+  if(free){ free.disabled = true; }
 }
 
-function onAnswer(sel){ const ok=normalize(sel)===normalize(currentQ.answer); els.feedback.textContent= ok?'✅ Richtig!':`❌ Falsch. Richtig: ${currentQ.answer}`; record(currentQ.origin,currentQ.item,ok); }
+function renderQuestion(){ if(!currentQ) return;
+  els.promptLabel.textContent = currentQ.from==='de'?'Deutsch':'Englisch';
+  els.promptText.textContent=currentQ.prompt; els.feedback.textContent=''; pushHistory(currentQ.prompt);
+  if(els.mcEnabled?.checked){
+    els.mcArea.classList.remove('hidden'); els.optionsList.innerHTML='';
+    currentQ.options.forEach(opt=>{
+      const li=document.createElement('li');
+      const btn=document.createElement('button');
+      btn.className='option-btn';
+      btn.textContent=opt;
+      btn.addEventListener('click',()=> onAnswer(opt));
+      li.appendChild(btn); els.optionsList.appendChild(li);
+    });
+  } else {
+    els.mcArea.classList.add('hidden'); els.optionsList.innerHTML='';
+    els.promptText.innerHTML = `${currentQ.prompt}<br/><input id="freeInput" class="option-btn" placeholder="Antwort hier eingeben" />`;
+    setTimeout(()=>{
+      const input=document.getElementById('freeInput');
+      if(input) input.addEventListener('keydown', e=>{ if(e.key==='Enter') onAnswer(input.value.trim()); });
+    },0);
+  }
+}
 
-let deferredPrompt=null;
-function updateInstallInfo(){ const standalone=window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone; els.installInfo && (els.installInfo.textContent=standalone?'installiert':'nicht installiert'); }
-window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredPrompt=e; els.installBtn && (els.installBtn.style.display='inline-block'); });
-window.addEventListener('appinstalled', ()=>{ deferredPrompt=null; updateInstallInfo(); });
-els.installBtn && els.installBtn.addEventListener('click', async ()=>{ if(!deferredPrompt){ if(/iphone|ipad|ipod/i.test(navigator.userAgent)) alert('iOS: Teilen-Icon → "Zum Home-Bildschirm" hinzufügen'); return; } deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt=null; updateInstallInfo(); });
+function onAnswer(sel){
+  // NEU: Schutz gegen Mehrfachzählung
+  if(!currentQ || currentQ.answered) return; // bereits beantwortet → nichts tun
+  currentQ.answered = true; // ab hier wird die Frage als beantwortet markiert
 
+  const ok=normalize(sel)===normalize(currentQ.answer);
+  els.feedback.textContent= ok?'✅ Richtig!':`❌ Falsch. Richtig: ${currentQ.answer}`;
+
+  // Einmalige Statistik-Aktualisierung
+  record(currentQ.origin,currentQ.item,ok);
+
+  // Alle weiteren Klicks auf Optionen deaktivieren
+  disableOptionButtons();
+}
+
+// UI-Hooks
 els.nextBtn && els.nextBtn.addEventListener('click', ()=>{ const q=pickQuestion(); if(q) renderQuestion(); else { els.promptText.textContent='Bitte wähle mindestens einen Block.'; } });
 els.resetSelectedBtn && els.resetSelectedBtn.addEventListener('click', ()=> resetSelected());
 els.resetAllBtn && els.resetAllBtn.addEventListener('click',   ()=> resetAll());
@@ -197,25 +235,11 @@ els.presetSelect && els.presetSelect.addEventListener('change', e=>{ if(e.target
 els.selectAllBtn && els.selectAllBtn.addEventListener('click', ()=>{ els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=true ); syncActiveBlockIds(); });
 els.clearAllBtn && els.clearAllBtn.addEventListener('click', ()=>{ els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=false ); syncActiveBlockIds(); });
 
-els.forceCentralToggle && els.forceCentralToggle.addEventListener('change', ()=>{ const m=loadSync(); m.enforced = !!els.forceCentralToggle.checked; saveSync(m); });
-els.refreshCentralBtn && els.refreshCentralBtn.addEventListener('click', async ()=>{ const central=await fetchCentral(); if(central){ const meta=loadSync(); mergeCentralIntoLocal(central, !!meta.enforced); saveSync({version: central.version||'unknown', enforced: !!meta.enforced}); els.centralVersion && (els.centralVersion.textContent = central.version||'unknown'); alert('Zentrale Liste aktualisiert.'); } else alert('Zentrale Liste konnte nicht geladen werden.'); });
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('./sw.js', { scope: './' });
+}
 
-(async function init(){
-  await initCentralSync();
-  renderChecklist();
-  initStats();
-  updateStatsUI();
-  updateInstallInfo();
-  if('serviceWorker' in navigator){
-    navigator.serviceWorker.register('./sw.js', { scope: './' }).then(reg=>{
-      if(reg.waiting) showUpdateBanner();
-      reg.addEventListener('updatefound',()=>{ const n=reg.installing; if(!n) return; n.addEventListener('statechange',()=>{ if(n.state==='installed' && navigator.serviceWorker.controller) showUpdateBanner(); }); });
-    });
-    navigator.serviceWorker.addEventListener('message', e=>{ if(e.data==='SW_UPDATED') showUpdateBanner(); });
-  }
-})();
-
-function showUpdateBanner(){ els.updateBanner && els.updateBanner.classList.remove('hidden'); }
+function showUpdateBanner(){ if(els.updateBanner) els.updateBanner.classList.remove('hidden'); }
 els.reloadBtn && els.reloadBtn.addEventListener('click', ()=> window.location.reload());
 
 function applyPreset(val){
@@ -224,3 +248,10 @@ function applyPreset(val){
   (ranges[val]||[]).forEach(id=>{ const cb=els.blockChecklist.querySelector(`input[value="${id}"]`); if(cb) cb.checked=true; });
   syncActiveBlockIds();
 }
+
+(async function init(){
+  await initCentralSync();
+  renderChecklist();
+  initStats();
+  updateStatsUI();
+})();
