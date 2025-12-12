@@ -1,6 +1,6 @@
 
 // Service Worker – einfache Cache-Strategie für GitHub Pages
-const CACHE_VERSION = 'v4';
+const CACHE_VERSION = 'v5';
 const STATIC_CACHE = `static-${CACHE_VERSION}`;
 const STATIC_ASSETS = [
   './', './index.html', './style.css', './app-inline.js',
