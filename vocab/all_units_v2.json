@@ -2099,9 +2099,9 @@
     "id": "u02-0126",
     "unit": 2,
     "en": {
-      "term": "",
+      "term": "public",
       "alt": [],
-      "display": ""
+      "display": "public"
     },
     "de": {
       "term": "öffentlich",
@@ -5968,12 +5968,12 @@
     "id": "u04-0357",
     "unit": 4,
     "en": {
-      "term": "embarrassed verlegen",
+      "term": "embarrassed",
       "alt": [],
-      "display": "embarrassed verlegen"
+      "display": "embarrassed"
     },
     "de": {
-      "term": "",
+      "term": "verlegen",
       "alt": []
     },
     "tags": [
