@@ -1,58 +1,17 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vokabeltrainer</title>
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" sizes="192x192" href="icon-192.png">
-  <link rel="icon" sizes="512x512" href="icon-512.png">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vokabeltrainer</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Vokabeltrainer</h1>
-    <div class="toolbar">
-      <label>Modus:
-        <select id="modeSelect">
-          <option value="de2en">Deutsch → Englisch</option>
-          <option value="en2de">Englisch → Deutsch</option>
-        </select>
-      </label>
-      <label><input id="mcEnabled" type="checkbox"> Multiple Choice</label>
-      <label><input id="weightedEnabled" type="checkbox" checked> Fehlergewichtung</label>
-      <label><input id="hintsEnabled" type="checkbox"> Lern‑Hinweise (Beta)</label>
-      <label>Preset:
-        <select id="presetSelect">
-          <option value="custom">(individuell)</option>
-          <option value="u1_2">U1–U2</option>
-          <option value="u1_3">U1–U3</option>
-          <option value="u3_4">U3–U4</option>
-          <option value="u1_6">U1–U6</option>
-        </select>
-      </label>
-    </div>
-  </header>
-  <main id="app-root">
-    <!-- Blocks-Section wird bei Bedarf von app-inline.js automatisch injiziert -->
-    <section class="card">
-      <div><span id="promptLabel">Deutsch</span></div>
-      <div id="promptText">Wähle mindestens einen Block und starte.</div>
-      <div id="mcArea" class="mc hidden"><ul id="optionsList"></ul></div>
-      <div id="feedback" class="feedback"></div>
-      <div id="hintArea" class="hint hidden"></div>
-      <div class="actions">
-        <button id="checkBtn" class="secondary">Prüfen</button>
-        <button id="nextBtn" class="primary">Start / Weiter</button>
-      </div>
-    </section>
-  </main>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js').catch(console.error);
-    }
-  </script>
-  <script src="app-inline.js"></script>
+<h1>Vokabeltrainer</h1>
+<section class="blocks">
+  <button id="resetSelectedBtn">Auswahl reset</button>
+  <button id="resetAllBtn">Alles reset</button>
+</section>
+<script src="app-inline.js"></script>
 </body>
 </html>
