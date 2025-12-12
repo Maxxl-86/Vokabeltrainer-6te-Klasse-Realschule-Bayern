@@ -1,5 +1,5 @@
 {
-  "version": "2025-12-12-clean",
+  "version": "seed-0.8.1",
   "units": {
     "u1": [
       {
@@ -7,33 +7,85 @@
         "en": "message in a bottle"
       },
       {
-        "de": "vielleicht",
-        "en": "maybe"
+        "de": "Nachrichten",
+        "en": "news"
       },
       {
-        "de": "kochen",
-        "en": "to cook"
+        "de": "Kamera",
+        "en": "camera"
+      },
+      {
+        "de": "Medien",
+        "en": "media"
       }
     ],
     "u2": [
       {
         "de": "Wasserfall",
         "en": "waterfall"
+      },
+      {
+        "de": "Berg",
+        "en": "mountain"
+      },
+      {
+        "de": "Küste",
+        "en": "coast"
+      },
+      {
+        "de": "Wald",
+        "en": "forest"
       }
     ],
     "u3": [
       {
+        "de": "U-Bahn",
+        "en": "underground"
+      },
+      {
         "de": "Kathedrale",
         "en": "cathedral"
+      },
+      {
+        "de": "Parlament",
+        "en": "parliament"
+      },
+      {
+        "de": "Glocke",
+        "en": "bell"
       }
     ],
     "u4": [
       {
-        "de": "Paprika",
-        "en": "pepper"
+        "de": "Haferbrei",
+        "en": "porridge"
+      },
+      {
+        "de": "Knoblauch",
+        "en": "garlic"
+      },
+      {
+        "de": "Hauptgericht",
+        "en": "main course"
+      },
+      {
+        "de": "Limonade",
+        "en": "lemonade"
       }
     ],
     "u5": [
+      {
+        "de": "Flughafen",
+        "en": "airport"
+      },
+      {
+        "de": "Süßigkeit",
+        "en": "candy"
+      },
+      {
+        "de": "Erdbeben",
+        "en": "earthquake"
+      },
       {
         "de": "Schauspieler",
         "en": "actor"
@@ -41,8 +93,20 @@
     ],
     "u6": [
       {
-        "de": "Nichte",
-        "en": "niece"
+        "de": "Rucksack",
+        "en": "backpack"
+      },
+      {
+        "de": "Stundenplan",
+        "en": "schedule"
+      },
+      {
+        "de": "Trainer/in",
+        "en": "coach"
+      },
+      {
+        "de": "Fußball",
+        "en": "soccer"
       }
     ]
   }

@@ -1,15 +1,16 @@
 
-# Fix‑Build 0.7.7 (Units‑Migration & Diagnose)
+# Fix-Build 0.8.1 – Blöcke sichtbar & Lernen sofort möglich
 
-Dieses Build repariert die **Unit‑Zuordnung**:
-- erkennt Schlüssel wie `u1`, `Unit 1` oder `1` und führt sie auf **`u1..u6`** zusammen,
-- baut die **Block‑Checkliste dynamisch** aus den tatsächlich vorhandenen Daten,
-- zeigt pro Block die **Wortanzahl**,
-- enthält einen **Diagnose‑Button**, der Version und Block‑Counts anzeigt.
+**Was ist neu?**
+- Die **Blöcke (Unit 1–6) sind statisch in `index.html`** vorhanden – sie können nicht mehr „verschwinden“.
+- `app-inline.js` lädt Vokabeln aus `vocab/vocab.json` und nutzt **lokalen Fallback (VOCAB_SEED)**, falls die zentrale Datei fehlt.
+- **Import** (`import.html`) kann dein altes Textformat oder echtes JSON in den lokalen Speicher übernehmen.
+- Service Worker mit Cache-Version `v4` für zuverlässige Updates.
 
-## Verwendung
-1. ZIP entpacken → Dateien ins Repo‑Root kopieren.
-2. Seite öffnen → Hard Reload (Strg+F5 / Cmd+Shift+R).
-3. Optional: DevTools → Application → Service Workers → Unregister → Reload.
+## Nutzung
+1. ZIP ins Repo (Root) kopieren.
+2. Seite öffnen → **Hard Reload**.
+3. Optional: `import.html` öffnen und deine Alt-Daten importieren.
 
-Wenn deine bisherigen Daten im Browser‑Storage liegen, übernimmt das Skript sie und migriert die Block‑Schlüssel automatisch.
+## Hinweise
+- Lokale Daten (LS_VOCAB) werden genutzt, wenn vorhanden. Zentraler Stand (`vocab/vocab.json`) wird automatisch synchronisiert, wenn sich die Version ändert.
