@@ -1,58 +1,80 @@
-
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vokabeltrainer</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vokabeltrainer – v0.9.1</title>
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" sizes="192x192" href="icon-192.png">
-  <link rel="icon" sizes="512x512" href="icon-512.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Vokabeltrainer</h1>
+    <h1>Vokabeltrainer <span id="badge" class="badge">v0.9.1</span></h1>
     <div class="toolbar">
-      <label>Modus:
-        <select id="modeSelect">
-          <option value="de2en">Deutsch → Englisch</option>
-          <option value="en2de">Englisch → Deutsch</option>
+      <label>
+        Modus:
+        <select id="mode">
+          <option value="de-en">Deutsch → Englisch</option>
+          <option value="en-de">Englisch → Deutsch</option>
         </select>
       </label>
-      <label><input id="mcEnabled" type="checkbox"> Multiple Choice</label>
-      <label><input id="weightedEnabled" type="checkbox" checked> Fehlergewichtung</label>
-      <label><input id="hintsEnabled" type="checkbox"> Lern‑Hinweise (Beta)</label>
-      <label>Preset:
-        <select id="presetSelect">
-          <option value="custom">(individuell)</option>
-          <option value="u1_2">U1–U2</option>
-          <option value="u1_3">U1–U3</option>
-          <option value="u3_4">U3–U4</option>
-          <option value="u1_6">U1–U6</option>
-        </select>
-      </label>
+      <label><input type="checkbox" id="useMC"> Multiple Choice</label>
+      <label><input type="checkbox" id="useHints"> Lern‑Hinweise (Beta)</label>
+      <span id="kofiWrap" class="kofi hidden"> · <a id="kofiLink" href="#" target="_blank" rel="noopener">Ko‑fi unterstützen</a></span>
+      <button id="installBtn" class="install hidden">Installieren</button>
     </div>
   </header>
-  <main id="app-root">
-    <!-- Blocks-Section wird bei Bedarf von app-inline.js automatisch injiziert -->
-    <section class="card">
-      <div><span id="promptLabel">Deutsch</span></div>
-      <div id="promptText">Wähle mindestens einen Block und starte.</div>
-      <div id="mcArea" class="mc hidden"><ul id="optionsList"></ul></div>
-      <div id="feedback" class="feedback"></div>
-      <div id="hintArea" class="hint hidden"></div>
-      <div class="actions">
-        <button id="checkBtn" class="secondary">Prüfen</button>
-        <button id="nextBtn" class="primary">Start / Weiter</button>
+
+  <main>
+    <section class="units">
+      <h2>Blöcke (Units)</h2>
+      <div id="unitList"></div>
+      <div class="presets">
+        <button id="presetAll">Alle</button>
+        <button id="presetNone">Keine</button>
+        <button id="presetReset">Auswahl zurücksetzen</button>
       </div>
     </section>
+
+    <section class="session">
+      <div id="prompt" class="prompt"></div>
+      <div id="answerArea">
+        <input id="answer" type="text" placeholder="Antwort hier eingeben" />
+        <div id="mcArea" class="hidden"></div>
+      </div>
+      <div class="controls">
+        <button id="startNext">Start / Weiter</button>
+        <button id="check" disabled>Prüfen</button>
+        <button id="resetStats">Statistik zurücksetzen</button>
+        <button id="resetAll">Alles zurücksetzen</button>
+      </div>
+      <div id="feedback"></div>
+      <div id="hintBox" class="hint hidden"></div>
+    </section>
+
+    <section class="stats">
+      <h2>Statistik</h2>
+      <div id="stats"></div>
+    </section>
+
+    <section class="importExport">
+      <h2>Import/Export</h2>
+      <p><a href="import.html">Import/Export‑Werkzeug öffnen</a></p>
+    </section>
   </main>
+
+  <footer>
+    <small>Installierbar als PWA · Offlinefähig</small>
+  </footer>
+
+  <script type="module" src="config.js"></script>
+  <script type="module" src="app.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js').catch(console.error);
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js');
+      });
     }
   </script>
-  <script src="app-inline.js"></script>
 </body>
 </html>

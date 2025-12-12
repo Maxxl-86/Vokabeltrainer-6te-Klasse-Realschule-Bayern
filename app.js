@@ -1,73 +1,259 @@
-\
-(function(){
-  const APP_VERSION = '0.7.5-recovery';
-  const KEYS = { units:'vt_units', cards:'vt_cards', schedules:'vt_schedules', appVersion:'vt_app_version' };
+import { DB } from './db.js';
+import { CONFIG } from './config.js';
+import { SM2 } from './sm2.js';
+import { Utils } from './utils.js';
 
-  function naturalSort(a,b){ return String(a).localeCompare(String(b), undefined, {numeric:true, sensitivity:'base'}); }
-  function loadJSON(k,f=null){ try{ return JSON.parse(localStorage.getItem(k)) ?? f; } catch { return f; } }
-  function saveJSON(k,v){ localStorage.setItem(k, JSON.stringify(v)); }
+let deferredPrompt = null; // for install button
 
-  function badge(){ const b=document.getElementById('badge'); if(b) b.textContent = `Vokabeltrainer v${APP_VERSION}`; }
-  function toast(msg){ const t=document.getElementById('toast'); if(!t){ console.log('[Toast]',msg); return;} t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'), 2500); }
+const state = {
+  mode: 'de-en',
+  useMC: false,
+  useHints: false,
+  unitsEnabled: new Set(),
+  cards: [],
+  queue: [],
+  current: null,
+  stats: {},
+  hints: {},
+  dataVersion: null,
+};
 
-  function unitsBroken(units){ if(!Array.isArray(units)) return true; if(units.length===0) return true; return units.some(u=>typeof u!=="string"||u.trim().length===0); }
-  function extractUnits(cards){ const set=new Set(); for(const c of cards||[]){ const tags=Array.isArray(c?.tags)?c.tags:(c?.tags?[c.tags]:[]); for(let t of tags){ t=String(t||'').trim(); if(t) set.add(t); } } return Array.from(set).sort(naturalSort); }
+const els = {
+  mode: document.getElementById('mode'),
+  useMC: document.getElementById('useMC'),
+  useHints: document.getElementById('useHints'),
+  unitList: document.getElementById('unitList'),
+  presetAll: document.getElementById('presetAll'),
+  presetNone: document.getElementById('presetNone'),
+  presetReset: document.getElementById('presetReset'),
+  prompt: document.getElementById('prompt'),
+  answer: document.getElementById('answer'),
+  mcArea: document.getElementById('mcArea'),
+  startNext: document.getElementById('startNext'),
+  check: document.getElementById('check'),
+  feedback: document.getElementById('feedback'),
+  stats: document.getElementById('stats'),
+  hintBox: document.getElementById('hintBox'),
+  kofiWrap: document.getElementById('kofiWrap'),
+  kofiLink: document.getElementById('kofiLink'),
+  badge: document.getElementById('badge'),
+  resetStats: document.getElementById('resetStats'),
+  resetAll: document.getElementById('resetAll'),
+  installBtn: document.getElementById('installBtn'),
+};
 
-  function renderUnits(){
-    const units = loadJSON(KEYS.units, []);
-    const grid = document.getElementById('units');
-    const empty = document.getElementById('empty');
-    grid.innerHTML = '';
-    if(!units || units.length===0){ empty.style.display='block'; return; }
-    empty.style.display='none';
-    for(const u of units){
-      const card = document.createElement('div'); card.className='card';
-      const h3 = document.createElement('h3'); h3.textContent = u; card.appendChild(h3);
-      const p = document.createElement('p'); p.className='small'; p.textContent = 'Bereit zum Lernen'; card.appendChild(p);
-      grid.appendChild(card);
+// PWA install prompt
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  els.installBtn.classList.remove('hidden');
+});
+els.installBtn.addEventListener('click', async () => {
+  if(!deferredPrompt) return;
+  deferredPrompt.prompt();
+  const choice = await deferredPrompt.userChoice;
+  if(choice.outcome === 'accepted'){
+    els.installBtn.classList.add('hidden');
+  }
+});
+
+async function boot(){
+  // config
+  els.badge.textContent = 'v' + CONFIG.APP_VERSION;
+  if(CONFIG.KOFI_ENABLED){
+    els.kofiWrap.classList.remove('hidden');
+    els.kofiLink.href = CONFIG.KOFI_LINK;
+  }
+
+  // load data
+  const vocabResp = await fetch('vocab/vocab.json');
+  const vocab = await vocabResp.json();
+  state.dataVersion = vocab.version;
+  const hintsResp = await fetch('vocab/hints.json');
+  state.hints = await hintsResp.json();
+
+  // build cards
+  state.cards = [];
+  for(const [uid, list] of Object.entries(vocab.units)){
+    list.forEach(w => {
+      const id = `${uid}|${w.de}|${w.en}`;
+      state.cards.push({ id, unit: uid, de: w.de, en: w.en });
+    });
+  }
+
+  renderUnits(Object.keys(vocab.units));
+  state.unitsEnabled = new Set(Object.keys(vocab.units));
+
+  // load progress from IndexedDB
+  await DB.open();
+  await DB.migrateFromLocalStorage();
+  const progress = await DB.getAllProgress();
+
+  // init stats
+  resetStats(true);
+
+  // attach progress
+  state.cards.forEach(card => {
+    let p = progress.get(card.id);
+    if(!p){
+      p = SM2.init(card.id);
+      DB.putProgress(p);
+    }
+    card.progress = p;
+  });
+
+  rebuildQueue();
+  updateStats();
+}
+
+function renderUnits(ids){
+  els.unitList.innerHTML = '';
+  ids.forEach(id => {
+    const div = document.createElement('div');
+    div.className = 'unit';
+    const cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.checked = true;
+    cb.addEventListener('change', () => {
+      if(cb.checked) state.unitsEnabled.add(id); else state.unitsEnabled.delete(id);
+      rebuildQueue();
+    });
+    div.appendChild(cb);
+    div.appendChild(document.createTextNode(id.toUpperCase()));
+    els.unitList.appendChild(div);
+  });
+}
+
+function rebuildQueue(){
+  const candidate = state.cards.filter(c => state.unitsEnabled.has(c.unit));
+  if(CONFIG.SCHEDULE_MODE === 'sm2'){
+    candidate.sort((a,b) => (a.progress.due || 0) - (b.progress.due || 0));
+  } else {
+    // lightweight shuffle
+    candidate.sort(() => Math.random() - 0.5);
+  }
+  state.queue = candidate;
+}
+
+function nextQuestion(){
+  if(state.queue.length === 0){
+    rebuildQueue();
+    if(state.queue.length === 0){
+      els.prompt.textContent = 'Keine Karte fällig.';
+      return;
     }
   }
-
-  function seedDemo(){
-    const cards = [{"front": "friend", "back": "Freund/in", "tags": ["Unit 1: Friends"]}, {"front": "classmate", "back": "Klassenkamerad/in", "tags": ["Unit 1: Friends"]}, {"front": "star", "back": "Star", "tags": ["Unit 2: Stars"]}, {"front": "famous", "back": "berühmt", "tags": ["Unit 2: Stars"]}, {"front": "underground", "back": "U-Bahn", "tags": ["Unit 3: London Life"]}, {"front": "sight", "back": "Sehenswürdigkeit", "tags": ["Unit 3: London Life"]}, {"front": "breakfast", "back": "Frühstück", "tags": ["Unit 4: Food and Drink"]}, {"front": "thirsty", "back": "durstig", "tags": ["Unit 4: Food and Drink"]}, {"front": "headline", "back": "Schlagzeile", "tags": ["Unit 5: In the News"]}, {"front": "reporter", "back": "Reporter/in", "tags": ["Unit 5: In the News"]}, {"front": "goodbye", "back": "auf Wiedersehen", "tags": ["Unit 6: Goodbye Greenwich"]}, {"front": "memories", "back": "Erinnerungen", "tags": ["Unit 6: Goodbye Greenwich"]}] ;
-    // IDs vergeben
-    for(const c of cards){ c.id = c.id || String(Date.now()+Math.random()); }
-    saveJSON(KEYS.cards, cards);
-    const units = extractUnits(cards);
-    saveJSON(KEYS.units, units);
-    toast(`Demo-Daten geladen (${cards.length} Karten, ${units.length} Units).`);
-    renderUnits();
+  state.current = state.queue[0];
+  const prompt = (state.mode === 'de-en') ? state.current.de : state.current.en;
+  els.prompt.textContent = `Frage: ${prompt}`;
+  els.feedback.textContent = '';
+  els.check.disabled = false;
+  els.answer.value = '';
+  const showHints = state.useHints && state.hints[(state.mode==='de-en'?state.current.en:state.current.de).toLowerCase()];
+  if(showHints){
+    const h = state.hints[(state.mode==='de-en'?state.current.en:state.current.de).toLowerCase()];
+    els.hintBox.classList.remove('hidden');
+    els.hintBox.innerHTML = Utils.renderHint(h);
+  } else {
+    els.hintBox.classList.add('hidden');
+    els.hintBox.innerHTML = '';
   }
-
-  async function hardReset(){
-    try{
-      // 1) SW abmelden
-      if('serviceWorker' in navigator){ const regs = await navigator.serviceWorker.getRegistrations(); for(const r of regs){ await r.unregister(); } }
-      // 2) Caches löschen
-      if('caches' in window){ const names = await caches.keys(); for(const n of names){ await caches.delete(n); } }
-      // 3) Storage leeren
-      localStorage.clear();
-      toast('Zurückgesetzt. Seite wird neu geladen...');
-    }catch(e){ console.error('Reset-Fehler:', e); }
-    setTimeout(()=>location.reload(), 600);
+  els.mcArea.classList.toggle('hidden', !state.useMC);
+  if(state.useMC){
+    renderMC();
   }
+}
 
-  function registerSW(){ if(!('serviceWorker' in navigator)) return; const base = location.pathname.replace(/[^\/]+$/, ''); const sw = base+'sw.js'; navigator.serviceWorker.register(sw).catch(e=>console.error('SW register error',e)); navigator.serviceWorker.addEventListener('message', ev=>{ if(ev.data?.type==='SW_ACTIVATED'){ toast(`App aktualisiert (Cache v${ev.data.version}).`); setTimeout(()=>location.reload(), 500); } }); }
-
-  function init(){ badge(); registerSW(); const prev = loadJSON(KEYS.appVersion, null); if(prev!==APP_VERSION){ saveJSON(KEYS.appVersion, APP_VERSION); }
-    // Auto-Repair: Units aus Karten ableiten, falls leer
-    const cards = loadJSON(KEYS.cards, []); let units = loadJSON(KEYS.units, []);
-    if (unitsBroken(units)) { const derived = extractUnits(cards); if (derived.length>0){ saveJSON(KEYS.units, derived); toast('Einheiten aktualisiert (cards).'); } }
-    renderUnits();
-
-    document.getElementById('btn-seed').onclick = seedDemo;
-    document.getElementById('btn-reset').onclick = hardReset;
-    document.getElementById('btn-diagnose').onclick = ()=>{
-      const info = { version: APP_VERSION, path: location.pathname, keys: Object.fromEntries(Object.keys(KEYS).map(k=>[k, loadJSON(KEYS[k])] )) };
-      console.log('[Diagnose]', info); toast('Diagnose in Konsole ausgegeben.');
-      alert('Diagnose -> Konsole (F12) öffnen.');
-    };
+function renderMC(){
+  const correct = (state.mode === 'de-en') ? state.current.en : state.current.de;
+  const pool = state.cards.map(c => (state.mode==='de-en')?c.en:c.de);
+  const options = new Set([correct]);
+  while(options.size < 4 && pool.length){
+    const p = pool[Math.floor(Math.random()*pool.length)];
+    options.add(p);
   }
+  const shuffled = Array.from(options).sort(() => Math.random() - 0.5);
+  els.mcArea.innerHTML = '';
+  shuffled.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.textContent = opt;
+    btn.addEventListener('click', () => {
+      els.answer.value = opt; // hidden field gets value
+      checkAnswer(true);      // flag: from MC
+    });
+    els.mcArea.appendChild(btn);
+  });
+}
 
-  document.addEventListener('DOMContentLoaded', init);
-})();
+async function checkAnswer(fromMC=false){
+  const givenRaw = els.answer.value.trim();
+  const given = givenRaw.toLowerCase();
+  const correct = (state.mode==='de-en')?state.current.en.toLowerCase():state.current.de.toLowerCase();
+  const uid = state.current.unit;
+  let wasCorrect = false;
+  if(given === correct){
+    state.stats[uid].right++;
+    els.feedback.textContent = '✅ Richtig!';
+    wasCorrect = true;
+  } else {
+    state.stats[uid].wrong++;
+    // Wenn Multiple Choice, keine Schreibweisen-Meldung, sondern neutraler Hinweis
+    if(fromMC){
+      els.feedback.textContent = '❌ Leider falsch.';
+    } else {
+      els.feedback.textContent = `❌ Falsch. Richtig wäre: ${(state.mode==='de-en')?state.current.en:state.current.de}`;
+    }
+  }
+  // update progress
+  state.current.progress = SM2.update(state.current.progress, wasCorrect);
+  await DB.putProgress(state.current.progress);
+  updateStats();
+  els.check.disabled = true;
+  state.queue.shift();
+}
+
+function updateStats(){
+  const parts = [];
+  for(const [uid,s] of Object.entries(state.stats)){
+    parts.push(`${uid.toUpperCase()}: ${s.right} ✓ / ${s.wrong} ✗`);
+  }
+  els.stats.textContent = parts.join('  ·  ');
+}
+
+function resetStats(silent=false){
+  state.stats = {};
+  const unitIds = new Set(state.cards.map(c=>c.unit));
+  unitIds.forEach(uid => state.stats[uid] = {right:0, wrong:0});
+  updateStats();
+  if(!silent){ els.feedback.textContent = '↺ Statistik zurückgesetzt.'; }
+}
+
+async function resetAll(){
+  // Statistik
+  resetStats(true);
+  // Fortschritt in IndexedDB löschen
+  await DB.clearStore('progress');
+  // Cards neu initialisieren
+  state.cards.forEach(card => { card.progress = SM2.init(card.id); });
+  await Promise.all(state.cards.map(c => DB.putProgress(c.progress)));
+  // Auswahl auf Standard (alle an)
+  state.unitsEnabled = new Set(state.cards.map(c=>c.unit));
+  Array.from(els.unitList.querySelectorAll('input[type=checkbox]')).forEach(cb=>cb.checked=true);
+  rebuildQueue();
+  updateStats();
+  els.feedback.textContent = '↺ Alles zurückgesetzt (Fortschritt, Statistik, Auswahl).';
+}
+
+// events
+els.mode.addEventListener('change', e => { state.mode = e.target.value; });
+els.useMC.addEventListener('change', e => { state.useMC = e.target.checked; });
+els.useHints.addEventListener('change', e => { state.useHints = e.target.checked; });
+els.startNext.addEventListener('click', nextQuestion);
+els.check.addEventListener('click', () => checkAnswer(false));
+els.presetAll.addEventListener('click', () => { state.unitsEnabled = new Set(state.cards.map(c=>c.unit)); Array.from(els.unitList.querySelectorAll('input[type=checkbox]')).forEach(cb=>cb.checked=true); rebuildQueue(); });
+els.presetNone.addEventListener('click', () => { state.unitsEnabled = new Set(); Array.from(els.unitList.querySelectorAll('input[type=checkbox]')).forEach(cb=>cb.checked=false); rebuildQueue(); });
+els.presetReset.addEventListener('click', () => { state.unitsEnabled = new Set(state.cards.map(c=>c.unit)); Array.from(els.unitList.querySelectorAll('input[type=checkbox]')).forEach(cb=>cb.checked=true); rebuildQueue(); els.feedback.textContent = '↺ Auswahl auf Standard gesetzt.'; });
+els.resetStats.addEventListener('click', () => resetStats(false));
+els.resetAll.addEventListener('click', () => { resetAll(); });
+
+boot();
