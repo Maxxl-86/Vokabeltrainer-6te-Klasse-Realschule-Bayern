@@ -4,20 +4,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vokabeltrainer</title>
+  <title>Vokabeltrainer (Recovery)</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" sizes="192x192" href="icon-192.png">
   <link rel="icon" sizes="512x512" href="icon-512.png">
   <link rel="stylesheet" href="style.css">
-  <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;margin:0;padding:16px}
-    h1{margin:0 0 8px 0}
-  </style>
 </head>
 <body>
-  <h1>Vokabeltrainer</h1>
-  <p>Wenn du diese Seite siehst, ist das HTML geladen. Unten rechts sollte nach dem Start ein Badge mit der Version erscheinen.</p>
+  <header>
+    <h1>Vokabeltrainer – Recovery</h1>
+    <div>
+      <button class="btn secondary" id="btn-diagnose">Diagnose</button>
+      <button class="btn secondary" id="btn-seed">Demo‑Daten laden</button>
+      <button class="btn" id="btn-reset">Alles zurücksetzen</button>
+    </div>
+  </header>
+  <main>
+    <p class="small">Wenn unten rechts keine Versionsnummer erscheint, ist das Skript nicht geladen. Drücke Strg+F5 (oder Cmd+Shift+R) und versuche es erneut.</p>
+    <h2>Einheiten (Units)</h2>
+    <div id="units" class="grid"></div>
+    <p id="empty" class="small" style="display:none">Keine Einheiten gefunden. Klicke oben auf <b>Demo‑Daten laden</b>, um testweise Units und Karten zu erzeugen.</p>
+  </main>
+  <div id="badge" class="badge"></div>
+  <div id="toast" class="toast"></div>
 
-  <script src="app-inline.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
