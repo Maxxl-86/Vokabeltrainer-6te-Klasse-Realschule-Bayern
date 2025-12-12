@@ -1,101 +1,90 @@
+
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vokabeltrainer (PWA) – Central Final FIX</title>
-  <meta name="theme-color" content="#22c55e" />
-  <link rel="manifest" href="./manifest.webmanifest" />
-  <link rel="icon" href="./icon-192.png" sizes="192x192" />
-  <link rel="apple-touch-icon" href="./icon-512.png" />
-  <link rel="stylesheet" href="./style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Vokabeltrainer</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <header class="app-header">
+  <header>
     <h1>Vokabeltrainer</h1>
-    <nav class="topbar">
-      <label>
-        Modus:
+    <div class="toolbar">
+      <label>Modus:
         <select id="modeSelect">
           <option value="de2en">Deutsch → Englisch</option>
           <option value="en2de">Englisch → Deutsch</option>
         </select>
       </label>
-      <label class="mc-toggle">
-        <input type="checkbox" id="mcEnabled" checked /> Multiple Choice
-      </label>
-      <label class="w-toggle">
-        <input type="checkbox" id="weightedEnabled" checked /> Fehlergewichtung
-      </label>
-      <label class="preset-toggle">
-        Preset:
+      <label><input id="mcEnabled" type="checkbox" checked> Multiple Choice</label>
+      <label><input id="weightedEnabled" type="checkbox" checked> Fehlergewichtung</label>
+      <label>Preset:
         <select id="presetSelect">
           <option value="custom">(individuell)</option>
-          <option value="u1_2">Unit 1–2</option>
-          <option value="u1_3">Unit 1–3</option>
-          <option value="u3_4">Unit 3–4</option>
-          <option value="u1_7">Unit 1–7</option>
+          <option value="u1_2">U1–U2</option>
+          <option value="u1_3">U1–U3</option>
+          <option value="u3_4">U3–U4</option>
+          <option value="u1_7">U1–U7</option>
         </select>
       </label>
-      <a class="secondary" id="importLink" href="./import.html" title="Vokabeln importieren/exportieren">Import/Export</a>
-      <button id="resetSelectedBtn" class="secondary">Auswahl reset</button>
-      <button id="resetAllBtn" class="secondary">Alles reset</button>
-      <button id="installBtn" class="secondary">App installieren</button>
-    </nav>
-
-    <!-- Central Sync Info (Admin) -->
-    <div id="centralInfo" class="muted hidden" style="margin-top:.25rem">
-      <small>Zentrale Liste: Version <strong id="centralVersion">–</strong> •
-        <label style="margin-left:.5rem"><input type="checkbox" id="forceCentral"> zentrale Liste erzwingen</label>
-        <button id="refreshCentral" class="secondary sm" style="margin-left:.5rem">Jetzt aktualisieren</button>
-      </small>
-    </div>
-
-    <div id="updateBanner" class="update-banner hidden">
-      Update verfügbar – <button id="reloadBtn">Neu laden</button>
+      <!-- optional install button
+      <button id="installBtn">App installieren</button>
+      -->
     </div>
   </header>
 
-  <div class="layout">
-    <aside class="sidebar">
-      <div class="checklist-wrap">
-        <div class="checklist-head">
-          <strong>Blöcke wählen</strong>
-          <div class="checklist-actions">
-            <button id="selectAllBtn" class="secondary sm">Alle</button>
-            <button id="clearAllBtn" class="secondary sm">Leeren</button>
-          </div>
-        </div>
-        <div id="blockChecklist" class="checklist"></div>
+  <main>
+    <section class="blocks">
+      <h2>Blöcke wählen</h2>
+      <div class="block-actions">
+        <button id="selectAllBtn">Alle</button>
+        <button id="clearAllBtn">Leeren</button>
       </div>
-
-      <div class="stats-panel">
+      <div id="blockChecklist" class="checklist" aria-label="Blöcke"></div>
+      <div class="stats">
         <div>Aktive Blöcke: <span id="currentBlocksLabel">–</span></div>
         <div>Richtig: <span id="statCorrect">0</span> | Falsch: <span id="statWrong">0</span></div>
-        <div class="muted">Gewichtung: <span id="weightInfo">aktiv</span> • Anti-Repeat • Install: <span id="installInfo">nicht installiert</span></div>
+        <div>Gewichtung: <span id="weightInfo">aktiv</span> • Anti-Repeat</div>
+        <div>Install: <span id="installInfo">nicht installiert</span></div>
       </div>
-    </aside>
+      <div class="reset-actions">
+        <button id="resetSelectedBtn">Auswahl reset</button>
+        <button id="resetAllBtn">Alles reset</button>
+      </div>
+    </section>
 
-    <main class="content">
-      <section class="card">
-        <div class="question">
-          <div id="promptLabel" class="prompt-label">Frage</div>
-          <div id="promptText" class="prompt-text">Wähle mindestens einen Block und starte.</div>
+    <section class="question">
+      <div class="card">
+        <div class="row">
+          <div id="promptLabel">Frage</div>
         </div>
-        <div id="mcArea" class="mc-area hidden">
-          <ul id="optionsList" class="options"></ul>
+        <div id="promptText">Wähle mindestens einen Block und starte.</div>
+        <div id="mcArea" class="mc">
+          <ul id="optionsList"></ul>
         </div>
         <div id="feedback" class="feedback"></div>
-      </section>
-
-      <div class="cta-row">
-        <button id="nextBtn" class="primary big">Start / Weiter</button>
+        <button id="nextBtn" class="primary">Start / Weiter</button>
       </div>
-    </main>
-  </div>
+    </section>
 
-  <footer class="foot">
-    <small>Offline-fähig (PWA) • © 2025</small>
+    <section class="central hidden" id="centralInfo">
+      <h3>Zentrale Liste</h3>
+      <div>Version: <span id="centralVersion">–</span></div>
+      <label><input type="checkbox" id="forceCentral"> Zentrale Liste erzwingen</label>
+      <button id="refreshCentral">Zentrale Liste aktualisieren</button>
+    </section>
+
+    <section class="update hidden" id="updateBanner">
+      Neue Version installiert. <button id="reloadBtn">Neu laden</button>
+    </section>
+
+    <section id="units" aria-label="Units"></section>
+  </main>
+
+  <footer>
+    <small>Offline-fähig (PWA) · © 2025</small>
   </footer>
 
   <script src="./app-inline.js"></script>
