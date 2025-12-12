@@ -1,10 +1,10 @@
-\
+
 <!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vokabeltrainer (Recovery)</title>
+  <title>Vokabeltrainer – Wiederherstellung</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" sizes="192x192" href="icon-192.png">
   <link rel="icon" sizes="512x512" href="icon-512.png">
@@ -12,22 +12,50 @@
 </head>
 <body>
   <header>
-    <h1>Vokabeltrainer – Recovery</h1>
-    <div>
-      <button class="btn secondary" id="btn-diagnose">Diagnose</button>
-      <button class="btn secondary" id="btn-seed">Demo‑Daten laden</button>
-      <button class="btn" id="btn-reset">Alles zurücksetzen</button>
+    <h1>Vokabeltrainer</h1>
+    <div class="toolbar">
+      <label>Modus:
+        <select id="modeSelect">
+          <option value="de2en">Deutsch → Englisch</option>
+          <option value="en2de">Englisch → Deutsch</option>
+        </select>
+      </label>
+      <label><input id="mcEnabled" type="checkbox"> Multiple Choice</label>
+      <label><input id="weightedEnabled" type="checkbox" checked> Fehlergewichtung</label>
+      <label><input id="hintsEnabled" type="checkbox"> Lern‑Hinweise (Beta)</label>
+      <label>Preset:
+        <select id="presetSelect">
+          <option value="custom">(individuell)</option>
+          <option value="u1_2">U1–U2</option>
+          <option value="u1_3">U1–U3</option>
+          <option value="u3_4">U3–U4</option>
+          <option value="u1_6">U1–U6</option>
+        </select>
+      </label>
     </div>
   </header>
-  <main>
-    <p class="small">Wenn unten rechts keine Versionsnummer erscheint, ist das Skript nicht geladen. Drücke Strg+F5 (oder Cmd+Shift+R) und versuche es erneut.</p>
-    <h2>Einheiten (Units)</h2>
-    <div id="units" class="grid"></div>
-    <p id="empty" class="small" style="display:none">Keine Einheiten gefunden. Klicke oben auf <b>Demo‑Daten laden</b>, um testweise Units und Karten zu erzeugen.</p>
-  </main>
-  <div id="badge" class="badge"></div>
-  <div id="toast" class="toast"></div>
 
-  <script src="app.js"></script>
+  <main id="app-root">
+    <section class="card">
+      <div><span id="promptLabel">Deutsch</span></div>
+      <div id="promptText">Wähle mindestens einen Block und starte.</div>
+      <div id="mcArea" class="mc hidden">
+        <ul id="optionsList"></ul>
+      </div>
+      <div id="feedback" class="feedback"></div>
+      <div id="hintArea" class="hint hidden"></div>
+      <div class="actions">
+        <button id="checkBtn" class="secondary">Prüfen</button>
+        <button id="nextBtn" class="primary">Start / Weiter</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js').catch(console.error);
+    }
+  </script>
+  <script src="app-inline.js"></script>
 </body>
 </html>
