@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vokabeltrainer</title>
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.webmanifest">
@@ -11,12 +10,17 @@
 <body>
   <header>
     <h1>Vokabeltrainer</h1>
-    <p>App-Version: v5</p>
+    <p>App-Version: v6</p>
     <div class="toolbar">
       <button id="reset-selection" class="secondary">Auswahl reset</button>
       <button id="reset-all" class="primary">Alles reset</button>
     </div>
   </header>
-  <main id="app-root"></main>
+  <main id="app-root">
+    <div class="stats">
+      Richtig: <span id="correct-count">0</span> · Falsch: <span id="wrong-count">0</span>
+    </div>
+  </main>
   <script src="app-inline.js"></script>
 </body>
+</html>
