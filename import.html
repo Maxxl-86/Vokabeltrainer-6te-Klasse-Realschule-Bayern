@@ -1,0 +1,26 @@
+\
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Import</title></head>
+<body>
+  <h1>Import</h1>
+  <input type="file" id="file" accept=".json,.csv" />
+  <button id="run">Import starten</button>
+  <pre id="out"></pre>
+  <script src="importer.js"></script>
+  <script>
+    function parseCSV(text){
+      const lines=text.split(/\r?\n/).filter(Boolean); const headers=lines.shift().split(',');
+      return lines.map(line=>{ const cols=line.split(','); const obj={}; headers.forEach((h,i)=>obj[h.trim()]=cols[i]?.trim()); if(obj.tags) obj.tags=obj.tags.split('|').map(s=>s.trim()); return obj; });
+    }
+    document.getElementById('run').onclick=async()=>{
+      const f=document.getElementById('file').files[0]; if(!f) return alert('Datei wählen');
+      const text=await f.text(); let cards;
+      try{ cards=JSON.parse(text).cards || JSON.parse(text); }
+      catch{ cards=parseCSV(text); }
+      const res = window.VTImporter.safeImport(cards);
+      document.getElementById('out').textContent = JSON.stringify(res, null, 2);
+    };
+  </script>
+</body>
+</html>

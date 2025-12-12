@@ -1,74 +1,23 @@
-
+\
 <!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vokabeltrainer</title>
-  <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" sizes="192x192" href="icon-192.png">
+  <link rel="icon" sizes="512x512" href="icon-512.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;margin:0;padding:16px}
+    h1{margin:0 0 8px 0}
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Vokabeltrainer</h1>
-    <div class="toolbar">
-      <label>Modus:
-        <select id="modeSelect">
-          <option value="de2en">Deutsch → Englisch</option>
-          <option value="en2de">Englisch → Deutsch</option>
-        </select>
-      </label>
-      <label><input id="mcEnabled" type="checkbox" checked> Multiple Choice</label>
-      <label><input id="weightedEnabled" type="checkbox" checked> Fehlergewichtung</label>
-      <label><input id="hintsEnabled" type="checkbox"> Lern‑Hinweise <span class="beta">(Beta)</span></label>
-      <label>Preset:
-        <select id="presetSelect">
-          <option value="custom">(individuell)</option>
-          <option value="u1_2">U1–U2</option>
-          <option value="u1_3">U1–U3</option>
-          <option value="u3_4">U3–U4</option>
-          <option value="u1_6">U1–U6</option>
-        </select>
-      </label>
-    </div>
-  </header>
+  <h1>Vokabeltrainer</h1>
+  <p>Wenn du diese Seite siehst, ist das HTML geladen. Unten rechts sollte nach dem Start ein Badge mit der Version erscheinen.</p>
 
-  <main id="app-root">
-    <section class="blocks">
-      <h2>Blöcke wählen</h2>
-      <div class="block-actions">
-        <button id="selectAllBtn">Alle</button>
-        <button id="clearAllBtn">Leeren</button>
-      </div>
-      <div id="blockChecklist" class="checklist" aria-label="Blöcke"></div>
-      <div class="stats">
-        <div>Aktive Blöcke: <span id="currentBlocksLabel">–</span></div>
-        <div>Richtig: <span id="statCorrect">0</span> | Falsch: <span id="statWrong">0</span></div>
-        <div>Gewichtung: <span id="weightInfo">aktiv</span></div>
-      </div>
-      <div class="reset-actions">
-        <button id="resetSelectedBtn">Auswahl reset</button>
-        <button id="resetAllBtn">Alles reset</button>
-      </div>
-    </section>
-
-    <section class="question">
-      <div class="card">
-        <div class="row"><div id="promptLabel">Frage</div></div>
-        <div id="promptText">Wähle mindestens einen Block und starte.</div>
-        <div id="mcArea" class="mc"><ul id="optionsList"></ul></div>
-        <div class="actions">
-          <button id="checkBtn" class="secondary" aria-label="Antwort prüfen">Prüfen</button>
-          <button id="nextBtn" class="primary" aria-label="Start oder weiter zur nächsten Frage">Start / Weiter</button>
-        </div>
-        <div id="feedback" class="feedback" aria-live="polite"></div>
-        <div id="hintArea" class="hint hidden" aria-live="polite"></div>
-      </div>
-    </section>
-  </main>
-
-  <footer><small>Offline-fähig (PWA) · © 2025</small></footer>
-
-  <script src="./app-inline.js"></script>
+  <script src="app-inline.js"></script>
 </body>
 </html>
