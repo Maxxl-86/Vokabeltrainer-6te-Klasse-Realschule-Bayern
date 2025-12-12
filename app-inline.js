@@ -111,32 +111,3 @@ function renderQuestion(){ if(!currentQ) return; els.feedback.textContent=''; el
 function bindControls(){ els.nextBtn && els.nextBtn.addEventListener('click', ()=>{ const q=pickQuestion(); if(q) renderQuestion(); else { els.promptText.textContent='Bitte wähle mindestens einen Block.'; } }); els.resetSelectedBtn && els.resetSelectedBtn.addEventListener('click', ()=> resetSelected()); els.resetAllBtn && els.resetAllBtn.addEventListener('click', ()=> resetAll()); els.weightedEnabled && els.weightedEnabled.addEventListener('change', ()=>{ updateStatsUI(); resetSessionQueue(); }); els.presetSelect && els.presetSelect.addEventListener('change', e=>{ if(e.target.value==='custom') return; applyPreset(e.target.value); }); els.selectAllBtn && els.selectAllBtn.addEventListener('click', ()=>{ els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=true ); syncActiveBlockIds(); }); els.clearAllBtn && els.clearAllBtn.addEventListener('click', ()=>{ els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=false ); syncActiveBlockIds(); }); }
 function applyPreset(val){ const ranges={ 'u1_2':['u1','u2'], 'u1_3':['u1','u2','u3'], 'u3_4':['u3','u4'], 'u1_6':['u1','u2','u3','u4','u5','u6'] }; els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=false ); (ranges[val]||[]).forEach(id=>{ const cb=els.blockChecklist.querySelector(`input[value="${id}"]`); if(cb) cb.checked=true; }); syncActiveBlockIds(); }
 (async function init(){ try{ ensureBlocksSection(); bindEls(); bindControls(); await initCentralSync(); renderChecklist(); initStats(); updateStatsUI(); } catch(e){ console.error('[INIT] Fehler:', e); }})();
-
-
-// Reset Buttons Funktionalität
-const resetSelectionBtn = document.getElementById('reset-selection');
-const resetAllBtn = document.getElementById('reset-all');
-
-function updateStatsUI() {
-  if (typeof renderStats === 'function') {
-    renderStats();
-  }
-}
-
-resetSelectionBtn.addEventListener('click', () => {
-  if (typeof resetSelected === 'function') {
-    resetSelected();
-  }
-  updateStatsUI();
-  resetSelectionBtn.classList.add('highlight');
-  setTimeout(() => resetSelectionBtn.classList.remove('highlight'), 900);
-});
-
-resetAllBtn.addEventListener('click', () => {
-  if (typeof resetAll === 'function') {
-    resetAll();
-  }
-  updateStatsUI();
-  resetAllBtn.classList.add('highlight');
-  setTimeout(() => resetAllBtn.classList.remove('highlight'), 900);
-});
