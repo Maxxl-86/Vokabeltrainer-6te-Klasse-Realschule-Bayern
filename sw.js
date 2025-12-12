@@ -1,6 +1,6 @@
 
 // Service Worker – einfache Cache-Strategie für GitHub Pages
-const CACHE_VERSION = 'v3';
+const CACHE_VERSION = 'v4';
 const STATIC_CACHE = `static-${CACHE_VERSION}`;
 const STATIC_ASSETS = [
   './', './index.html', './style.css', './app-inline.js',
@@ -33,4 +33,11 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(req).then(cached=> cached || fetch(req).then(res=>{ const copy=res.clone(); caches.open(STATIC_CACHE).then(cache=> cache.put(req, copy)).catch(()=>{}); return res; }))
   );
+});
+
+
+self.addEventListener('activate', () => {
+  self.clients.matchAll({type: 'window'}).then(clients => {
+    clients.forEach(client => client.navigate(client.url));
+  });
 });
