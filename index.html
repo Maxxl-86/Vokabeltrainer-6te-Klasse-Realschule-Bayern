@@ -33,7 +33,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="app-root">
     <section class="blocks">
       <h2>Blöcke wählen</h2>
       <div class="block-actions">
@@ -44,7 +44,7 @@
       <div class="stats">
         <div>Aktive Blöcke: <span id="currentBlocksLabel">–</span></div>
         <div>Richtig: <span id="statCorrect">0</span> | Falsch: <span id="statWrong">0</span></div>
-        <div>Gewichtung: <span id="weightInfo">aktiv</span> • Anti-Repeat</div>
+        <div>Gewichtung: <span id="weightInfo">aktiv</span></div>
       </div>
       <div class="reset-actions">
         <button id="resetSelectedBtn">Auswahl reset</button>
@@ -54,13 +54,9 @@
 
     <section class="question">
       <div class="card">
-        <div class="row">
-          <div id="promptLabel">Frage</div>
-        </div>
+        <div class="row"><div id="promptLabel">Frage</div></div>
         <div id="promptText">Wähle mindestens einen Block und starte.</div>
-        <div id="mcArea" class="mc">
-          <ul id="optionsList"></ul>
-        </div>
+        <div id="mcArea" class="mc"><ul id="optionsList"></ul></div>
         <div class="actions">
           <button id="checkBtn" class="secondary" aria-label="Antwort prüfen">Prüfen</button>
           <button id="nextBtn" class="primary" aria-label="Start oder weiter zur nächsten Frage">Start / Weiter</button>
@@ -71,9 +67,7 @@
     </section>
   </main>
 
-  <footer>
-    <small>Offline-fähig (PWA) · © 2025</small>
-  </footer>
+  <footer><small>Offline-fähig (PWA) · © 2025</small></footer>
 
   <script src="./app-inline.js"></script>
 </body>
