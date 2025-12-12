@@ -117,21 +117,26 @@ function applyPreset(val){ const ranges={ 'u1_2':['u1','u2'], 'u1_3':['u1','u2',
 const resetSelectionBtn = document.getElementById('reset-selection');
 const resetAllBtn = document.getElementById('reset-all');
 
-function updateCounters() {
-  document.querySelector('#correct-count').textContent = 0;
-  document.querySelector('#wrong-count').textContent = 0;
+function updateStatsUI() {
+  if (typeof renderStats === 'function') {
+    renderStats();
+  }
 }
 
 resetSelectionBtn.addEventListener('click', () => {
-  // Auswahl reset: nur aktuelle Auswahl zurücksetzen
-  updateCounters();
+  if (typeof resetSelected === 'function') {
+    resetSelected();
+  }
+  updateStatsUI();
   resetSelectionBtn.classList.add('highlight');
   setTimeout(() => resetSelectionBtn.classList.remove('highlight'), 900);
 });
 
 resetAllBtn.addEventListener('click', () => {
-  // Alles reset: gesamte Statistik zurücksetzen
-  updateCounters();
+  if (typeof resetAll === 'function') {
+    resetAll();
+  }
+  updateStatsUI();
   resetAllBtn.classList.add('highlight');
   setTimeout(() => resetAllBtn.classList.remove('highlight'), 900);
 });
