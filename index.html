@@ -20,6 +20,7 @@
       </label>
       <label><input id="mcEnabled" type="checkbox" checked> Multiple Choice</label>
       <label><input id="weightedEnabled" type="checkbox" checked> Fehlergewichtung</label>
+      <label><input id="hintsEnabled" type="checkbox"> Lern‑Hinweise <span class="beta">(Beta)</span></label>
       <label>Preset:
         <select id="presetSelect">
           <option value="custom">(individuell)</option>
@@ -44,7 +45,6 @@
         <div>Aktive Blöcke: <span id="currentBlocksLabel">–</span></div>
         <div>Richtig: <span id="statCorrect">0</span> | Falsch: <span id="statWrong">0</span></div>
         <div>Gewichtung: <span id="weightInfo">aktiv</span> • Anti-Repeat</div>
-        <div>Install: <span id="installInfo">nicht installiert</span></div>
       </div>
       <div class="reset-actions">
         <button id="resetSelectedBtn">Auswahl reset</button>
@@ -61,23 +61,14 @@
         <div id="mcArea" class="mc">
           <ul id="optionsList"></ul>
         </div>
-        <div id="feedback" class="feedback"></div>
-        <button id="nextBtn" class="primary">Start / Weiter</button>
+        <div class="actions">
+          <button id="checkBtn" class="secondary" aria-label="Antwort prüfen">Prüfen</button>
+          <button id="nextBtn" class="primary" aria-label="Start oder weiter zur nächsten Frage">Start / Weiter</button>
+        </div>
+        <div id="feedback" class="feedback" aria-live="polite"></div>
+        <div id="hintArea" class="hint hidden" aria-live="polite"></div>
       </div>
     </section>
-
-    <section class="central hidden" id="centralInfo">
-      <h3>Zentrale Liste</h3>
-      <div>Version: <span id="centralVersion">–</span></div>
-      <label><input type="checkbox" id="forceCentral"> Zentrale Liste erzwingen</label>
-      <button id="refreshCentral">Zentrale Liste aktualisieren</button>
-    </section>
-
-    <section class="update hidden" id="updateBanner">
-      Neue Version installiert. <button id="reloadBtn">Neu laden</button>
-    </section>
-
-    <section id="units" aria-label="Units"></section>
   </main>
 
   <footer>

@@ -1,7 +1,9 @@
 
-// Vokabeltrainer – Central Sync (Fix: Mehrfachklick verhindert)
-// Dieser Build verhindert, dass nach einer Antwort weitere Klicks den
-// Richtig/Falsch-Zähler erneut erhöhen.
+// Vokabeltrainer – UX + Toleranz + Lern-Hinweise (Beta)
+// - "Weiter zur nächsten Frage" (Highlight + Fokus)
+// - Freitext: Prüfen + Enter (einmalige Bewertung)
+// - Tippfehler-Toleranz (Levenshtein)
+// - Optionale Lern-Hinweise (Beta), abschaltbar
 
 const UNIT_META = [
   { id: 'u1', name: 'Unit 1' },
@@ -18,8 +20,13 @@ const LS_SYNC  = 'vocab-central-meta';
 const CENTRAL_URL = './vocab/vocab.json';
 
 function normalize(s){ return String(s||'').trim().toLowerCase(); }
+function softNorm(s){ return normalize(s).replace(/[^a-zäöüß\-\s]/g,'').replace(/\s+/g,' ').trim(); }
 function key(w){ return normalize(w.de)+'\n'+normalize(w.en); }
 function shuffle(arr){ for(let i=arr.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]];} return arr; }
+
+// Levenshtein
+function lev(a,b){ a=softNorm(a); b=softNorm(b); const m=a.length,n=b.length; const dp=Array.from({length:m+1},()=>Array(n+1).fill(0)); for(let i=0;i<=m;i++) dp[i][0]=i; for(let j=0;j<=n;j++) dp[0][j]=j; for(let i=1;i<=m;i++){ for(let j=1;j<=n;j++){ const cost=a[i-1]===b[j-1]?0:1; dp[i][j]=Math.min(dp[i-1][j]+1, dp[i][j-1]+1, dp[i-1][j-1]+cost); } } return dp[m][n]; }
+function withinTolerance(user, correct){ const u=softNorm(user), c=softNorm(correct); if(!u) return false; if(u===c) return true; const len=Math.max(c.length,u.length); const d=lev(u,c); const limit=len<=5?1:len<=8?2:3; const stripPlural=s=>s.replace(/s$/,''); if(stripPlural(u)===stripPlural(c)) return true; return d<=limit; }
 
 const els = {
   blockChecklist: document.getElementById('blockChecklist'),
@@ -29,29 +36,28 @@ const els = {
   modeSelect: document.getElementById('modeSelect'),
   mcEnabled: document.getElementById('mcEnabled'),
   weightedEnabled: document.getElementById('weightedEnabled'),
+  hintsEnabled: document.getElementById('hintsEnabled'),
   nextBtn: document.getElementById('nextBtn'),
+  checkBtn: document.getElementById('checkBtn'),
   promptLabel: document.getElementById('promptLabel'),
   promptText: document.getElementById('promptText'),
   optionsList: document.getElementById('optionsList'),
   mcArea: document.getElementById('mcArea'),
   feedback: document.getElementById('feedback'),
+  hintArea: document.getElementById('hintArea'),
   statCorrect: document.getElementById('statCorrect'),
   statWrong: document.getElementById('statWrong'),
   currentBlocksLabel: document.getElementById('currentBlocksLabel'),
-  updateBanner: document.getElementById('updateBanner'),
   reloadBtn: document.getElementById('reloadBtn'),
   weightInfo: document.getElementById('weightInfo'),
   resetSelectedBtn: document.getElementById('resetSelectedBtn'),
   resetAllBtn: document.getElementById('resetAllBtn'),
-  centralInfo: document.getElementById('centralInfo'),
-  forceCentralToggle: document.getElementById('forceCentral'),
-  refreshCentralBtn: document.getElementById('refreshCentral'),
-  centralVersion: document.getElementById('centralVersion'),
 };
 
 let activeBlockIds = [];
 let lastPrompts = [];
 let sessionQueue = [];
+let currentQ = null;
 const HISTORY_SIZE = 2;
 
 function loadVocab(){ try{ return JSON.parse(localStorage.getItem(LS_VOCAB)||'{}'); }catch(e){ return {}; } }
@@ -61,172 +67,50 @@ function saveStats(s){ localStorage.setItem(LS_STATS, JSON.stringify(s)); }
 function loadSync(){ try{ return JSON.parse(localStorage.getItem(LS_SYNC)||'{}'); }catch(e){ return {}; } }
 function saveSync(m){ localStorage.setItem(LS_SYNC, JSON.stringify(m)); }
 
-async function fetchCentral(){
-  try{
-    const res = await fetch(CENTRAL_URL, { cache: 'no-store' });
-    if(!res.ok) throw new Error('HTTP '+res.status);
-    return await res.json();
-  }catch(e){ console.warn('Zentrale Liste konnte nicht geladen werden:', e); return null; }
-}
+async function fetchCentral(){ try{ const res=await fetch(CENTRAL_URL,{cache:'no-store'}); if(!res.ok) throw new Error('HTTP '+res.status); return await res.json(); }catch(e){ console.warn('Zentrale Liste konnte nicht geladen werden:', e); return null; } }
+function mergeCentralIntoLocal(central){ const local=loadVocab(); const out={...local}; const src=(central&&central.units)?central.units:{}; for(const unit of Object.keys(src)){ const list=Array.isArray(src[unit])?src[unit]:[]; if(!out[unit]) out[unit]=[]; const existing=new Set(out[unit].map(key)); list.forEach(w=>{ if(!existing.has(key(w))) out[unit].push(w); }); } saveVocab(out); initStats(); }
 
-function mergeCentralIntoLocal(central, enforced=false){
-  const local = enforced ? {} : loadVocab();
-  const out = {...local};
-  const src = (central && central.units) ? central.units : {};
-  for(const unit of Object.keys(src)){
-    if(!UNIT_META.find(u=>u.id===unit)) continue; // ignoriert unbekannte Units
-    const list = Array.isArray(src[unit]) ? src[unit] : [];
-    if(!out[unit]) out[unit] = [];
-    if(enforced){ out[unit] = list.slice(); }
-    else{
-      const existing = new Set(out[unit].map(key));
-      list.forEach(w=>{ if(!existing.has(key(w))) out[unit].push(w); });
-    }
-  }
-  saveVocab(out);
-  initStats();
-}
+async function initCentralSync(){ const central=await fetchCentral(); if(central){ const newVersion=central.version||'unknown'; const meta=loadSync(); if(newVersion!==meta.version){ mergeCentralIntoLocal(central); saveSync({version:newVersion}); } } }
 
-async function initCentralSync(){
-  const meta = loadSync();
-  if(els.forceCentralToggle) els.forceCentralToggle.checked = !!meta.enforced;
-  if(els.centralVersion)     els.centralVersion.textContent = meta.version ? meta.version : '–';
-  const central = await fetchCentral();
-  if(central){
-    const newVersion = central.version || 'unknown';
-    const changed = newVersion !== meta.version;
-    if(changed || meta.enforced){
-      mergeCentralIntoLocal(central, !!meta.enforced);
-      saveSync({ version: newVersion, enforced: !!meta.enforced });
-      if(els.centralVersion) els.centralVersion.textContent = newVersion;
-    }
-    if(els.centralInfo) els.centralInfo.classList.remove('hidden');
-  } else {
-    if(els.centralInfo) els.centralInfo.classList.remove('hidden');
-  }
-}
+function initStats(){ const stats=loadStats(); if(!stats.blocks) stats.blocks={}; if(!stats.words) stats.words={}; const vocab=loadVocab(); UNIT_META.forEach(u=>{ if(!stats.blocks[u.id]) stats.blocks[u.id]={correct:0,wrong:0}; if(!stats.words[u.id]) stats.words[u.id]={}; (vocab[u.id]||[]).forEach(w=>{ const k=key(w); if(!stats.words[u.id][k]) stats.words[u.id][k]={correct:0,wrong:0}; }); }); saveStats(stats); }
 
-function initStats(){
-  const stats = loadStats(); if(!stats.blocks) stats.blocks={}; if(!stats.words) stats.words={};
-  const vocab = loadVocab();
-  UNIT_META.forEach(u=>{
-    if(!stats.blocks[u.id]) stats.blocks[u.id] = {correct:0, wrong:0};
-    if(!stats.words[u.id])  stats.words[u.id]  = {};
-    (vocab[u.id]||[]).forEach(w=>{ const k=key(w); if(!stats.words[u.id][k]) stats.words[u.id][k] = {correct:0,wrong:0}; });
-  });
-  saveStats(stats);
-}
-
-function updateStatsUI(){
-  if(els.weightInfo) els.weightInfo.textContent = els.weightedEnabled?.checked ? 'aktiv' : 'aus';
-  if(!activeBlockIds.length){ els.statCorrect.textContent='0'; els.statWrong.textContent='0'; return; }
-  const stats = loadStats();
-  const agg = activeBlockIds.reduce((acc,id)=>{ const s=stats.blocks[id]||{correct:0,wrong:0}; acc.correct+=s.correct; acc.wrong+=s.wrong; return acc; }, {correct:0,wrong:0});
-  els.statCorrect.textContent = agg.correct; els.statWrong.textContent = agg.wrong;
-}
-
-function record(originBlockId, item, ok){
-  const stats = loadStats(); const bs = stats.blocks[originBlockId]; const ws = stats.words[originBlockId][key(item)];
-  if(ok){ bs.correct++; ws.correct++; } else { bs.wrong++; ws.wrong++; }
-  saveStats(stats); updateStatsUI();
-}
+function updateStatsUI(){ els.weightInfo && (els.weightInfo.textContent = els.weightedEnabled?.checked ? 'aktiv' : 'aus'); if(!activeBlockIds.length){ els.statCorrect.textContent='0'; els.statWrong.textContent='0'; return; } const stats=loadStats(); const agg=activeBlockIds.reduce((acc,id)=>{ const s=stats.blocks[id]||{correct:0,wrong:0}; acc.correct+=s.correct; acc.wrong+=s.wrong; return acc; },{correct:0,wrong:0}); els.statCorrect.textContent=agg.correct; els.statWrong.textContent=agg.wrong; }
+function record(originBlockId,item,ok){ const stats=loadStats(); const bs=stats.blocks[originBlockId]; const ws=stats.words[originBlockId][key(item)]; if(ok){ bs.correct++; ws.correct++; }else{ bs.wrong++; ws.wrong++; } saveStats(stats); updateStatsUI(); }
 
 function resetBlock(blockId){ const stats=loadStats(); if(!stats.blocks[blockId]) return; stats.blocks[blockId]={correct:0,wrong:0}; Object.keys(stats.words[blockId]||{}).forEach(k=> stats.words[blockId][k]={correct:0,wrong:0}); saveStats(stats); updateStatsUI(); }
 function resetSelected(){ activeBlockIds.forEach(id=> resetBlock(id)); }
 function resetAll(){ UNIT_META.forEach(u=> resetBlock(u.id)); }
 
-function renderChecklist(){
-  els.blockChecklist.innerHTML='';
-  UNIT_META.forEach(u=>{
-    const label=document.createElement('label');
-    const cb=document.createElement('input'); cb.type='checkbox'; cb.value=u.id; cb.checked=false; cb.addEventListener('change', syncActiveBlockIds);
-    label.appendChild(cb); label.appendChild(document.createTextNode(' '+u.name));
-    els.blockChecklist.appendChild(label);
-  });
-  const first = els.blockChecklist.querySelector('input[value="u1"]'); if(first){ first.checked=true; syncActiveBlockIds(); }
-}
-
-function syncActiveBlockIds(){
-  activeBlockIds = Array.from(els.blockChecklist.querySelectorAll('input[type=checkbox]:checked')).map(el=>el.value);
-  const names = activeBlockIds.map(id=> UNIT_META.find(u=>u.id===id)?.name).filter(Boolean);
-  els.currentBlocksLabel.textContent = names.length ? names.join(', ') : '–';
-  updateStatsUI(); resetSessionQueue(); if(els.presetSelect) els.presetSelect.value='custom';
-}
+function renderChecklist(){ els.blockChecklist.innerHTML=''; UNIT_META.forEach(u=>{ const label=document.createElement('label'); const cb=document.createElement('input'); cb.type='checkbox'; cb.value=u.id; cb.checked=false; cb.addEventListener('change', syncActiveBlockIds); label.appendChild(cb); label.appendChild(document.createTextNode(' '+u.name)); els.blockChecklist.appendChild(label); }); const first=els.blockChecklist.querySelector('input[value="u1"]'); if(first){ first.checked=true; syncActiveBlockIds(); } }
+function syncActiveBlockIds(){ activeBlockIds=Array.from(els.blockChecklist.querySelectorAll('input[type=checkbox]:checked')).map(el=>el.value); const names=activeBlockIds.map(id=> UNIT_META.find(u=>u.id===id)?.name).filter(Boolean); els.currentBlocksLabel.textContent = names.length ? names.join(', ') : '–'; updateStatsUI(); resetSessionQueue(); els.presetSelect && (els.presetSelect.value='custom'); }
 
 function buildPool(){ const vocab=loadVocab(); const pool=[]; activeBlockIds.forEach(id=> (vocab[id]||[]).forEach(w=> pool.push({w,origin:id})) ); return pool; }
 
-function resetSessionQueue(){
-  const base=buildPool(); const weighted=[]; const useW=!!els.weightedEnabled?.checked; const stats=loadStats();
-  base.forEach(({w,origin})=>{ const ws=stats.words[origin]?.[key(w)]||{correct:0,wrong:0}; let weight=1; if(useW) weight=Math.max(1, Math.min(5, 1 + ws.wrong - Math.floor(ws.correct*0.5))); for(let i=0;i<weight;i++) weighted.push({w,origin}); });
-  sessionQueue=shuffle(weighted);
-}
+function resetSessionQueue(){ const base=buildPool(); const weighted=[]; const useW=!!els.weightedEnabled?.checked; const stats=loadStats(); base.forEach(({w,origin})=>{ const ws=stats.words[origin]?.[key(w)]||{correct:0,wrong:0}; let weight=1; if(useW) weight=Math.max(1, Math.min(5, 1 + ws.wrong - Math.floor(ws.correct*0.5))); for(let i=0;i<weight;i++) weighted.push({w,origin}); }); sessionQueue=shuffle(weighted); }
 
 function recentlyAsked(text){ return lastPrompts.some(t=> normalize(t)===normalize(text)); }
 function pushHistory(text){ lastPrompts.unshift(text); if(lastPrompts.length>HISTORY_SIZE) lastPrompts.pop(); }
 
-let currentQ=null;
-function pickQuestion(){
-  const mode=els.modeSelect.value; if(!activeBlockIds.length) return null; if(!sessionQueue.length) resetSessionQueue();
-  let tries=Math.min(sessionQueue.length,5); let cand=sessionQueue[0]; const from=mode==='de2en'?'de':'en'; const to=mode==='de2en'?'en':'de';
-  while(tries>0 && cand && recentlyAsked(cand.w[from])){ sessionQueue.push(sessionQueue.shift()); cand=sessionQueue[0]; tries--; }
-  cand=sessionQueue.shift(); if(!sessionQueue.length) resetSessionQueue();
-  const item=cand.w, origin=cand.origin; const prompt=item[from]; const answer=item[to];
-  const pool=buildPool(); let options=[answer];
-  const distract=shuffle(pool.filter(x=>x.w!==item).map(x=>x.w[to]).filter(x=> normalize(x)!==normalize(answer)));
-  while(options.length<4 && distract.length) options.push(distract.pop()); options=shuffle(options);
-  currentQ={ origin, from, to, prompt, answer, options, item, answered:false };
-  return currentQ;
+function pickQuestion(){ const mode=els.modeSelect.value; if(!activeBlockIds.length) return null; if(!sessionQueue.length) resetSessionQueue(); let tries=Math.min(sessionQueue.length,5); let cand=sessionQueue[0]; const from=mode==='de2en'?'de':'en'; const to=mode==='de2en'?'en':'de'; while(tries>0 && cand && recentlyAsked(cand.w[from])){ sessionQueue.push(sessionQueue.shift()); cand=sessionQueue[0]; tries--; } cand=sessionQueue.shift(); if(!sessionQueue.length) resetSessionQueue(); const item=cand.w, origin=cand.origin; const prompt=item[from]; const answer=item[to]; const pool=buildPool(); let options=[answer]; const distract=shuffle(pool.filter(x=>x.w!==item).map(x=>x.w[to]).filter(x=> normalize(x)!==normalize(answer))); while(options.length<4 && distract.length) options.push(distract.pop()); options=shuffle(options); currentQ={ origin, from, to, prompt, answer, options, item, answered:false }; return currentQ; }
+
+function disableInputsAfterAnswer(){ els.optionsList.querySelectorAll('button.option-btn').forEach(btn=>{ btn.disabled=true; btn.classList.add('disabled'); }); const free=document.getElementById('freeInput'); if(free){ free.disabled=true; } els.checkBtn && (els.checkBtn.disabled=true); }
+function prepareNextUX(){ if(!els.nextBtn) return; els.nextBtn.textContent='Weiter zur nächsten Frage'; els.nextBtn.classList.add('highlight'); setTimeout(()=>{ try{ els.nextBtn.focus(); }catch(e){} },700); }
+
+function isCorrect(user, correct){ return withinTolerance(user, correct); }
+
+function showHint(ok){ if(!els.hintsEnabled?.checked){ els.hintArea && els.hintArea.classList.add('hidden'); return; } if(!els.hintArea) return; const mode=els.modeSelect.value; const ans=currentQ.answer; const de=currentQ.from==='de'?currentQ.prompt:ans; const en=currentQ.from==='de'?ans:currentQ.prompt; const title = ok ? 'Lern‑Hinweis (Beta): Super!' : 'Lern‑Hinweis (Beta): Merke'; const sentence = mode==='de2en' ? `Satzidee: "I use **${en}** every day."` : `Satzidee: "Ich kenne das Wort **${de}**."`;
+  els.hintArea.innerHTML = `<div class="meta">${title}</div><div>${sentence}</div>`;
+  els.hintArea.classList.remove('hidden'); }
+
+function onAnswerOnce(userInput){ if(!currentQ || currentQ.answered) return; currentQ.answered=true; const ok=isCorrect(userInput, currentQ.answer); els.feedback.textContent = ok ? '✅ Richtig!' : `❌ Falsch. Richtig: ${currentQ.answer}`; record(currentQ.origin, currentQ.item, ok); disableInputsAfterAnswer(); prepareNextUX(); showHint(ok); }
+
+function renderQuestion(){ if(!currentQ) return; els.feedback.textContent=''; els.hintArea && els.hintArea.classList.add('hidden'); els.nextBtn && (els.nextBtn.textContent='Start / Weiter', els.nextBtn.classList.remove('highlight')); els.checkBtn && (els.checkBtn.disabled=false);
+  els.promptLabel.textContent = currentQ.from==='de'?'Deutsch':'Englisch'; els.promptText.textContent=currentQ.prompt; pushHistory(currentQ.prompt);
+  if(els.mcEnabled?.checked){ els.mcArea.classList.remove('hidden'); els.optionsList.innerHTML=''; els.checkBtn && els.checkBtn.classList.add('hidden'); currentQ.options.forEach(opt=>{ const li=document.createElement('li'); const btn=document.createElement('button'); btn.className='option-btn'; btn.textContent=opt; btn.addEventListener('click',()=> onAnswerOnce(opt)); li.appendChild(btn); els.optionsList.appendChild(li); }); }
+  else { els.mcArea.classList.add('hidden'); els.optionsList.innerHTML=''; els.checkBtn && els.checkBtn.classList.remove('hidden'); els.promptText.innerHTML = `${currentQ.prompt}<br/><input id=\"freeInput\" class=\"option-btn\" placeholder=\"Antwort hier eingeben\" />`; setTimeout(()=>{ const input=document.getElementById('freeInput'); if(input){ input.focus(); input.addEventListener('keydown', e=>{ if(e.key==='Enter'){ onAnswerOnce(input.value.trim()); } }); els.checkBtn && els.checkBtn.addEventListener('click', ()=> onAnswerOnce(input.value.trim()) ); } },0); }
 }
 
-function disableOptionButtons(){
-  // deaktiviert alle Antwort-Buttons nach der ersten Antwort
-  els.optionsList.querySelectorAll('button.option-btn').forEach(btn=>{
-    btn.disabled = true;
-    btn.classList.add('disabled');
-  });
-  const free = document.getElementById('freeInput');
-  if(free){ free.disabled = true; }
-}
-
-function renderQuestion(){ if(!currentQ) return;
-  els.promptLabel.textContent = currentQ.from==='de'?'Deutsch':'Englisch';
-  els.promptText.textContent=currentQ.prompt; els.feedback.textContent=''; pushHistory(currentQ.prompt);
-  if(els.mcEnabled?.checked){
-    els.mcArea.classList.remove('hidden'); els.optionsList.innerHTML='';
-    currentQ.options.forEach(opt=>{
-      const li=document.createElement('li');
-      const btn=document.createElement('button');
-      btn.className='option-btn';
-      btn.textContent=opt;
-      btn.addEventListener('click',()=> onAnswer(opt));
-      li.appendChild(btn); els.optionsList.appendChild(li);
-    });
-  } else {
-    els.mcArea.classList.add('hidden'); els.optionsList.innerHTML='';
-    els.promptText.innerHTML = `${currentQ.prompt}<br/><input id="freeInput" class="option-btn" placeholder="Antwort hier eingeben" />`;
-    setTimeout(()=>{
-      const input=document.getElementById('freeInput');
-      if(input) input.addEventListener('keydown', e=>{ if(e.key==='Enter') onAnswer(input.value.trim()); });
-    },0);
-  }
-}
-
-function onAnswer(sel){
-  // NEU: Schutz gegen Mehrfachzählung
-  if(!currentQ || currentQ.answered) return; // bereits beantwortet → nichts tun
-  currentQ.answered = true; // ab hier wird die Frage als beantwortet markiert
-
-  const ok=normalize(sel)===normalize(currentQ.answer);
-  els.feedback.textContent= ok?'✅ Richtig!':`❌ Falsch. Richtig: ${currentQ.answer}`;
-
-  // Einmalige Statistik-Aktualisierung
-  record(currentQ.origin,currentQ.item,ok);
-
-  // Alle weiteren Klicks auf Optionen deaktivieren
-  disableOptionButtons();
-}
-
-// UI-Hooks
+// Controls
 els.nextBtn && els.nextBtn.addEventListener('click', ()=>{ const q=pickQuestion(); if(q) renderQuestion(); else { els.promptText.textContent='Bitte wähle mindestens einen Block.'; } });
 els.resetSelectedBtn && els.resetSelectedBtn.addEventListener('click', ()=> resetSelected());
 els.resetAllBtn && els.resetAllBtn.addEventListener('click',   ()=> resetAll());
@@ -235,23 +119,6 @@ els.presetSelect && els.presetSelect.addEventListener('change', e=>{ if(e.target
 els.selectAllBtn && els.selectAllBtn.addEventListener('click', ()=>{ els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=true ); syncActiveBlockIds(); });
 els.clearAllBtn && els.clearAllBtn.addEventListener('click', ()=>{ els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=false ); syncActiveBlockIds(); });
 
-if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('./sw.js', { scope: './' });
-}
+function applyPreset(val){ const ranges={ 'u1_2':['u1','u2'], 'u1_3':['u1','u2','u3'], 'u3_4':['u3','u4'], 'u1_6':['u1','u2','u3','u4','u5','u6'] }; els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=false ); (ranges[val]||[]).forEach(id=>{ const cb=els.blockChecklist.querySelector(`input[value=\"${id}\"]`); if(cb) cb.checked=true; }); syncActiveBlockIds(); }
 
-function showUpdateBanner(){ if(els.updateBanner) els.updateBanner.classList.remove('hidden'); }
-els.reloadBtn && els.reloadBtn.addEventListener('click', ()=> window.location.reload());
-
-function applyPreset(val){
-  const ranges = { 'u1_2':['u1','u2'], 'u1_3':['u1','u2','u3'], 'u3_4':['u3','u4'], 'u1_6':['u1','u2','u3','u4','u5','u6'] };
-  els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=false );
-  (ranges[val]||[]).forEach(id=>{ const cb=els.blockChecklist.querySelector(`input[value="${id}"]`); if(cb) cb.checked=true; });
-  syncActiveBlockIds();
-}
-
-(async function init(){
-  await initCentralSync();
-  renderChecklist();
-  initStats();
-  updateStatsUI();
-})();
+(async function init(){ await initCentralSync(); renderChecklist(); initStats(); updateStatsUI(); })();
