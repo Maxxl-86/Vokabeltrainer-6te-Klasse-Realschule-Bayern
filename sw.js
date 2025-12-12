@@ -1,11 +1,60 @@
+\
+// Service Worker – Cache Versioning & Precache (v0.7.3)
+const CACHE_VERSION = '0.7.3';
+const CACHE_NAME = `vt-cache-${CACHE_VERSION}`;
 
-// Service Worker – einfache Cache-Strategie für GitHub Pages
-const CACHE_VERSION = 'v3';
-const STATIC_CACHE = `static-${CACHE_VERSION}`;
-const STATIC_ASSETS = [
-  './', './index.html', './style.css', './app-inline.js',
-  './manifest.webmanifest', './icon-192.png', './icon-512.png'
+// Bestimme Basis-Pfad dynamisch (GitHub Pages kompatibel)
+function getBasePath() {
+  try {
+    const scope = self.registration?.scope || self.location.href;
+    const u = new URL(scope);
+    let p = u.pathname;
+    if (!p.endsWith('/')) p += '/';
+    return p;
+  } catch { return '/'; }
+}
+const BASE_PATH = getBasePath();
+
+const FILES = [
+  '',
+  'index.html',
+  'style.css',
+  'app-inline.js',
+  'manifest.webmanifest',
+  'icon-192.png',
+  'icon-512.png',
+  'import.html',
+  'importer.js'
 ];
-self.addEventListener('install', (event) => { event.waitUntil(caches.open(STATIC_CACHE).then((cache) => cache.addAll(STATIC_ASSETS))); self.skipWaiting(); });
-self.addEventListener('activate', (event) => { event.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter(k=> k.startsWith('static-') && k!==STATIC_CACHE).map(k=> caches.delete(k))))); self.clients.claim(); });
-self.addEventListener('fetch', (event) => { const req = event.request; const url = new URL(req.url); if(url.pathname.endsWith('/vocab.json') || url.pathname.endsWith('.json')){ event.respondWith(fetch(req).then(res=>{ const copy=res.clone(); caches.open(STATIC_CACHE).then(cache=> cache.put(req, copy)).catch(()=>{}); return res; }).catch(()=> caches.match(req))); return; } event.respondWith(caches.match(req).then(cached=> cached || fetch(req).then(res=>{ const copy=res.clone(); caches.open(STATIC_CACHE).then(cache=> cache.put(req, copy)).catch(()=>{}); return res; }))); });
+const PRECACHE_URLS = FILES.map(f => BASE_PATH + f);
+
+self.addEventListener('install', (event) => {
+  self.skipWaiting();
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(PRECACHE_URLS))
+  );
+});
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(keys.map(k => (k !== CACHE_NAME ? caches.delete(k) : Promise.resolve())));
+    await self.clients.claim();
+    const clients = await self.clients.matchAll({ includeUncontrolled: true });
+    for (const c of clients) c.postMessage({ type: 'SW_ACTIVATED', version: CACHE_VERSION });
+  })());
+});
+
+self.addEventListener('fetch', (event) => {
+  const req = event.request;
+  event.respondWith((async () => {
+    const cache = await caches.open(CACHE_NAME);
+    const cached = await cache.match(req);
+    const networkPromise = fetch(req).then(res => {
+      if (req.method === 'GET' && res && res.status === 200) { cache.put(req, res.clone()); }
+      return res;
+    }).catch(() => cached);
+    return cached || networkPromise;
+  })());
+});
+\
