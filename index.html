@@ -4,11 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vokabeltrainer – Wiederherstellung</title>
+  <title>Vokabeltrainer</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" sizes="192x192" href="icon-192.png">
   <link rel="icon" sizes="512x512" href="icon-512.png">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .version-badge{position:fixed;right:12px;bottom:12px;background:#0b5fff;color:#fff;padding:6px 10px;border-radius:8px;font-size:12px;box-shadow:0 2px 8px rgba(0,0,0,.2);opacity:.9;z-index:9999}
+  </style>
 </head>
 <body>
   <header>
@@ -36,6 +39,31 @@
   </header>
 
   <main id="app-root">
+    <section class="blocks">
+      <h2>Blöcke wählen</h2>
+      <div class="block-actions">
+        <button id="selectAllBtn">Alle</button>
+        <button id="clearAllBtn">Leeren</button>
+      </div>
+      <div id="blockChecklist" class="checklist" aria-label="Blöcke">
+        <label><input type="checkbox" value="u1"> Unit 1</label>
+        <label><input type="checkbox" value="u2"> Unit 2</label>
+        <label><input type="checkbox" value="u3"> Unit 3</label>
+        <label><input type="checkbox" value="u4"> Unit 4</label>
+        <label><input type="checkbox" value="u5"> Unit 5</label>
+        <label><input type="checkbox" value="u6"> Unit 6</label>
+      </div>
+      <div class="stats">
+        <div>Aktive Blöcke: <span id="currentBlocksLabel">–</span></div>
+        <div>Richtig: <span id="statCorrect">0</span> · Falsch: <span id="statWrong">0</span></div>
+        <div>Gewichtung: <span id="weightInfo">aktiv</span></div>
+      </div>
+      <div class="reset-actions">
+        <button id="resetSelectedBtn">Auswahl reset</button>
+        <button id="resetAllBtn">Alles reset</button>
+      </div>
+    </section>
+
     <section class="card">
       <div><span id="promptLabel">Deutsch</span></div>
       <div id="promptText">Wähle mindestens einen Block und starte.</div>
@@ -51,10 +79,10 @@
     </section>
   </main>
 
+  <div id="version-badge" class="version-badge">Vokabeltrainer v0.8.0</div>
+
   <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js').catch(console.error);
-    }
+    if ('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js').catch(console.error); }
   </script>
   <script src="app-inline.js"></script>
 </body>

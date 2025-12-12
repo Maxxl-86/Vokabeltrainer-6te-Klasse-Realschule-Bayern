@@ -1,2 +1,27 @@
 :root{color-scheme:dark}
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:#0f172a;color:#e5e7eb}header{padding:12px 16px;background:#0b1220;border-bottom:1px solid #1f2937}h1{margin:0;font-size:20px}.toolbar{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap;margin-top:.5rem}.beta{color:#a5b4fc;font-weight:600}main{padding:16px}.blocks{margin-bottom:16px}.blocks .checklist label{display:inline-flex;align-items:center;gap:.4rem;margin:.25rem .75rem .25rem 0}button{background:#1f2937;color:#e5e7eb;border:1px solid #334155;border-radius:8px;padding:.5rem .8rem;cursor:pointer}button.primary{background:#16a34a;border-color:#15803d}button.secondary{background:#334155;border-color:#475569}button:disabled{opacity:.6;cursor:not-allowed}button.highlight{box-shadow:0 0 0 3px rgba(22,163,74,.35);animation:pulse .9s ease-in-out 1}@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.02)}100%{transform:scale(1)}}.card{background:#0b1220;border:1px solid #1f2937;border-radius:12px;padding:12px}.mc ul{list-style:none;padding:0;margin:.5rem 0}.mc li{margin:.25rem 0}.option-btn{display:inline-block;padding:.4rem .6rem;border-radius:6px;background:#334155;color:#e5e7eb;border:none;cursor:pointer}.option-btn.disabled{opacity:.7;cursor:not-allowed}.feedback{margin-top:.75rem;min-height:1.25rem}.hint{margin-top:.5rem;padding:.5rem .75rem;border-left:3px solid #22c55e;background:#0f1b2f;color:#d1fae5}.hint .meta{font-size:.85em;color:#93c5fd;margin-bottom:.25rem}.actions{display:flex;gap:.5rem;margin-top:.75rem}.hidden{display:none}mark.diff{background:#ef4444;color:#fff;border-radius:3px;padding:0 2px}.diffline{margin-top:.25rem;font-family:ui-monospace,Consolas,monospace}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:#0f172a;color:#e5e7eb}
+header{padding:12px 16px;background:#0b1220;border-bottom:1px solid #1f2937}
+h1{margin:0;font-size:20px}
+.toolbar{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap;margin-top:.5rem}
+.beta{color:#a5b4fc;font-weight:600}
+main{padding:16px}
+.blocks{margin-bottom:16px}
+.blocks .checklist label{display:inline-flex;align-items:center;gap:.4rem;margin:.25rem .75rem .25rem 0}
+button{background:#1f2937;color:#e5e7eb;border:1px solid #334155;border-radius:8px;padding:.5rem .8rem;cursor:pointer}
+button.primary{background:#16a34a;border-color:#15803d}
+button.secondary{background:#334155;border-color:#475569}
+button:disabled{opacity:.6;cursor:not-allowed}
+button.highlight{box-shadow:0 0 0 3px rgba(22,163,74,.35);animation:pulse .9s ease-in-out 1}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.02)}100%{transform:scale(1)}}
+.card{background:#0b1220;border:1px solid #1f2937;border-radius:12px;padding:12px}
+.mc ul{list-style:none;padding:0;margin:.5rem 0}
+.mc li{margin:.25rem 0}
+.option-btn{display:inline-block;padding:.4rem .6rem;border-radius:6px;background:#334155;color:#e5e7eb;border:none;cursor:pointer}
+.option-btn.disabled{opacity:.7;cursor:not-allowed}
+.feedback{margin-top:.75rem;min-height:1.25rem}
+.hint{margin-top:.5rem;padding:.5rem .75rem;border-left:3px solid #22c55e;background:#0f1b2f;color:#d1fae5}
+.hint .meta{font-size:.85em;color:#93c5fd;margin-bottom:.25rem}
+.actions{display:flex;gap:.5rem;margin-top:.75rem}
+.hidden{display:none}
+mark.diff{background:#ef4444;color:#fff;border-radius:3px;padding:0 2px}
+.diffline{margin-top:.25rem;font-family:ui-monospace,Consolas,monospace}
