@@ -1,9 +1,9 @@
 
-// Vokabeltrainer – UX + Toleranz + Lern-Hinweise (Beta)
-// - "Weiter zur nächsten Frage" (Highlight + Fokus)
-// - Freitext: Prüfen + Enter (einmalige Bewertung)
-// - Tippfehler-Toleranz (Levenshtein)
-// - Optionale Lern-Hinweise (Beta), abschaltbar
+// Vokabeltrainer – UX + Toleranz (kein Autokorrekt) + Lern-Hinweise (Beta)
+// - Weiter-Flow: Button-Highlight + Fokus
+// - Freitext: Prüfen + Enter, nur einmal
+// - Tippfehler: NICHT als richtig werten; zeige Diff und Hinweis
+// - Hints: Wortbezogen, mit Artikeln a/an und kleinen Collocations (wenn bekannt)
 
 const UNIT_META = [
   { id: 'u1', name: 'Unit 1' },
@@ -21,12 +21,42 @@ const CENTRAL_URL = './vocab/vocab.json';
 
 function normalize(s){ return String(s||'').trim().toLowerCase(); }
 function softNorm(s){ return normalize(s).replace(/[^a-zäöüß\-\s]/g,'').replace(/\s+/g,' ').trim(); }
-function key(w){ return normalize(w.de)+'\n'+normalize(w.en); }
+function key(w){ return normalize(w.de)+'
+'+normalize(w.en); }
 function shuffle(arr){ for(let i=arr.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]];} return arr; }
 
-// Levenshtein
+// Levenshtein (für Diff-Info, nicht zum Durchwinken)
 function lev(a,b){ a=softNorm(a); b=softNorm(b); const m=a.length,n=b.length; const dp=Array.from({length:m+1},()=>Array(n+1).fill(0)); for(let i=0;i<=m;i++) dp[i][0]=i; for(let j=0;j<=n;j++) dp[0][j]=j; for(let i=1;i<=m;i++){ for(let j=1;j<=n;j++){ const cost=a[i-1]===b[j-1]?0:1; dp[i][j]=Math.min(dp[i-1][j]+1, dp[i][j-1]+1, dp[i-1][j-1]+cost); } } return dp[m][n]; }
-function withinTolerance(user, correct){ const u=softNorm(user), c=softNorm(correct); if(!u) return false; if(u===c) return true; const len=Math.max(c.length,u.length); const d=lev(u,c); const limit=len<=5?1:len<=8?2:3; const stripPlural=s=>s.replace(/s$/,''); if(stripPlural(u)===stripPlural(c)) return true; return d<=limit; }
+function simpleDiffLine(a,b){ // char-basierter Diff, markiert Unterschiede
+  const aa = softNorm(a), bb = softNorm(b);
+  const L = Math.max(aa.length, bb.length);
+  let ua = '', ub = '';
+  for(let i=0;i<L;i++){
+    const ca = aa[i]||''; const cb = bb[i]||'';
+    if(ca===cb){ ua += ca; ub += cb; }
+    else{
+      if(ca) ua += `<mark class="diff">${ca}</mark>`; else ua += `<mark class="diff">∅</mark>`;
+      if(cb) ub += `<mark class="diff">${cb}</mark>`; else ub += `<mark class="diff">∅</mark>`;
+    }
+  }
+  return { ua, ub };
+}
+
+// Hints: kleine Wortlisten für bessere Qualität, sonst generische, aber wortbezogene Sätze
+const HINTS_DICT = {
+  'public': ['public transport','public holiday','in public'],
+  'media': ['social media','mass media','the media'],
+  'embarrassed': ['feel embarrassed','be embarrassed about sth']
+};
+function aAn(word){ return /^[aeiou]/.test(word.toLowerCase()) ? 'an' : 'a'; }
+function pickHint(en,de,mode){
+  const base = en.toLowerCase();
+  const list = HINTS_DICT[base];
+  if(list && list.length){ const c = list[Math.floor(Math.random()*list.length)]; return `Collocation: **${c}**`; }
+  // generischer, aber wortbezogener Satz
+  if(mode==='de2en') return `Satzidee: "This is ${aAn(en)} **${en}**."`;
+  return `Satzidee: "Das Wort **${de}** kenne ich."`;
+}
 
 const els = {
   blockChecklist: document.getElementById('blockChecklist'),
@@ -48,7 +78,6 @@ const els = {
   statCorrect: document.getElementById('statCorrect'),
   statWrong: document.getElementById('statWrong'),
   currentBlocksLabel: document.getElementById('currentBlocksLabel'),
-  reloadBtn: document.getElementById('reloadBtn'),
   weightInfo: document.getElementById('weightInfo'),
   resetSelectedBtn: document.getElementById('resetSelectedBtn'),
   resetAllBtn: document.getElementById('resetAllBtn'),
@@ -96,18 +125,28 @@ function pickQuestion(){ const mode=els.modeSelect.value; if(!activeBlockIds.len
 function disableInputsAfterAnswer(){ els.optionsList.querySelectorAll('button.option-btn').forEach(btn=>{ btn.disabled=true; btn.classList.add('disabled'); }); const free=document.getElementById('freeInput'); if(free){ free.disabled=true; } els.checkBtn && (els.checkBtn.disabled=true); }
 function prepareNextUX(){ if(!els.nextBtn) return; els.nextBtn.textContent='Weiter zur nächsten Frage'; els.nextBtn.classList.add('highlight'); setTimeout(()=>{ try{ els.nextBtn.focus(); }catch(e){} },700); }
 
-function isCorrect(user, correct){ return withinTolerance(user, correct); }
+function showHint(ok){ if(!els.hintsEnabled?.checked){ els.hintArea && els.hintArea.classList.add('hidden'); return; } if(!els.hintArea) return; const mode=els.modeSelect.value; const ans=currentQ.answer; const de=currentQ.from==='de'?currentQ.prompt:ans; const en=currentQ.from==='de'?ans:currentQ.prompt; const title = ok ? 'Lern‑Hinweis (Beta):' : 'Lern‑Hinweis (Beta):'; const content = pickHint(en,de,mode); els.hintArea.innerHTML = `<div class="meta">${title}</div><div>${content}</div>`; els.hintArea.classList.remove('hidden'); }
 
-function showHint(ok){ if(!els.hintsEnabled?.checked){ els.hintArea && els.hintArea.classList.add('hidden'); return; } if(!els.hintArea) return; const mode=els.modeSelect.value; const ans=currentQ.answer; const de=currentQ.from==='de'?currentQ.prompt:ans; const en=currentQ.from==='de'?ans:currentQ.prompt; const title = ok ? 'Lern‑Hinweis (Beta): Super!' : 'Lern‑Hinweis (Beta): Merke'; const sentence = mode==='de2en' ? `Satzidee: "I use **${en}** every day."` : `Satzidee: "Ich kenne das Wort **${de}**."`;
-  els.hintArea.innerHTML = `<div class="meta">${title}</div><div>${sentence}</div>`;
-  els.hintArea.classList.remove('hidden'); }
+function diffFeedback(user, correct){ const {ua,ub} = simpleDiffLine(user, correct); return `Fast richtig – **Schreibweise prüfen**:<div class="diffline">Dein Wort: ${ua}</div><div class="diffline">Richtig: ${ub}</div>`; }
 
-function onAnswerOnce(userInput){ if(!currentQ || currentQ.answered) return; currentQ.answered=true; const ok=isCorrect(userInput, currentQ.answer); els.feedback.textContent = ok ? '✅ Richtig!' : `❌ Falsch. Richtig: ${currentQ.answer}`; record(currentQ.origin, currentQ.item, ok); disableInputsAfterAnswer(); prepareNextUX(); showHint(ok); }
+function onAnswerOnce(userInput){ if(!currentQ || currentQ.answered) return; currentQ.answered=true; const exact = softNorm(userInput)===softNorm(currentQ.answer); const d = lev(userInput, currentQ.answer); let ok = exact; let msg = '';
+  if(exact){ msg='✅ Richtig!'; }
+  else {
+    // Nähe zeigen, aber als falsch werten
+    msg = diffFeedback(userInput, currentQ.answer);
+    ok = false;
+  }
+  els.feedback.innerHTML = msg;
+  record(currentQ.origin, currentQ.item, ok);
+  disableInputsAfterAnswer();
+  prepareNextUX();
+  showHint(ok);
+}
 
 function renderQuestion(){ if(!currentQ) return; els.feedback.textContent=''; els.hintArea && els.hintArea.classList.add('hidden'); els.nextBtn && (els.nextBtn.textContent='Start / Weiter', els.nextBtn.classList.remove('highlight')); els.checkBtn && (els.checkBtn.disabled=false);
   els.promptLabel.textContent = currentQ.from==='de'?'Deutsch':'Englisch'; els.promptText.textContent=currentQ.prompt; pushHistory(currentQ.prompt);
   if(els.mcEnabled?.checked){ els.mcArea.classList.remove('hidden'); els.optionsList.innerHTML=''; els.checkBtn && els.checkBtn.classList.add('hidden'); currentQ.options.forEach(opt=>{ const li=document.createElement('li'); const btn=document.createElement('button'); btn.className='option-btn'; btn.textContent=opt; btn.addEventListener('click',()=> onAnswerOnce(opt)); li.appendChild(btn); els.optionsList.appendChild(li); }); }
-  else { els.mcArea.classList.add('hidden'); els.optionsList.innerHTML=''; els.checkBtn && els.checkBtn.classList.remove('hidden'); els.promptText.innerHTML = `${currentQ.prompt}<br/><input id=\"freeInput\" class=\"option-btn\" placeholder=\"Antwort hier eingeben\" />`; setTimeout(()=>{ const input=document.getElementById('freeInput'); if(input){ input.focus(); input.addEventListener('keydown', e=>{ if(e.key==='Enter'){ onAnswerOnce(input.value.trim()); } }); els.checkBtn && els.checkBtn.addEventListener('click', ()=> onAnswerOnce(input.value.trim()) ); } },0); }
+  else { els.mcArea.classList.add('hidden'); els.optionsList.innerHTML=''; els.checkBtn && els.checkBtn.classList.remove('hidden'); els.promptText.innerHTML = `${currentQ.prompt}<br/><input id="freeInput" class="option-btn" placeholder="Antwort hier eingeben" />`; setTimeout(()=>{ const input=document.getElementById('freeInput'); if(input){ input.focus(); input.addEventListener('keydown', e=>{ if(e.key==='Enter'){ onAnswerOnce(input.value.trim()); } }); els.checkBtn && els.checkBtn.addEventListener('click', ()=> onAnswerOnce(input.value.trim()) ); } },0); }
 }
 
 // Controls
@@ -119,6 +158,6 @@ els.presetSelect && els.presetSelect.addEventListener('change', e=>{ if(e.target
 els.selectAllBtn && els.selectAllBtn.addEventListener('click', ()=>{ els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=true ); syncActiveBlockIds(); });
 els.clearAllBtn && els.clearAllBtn.addEventListener('click', ()=>{ els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=false ); syncActiveBlockIds(); });
 
-function applyPreset(val){ const ranges={ 'u1_2':['u1','u2'], 'u1_3':['u1','u2','u3'], 'u3_4':['u3','u4'], 'u1_6':['u1','u2','u3','u4','u5','u6'] }; els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=false ); (ranges[val]||[]).forEach(id=>{ const cb=els.blockChecklist.querySelector(`input[value=\"${id}\"]`); if(cb) cb.checked=true; }); syncActiveBlockIds(); }
+function applyPreset(val){ const ranges={ 'u1_2':['u1','u2'], 'u1_3':['u1','u2','u3'], 'u3_4':['u3','u4'], 'u1_6':['u1','u2','u3','u4','u5','u6'] }; els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=false ); (ranges[val]||[]).forEach(id=>{ const cb=els.blockChecklist.querySelector(`input[value="${id}"]`); if(cb) cb.checked=true; }); syncActiveBlockIds(); }
 
 (async function init(){ await initCentralSync(); renderChecklist(); initStats(); updateStatsUI(); })();

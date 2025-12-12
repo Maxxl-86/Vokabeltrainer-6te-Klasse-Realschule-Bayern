@@ -23,3 +23,5 @@ button.highlight{box-shadow:0 0 0 3px rgba(22,163,74,.35);animation:pulse .9s ea
 .hint .meta{font-size:.85em;color:#93c5fd;margin-bottom:.25rem}
 .actions{display:flex;gap:.5rem;margin-top:.75rem}
 .hidden{display:none}
+mark.diff{background:#ef4444;color:#fff;border-radius:3px;padding:0 2px}
+.diffline{margin-top:.25rem; font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
