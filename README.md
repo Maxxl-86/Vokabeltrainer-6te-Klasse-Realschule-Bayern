@@ -1,19 +1,29 @@
 
-# Vokabeltrainer – Auto-Repair & UX
+# Vokabeltrainer – Auto-Repair & gezielte Lern-Hinweise (Beta)
 
-Dieses Paket enthält eine **Auto-Reparatur** der Block-Auswahl: Falls die Blocks-Section in `index.html` fehlt, injiziert die App sie automatisch bei Start – inkl. korrekter IDs.
+## Neu
+- **Auto-Repair**: Falls die Blocks-Section fehlt, wird sie automatisch injiziert.
+- **Lern-Hinweise (Beta)**: Werden jetzt aus **`vocab/hints.json`** geladen.
+  - Wenn für ein Wort **kein Eintrag** vorhanden ist, **wird kein generischer Hinweis angezeigt**.
+  - Du kannst `hints.json` selbst erweitern.
 
 ## Dateien
-- `index.html` – Toolbar, Blocks-Section, Fragekarte
-- `style.css` – Styles (Hint, Diff, Highlight)
-- `app-inline.js` – Auto-Repair + UX + Tippfehler-Diff + Lern-Hinweise (Beta)
-- `sw.js` – Service Worker (network-first für `.json`)
+- index.html, style.css, app-inline.js, sw.js
+- **vocab/hints.json** (editierbar)
 
 ## Einbau
-1. ZIP entpacken und **alle Dateien** ins Repo-Root hochladen (ersetzen).
+1. ZIP entpacken, alles ins Repo-Root hochladen. Ordner **`vocab/`** mit `hints.json` übernehmen.
 2. Commit speichern.
 3. Seite öffnen und **Hard Reload** (Strg/Cmd + Shift + R).
 
-## Hinweise
-- Die Lern-Hinweise sind **Beta** und optional (Checkbox).
-- Tippfehler werden **nicht** als richtig gewertet; statt dessen **Diff** angezeigt.
+## `hints.json` Format
+```json
+{
+  "media": {
+    "collocations": ["social media", "mass media"],
+    "examples": ["Social media can spread news very fast."],
+    "note": "Usually plural collective: 'The media are ...'"
+  }
+}
+```
+```

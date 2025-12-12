@@ -1,0 +1,73 @@
+{
+  "public": {
+    "collocations": [
+      "public transport",
+      "public holiday",
+      "in public"
+    ],
+    "examples": [
+      "Smoking in public places is not allowed.",
+      "The mayor spoke in public."
+    ],
+    "note": "'public' is often used before nouns: public transport, public library."
+  },
+  "media": {
+    "collocations": [
+      "social media",
+      "mass media",
+      "the media"
+    ],
+    "examples": [
+      "Social media can spread news very fast.",
+      "The mass media influence public opinion."
+    ],
+    "note": "Usually treated as a plural collective: 'The media are ...'"
+  },
+  "embarrassed": {
+    "collocations": [
+      "feel embarrassed",
+      "embarrassed about sth"
+    ],
+    "examples": [
+      "She felt embarrassed when she forgot the lines.",
+      "I'm embarrassed about my mistake."
+    ],
+    "note": "Adjective; common with 'feel' or 'be embarrassed about'"
+  },
+  "screen": {
+    "collocations": [
+      "computer screen",
+      "touch screen",
+      "screen time"
+    ],
+    "examples": [
+      "My phone has a big touch screen.",
+      "Parents often limit screen time."
+    ],
+    "note": "Noun; compound nouns are common (touch screen, screen time)."
+  },
+  "device": {
+    "collocations": [
+      "electronic device",
+      "mobile device",
+      "medical device"
+    ],
+    "examples": [
+      "A mobile device is portable.",
+      "This medical device measures pulse."
+    ],
+    "note": "Countable noun; often used with adjectives (electronic/mobile)."
+  },
+  "homework": {
+    "collocations": [
+      "do homework",
+      "get homework",
+      "hand in homework"
+    ],
+    "examples": [
+      "I have to do my homework now.",
+      "We handed in our homework."
+    ],
+    "note": "Uncountable; use 'do homework', not 'make homework'."
+  }
+}
