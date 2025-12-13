@@ -255,3 +255,41 @@ button.highlight{
     padding: 0.4rem 0.6rem; 
     font-size: 0.8rem;
 }
+
+/* --- TRINKGELD / FOOTER STYLES --- */
+
+.app-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    margin-top: 20px;
+    border-top: 1px solid #1f2937;
+    background: #0b1220; /* Wie der Header */
+    font-size: 0.8rem;
+    color: #9ca3af;
+}
+
+/* Styling für den Tip-Button */
+.tip-jar .tip-button {
+    text-decoration: none;
+    background: #2563eb; /* Ein freundlicher Blauton */
+    color: #ffffff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    white-space: nowrap; 
+}
+
+.tip-jar .tip-button:hover {
+    background: #3b82f6;
+}
+
+/* Platzierung im Footer: Button links, Version rechts */
+.tip-jar {
+    order: 1;
+}
+.version-info {
+    order: 2; 
+}
