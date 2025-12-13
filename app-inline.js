@@ -1,5 +1,5 @@
 // Vokabeltrainer – Auto-Repair Blocks + UX + Tippfehler-Diff + Lern-Hinweise (Beta)
-const APP_VERSION = 'v8'; // <--- ZENTRALE VERSIONSNUMMER
+const APP_VERSION = 'v9'; // <--- ZENTRALE VERSIONSNUMMER
 const UNIT_META = [
   { id: 'u1', name: 'Unit 1' },
   { id: 'u2', name: 'Unit 2' },
@@ -119,8 +119,59 @@ function disableInputsAfterAnswer(){ els.optionsList.querySelectorAll('button.op
 function prepareNextUX(){ if(!els.nextBtn) return; els.nextBtn.textContent='Weiter zur nächsten Frage'; els.nextBtn.classList.add('highlight'); setTimeout(()=>{ try{ els.nextBtn.focus(); }catch(e){} },700); }
 function showHint(ok){ if(!els.hintsEnabled?.checked){ els.hintArea && els.hintArea.classList.add('hidden'); return; } if(!els.hintArea) return; const mode=els.modeSelect.value; const ans=currentQ.answer; const de=currentQ.from==='de'?currentQ.prompt:ans; const en=currentQ.from==='de'?ans:currentQ.prompt; const content = pickHint(en,de,mode); if(!content){ els.hintArea.classList.add('hidden'); return; } els.hintArea.innerHTML = `<div class="meta">Lern‑Hinweis (Beta):</div><div>${content}</div>`; els.hintArea.classList.remove('hidden'); }
 function onAnswerOnce(userInput){ if(!currentQ || currentQ.answered) return; currentQ.answered=true; const exact = softNorm(userInput)===softNorm(currentQ.answer); let ok = exact; let msg = exact ? '✅ Richtig!' : diffFeedback(userInput, currentQ.answer); els.feedback.innerHTML = msg; record(currentQ.origin, currentQ.item, ok); disableInputsAfterAnswer(); prepareNextUX(); showHint(ok); }
-function renderQuestion(){ if(!currentQ) return; els.feedback.textContent=''; els.hintArea && els.hintArea.classList.add('hidden'); els.nextBtn && (els.nextBtn.textContent='Start / Weiter', els.nextBtn.classList.remove('highlight')); els.checkBtn && (els.checkBtn.disabled=false); els.promptLabel.textContent = currentQ.from==='de'?'Deutsch':'Englisch'; els.promptText.textContent=currentQ.prompt; pushHistory(currentQ.prompt); if(els.mcEnabled?.checked){ els.mcArea.classList.remove('hidden'); els.optionsList.innerHTML=''; els.checkBtn && els.checkBtn.classList.add('hidden'); currentQ.options.forEach(opt=>{ const li=document.createElement('li'); const btn=document.createElement('button'); btn.className='option-btn'; btn.textContent=opt; btn.addEventListener('click',()=> onAnswerOnce(opt)); li.appendChild(btn); els.optionsList.appendChild(li); }); } else { els.mcArea.classList.add('hidden'); els.optionsList.innerHTML=''; els.checkBtn && els.checkBtn.classList.remove('hidden'); els.promptText.innerHTML = `${currentQ.prompt}<br/><input id="freeInput" class="option-btn" placeholder="Antwort hier eingeben" />`; setTimeout(()=>{ const input=document.getElementById('freeInput'); if(input){ input.focus(); input.addEventListener('keydown', e=>{ if(e.key==='Enter'){ onAnswerOnce(input.value.trim()); } }); els.checkBtn && els.checkBtn.addEventListener('click', ()=> onAnswerOnce(input.value.trim()) ); } },0); }
+function renderQuestion(){ 
+    if(!currentQ) return; 
+    els.feedback.textContent=''; 
+    els.hintArea && els.hintArea.classList.add('hidden'); 
+    els.nextBtn && (els.nextBtn.textContent='Start / Weiter', els.nextBtn.classList.remove('highlight')); 
+    els.checkBtn && (els.checkBtn.disabled=false); 
+    els.promptLabel.textContent = currentQ.from==='de'?'Deutsch':'Englisch'; 
+    els.promptText.textContent=currentQ.prompt; 
+    pushHistory(currentQ.prompt); 
+    
+    if(els.mcEnabled?.checked){ 
+        els.mcArea.classList.remove('hidden'); 
+        els.optionsList.innerHTML=''; 
+        els.checkBtn && els.checkBtn.classList.add('hidden'); 
+        currentQ.options.forEach(opt=>{ 
+            const li=document.createElement('li'); 
+            const btn=document.createElement('button'); 
+            btn.className='option-btn'; 
+            btn.textContent=opt; 
+            btn.addEventListener('click',()=> onAnswerOnce(opt)); 
+            li.appendChild(btn); 
+            els.optionsList.appendChild(li); 
+        }); 
+    } else { 
+        els.mcArea.classList.add('hidden'); 
+        els.optionsList.innerHTML=''; 
+        els.checkBtn && els.checkBtn.classList.remove('hidden'); 
+        els.promptText.innerHTML = `${currentQ.prompt}<br/><input id="freeInput" class="option-btn" placeholder="Antwort hier eingeben" />`; 
+        
+        // Hinzufügen/Aktualisieren der Event Listener für manuelle Eingabe
+        setTimeout(()=>{ 
+            const input=document.getElementById('freeInput'); 
+            if(input){ 
+                // WICHTIGER FIX: Enter-Taste löst onAnswerOnce aus
+                input.addEventListener('keydown', e=>{ 
+                    if(e.key==='Enter'){ 
+                        // Entferne den alten Listener, um Duplikate zu vermeiden, falls vorhanden
+                        const oldCheckListener = els.checkBtn.onclick; 
+                        if(oldCheckListener) els.checkBtn.removeEventListener('click', oldCheckListener); 
+
+                        onAnswerOnce(input.value.trim()); 
+                    } 
+                }); 
+
+                // WICHTIGER FIX: Prüfen-Button löst onAnswerOnce aus (Muss nach jedem Render neu gebunden werden, da Button immer sichtbar ist)
+                const checkListener = () => { onAnswerOnce(input.value.trim()); };
+                els.checkBtn.onclick = checkListener; // Speichert den Listener
+                els.checkBtn.addEventListener('click', checkListener); // Bindet den Listener
+            } 
+        },0); 
+    }
 }
+
 function bindControls(){ 
     els.nextBtn && els.nextBtn.addEventListener('click', ()=>{ const q=pickQuestion(); if(q) renderQuestion(); else { els.promptText.textContent='Bitte wähle mindestens einen Block.'; } }); 
     els.resetSelectedBtn && els.resetSelectedBtn.addEventListener('click', ()=> resetSelected()); 
@@ -133,24 +184,22 @@ function bindControls(){
     // Installations-Logik
     if (els.installBtn) {
         window.addEventListener('beforeinstallprompt', (e) => {
-            // Verhindert, dass der Browser das Standard-Prompt sofort anzeigt
             e.preventDefault();
-            // Speichert das Ereignis zur späteren Auslösung
             deferredPrompt = e;
-            // Zeigt den benutzerdefinierten Button an
+            // Entferne 'hidden', um den Button sichtbar zu machen
             els.installBtn.classList.remove('hidden');
         });
 
         els.installBtn.addEventListener('click', (e) => {
             if (deferredPrompt) {
-                // Button verstecken und Prompt auslösen
                 els.installBtn.classList.add('hidden');
                 deferredPrompt.prompt();
-                // Auf die Benutzerreaktion warten
                 deferredPrompt.userChoice.then((choiceResult) => {
                     if (choiceResult.outcome === 'accepted') {
                         console.log('App installiert');
                     } else {
+                        // Bei Ablehnung Button wieder anzeigen
+                        els.installBtn.classList.remove('hidden');
                         console.log('App Installation abgebrochen');
                     }
                     deferredPrompt = null;
@@ -158,10 +207,15 @@ function bindControls(){
             }
         });
         
-        // Versteckt den Button, wenn die App bereits installiert ist
         window.addEventListener('appinstalled', (e) => {
             els.installBtn.classList.add('hidden');
         });
+        
+        // Füge einen Check hinzu, falls die App bereits als PWA gestartet wurde
+        if (window.matchMedia('(display-mode: standalone)').matches || 
+            document.referrer.includes('android-app://')) {
+            els.installBtn.classList.add('hidden');
+        }
     }
 }
 function applyPreset(val){ const ranges={ 'u1_2':['u1','u2'], 'u1_3':['u1','u2','u3'], 'u3_4':['u3','u4'], 'u1_6':['u1','u2','u3','u4','u5','u6'] }; els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=false ); (ranges[val]||[]).forEach(id=>{ const cb=els.blockChecklist.querySelector(`input[value=\"${id}\"]`); if(cb) cb.checked=true; }); syncActiveBlockIds(); }
@@ -182,5 +236,5 @@ function displayVersion() {
     renderChecklist(); 
     initStats(); 
     updateStatsUI(); 
-    displayVersion(); // <--- HIER WIRD DIE VERSION GESETZT!
+    displayVersion(); 
 } catch(e){ console.error('[INIT] Fehler:', e); }})();
