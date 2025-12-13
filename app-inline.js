@@ -1,5 +1,5 @@
 // Vokabeltrainer – Auto-Repair Blocks + UX + Tippfehler-Diff + Lern-Hinweise (Beta)
-const APP_VERSION = 'v9'; // <--- ZENTRALE VERSIONSNUMMER
+const APP_VERSION = 'v10'; // <--- ZENTRALE VERSIONSNUMMER
 const UNIT_META = [
   { id: 'u1', name: 'Unit 1' },
   { id: 'u2', name: 'Unit 2' },
@@ -115,10 +115,27 @@ function recentlyAsked(text){ return lastPrompts.some(t=> normalize(t)===normali
 function pushHistory(text){ lastPrompts.unshift(text); if(lastPrompts.length>2) lastPrompts.pop(); }
 function pickQuestion(){ const mode=els.modeSelect.value; if(!activeBlockIds.length) return null; if(!sessionQueue.length) resetSessionQueue(); let tries=Math.min(sessionQueue.length,5); let cand=sessionQueue[0]; const from=mode==='de2en'?'de':'en'; const to=mode==='de2en'?'en':'de'; while(tries>0 && cand && recentlyAsked(cand.w[from])){ sessionQueue.push(sessionQueue.shift()); cand=sessionQueue[0]; tries--; } cand=sessionQueue.shift(); if(!sessionQueue.length) resetSessionQueue(); const item=cand.w, origin=cand.origin; const prompt=item[from]; const answer=item[to]; const pool=buildPool(); let options=[answer]; const distract=shuffle(pool.filter(x=>x.w!==item).map(x=>x.w[to]).filter(x=> normalize(x)!==normalize(answer))); while(options.length<4 && distract.length) options.push(distract.pop()); options=shuffle(options); currentQ={ origin, from, to, prompt, answer, options, item, answered:false }; return currentQ; }
 function diffFeedback(user, correct){ const {ua,ub} = simpleDiffLine(user, correct); return `Fast richtig – **Schreibweise prüfen**:<div class="diffline">Dein Wort: ${ua}</div><div class="diffline">Richtig: ${ub}</div>`; }
-function disableInputsAfterAnswer(){ els.optionsList.querySelectorAll('button.option-btn').forEach(btn=>{ btn.disabled=true; btn.classList.add('disabled'); }); const free=document.getElementById('freeInput'); if(free){ free.disabled=true; } els.checkBtn && (els.checkBtn.disabled=true); }
+function disableInputsAfterAnswer(){ 
+    els.optionsList.querySelectorAll('button.option-btn').forEach(btn=>{ btn.disabled=true; btn.classList.add('disabled'); }); 
+    const free=document.getElementById('freeInput'); 
+    if(free){ free.disabled=true; } 
+    els.checkBtn && (els.checkBtn.disabled=true); 
+    // HIER IST DER FIX: Wir stellen sicher, dass der Next-Button in den "Weiter"-Zustand wechselt
+    prepareNextUX(); 
+}
 function prepareNextUX(){ if(!els.nextBtn) return; els.nextBtn.textContent='Weiter zur nächsten Frage'; els.nextBtn.classList.add('highlight'); setTimeout(()=>{ try{ els.nextBtn.focus(); }catch(e){} },700); }
 function showHint(ok){ if(!els.hintsEnabled?.checked){ els.hintArea && els.hintArea.classList.add('hidden'); return; } if(!els.hintArea) return; const mode=els.modeSelect.value; const ans=currentQ.answer; const de=currentQ.from==='de'?currentQ.prompt:ans; const en=currentQ.from==='de'?ans:currentQ.prompt; const content = pickHint(en,de,mode); if(!content){ els.hintArea.classList.add('hidden'); return; } els.hintArea.innerHTML = `<div class="meta">Lern‑Hinweis (Beta):</div><div>${content}</div>`; els.hintArea.classList.remove('hidden'); }
-function onAnswerOnce(userInput){ if(!currentQ || currentQ.answered) return; currentQ.answered=true; const exact = softNorm(userInput)===softNorm(currentQ.answer); let ok = exact; let msg = exact ? '✅ Richtig!' : diffFeedback(userInput, currentQ.answer); els.feedback.innerHTML = msg; record(currentQ.origin, currentQ.item, ok); disableInputsAfterAnswer(); prepareNextUX(); showHint(ok); }
+function onAnswerOnce(userInput){ 
+    if(!currentQ || currentQ.answered) return; 
+    currentQ.answered=true; 
+    const exact = softNorm(userInput)===softNorm(currentQ.answer); 
+    let ok = exact; 
+    let msg = exact ? '✅ Richtig!' : diffFeedback(userInput, currentQ.answer); 
+    els.feedback.innerHTML = msg; 
+    record(currentQ.origin, currentQ.item, ok); 
+    disableInputsAfterAnswer(); // Schaltet Inputs ab und setzt den "Weiter"-Zustand!
+    showHint(ok); 
+}
 function renderQuestion(){ 
     if(!currentQ) return; 
     els.feedback.textContent=''; 
@@ -143,30 +160,39 @@ function renderQuestion(){
             els.optionsList.appendChild(li); 
         }); 
     } else { 
+        // Freitext-Eingabe (Free Input Mode)
         els.mcArea.classList.add('hidden'); 
         els.optionsList.innerHTML=''; 
         els.checkBtn && els.checkBtn.classList.remove('hidden'); 
         els.promptText.innerHTML = `${currentQ.prompt}<br/><input id="freeInput" class="option-btn" placeholder="Antwort hier eingeben" />`; 
         
-        // Hinzufügen/Aktualisieren der Event Listener für manuelle Eingabe
+        // Event Listener für manuelle Eingabe
         setTimeout(()=>{ 
             const input=document.getElementById('freeInput'); 
+            
+            // WICHTIGER FIX: Vorherige Listener von checkBtn entfernen, um Doppel-Trigger zu vermeiden
+            els.checkBtn.replaceWith(els.checkBtn.cloneNode(true));
+            els.checkBtn = $("checkBtn"); // El-Reference muss neu gebunden werden, da DOM-Node ersetzt wurde
+            
             if(input){ 
-                // WICHTIGER FIX: Enter-Taste löst onAnswerOnce aus
-                input.addEventListener('keydown', e=>{ 
-                    if(e.key==='Enter'){ 
-                        // Entferne den alten Listener, um Duplikate zu vermeiden, falls vorhanden
-                        const oldCheckListener = els.checkBtn.onclick; 
-                        if(oldCheckListener) els.checkBtn.removeEventListener('click', oldCheckListener); 
+                const answerCheckHandler = (e) => {
+                    // Verhindert unnötiges Auslösen bei CheckBtn-Klick, wenn Enter gedrückt wird
+                    if(e.type === 'keydown' && e.key !== 'Enter') return;
+                    if(e.type === 'click' && input.disabled) return;
+                    
+                    onAnswerOnce(input.value.trim()); 
 
-                        onAnswerOnce(input.value.trim()); 
-                    } 
-                }); 
+                    // Verhindere Standard-Formular-Aktion, falls wir in einem Formular wären
+                    if (e.preventDefault) e.preventDefault();
+                };
 
-                // WICHTIGER FIX: Prüfen-Button löst onAnswerOnce aus (Muss nach jedem Render neu gebunden werden, da Button immer sichtbar ist)
-                const checkListener = () => { onAnswerOnce(input.value.trim()); };
-                els.checkBtn.onclick = checkListener; // Speichert den Listener
-                els.checkBtn.addEventListener('click', checkListener); // Bindet den Listener
+                // 1. Enter-Taste
+                input.addEventListener('keydown', answerCheckHandler); 
+                
+                // 2. Prüfen-Button
+                els.checkBtn.addEventListener('click', answerCheckHandler);
+                
+                input.focus();
             } 
         },0); 
     }
@@ -211,7 +237,7 @@ function bindControls(){
             els.installBtn.classList.add('hidden');
         });
         
-        // Füge einen Check hinzu, falls die App bereits als PWA gestartet wurde
+        // Verstecke den Button, wenn die App bereits als PWA läuft
         if (window.matchMedia('(display-mode: standalone)').matches || 
             document.referrer.includes('android-app://')) {
             els.installBtn.classList.add('hidden');
