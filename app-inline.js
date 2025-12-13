@@ -1,6 +1,8 @@
 // Vokabeltrainer – Auto-Repair Blocks + UX + Tippfehler-Diff + Lern-Hinweise (Beta)
-const APP_VERSION = 'v11'; // <--- AKTUALISIERT AUF V10
+const APP_VERSION = 'v12'; // <--- AKTUALISIERT AUF V12
 const UNIT_META = [
+// ... (UNIT_META bleibt unverändert) ...
+// ... (Hilfsfunktionen bleiben unverändert) ...
   { id: 'u1', name: 'Unit 1' },
   { id: 'u2', name: 'Unit 2' },
   { id: 'u3', name: 'Unit 3' },
@@ -14,7 +16,9 @@ const LS_SYNC = 'vocab-central-meta';
 const CENTRAL_URL = './vocab/vocab.json';
 const HINTS_URL = './vocab/hints.json';
 let HINTS_DICT = {};
-let deferredPrompt = null; // Für das Installations-Prompt
+let deferredPrompt = null; 
+let sessionTotalSize = 0; // NEU: Gesamtgröße der Session
+let sessionCompleted = 0; // NEU: Bereits beantwortete Fragen (auch übersprungene)
 
 function normalize(s){ return String(s||'').trim().toLowerCase(); }
 function softNorm(s){ return normalize(s).replace(/[^a-zäöüß\-\s]/g,'').replace(/\s+/g,' ').trim(); }
@@ -50,7 +54,7 @@ const els = {};
 let activeBlockIds = [], lastPrompts = [], sessionQueue = [], currentQ = null;
 function $(id){ return document.getElementById(id); }
 function ensureBlocksSection(){
-  // Der Check stellt sicher, dass die Sektion nur einmal eingefügt wird.
+  // ... (ensureBlocksSection bleibt unverändert) ...
   if($("blockChecklist") && $("currentBlocksLabel") && $("selectAllBtn") && $("clearAllBtn") && $("resetSelectedBtn") && $("resetAllBtn")) return;
   const root = document.querySelector('#app-root') || document.querySelector('main') || document.body;
   const sec = document.createElement('section'); sec.className = 'blocks';
@@ -81,8 +85,10 @@ function bindEls(){
   els.statCorrect = $("statCorrect"); els.statWrong = $("statWrong"); els.weightInfo = $("weightInfo"); els.currentBlocksLabel = $("currentBlocksLabel");
   els.resetSelectedBtn = $("resetSelectedBtn");
   els.resetAllBtn = $("resetAllBtn");
-  // Neu: Install Button binden
   els.installBtn = $("installBtn");
+  // NEUE ELEMENTE BINDEN
+  els.showAnswerBtn = $("showAnswerBtn"); 
+  els.sessionProgress = $("sessionProgress");
 }
 function loadVocab(){ try{ return JSON.parse(localStorage.getItem(LS_VOCAB)||'{}'); }catch(e){ return {}; } }
 function saveVocab(v){ localStorage.setItem(LS_VOCAB, JSON.stringify(v)); }
@@ -97,7 +103,7 @@ async function initCentralSync(){ const central = await fetchJSON(CENTRAL_URL); 
 }
 function initStats(){ const stats=loadStats(); if(!stats.blocks) stats.blocks={}; if(!stats.words) stats.words={}; const vocab=loadVocab(); UNIT_META.forEach(u=>{ if(!stats.blocks[u.id]) stats.blocks[u.id]={correct:0,wrong:0}; if(!stats.words[u.id]) stats.words[u.id]={}; (vocab[u.id]||[]).forEach(w=>{ const k=key(w); if(!stats.words[u.id][k]) stats.words[u.id][k]={correct:0,wrong:0}; }); }); saveStats(stats); }
 function updateStatsUI(){ els.weightInfo && (els.weightInfo.textContent = els.weightedEnabled?.checked ? 'aktiv' : 'aus'); if(!activeBlockIds.length){ els.statCorrect.textContent='0'; els.statWrong.textContent='0'; return; } const stats=loadStats(); const agg=activeBlockIds.reduce((acc,id)=>{ const s=stats.blocks[id]||{correct:0,wrong:0}; acc.correct+=s.correct; acc.wrong+=s.wrong; return acc; },{correct:0,wrong:0}); els.statCorrect.textContent=agg.correct; els.statWrong.textContent=agg.wrong; }
-function record(originBlockId,item,ok){ const stats=loadStats(); const bs=stats.blocks[originBlockId]; const ws=stats.words[originBlockId][key(item)]; if(ok){ bs.correct++; ws.correct++; }else{ bs.wrong++; ws.wrong++; } saveStats(stats); updateStatsUI(); }
+function record(originBlockId,item,ok){ const stats=loadStats(); const bs=stats.blocks[originBlockId]; const ws=stats.words[originBlockId][key(item)]; if(ok){ bs.correct++; ws.correct++; }else{ bs.wrong++; ws.correct++; } saveStats(stats); updateStatsUI(); }
 function resetBlock(blockId){ const stats=loadStats(); if(!stats.blocks[blockId]) return; stats.blocks[blockId]={correct:0,wrong:0}; Object.keys(stats.words[blockId]||{}).forEach(k=> stats.words[blockId][k]={correct:0,wrong:0}); saveStats(stats); updateStatsUI(); }
 function resetSelected(){ 
   const confirmed = window.confirm("Möchten Sie die Statistik für die aktuell ausgewählten Blöcke wirklich zurücksetzen (Richtig/Falsch = 0)?");
@@ -107,13 +113,60 @@ function resetAll(){
   const confirmed = window.confirm("ACHTUNG: Möchten Sie die gesamte Lernstatistik (alle Blöcke) wirklich löschen? Dieser Schritt kann nicht rückgängig gemacht werden.");
   if(confirmed) { UNIT_META.forEach(u=> resetBlock(u.id)); }
 }
-function renderChecklist(){ try{ els.blockChecklist.innerHTML=''; UNIT_META.forEach(u=>{ const label=document.createElement('label'); const cb=document.createElement('input'); cb.type='checkbox'; cb.value=u.id; cb.checked=false; cb.addEventListener('change', syncActiveBlockIds); label.appendChild(cb); label.appendChild(document.createTextNode(' '+u.name)); els.blockChecklist.appendChild(label); }); const first=els.blockChecklist.querySelector('input[value="u1"]'); if(first){ first.checked=true; syncActiveBlockIds(); } }catch(e){ console.error('[Blocks] renderChecklist fehlgeschlagen:', e); }}
+function renderChecklist(){ try{ els.blockChecklist.innerHTML=''; UNIT_META.forEach(u=>{ const stats=loadStats(); const blockStats=stats.blocks[u.id]||{correct:0,wrong:0}; const label=document.createElement('label'); const cb=document.createElement('input'); cb.type='checkbox'; cb.value=u.id; cb.checked=false; cb.addEventListener('change', syncActiveBlockIds); label.appendChild(cb); 
+    // NEU: Statistische Anzeige neben dem Blocknamen (Punkt 1)
+    const total = blockStats.correct + blockStats.wrong;
+    const statText = total > 0 ? ` (${blockStats.wrong}/${total})` : '';
+    label.appendChild(document.createTextNode(' '+u.name + statText)); 
+    els.blockChecklist.appendChild(label); 
+}); const first=els.blockChecklist.querySelector('input[value="u1"]'); if(first){ first.checked=true; syncActiveBlockIds(); } }catch(e){ console.error('[Blocks] renderChecklist fehlgeschlagen:', e); }}
 function syncActiveBlockIds(){ activeBlockIds = Array.from(els.blockChecklist.querySelectorAll('input[type=checkbox]:checked')).map(el=>el.value); const names = activeBlockIds.map(id=> UNIT_META.find(u=>u.id===id)?.name).filter(Boolean); els.currentBlocksLabel.textContent = names.length ? names.join(', ') : '–'; updateStatsUI(); resetSessionQueue(); els.presetSelect && (els.presetSelect.value='custom'); }
 function buildPool(){ const vocab=loadVocab(); const pool=[]; activeBlockIds.forEach(id=> (vocab[id]||[]).forEach(w=> pool.push({w,origin:id})) ); return pool; }
-function resetSessionQueue(){ const base=buildPool(); const weighted=[]; const useW=!!els.weightedEnabled?.checked; const stats=loadStats(); base.forEach(({w,origin})=>{ const ws=stats.words[origin]?.[key(w)]||{correct:0,wrong:0}; let weight=1; if(useW) weight=Math.max(1, Math.min(5, 1 + ws.wrong - Math.floor(ws.correct*0.5))); for(let i=0;i<weight;i++) weighted.push({w,origin}); }); sessionQueue=shuffle(weighted); }
+function resetSessionQueue(){ 
+  const base=buildPool(); 
+  const weighted=[]; 
+  const useW=!!els.weightedEnabled?.checked; 
+  const stats=loadStats(); 
+  base.forEach(({w,origin})=>{ 
+      const ws=stats.words[origin]?.[key(w)]||{correct:0,wrong:0}; 
+      let weight=1; 
+      if(useW) weight=Math.max(1, Math.min(5, 1 + ws.wrong - Math.floor(ws.correct*0.5))); 
+      for(let i=0;i<weight;i++) weighted.push({w,origin}); 
+  }); 
+  sessionQueue=shuffle(weighted); 
+  sessionTotalSize = sessionQueue.length; // NEU: Gesamtgröße setzen
+  sessionCompleted = 0; // NEU: Zähler zurücksetzen
+  updateProgressUI(); // NEU: UI aktualisieren
+}
 function recentlyAsked(text){ return lastPrompts.some(t=> normalize(t)===normalize(text)); }
 function pushHistory(text){ lastPrompts.unshift(text); if(lastPrompts.length>2) lastPrompts.pop(); }
-function pickQuestion(){ const mode=els.modeSelect.value; if(!activeBlockIds.length) return null; if(!sessionQueue.length) resetSessionQueue(); let tries=Math.min(sessionQueue.length,5); let cand=sessionQueue[0]; const from=mode==='de2en'?'de':'en'; const to=mode==='de2en'?'en':'de'; while(tries>0 && cand && recentlyAsked(cand.w[from])){ sessionQueue.push(sessionQueue.shift()); cand=sessionQueue[0]; tries--; } cand=sessionQueue.shift(); if(!sessionQueue.length) resetSessionQueue(); const item=cand.w, origin=cand.origin; const prompt=item[from]; const answer=item[to]; const pool=buildPool(); let options=[answer]; const distract=shuffle(pool.filter(x=>x.w!==item).map(x=>x.w[to]).filter(x=> normalize(x)!==normalize(answer))); while(options.length<4 && distract.length) options.push(distract.pop()); options=shuffle(options); currentQ={ origin, from, to, prompt, answer, options, item, answered:false }; return currentQ; }
+function pickQuestion(){ 
+  const mode=els.modeSelect.value; 
+  if(!activeBlockIds.length) return null; 
+  if(!sessionQueue.length) { 
+      resetSessionQueue(); 
+      if (!sessionQueue.length) return null; // Falls Pool leer
+  }
+  let tries=Math.min(sessionQueue.length,5); 
+  let cand=sessionQueue[0]; 
+  const from=mode==='de2en'?'de':'en'; 
+  const to=mode==='de2en'?'en':'de'; 
+  while(tries>0 && cand && recentlyAsked(cand.w[from])){ 
+    sessionQueue.push(sessionQueue.shift()); cand=sessionQueue[0]; tries--; 
+  } 
+  cand=sessionQueue.shift(); 
+  if(!sessionQueue.length) resetSessionQueue(); 
+  const item=cand.w, origin=cand.origin; 
+  const prompt=item[from]; 
+  const answer=item[to]; 
+  const pool=buildPool(); 
+  let options=[answer]; 
+  const distract=shuffle(pool.filter(x=>x.w!==item).map(x=>x.w[to]).filter(x=> normalize(x)!==normalize(answer))); 
+  while(options.length<4 && distract.length) options.push(distract.pop()); 
+  options=shuffle(options); 
+  currentQ={ origin, from, to, prompt, answer, options, item, answered:false }; 
+  return currentQ; 
+}
 function diffFeedback(user, correct){ const {ua,ub} = simpleDiffLine(user, correct); return `Fast richtig – **Schreibweise prüfen**:<div class="diffline">Dein Wort: ${ua}</div><div class="diffline">Richtig: ${ub}</div>`; }
 function disableInputsAfterAnswer(){ 
     els.optionsList.querySelectorAll('button.option-btn').forEach(btn=>{ btn.disabled=true; btn.classList.add('disabled'); }); 
@@ -121,6 +174,7 @@ function disableInputsAfterAnswer(){
     if(free){ free.disabled=true; } 
     els.checkBtn && (els.checkBtn.disabled=true); 
     els.checkBtn && els.checkBtn.classList.add('hidden'); 
+    els.showAnswerBtn && els.showAnswerBtn.classList.add('hidden'); // Lösung-Button ausblenden
     prepareNextUX(); 
 }
 function prepareNextUX(){ 
@@ -141,15 +195,42 @@ function onAnswerOnce(userInput){
     record(currentQ.origin, currentQ.item, ok); 
     disableInputsAfterAnswer(); 
     showHint(ok); 
+    sessionCompleted++; // NEU: Fortschritt erhöhen
+    updateProgressUI(); // NEU: UI aktualisieren
+}
+function updateProgressUI(){
+    if(!els.sessionProgress) return;
+    if(sessionTotalSize > 0){
+        // Zeigt "Frage 5 von 45" oder "5 / 45"
+        const remaining = sessionTotalSize - sessionQueue.length;
+        els.sessionProgress.textContent = `(${remaining} / ${sessionTotalSize})`;
+        els.sessionProgress.classList.remove('hidden');
+    } else {
+        els.sessionProgress.classList.add('hidden');
+    }
+}
+function handleShowAnswer(){
+    if(!currentQ || currentQ.answered) return;
+    currentQ.answered = true;
+    els.feedback.innerHTML = `Lösung: **${currentQ.answer}**`;
+    
+    // Keine Statistik-Änderung, da es ein Überspringen ist
+    
+    disableInputsAfterAnswer();
+    showHint(true); // Hint zeigen, da die Lösung bekannt ist
+    
+    sessionCompleted++; // NEU: Fortschritt erhöhen (wurde übersprungen)
+    updateProgressUI(); // NEU: UI aktualisieren
 }
 function renderQuestion(){ 
     if(!currentQ) return; 
     els.feedback.textContent=''; 
     els.hintArea && els.hintArea.classList.add('hidden'); 
     
-    // Next-Button (Start/Weiter) ausblenden, solange die Frage aktiv ist
+    // Buttons steuern
     els.nextBtn && els.nextBtn.classList.add('hidden'); 
     els.checkBtn && (els.checkBtn.disabled=false); 
+    els.showAnswerBtn && els.showAnswerBtn.classList.remove('hidden'); // Lösung-Button sichtbar
     
     els.promptLabel.textContent = currentQ.from==='de'?'Deutsch':'Englisch'; 
     els.promptText.textContent=currentQ.prompt; 
@@ -158,7 +239,6 @@ function renderQuestion(){
     if(els.mcEnabled?.checked){ 
         els.mcArea.classList.remove('hidden'); 
         els.optionsList.innerHTML=''; 
-        // MC: Check-Button wird nicht gebraucht
         els.checkBtn && els.checkBtn.classList.add('hidden'); 
         currentQ.options.forEach(opt=>{ 
             const li=document.createElement('li'); 
@@ -173,16 +253,13 @@ function renderQuestion(){
         // Freitext-Eingabe (Free Input Mode)
         els.mcArea.classList.add('hidden'); 
         els.optionsList.innerHTML=''; 
-        els.checkBtn && els.checkBtn.classList.remove('hidden'); // Check-Button sichtbar
+        els.checkBtn && els.checkBtn.classList.remove('hidden'); 
         els.promptText.innerHTML = `${currentQ.prompt}<br/><input id="freeInput" class="option-btn" placeholder="Antwort hier eingeben" />`; 
         
-        // Event Listener für manuelle Eingabe (ROBUSTER FIX)
         setTimeout(()=>{ 
             const input=document.getElementById('freeInput'); 
             
-            // FIX: checkBtn neu binden, um alte Listener zu entfernen (DOM-Ersatz)
             const oldCheckBtn = els.checkBtn;
-            // Klonen, falls es den Button gibt, ansonsten leeren Platzhalter
             els.checkBtn = oldCheckBtn ? oldCheckBtn.cloneNode(true) : document.createElement('button');
             if(oldCheckBtn) oldCheckBtn.replaceWith(els.checkBtn);
 
@@ -193,13 +270,8 @@ function renderQuestion(){
                     onAnswerOnce(input.value.trim()); 
                     if (e.preventDefault) e.preventDefault();
                 };
-
-                // 1. Enter-Taste
                 input.addEventListener('keydown', answerCheckHandler); 
-                
-                // 2. Prüfen-Button
                 els.checkBtn.addEventListener('click', answerCheckHandler);
-                
                 input.focus();
             } 
         },0); 
@@ -207,14 +279,18 @@ function renderQuestion(){
 }
 
 function bindControls(){ 
-    // nextBtn (Start/Weiter) wird nur ausgelöst, wenn die Frage noch nicht aktiv ist (Start) oder beantwortet wurde (Weiter)
+    // ... (Andere Controls bleiben unverändert) ...
     els.nextBtn && els.nextBtn.addEventListener('click', ()=>{ 
         if(!currentQ || currentQ.answered){
             const q=pickQuestion(); 
             if(q) renderQuestion(); 
-            else { els.promptText.textContent='Bitte wähle mindestens einen Block.'; }
+            else { els.promptText.textContent='Glückwunsch! Die aktuelle Session ist abgeschlossen.'; updateProgressUI();}
         }
     }); 
+    
+    // NEU: Lösung anzeigen Button binden
+    els.showAnswerBtn && els.showAnswerBtn.addEventListener('click', handleShowAnswer);
+
     els.resetSelectedBtn && els.resetSelectedBtn.addEventListener('click', ()=> resetSelected()); 
     els.resetAllBtn && els.resetAllBtn.addEventListener('click', ()=> resetAll()); 
     els.weightedEnabled && els.weightedEnabled.addEventListener('change', ()=>{ updateStatsUI(); resetSessionQueue(); }); 
@@ -222,53 +298,32 @@ function bindControls(){
     els.selectAllBtn && els.selectAllBtn.addEventListener('click', ()=>{ els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=true ); syncActiveBlockIds(); }); 
     els.clearAllBtn && els.clearAllBtn.addEventListener('click', ()=>{ els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=false ); syncActiveBlockIds(); }); 
 
-    // Installations-Logik (Sichtbarkeit erzwungen + Fallback)
+    // Installations-Logik (unverändert)
     if (els.installBtn) {
-        
-        // Listener für das PWA-Ereignis speichern
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-        });
-
+        window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; });
         els.installBtn.addEventListener('click', (e) => {
             if (deferredPrompt) {
-                // Wenn Prompt verfügbar, Installation starten
                 els.installBtn.classList.add('hidden');
                 deferredPrompt.prompt();
                 deferredPrompt.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === 'accepted') {
-                        console.log('App installiert');
-                    } else {
-                        // Bei Ablehnung Button wieder anzeigen
-                        els.installBtn.classList.remove('hidden');
-                        console.log('App Installation abgebrochen');
-                    }
+                    if (choiceResult.outcome === 'accepted') { console.log('App installiert'); } 
+                    else { els.installBtn.classList.remove('hidden'); console.log('App Installation abgebrochen'); }
                     deferredPrompt = null;
                 });
             } else {
-                // FALLBACK: Wenn der Browser das Event nicht gesendet hat, Anweisung geben
                 alert("Der Browser hat die automatische Installation noch nicht freigegeben. Bitte nutzen Sie das 3-Punkte-Menü (⋮) oben rechts und wählen Sie 'App installieren' oder 'Zum Startbildschirm hinzufügen'.");
             }
         });
-        
-        window.addEventListener('appinstalled', (e) => {
-            els.installBtn.classList.add('hidden');
-        });
-        
-        // Beim Start prüfen, ob die App bereits als PWA läuft
-        if (window.matchMedia('(display-mode: standalone)').matches || 
-            document.referrer.includes('android-app://')) {
+        window.addEventListener('appinstalled', (e) => { els.installBtn.classList.add('hidden'); });
+        if (window.matchMedia('(display-mode: standalone)').matches || document.referrer.includes('android-app://')) {
             els.installBtn.classList.add('hidden');
         } else {
-            // Wenn nicht installiert, machen wir den Button sofort sichtbar
             els.installBtn.classList.remove('hidden');
         }
     }
 }
 function applyPreset(val){ const ranges={ 'u1_2':['u1','u2'], 'u1_3':['u1','u2','u3'], 'u3_4':['u3','u4'], 'u1_6':['u1','u2','u3','u4','u5','u6'] }; els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=false ); (ranges[val]||[]).forEach(id=>{ const cb=els.blockChecklist.querySelector(`input[value=\"${id}\"]`); if(cb) cb.checked=true; }); syncActiveBlockIds(); }
 
-// FUNKTION: Version im Footer anzeigen
 function displayVersion() {
     const versionEl = document.getElementById('appVersion');
     if (versionEl) {
@@ -285,9 +340,11 @@ function displayVersion() {
     initStats(); 
     updateStatsUI(); 
     displayVersion(); 
+    updateProgressUI(); // NEU: Initialen Fortschritt setzen
 
     // Initialen Zustand setzen
     els.promptText.textContent='Wähle mindestens einen Block und starte.';
     els.checkBtn && els.checkBtn.classList.add('hidden'); 
+    els.showAnswerBtn && els.showAnswerBtn.classList.add('hidden'); // Lösung-Button initial verstecken
     
 } catch(e){ console.error('[INIT] Fehler:', e); }})();

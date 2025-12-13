@@ -8,15 +8,16 @@
   <meta name="theme-color" content="#0b1220">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="mobile-web-app-capable" content="yes"> <link rel="manifest" href="manifest.webmanifest">
+  <meta name="mobile-web-app-capable" content="yes"> 
+  
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" sizes="192x192" href="icon-192.png">
   <link rel="icon" sizes="512x512" href="icon-512.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Vokabeltrainer</h1>
-    <div class="toolbar">
+    <h1>Vokabeltrainer <span id="sessionProgress" class="progress-info"></span></h1> <div class="toolbar">
       <label>Modus:
         <select id="modeSelect">
           <option value="de2en">Deutsch → Englisch</option>
@@ -49,6 +50,7 @@
       <div id="hintArea" class="hint hidden"></div>
       <div class="actions">
         <button id="checkBtn" class="secondary hidden">Prüfen</button> 
+        <button id="showAnswerBtn" class="secondary hidden">Lösung anzeigen</button>
         <button id="nextBtn" class="primary">Start</button> 
       </div>
     </section>

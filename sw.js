@@ -1,7 +1,5 @@
 // Service Worker – einfache Cache-Strategie für GitHub Pages
-// WICHTIG: Erhöhen Sie diese Versionsnummer (z.B. auf v11, v12, etc.),
-// WENN Sie Dateien wie index.html, style.css oder app-inline.js ändern!
-const CACHE_VERSION = 'v11'; // <--- AKTUALISIERT AUF V10
+const CACHE_VERSION = 'v12'; // <--- AKTUALISIERT AUF V12
 const STATIC_CACHE = `static-${CACHE_VERSION}`;
 const STATIC_ASSETS = [
   './', './index.html', './style.css', './app-inline.js',
@@ -21,7 +19,6 @@ self.addEventListener('activate', (event) => {
       .map(k=> caches.delete(k))
     ))
   );
-  // Wichtig: Sofortige Übernahme des neuen Workers, um Caching-Probleme zu vermeiden
   self.clients.claim();
 });
 
@@ -29,11 +26,9 @@ self.addEventListener('fetch', (event) => {
   const req = event.request; 
   const url = new URL(req.url);
 
-  // JSON-Dateien (Vokabeln) immer versuchen zu aktualisieren, bei Fehler Cache verwenden
   if(url.pathname.endsWith('/vocab.json') || url.pathname.endsWith('/hints.json')){
     event.respondWith(
       fetch(req).then(res=>{ 
-        // Antwort cachen und dann zurückgeben
         const copy=res.clone(); 
         caches.open(STATIC_CACHE).then(cache=> cache.put(req, copy)).catch(()=>{}); 
         return res; 
@@ -43,13 +38,11 @@ self.addEventListener('fetch', (event) => {
     return;
   }
   
-  // Alle anderen statischen Assets aus dem Cache, mit Fallback auf Netzwerk
   event.respondWith(
     caches.match(req).then(cached=> cached || fetch(req))
   );
 });
 
-// ZUSATZ: Logik, um Benutzer über ein Update zu informieren und die Seite neu zu laden
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
