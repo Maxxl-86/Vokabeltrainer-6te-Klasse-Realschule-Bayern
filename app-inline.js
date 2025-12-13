@@ -1,5 +1,5 @@
 // Vokabeltrainer – Auto-Repair Blocks + UX + Tippfehler-Diff + Lern-Hinweise (Beta)
-const APP_VERSION = 'v10'; // <--- ZENTRALE VERSIONSNUMMER
+const APP_VERSION = 'v8'; // <--- ZENTRALE VERSIONSNUMMER
 const UNIT_META = [
   { id: 'u1', name: 'Unit 1' },
   { id: 'u2', name: 'Unit 2' },
@@ -120,10 +120,16 @@ function disableInputsAfterAnswer(){
     const free=document.getElementById('freeInput'); 
     if(free){ free.disabled=true; } 
     els.checkBtn && (els.checkBtn.disabled=true); 
-    // HIER IST DER FIX: Wir stellen sicher, dass der Next-Button in den "Weiter"-Zustand wechselt
+    els.checkBtn && els.checkBtn.classList.add('hidden'); // NEU: Check-Button verstecken
     prepareNextUX(); 
 }
-function prepareNextUX(){ if(!els.nextBtn) return; els.nextBtn.textContent='Weiter zur nächsten Frage'; els.nextBtn.classList.add('highlight'); setTimeout(()=>{ try{ els.nextBtn.focus(); }catch(e){} },700); }
+function prepareNextUX(){ 
+    if(!els.nextBtn) return; 
+    els.nextBtn.textContent='Weiter zur nächsten Frage'; 
+    els.nextBtn.classList.remove('hidden'); // NEU: Next-Button sichtbar machen
+    els.nextBtn.classList.add('highlight'); 
+    setTimeout(()=>{ try{ els.nextBtn.focus(); }catch(e){} },700); 
+}
 function showHint(ok){ if(!els.hintsEnabled?.checked){ els.hintArea && els.hintArea.classList.add('hidden'); return; } if(!els.hintArea) return; const mode=els.modeSelect.value; const ans=currentQ.answer; const de=currentQ.from==='de'?currentQ.prompt:ans; const en=currentQ.from==='de'?ans:currentQ.prompt; const content = pickHint(en,de,mode); if(!content){ els.hintArea.classList.add('hidden'); return; } els.hintArea.innerHTML = `<div class="meta">Lern‑Hinweis (Beta):</div><div>${content}</div>`; els.hintArea.classList.remove('hidden'); }
 function onAnswerOnce(userInput){ 
     if(!currentQ || currentQ.answered) return; 
@@ -140,8 +146,11 @@ function renderQuestion(){
     if(!currentQ) return; 
     els.feedback.textContent=''; 
     els.hintArea && els.hintArea.classList.add('hidden'); 
-    els.nextBtn && (els.nextBtn.textContent='Start / Weiter', els.nextBtn.classList.remove('highlight')); 
+    
+    // NEU: Next-Button (Start/Weiter) ausblenden, solange die Frage aktiv ist
+    els.nextBtn && els.nextBtn.classList.add('hidden'); 
     els.checkBtn && (els.checkBtn.disabled=false); 
+    
     els.promptLabel.textContent = currentQ.from==='de'?'Deutsch':'Englisch'; 
     els.promptText.textContent=currentQ.prompt; 
     pushHistory(currentQ.prompt); 
@@ -149,6 +158,7 @@ function renderQuestion(){
     if(els.mcEnabled?.checked){ 
         els.mcArea.classList.remove('hidden'); 
         els.optionsList.innerHTML=''; 
+        // MC: Check-Button wird nicht gebraucht
         els.checkBtn && els.checkBtn.classList.add('hidden'); 
         currentQ.options.forEach(opt=>{ 
             const li=document.createElement('li'); 
@@ -163,26 +173,23 @@ function renderQuestion(){
         // Freitext-Eingabe (Free Input Mode)
         els.mcArea.classList.add('hidden'); 
         els.optionsList.innerHTML=''; 
-        els.checkBtn && els.checkBtn.classList.remove('hidden'); 
+        els.checkBtn && els.checkBtn.classList.remove('hidden'); // Check-Button sichtbar
         els.promptText.innerHTML = `${currentQ.prompt}<br/><input id="freeInput" class="option-btn" placeholder="Antwort hier eingeben" />`; 
         
-        // Event Listener für manuelle Eingabe
+        // Event Listener für manuelle Eingabe (ROBUSTER FIX)
         setTimeout(()=>{ 
             const input=document.getElementById('freeInput'); 
             
-            // WICHTIGER FIX: Vorherige Listener von checkBtn entfernen, um Doppel-Trigger zu vermeiden
-            els.checkBtn.replaceWith(els.checkBtn.cloneNode(true));
-            els.checkBtn = $("checkBtn"); // El-Reference muss neu gebunden werden, da DOM-Node ersetzt wurde
+            // FIX: checkBtn neu binden, um alte Listener zu entfernen (DOM-Ersatz)
+            const oldCheckBtn = els.checkBtn;
+            els.checkBtn = oldCheckBtn.cloneNode(true);
+            oldCheckBtn.replaceWith(els.checkBtn);
             
             if(input){ 
                 const answerCheckHandler = (e) => {
-                    // Verhindert unnötiges Auslösen bei CheckBtn-Klick, wenn Enter gedrückt wird
                     if(e.type === 'keydown' && e.key !== 'Enter') return;
                     if(e.type === 'click' && input.disabled) return;
-                    
                     onAnswerOnce(input.value.trim()); 
-
-                    // Verhindere Standard-Formular-Aktion, falls wir in einem Formular wären
                     if (e.preventDefault) e.preventDefault();
                 };
 
@@ -199,7 +206,14 @@ function renderQuestion(){
 }
 
 function bindControls(){ 
-    els.nextBtn && els.nextBtn.addEventListener('click', ()=>{ const q=pickQuestion(); if(q) renderQuestion(); else { els.promptText.textContent='Bitte wähle mindestens einen Block.'; } }); 
+    // GEÄNDERT: nextBtn (Start/Weiter) wird nur ausgelöst, wenn die Frage noch nicht aktiv ist (Start) oder beantwortet wurde (Weiter)
+    els.nextBtn && els.nextBtn.addEventListener('click', ()=>{ 
+        if(!currentQ || currentQ.answered){
+            const q=pickQuestion(); 
+            if(q) renderQuestion(); 
+            else { els.promptText.textContent='Bitte wähle mindestens einen Block.'; }
+        }
+    }); 
     els.resetSelectedBtn && els.resetSelectedBtn.addEventListener('click', ()=> resetSelected()); 
     els.resetAllBtn && els.resetAllBtn.addEventListener('click', ()=> resetAll()); 
     els.weightedEnabled && els.weightedEnabled.addEventListener('change', ()=>{ updateStatsUI(); resetSessionQueue(); }); 
@@ -207,12 +221,11 @@ function bindControls(){
     els.selectAllBtn && els.selectAllBtn.addEventListener('click', ()=>{ els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=true ); syncActiveBlockIds(); }); 
     els.clearAllBtn && els.clearAllBtn.addEventListener('click', ()=>{ els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=false ); syncActiveBlockIds(); }); 
 
-    // Installations-Logik
+    // Installations-Logik (unverändert)
     if (els.installBtn) {
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
-            // Entferne 'hidden', um den Button sichtbar zu machen
             els.installBtn.classList.remove('hidden');
         });
 
@@ -224,7 +237,6 @@ function bindControls(){
                     if (choiceResult.outcome === 'accepted') {
                         console.log('App installiert');
                     } else {
-                        // Bei Ablehnung Button wieder anzeigen
                         els.installBtn.classList.remove('hidden');
                         console.log('App Installation abgebrochen');
                     }
@@ -237,7 +249,6 @@ function bindControls(){
             els.installBtn.classList.add('hidden');
         });
         
-        // Verstecke den Button, wenn die App bereits als PWA läuft
         if (window.matchMedia('(display-mode: standalone)').matches || 
             document.referrer.includes('android-app://')) {
             els.installBtn.classList.add('hidden');
@@ -263,4 +274,9 @@ function displayVersion() {
     initStats(); 
     updateStatsUI(); 
     displayVersion(); 
+
+    // NEU: Initialen Zustand setzen (sicherstellen, dass Prüfen versteckt ist)
+    els.promptText.textContent='Wähle mindestens einen Block und starte.';
+    els.checkBtn.classList.add('hidden'); 
+    
 } catch(e){ console.error('[INIT] Fehler:', e); }})();
