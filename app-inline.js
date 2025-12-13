@@ -1,4 +1,5 @@
 // Vokabeltrainer – Auto-Repair Blocks + UX + Tippfehler-Diff + Lern-Hinweise (Beta)
+const APP_VERSION = 'v8'; // <--- ZENTRALE VERSIONSNUMMER
 const UNIT_META = [
   { id: 'u1', name: 'Unit 1' },
   { id: 'u2', name: 'Unit 2' },
@@ -13,6 +14,8 @@ const LS_SYNC = 'vocab-central-meta';
 const CENTRAL_URL = './vocab/vocab.json';
 const HINTS_URL = './vocab/hints.json';
 let HINTS_DICT = {};
+let deferredPrompt = null; // Für das Installations-Prompt
+
 function normalize(s){ return String(s||'').trim().toLowerCase(); }
 function softNorm(s){ return normalize(s).replace(/[^a-zäöüß\-\s]/g,'').replace(/\s+/g,' ').trim(); }
 function key(w){ return normalize(w.de)+'\n'+normalize(w.en); }
@@ -47,9 +50,8 @@ const els = {};
 let activeBlockIds = [], lastPrompts = [], sessionQueue = [], currentQ = null;
 function $(id){ return document.getElementById(id); }
 function ensureBlocksSection(){
-  // Überprüfen, ob die kritischen IDs fehlen, um die Sektion einzufügen
-  if($("blockChecklist")) return; // Wenn der Hauptcontainer da ist, nicht neu einfügen
-  
+  // Der Check stellt sicher, dass die Sektion nur einmal eingefügt wird.
+  if($("blockChecklist") && $("currentBlocksLabel") && $("selectAllBtn") && $("clearAllBtn") && $("resetSelectedBtn") && $("resetAllBtn")) return;
   const root = document.querySelector('#app-root') || document.querySelector('main') || document.body;
   const sec = document.createElement('section'); sec.className = 'blocks';
   sec.innerHTML = `
@@ -77,8 +79,10 @@ function bindEls(){
   els.nextBtn = $("nextBtn"); els.checkBtn = $("checkBtn"); els.promptLabel = $("promptLabel"); els.promptText = $("promptText");
   els.optionsList = $("optionsList"); els.mcArea = $("mcArea"); els.feedback = $("feedback"); els.hintArea = $("hintArea");
   els.statCorrect = $("statCorrect"); els.statWrong = $("statWrong"); els.weightInfo = $("weightInfo"); els.currentBlocksLabel = $("currentBlocksLabel");
-  // Wichtig: Die Reset-Buttons hier binden, da sie durch ensureBlocksSection erzeugt werden
-  els.resetSelectedBtn = $("resetSelectedBtn"); els.resetAllBtn = $("resetAllBtn");
+  els.resetSelectedBtn = $("resetSelectedBtn");
+  els.resetAllBtn = $("resetAllBtn");
+  // Neu: Install Button binden
+  els.installBtn = $("installBtn");
 }
 function loadVocab(){ try{ return JSON.parse(localStorage.getItem(LS_VOCAB)||'{}'); }catch(e){ return {}; } }
 function saveVocab(v){ localStorage.setItem(LS_VOCAB, JSON.stringify(v)); }
@@ -87,47 +91,11 @@ function saveStats(s){ localStorage.setItem(LS_STATS, JSON.stringify(s)); }
 function loadSync(){ try{ return JSON.parse(localStorage.getItem(LS_SYNC)||'{}'); }catch(e){ return {}; } }
 function saveSync(m){ localStorage.setItem(LS_SYNC, JSON.stringify(m)); }
 async function fetchJSON(url){ try{ const res=await fetch(url,{cache:'no-store'}); if(!res.ok) throw new Error('HTTP '+res.status); return await res.json(); } catch(e){ console.warn('Fetch fehlgeschlagen:', url, e); return null; } }
-async function initCentralSync(){
-  const central = await fetchJSON(CENTRAL_URL);
-  if(central){
-    const newVersion=central.version||'unknown';
-    const meta=loadSync();
-    if(newVersion!==meta.version){
-      const local=loadVocab();
-      const out={...local};
-      const src=central.units||{};
-      const allUnits = new Set([...UNIT_META.map(u => u.id), ...Object.keys(src)]);
-      for(const unit of allUnits){
-        const list=Array.isArray(src[unit])?src[unit]:[];
-        if(!out[unit]) out[unit]=[];
-        const existing=new Set(out[unit].map(key));
-        list.forEach(w=>{
-          if(!existing.has(key(w))) out[unit].push(w);
-        });
-      }
-      saveVocab(out);
-      saveSync({version:newVersion});
-      initStats();
-    }
-  }
-  const hints = await fetchJSON(HINTS_URL);
-  if(hints) HINTS_DICT = hints;
+async function initCentralSync(){ const central = await fetchJSON(CENTRAL_URL); if(central){ const newVersion=central.version||'unknown'; const meta=loadSync(); if(newVersion!==meta.version){ // merge
+  const local=loadVocab(); const out={...local}; const src=central.units||{}; for(const unit of Object.keys(src)){ const list=Array.isArray(src[unit])?src[unit]:[]; if(!out[unit]) out[unit]=[]; const existing=new Set(out[unit].map(key)); list.forEach(w=>{ if(!existing.has(key(w))) out[unit].push(w); }); } saveVocab(out); saveSync({version:newVersion}); initStats(); } }
+  const hints = await fetchJSON(HINTS_URL); if(hints) HINTS_DICT = hints;
 }
-function initStats(){
-  const stats=loadStats();
-  if(!stats.blocks) stats.blocks={};
-  if(!stats.words) stats.words={};
-  const vocab=loadVocab();
-  UNIT_META.forEach(u=>{
-    if(!stats.blocks[u.id]) stats.blocks[u.id]={correct:0,wrong:0};
-    if(!stats.words[u.id]) stats.words[u.id]={};
-    (vocab[u.id]||[]).forEach(w=>{
-      const k=key(w);
-      if(!stats.words[u.id][k]) stats.words[u.id][k]={correct:0,wrong:0};
-    });
-  });
-  saveStats(stats);
-}
+function initStats(){ const stats=loadStats(); if(!stats.blocks) stats.blocks={}; if(!stats.words) stats.words={}; const vocab=loadVocab(); UNIT_META.forEach(u=>{ if(!stats.blocks[u.id]) stats.blocks[u.id]={correct:0,wrong:0}; if(!stats.words[u.id]) stats.words[u.id]={}; (vocab[u.id]||[]).forEach(w=>{ const k=key(w); if(!stats.words[u.id][k]) stats.words[u.id][k]={correct:0,wrong:0}; }); }); saveStats(stats); }
 function updateStatsUI(){ els.weightInfo && (els.weightInfo.textContent = els.weightedEnabled?.checked ? 'aktiv' : 'aus'); if(!activeBlockIds.length){ els.statCorrect.textContent='0'; els.statWrong.textContent='0'; return; } const stats=loadStats(); const agg=activeBlockIds.reduce((acc,id)=>{ const s=stats.blocks[id]||{correct:0,wrong:0}; acc.correct+=s.correct; acc.wrong+=s.wrong; return acc; },{correct:0,wrong:0}); els.statCorrect.textContent=agg.correct; els.statWrong.textContent=agg.wrong; }
 function record(originBlockId,item,ok){ const stats=loadStats(); const bs=stats.blocks[originBlockId]; const ws=stats.words[originBlockId][key(item)]; if(ok){ bs.correct++; ws.correct++; }else{ bs.wrong++; ws.wrong++; } saveStats(stats); updateStatsUI(); }
 function resetBlock(blockId){ const stats=loadStats(); if(!stats.blocks[blockId]) return; stats.blocks[blockId]={correct:0,wrong:0}; Object.keys(stats.words[blockId]||{}).forEach(k=> stats.words[blockId][k]={correct:0,wrong:0}); saveStats(stats); updateStatsUI(); }
@@ -154,14 +122,65 @@ function onAnswerOnce(userInput){ if(!currentQ || currentQ.answered) return; cur
 function renderQuestion(){ if(!currentQ) return; els.feedback.textContent=''; els.hintArea && els.hintArea.classList.add('hidden'); els.nextBtn && (els.nextBtn.textContent='Start / Weiter', els.nextBtn.classList.remove('highlight')); els.checkBtn && (els.checkBtn.disabled=false); els.promptLabel.textContent = currentQ.from==='de'?'Deutsch':'Englisch'; els.promptText.textContent=currentQ.prompt; pushHistory(currentQ.prompt); if(els.mcEnabled?.checked){ els.mcArea.classList.remove('hidden'); els.optionsList.innerHTML=''; els.checkBtn && els.checkBtn.classList.add('hidden'); currentQ.options.forEach(opt=>{ const li=document.createElement('li'); const btn=document.createElement('button'); btn.className='option-btn'; btn.textContent=opt; btn.addEventListener('click',()=> onAnswerOnce(opt)); li.appendChild(btn); els.optionsList.appendChild(li); }); } else { els.mcArea.classList.add('hidden'); els.optionsList.innerHTML=''; els.checkBtn && els.checkBtn.classList.remove('hidden'); els.promptText.innerHTML = `${currentQ.prompt}<br/><input id="freeInput" class="option-btn" placeholder="Antwort hier eingeben" />`; setTimeout(()=>{ const input=document.getElementById('freeInput'); if(input){ input.focus(); input.addEventListener('keydown', e=>{ if(e.key==='Enter'){ onAnswerOnce(input.value.trim()); } }); els.checkBtn && els.checkBtn.addEventListener('click', ()=> onAnswerOnce(input.value.trim()) ); } },0); }
 }
 function bindControls(){ 
-  els.nextBtn && els.nextBtn.addEventListener('click', ()=>{ const q=pickQuestion(); if(q) renderQuestion(); else { els.promptText.textContent='Bitte wähle mindestens einen Block.'; } }); 
-  // Wichtig: Jetzt auf die richtig gebundenen Elemente zugreifen
-  els.resetSelectedBtn && els.resetSelectedBtn.addEventListener('click', ()=> resetSelected()); 
-  els.resetAllBtn && els.resetAllBtn.addEventListener('click', ()=> resetAll()); 
-  els.weightedEnabled && els.weightedEnabled.addEventListener('change', ()=>{ updateStatsUI(); resetSessionQueue(); }); 
-  els.presetSelect && els.presetSelect.addEventListener('change', e=>{ if(e.target.value==='custom') return; applyPreset(e.target.value); }); 
-  els.selectAllBtn && els.selectAllBtn.addEventListener('click', ()=>{ els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=true ); syncActiveBlockIds(); }); 
-  els.clearAllBtn && els.clearAllBtn.addEventListener('click', ()=>{ els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=false ); syncActiveBlockIds(); }); 
+    els.nextBtn && els.nextBtn.addEventListener('click', ()=>{ const q=pickQuestion(); if(q) renderQuestion(); else { els.promptText.textContent='Bitte wähle mindestens einen Block.'; } }); 
+    els.resetSelectedBtn && els.resetSelectedBtn.addEventListener('click', ()=> resetSelected()); 
+    els.resetAllBtn && els.resetAllBtn.addEventListener('click', ()=> resetAll()); 
+    els.weightedEnabled && els.weightedEnabled.addEventListener('change', ()=>{ updateStatsUI(); resetSessionQueue(); }); 
+    els.presetSelect && els.presetSelect.addEventListener('change', e=>{ if(e.target.value==='custom') return; applyPreset(e.target.value); }); 
+    els.selectAllBtn && els.selectAllBtn.addEventListener('click', ()=>{ els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=true ); syncActiveBlockIds(); }); 
+    els.clearAllBtn && els.clearAllBtn.addEventListener('click', ()=>{ els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=false ); syncActiveBlockIds(); }); 
+
+    // Installations-Logik
+    if (els.installBtn) {
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Verhindert, dass der Browser das Standard-Prompt sofort anzeigt
+            e.preventDefault();
+            // Speichert das Ereignis zur späteren Auslösung
+            deferredPrompt = e;
+            // Zeigt den benutzerdefinierten Button an
+            els.installBtn.classList.remove('hidden');
+        });
+
+        els.installBtn.addEventListener('click', (e) => {
+            if (deferredPrompt) {
+                // Button verstecken und Prompt auslösen
+                els.installBtn.classList.add('hidden');
+                deferredPrompt.prompt();
+                // Auf die Benutzerreaktion warten
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('App installiert');
+                    } else {
+                        console.log('App Installation abgebrochen');
+                    }
+                    deferredPrompt = null;
+                });
+            }
+        });
+        
+        // Versteckt den Button, wenn die App bereits installiert ist
+        window.addEventListener('appinstalled', (e) => {
+            els.installBtn.classList.add('hidden');
+        });
+    }
 }
-function applyPreset(val){ const ranges={ 'u1_2':['u1','u2'], 'u1_3':['u1','u2','u3'], 'u3_4':['u3','u4'], 'u1_6':['u1','u2','u3','u4','u5','u6'] }; els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=false ); (ranges[val]||[]).forEach(id=>{ const cb=els.blockChecklist.querySelector(`input[value="${id}"]`); if(cb) cb.checked=true; }); syncActiveBlockIds(); }
-(async function init(){ try{ ensureBlocksSection(); bindEls(); bindControls(); await initCentralSync(); renderChecklist(); initStats(); updateStatsUI(); } catch(e){ console.error('[INIT] Fehler:', e); }})();
+function applyPreset(val){ const ranges={ 'u1_2':['u1','u2'], 'u1_3':['u1','u2','u3'], 'u3_4':['u3','u4'], 'u1_6':['u1','u2','u3','u4','u5','u6'] }; els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=false ); (ranges[val]||[]).forEach(id=>{ const cb=els.blockChecklist.querySelector(`input[value=\"${id}\"]`); if(cb) cb.checked=true; }); syncActiveBlockIds(); }
+
+// FUNKTION: Version im Footer anzeigen
+function displayVersion() {
+    const versionEl = document.getElementById('appVersion');
+    if (versionEl) {
+        versionEl.textContent = APP_VERSION;
+    }
+}
+
+(async function init(){ try{ 
+    ensureBlocksSection(); 
+    bindEls(); 
+    bindControls(); 
+    await initCentralSync(); 
+    renderChecklist(); 
+    initStats(); 
+    updateStatsUI(); 
+    displayVersion(); // <--- HIER WIRD DIE VERSION GESETZT!
+} catch(e){ console.error('[INIT] Fehler:', e); }})();
