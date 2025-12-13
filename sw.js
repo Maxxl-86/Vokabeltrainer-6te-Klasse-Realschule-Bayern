@@ -1,7 +1,7 @@
 // Service Worker – einfache Cache-Strategie für GitHub Pages
 // WICHTIG: Erhöhen Sie diese Versionsnummer (z.B. auf v11, v12, etc.),
 // WENN Sie Dateien wie index.html, style.css oder app-inline.js ändern!
-const CACHE_VERSION = 'v10'; // <--- AKTUALISIERT AUF V10
+const CACHE_VERSION = 'v11'; // <--- AKTUALISIERT AUF V10
 const STATIC_CACHE = `static-${CACHE_VERSION}`;
 const STATIC_ASSETS = [
   './', './index.html', './style.css', './app-inline.js',
