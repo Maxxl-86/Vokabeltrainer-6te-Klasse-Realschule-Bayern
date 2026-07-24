@@ -333,7 +333,17 @@ function bindControls(){
     els.presetSelect && els.presetSelect.addEventListener('change', e=>{ if(e.target.value==='custom') return; applyPreset(e.target.value); }); 
     els.selectAllBtn && els.selectAllBtn.addEventListener('click', ()=>{ els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=true ); syncActiveBlockIds(); }); 
     els.clearAllBtn && els.clearAllBtn.addEventListener('click', ()=>{ els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=false ); syncActiveBlockIds(); }); 
+els.modeSelect && els.modeSelect.addEventListener('change', () => {
 
+    currentQ = null;
+
+    const q = pickQuestion();
+
+    if(q){
+        renderQuestion();
+    }
+
+});
     // Installations-Logik (unverändert)
     if (els.installBtn) {
         window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; });
