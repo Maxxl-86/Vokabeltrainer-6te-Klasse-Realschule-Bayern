@@ -13,6 +13,7 @@ const UNIT_META = [
 const LS_VOCAB = 'vocab-data-v1';
 const LS_STATS = 'vocab-trainer-stats-v4';
 const LS_SYNC = 'vocab-central-meta';
+const LS_PLAYER = 'english-coach-player-v1';
 const CENTRAL_URL = './vocab/vocab.json';
 const HINTS_URL = './vocab/hints.json';
 
@@ -103,7 +104,25 @@ function saveVocab(v){ localStorage.setItem(LS_VOCAB, JSON.stringify(v)); }
 function loadStats(){ try{ return JSON.parse(localStorage.getItem(LS_STATS)||'{}'); }catch(e){ return {}; } }
 function saveStats(s){ localStorage.setItem(LS_STATS, JSON.stringify(s)); }
 function loadSync(){ try{ return JSON.parse(localStorage.getItem(LS_SYNC)||'{}'); }catch(e){ return {}; } }
-function saveSync(m){ localStorage.setItem(LS_SYNC, JSON.stringify(m)); }
+function saveSync(m){
+  function loadPlayer(){
+    try{
+        return JSON.parse(
+            localStorage.getItem(LS_PLAYER)
+            || '{"xp":0}'
+        );
+    }catch(e){
+        return {xp:0};
+    }
+}
+
+function savePlayer(player){
+    localStorage.setItem(
+        LS_PLAYER,
+        JSON.stringify(player)
+    );
+}
+  localStorage.setItem(LS_SYNC, JSON.stringify(m)); }
 async function fetchJSON(url){ try{ const res=await fetch(url,{cache:'no-store'}); if(!res.ok) throw new Error('HTTP '+res.status); return await res.json(); } catch(e){ console.warn('Fetch fehlgeschlagen:', url, e); return null; } }
 async function initCentralSync(){ const central = await fetchJSON(CENTRAL_URL); if(central){ const newVersion=central.version||'unknown'; const meta=loadSync(); if(newVersion!==meta.version){ // merge
   const local=loadVocab(); const out={...local}; const src=central.units||{}; for(const unit of Object.keys(src)){ const list=Array.isArray(src[unit])?src[unit]:[]; if(!out[unit]) out[unit]=[]; const existing=new Set(out[unit].map(key)); list.forEach(w=>{ if(!existing.has(key(w))) out[unit].push(w); }); } saveVocab(out); saveSync({version:newVersion}); initStats(); } }
@@ -147,6 +166,47 @@ function resetSessionQueue(){
   sessionTotalSize = sessionQueue.length; // NEU: Gesamtgröße setzen
   sessionCompleted = 0; // NEU: Zähler zurücksetzen
   updateProgressUI(); // NEU: UI aktualisieren
+  function updatePlayerUI(){
+
+    const player = loadPlayer();
+
+    const level =
+        Math.floor(player.xp / 100) + 1;
+
+    const currentXP =
+        player.xp % 100;
+
+    const levelEl =
+        document.querySelector(
+            '.player-level'
+        );
+
+    const xpText =
+        document.querySelector(
+            '.xp-text'
+        );
+
+    const xpFill =
+        document.querySelector(
+            '.xp-fill'
+        );
+
+    if(levelEl){
+        levelEl.textContent =
+            `⭐ Level ${level}`;
+    }
+
+    if(xpText){
+        xpText.textContent =
+            `XP: ${currentXP} / 100`;
+    }
+
+    if(xpFill){
+        xpFill.style.width =
+            `${currentXP}%`;
+    }
+
+}
 }
 function recentlyAsked(text){ return lastPrompts.some(t=> normalize(t)===normalize(text)); }
 function pushHistory(text){ lastPrompts.unshift(text); if(lastPrompts.length>2) lastPrompts.pop(); }
@@ -216,20 +276,67 @@ function prepareNextUX(){
     setTimeout(()=>{ try{ els.nextBtn.focus(); }catch(e){} },700); 
 }
 function showHint(ok){ if(!els.hintsEnabled?.checked){ els.hintArea && els.hintArea.classList.add('hidden'); return; } if(!els.hintArea) return; const mode=els.modeSelect.value; const ans=currentQ.answer; const de=currentQ.from==='de'?currentQ.prompt:ans; const en=currentQ.from==='de'?ans:currentQ.prompt; const content = pickHint(en,de,mode); if(!content){ els.hintArea.classList.add('hidden'); return; } els.hintArea.innerHTML = `<div class="meta">Lern‑Hinweis (Beta):</div><div>${content}</div>`; els.hintArea.classList.remove('hidden'); }
-function onAnswerOnce(userInput){ 
-    if(!currentQ || currentQ.answered) return; 
-    currentQ.answered=true; 
-    const exact = softNorm(userInput)===softNorm(currentQ.answer); 
-    let ok = exact; 
-    let msg = exact ? '✅ Richtig!' : diffFeedback(userInput, currentQ.answer); 
-    els.feedback.innerHTML = msg; 
+function onAnswerOnce(userInput){
+
+    if(!currentQ || currentQ.answered) return;
+
+    currentQ.answered = true;
+
+    const exact =
+        softNorm(userInput) ===
+        softNorm(currentQ.answer);
+
+    let ok = exact;
+    let msg = '';
+    let xpEarned = 0;
+
+    if(exact){
+
+        xpEarned =
+            currentQ.type === 'sentence'
+            ? 10
+            : 5;
+
+        const player =
+            loadPlayer();
+
+        player.xp += xpEarned;
+
+        savePlayer(player);
+
+        updatePlayerUI();
+
+        msg =
+            `✅ Richtig! (+${xpEarned} XP)`;
+
+    }else{
+
+        msg =
+            diffFeedback(
+                userInput,
+                currentQ.answer
+            );
+
+    }
+
+    els.feedback.innerHTML = msg;
+
     if(currentQ.type !== 'sentence'){
-    record(currentQ.origin, currentQ.item, ok);
-}
-    disableInputsAfterAnswer(); 
-    showHint(ok); 
-    sessionCompleted++; // NEU: Fortschritt erhöhen
-    updateProgressUI(); // NEU: UI aktualisieren
+        record(
+            currentQ.origin,
+            currentQ.item,
+            ok
+        );
+    }
+
+    disableInputsAfterAnswer();
+
+    showHint(ok);
+
+    sessionCompleted++;
+
+    updateProgressUI();
+
 }
 function updateProgressUI(){
     if(!els.sessionProgress) return;
@@ -408,6 +515,7 @@ function displayVersion() {
     updateStatsUI(); 
     displayVersion(); 
     updateProgressUI(); // NEU: Initialen Fortschritt setzen
+  updatePlayerUI();
 
     // Initialen Zustand setzen
     els.promptText.textContent='Wähle mindestens einen Block und starte.';
