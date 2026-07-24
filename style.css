@@ -327,3 +327,62 @@ button.highlight{
 
     color:white;
 }
+.exercise-header{
+    margin-bottom:20px;
+}
+
+.exercise-type{
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.exercise-description{
+    margin-top:10px;
+    padding:12px 16px;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,0.04);
+
+    border-left:4px solid #5dff9a;
+
+    color:#d7dceb;
+}
+
+#promptText{
+    font-size:36px;
+    font-weight:700;
+
+    line-height:1.4;
+
+    margin-top:20px;
+    margin-bottom:25px;
+
+    color:white;
+}
+
+#freeInput{
+    width:100%;
+    padding:15px;
+
+    font-size:20px;
+
+    border-radius:12px;
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    background:#1d2b44;
+
+    color:white;
+}
+
+.actions button{
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    font-weight:600;
+}
