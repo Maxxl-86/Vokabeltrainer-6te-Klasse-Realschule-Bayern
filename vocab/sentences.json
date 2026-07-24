@@ -1,14 +1,17 @@
 {
   "u1": [
     {
+      "id": "u1s1",
       "en": "I use my camera every day.",
       "de": "Ich benutze jeden Tag meine Kamera."
     },
     {
+      "id": "u1s2",
       "en": "I download games to my phone.",
       "de": "Ich lade Spiele auf mein Handy herunter."
     },
     {
+      "id": "u1s3",
       "en": "The game is exciting.",
       "de": "Das Spiel ist aufregend."
     }
