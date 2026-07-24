@@ -15,6 +15,10 @@ const LS_STATS = 'vocab-trainer-stats-v4';
 const LS_SYNC = 'vocab-central-meta';
 const CENTRAL_URL = './vocab/vocab.json';
 const HINTS_URL = './vocab/hints.json';
+
+const SENTENCES_URL = './vocab/sentences.json';
+let SENTENCES_DATA = {};
+
 let HINTS_DICT = {};
 let deferredPrompt = null; 
 let sessionTotalSize = 0; // NEU: Gesamtgröße der Session
@@ -100,6 +104,8 @@ async function fetchJSON(url){ try{ const res=await fetch(url,{cache:'no-store'}
 async function initCentralSync(){ const central = await fetchJSON(CENTRAL_URL); if(central){ const newVersion=central.version||'unknown'; const meta=loadSync(); if(newVersion!==meta.version){ // merge
   const local=loadVocab(); const out={...local}; const src=central.units||{}; for(const unit of Object.keys(src)){ const list=Array.isArray(src[unit])?src[unit]:[]; if(!out[unit]) out[unit]=[]; const existing=new Set(out[unit].map(key)); list.forEach(w=>{ if(!existing.has(key(w))) out[unit].push(w); }); } saveVocab(out); saveSync({version:newVersion}); initStats(); } }
   const hints = await fetchJSON(HINTS_URL); if(hints) HINTS_DICT = hints;
+  const sentences = await fetchJSON(SENTENCES_URL);
+if(sentences) SENTENCES_DATA = sentences;
 }
 function initStats(){ const stats=loadStats(); if(!stats.blocks) stats.blocks={}; if(!stats.words) stats.words={}; const vocab=loadVocab(); UNIT_META.forEach(u=>{ if(!stats.blocks[u.id]) stats.blocks[u.id]={correct:0,wrong:0}; if(!stats.words[u.id]) stats.words[u.id]={}; (vocab[u.id]||[]).forEach(w=>{ const k=key(w); if(!stats.words[u.id][k]) stats.words[u.id][k]={correct:0,wrong:0}; }); }); saveStats(stats); }
 function updateStatsUI(){ els.weightInfo && (els.weightInfo.textContent = els.weightedEnabled?.checked ? 'aktiv' : 'aus'); if(!activeBlockIds.length){ els.statCorrect.textContent='0'; els.statWrong.textContent='0'; return; } const stats=loadStats(); const agg=activeBlockIds.reduce((acc,id)=>{ const s=stats.blocks[id]||{correct:0,wrong:0}; acc.correct+=s.correct; acc.wrong+=s.wrong; return acc; },{correct:0,wrong:0}); els.statCorrect.textContent=agg.correct; els.statWrong.textContent=agg.wrong; }
