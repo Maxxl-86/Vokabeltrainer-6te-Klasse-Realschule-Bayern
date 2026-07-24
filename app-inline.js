@@ -236,7 +236,7 @@ function updateProgressUI(){
     if(sessionTotalSize > 0){
         // Zeigt "Frage 5 von 45" oder "5 / 45"
         const remaining = sessionTotalSize - sessionQueue.length;
-        els.sessionProgress.textContent = `(${remaining} / ${sessionTotalSize})`;
+       els.sessionProgress.textContent = '';
         els.sessionProgress.classList.remove('hidden');
     } else {
         els.sessionProgress.classList.add('hidden');
