@@ -84,7 +84,8 @@ function bindEls(){
   els.blockChecklist = $("blockChecklist"); els.selectAllBtn = $("selectAllBtn"); els.clearAllBtn = $("clearAllBtn");
   els.presetSelect = $("presetSelect"); els.modeSelect = $("modeSelect"); els.mcEnabled = $("mcEnabled");
   els.weightedEnabled = $("weightedEnabled"); els.hintsEnabled = $("hintsEnabled");
-  els.nextBtn = $("nextBtn"); els.checkBtn = $("checkBtn"); els.promptLabel = $("promptLabel"); els.promptText = $("promptText");
+  els.nextBtn = $("nextBtn"); els.checkBtn = $("checkBtn"); els.promptLabel = $("promptLabel"); els.exerciseType = $("exerciseType");
+  els.promptText = $("promptText");
   els.optionsList = $("optionsList"); els.mcArea = $("mcArea"); els.feedback = $("feedback"); els.hintArea = $("hintArea");
   els.statCorrect = $("statCorrect"); els.statWrong = $("statWrong"); els.weightInfo = $("weightInfo"); els.currentBlocksLabel = $("currentBlocksLabel");
   els.resetSelectedBtn = $("resetSelectedBtn");
@@ -260,7 +261,13 @@ function renderQuestion(){
     els.nextBtn && els.nextBtn.classList.add('hidden'); 
     els.checkBtn && (els.checkBtn.disabled=false); 
     els.showAnswerBtn && els.showAnswerBtn.classList.remove('hidden'); // Lösung-Button sichtbar
-    
+
+  if(currentQ.type === 'sentence'){
+    els.exerciseType.textContent = '📖 Satztrainer';
+}else{
+    els.exerciseType.textContent = '📚 Vokabeltrainer';
+}
+  
     els.promptLabel.textContent = currentQ.from==='de'?'Deutsch':'Englisch'; 
     els.promptText.textContent=currentQ.prompt; 
     pushHistory(currentQ.prompt); 
