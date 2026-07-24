@@ -522,3 +522,22 @@ button.highlight{
 
     color:#aab4c7;
 }
+.blocks-toggle{
+
+    cursor:pointer;
+
+    user-select:none;
+
+    font-size:22px;
+
+    margin-bottom:20px;
+
+    color:#7dc8ff;
+
+    transition:0.2s;
+}
+
+.blocks-toggle:hover{
+
+    color:white;
+}
