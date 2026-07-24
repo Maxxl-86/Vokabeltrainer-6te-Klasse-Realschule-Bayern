@@ -496,3 +496,17 @@ button.highlight{
 
     color:#c2cad8;
 }
+.player-progress{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:12px;
+
+    color:#d7dceb;
+
+    font-size:15px;
+
+    font-weight:600;
+}
