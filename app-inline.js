@@ -62,8 +62,10 @@ function ensureBlocksSection(){
   if($("blockChecklist") && $("currentBlocksLabel") && $("selectAllBtn") && $("clearAllBtn") && $("resetSelectedBtn") && $("resetAllBtn")) return;
   const root = document.querySelector('#app-root') || document.querySelector('main') || document.body;
   const sec = document.createElement('section'); sec.className = 'blocks';
-  sec.innerHTML = `
-  <h2>Blöcke wählen</h2>
+sec.innerHTML = `
+  <h2 id="blocksToggle" class="blocks-toggle">
+    ⚙️ Lernbereiche ▼
+  </h2>
   <div class="block-actions">
     <button id="selectAllBtn">Alle wählen</button>
     <button id="clearAllBtn">Auswahl leeren</button>
