@@ -105,7 +105,9 @@ function loadStats(){ try{ return JSON.parse(localStorage.getItem(LS_STATS)||'{}
 function saveStats(s){ localStorage.setItem(LS_STATS, JSON.stringify(s)); }
 function loadSync(){ try{ return JSON.parse(localStorage.getItem(LS_SYNC)||'{}'); }catch(e){ return {}; } }
 function saveSync(m){
-  function loadPlayer(){
+  localStorage.setItem(LS_SYNC, JSON.stringify(m)); }
+function loadPlayer(){
+
     try{
         return JSON.parse(
             localStorage.getItem(LS_PLAYER)
@@ -117,12 +119,13 @@ function saveSync(m){
 }
 
 function savePlayer(player){
+
     localStorage.setItem(
         LS_PLAYER,
         JSON.stringify(player)
     );
 }
-  localStorage.setItem(LS_SYNC, JSON.stringify(m)); }
+``
 async function fetchJSON(url){ try{ const res=await fetch(url,{cache:'no-store'}); if(!res.ok) throw new Error('HTTP '+res.status); return await res.json(); } catch(e){ console.warn('Fetch fehlgeschlagen:', url, e); return null; } }
 async function initCentralSync(){ const central = await fetchJSON(CENTRAL_URL); if(central){ const newVersion=central.version||'unknown'; const meta=loadSync(); if(newVersion!==meta.version){ // merge
   const local=loadVocab(); const out={...local}; const src=central.units||{}; for(const unit of Object.keys(src)){ const list=Array.isArray(src[unit])?src[unit]:[]; if(!out[unit]) out[unit]=[]; const existing=new Set(out[unit].map(key)); list.forEach(w=>{ if(!existing.has(key(w))) out[unit].push(w); }); } saveVocab(out); saveSync({version:newVersion}); initStats(); } }
@@ -166,6 +169,8 @@ function resetSessionQueue(){
   sessionTotalSize = sessionQueue.length; // NEU: Gesamtgröße setzen
   sessionCompleted = 0; // NEU: Zähler zurücksetzen
   updateProgressUI(); // NEU: UI aktualisieren
+
+}
   function updatePlayerUI(){
 
     const player = loadPlayer();
@@ -206,7 +211,6 @@ function resetSessionQueue(){
             `${currentXP}%`;
     }
 
-}
 }
 function recentlyAsked(text){ return lastPrompts.some(t=> normalize(t)===normalize(text)); }
 function pushHistory(text){ lastPrompts.unshift(text); if(lastPrompts.length>2) lastPrompts.pop(); }
