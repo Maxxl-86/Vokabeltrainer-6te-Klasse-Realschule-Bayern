@@ -266,12 +266,15 @@ function renderQuestion(){
 if(currentQ.type === 'sentence'){
 
     els.exerciseType.textContent = '📖 Satztrainer';
+    els.exerciseType.style.color = '#5dff9a';
+
     els.exerciseDescription.textContent =
         'Übersetze den kompletten Satz ins Deutsche.';
 
 }else{
 
     els.exerciseType.textContent = '📚 Vokabeltrainer';
+    els.exerciseType.style.color = '#7dc8ff';
 
     if(currentQ.from === 'de'){
         els.exerciseDescription.textContent =
@@ -282,6 +285,7 @@ if(currentQ.type === 'sentence'){
     }
 
 }
+
   
     els.promptLabel.textContent = currentQ.from==='de'?'Deutsch':'Englisch'; 
     els.promptText.textContent=currentQ.prompt; 
