@@ -158,11 +158,13 @@ function pickQuestion(){
     const randomSentence =
         sentences[Math.floor(Math.random() * sentences.length)];
 
-    currentQ = {
-        type: 'sentence',
-        prompt: randomSentence.en,
-        answer: randomSentence.de,
-        answered: false
+   currentQ = {
+    type: 'sentence',
+    from: 'en',
+    to: 'de',
+    prompt: randomSentence.en,
+    answer: randomSentence.de,
+    answered: false
     };
 
     return currentQ;
