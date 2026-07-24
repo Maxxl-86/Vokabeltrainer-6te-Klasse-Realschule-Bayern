@@ -147,7 +147,26 @@ function resetSessionQueue(){
 function recentlyAsked(text){ return lastPrompts.some(t=> normalize(t)===normalize(text)); }
 function pushHistory(text){ lastPrompts.unshift(text); if(lastPrompts.length>2) lastPrompts.pop(); }
 function pickQuestion(){ 
-  const mode=els.modeSelect.value; 
+  const mode=els.modeSelect.value;
+  if(mode === 'sentences'){
+    const sentences = SENTENCES_DATA?.u1 || [];
+
+    if(!sentences.length){
+        return null;
+    }
+
+    const randomSentence =
+        sentences[Math.floor(Math.random() * sentences.length)];
+
+    currentQ = {
+        type: 'sentence',
+        prompt: randomSentence.en,
+        answer: randomSentence.de,
+        answered: false
+    };
+
+    return currentQ;
+}
   if(!activeBlockIds.length) return null; 
   if(!sessionQueue.length) { 
       resetSessionQueue(); 
