@@ -293,3 +293,19 @@ button.highlight{
 .version-info {
     order: 2; 
 }
+.exercise-header{
+    margin-bottom:20px;
+}
+
+.exercise-type{
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:6px;
+    color:#7dc8ff;
+}
+
+.exercise-description{
+    font-size:15px;
+    color:#c0c8d8;
+    margin-bottom:10px;
+}
