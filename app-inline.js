@@ -287,7 +287,7 @@ if(currentQ.type === 'sentence'){
 }
 
   
-    els.promptLabel.textContent = currentQ.from==='de'?'Deutsch':'Englisch'; 
+    els.promptLabel.textContent = '';
     els.promptText.textContent=currentQ.prompt; 
     pushHistory(currentQ.prompt); 
     
