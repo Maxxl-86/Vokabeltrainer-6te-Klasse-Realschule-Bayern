@@ -85,6 +85,7 @@ function bindEls(){
   els.presetSelect = $("presetSelect"); els.modeSelect = $("modeSelect"); els.mcEnabled = $("mcEnabled");
   els.weightedEnabled = $("weightedEnabled"); els.hintsEnabled = $("hintsEnabled");
   els.nextBtn = $("nextBtn"); els.checkBtn = $("checkBtn"); els.promptLabel = $("promptLabel"); els.exerciseType = $("exerciseType");
+  els.exerciseDescription = $("exerciseDescription");
   els.promptText = $("promptText");
   els.optionsList = $("optionsList"); els.mcArea = $("mcArea"); els.feedback = $("feedback"); els.hintArea = $("hintArea");
   els.statCorrect = $("statCorrect"); els.statWrong = $("statWrong"); els.weightInfo = $("weightInfo"); els.currentBlocksLabel = $("currentBlocksLabel");
@@ -262,10 +263,24 @@ function renderQuestion(){
     els.checkBtn && (els.checkBtn.disabled=false); 
     els.showAnswerBtn && els.showAnswerBtn.classList.remove('hidden'); // Lösung-Button sichtbar
 
-  if(currentQ.type === 'sentence'){
+if(currentQ.type === 'sentence'){
+
     els.exerciseType.textContent = '📖 Satztrainer';
+    els.exerciseDescription.textContent =
+        'Übersetze den kompletten Satz ins Deutsche.';
+
 }else{
+
     els.exerciseType.textContent = '📚 Vokabeltrainer';
+
+    if(currentQ.from === 'de'){
+        els.exerciseDescription.textContent =
+            'Übersetze das Wort ins Englische.';
+    }else{
+        els.exerciseDescription.textContent =
+            'Übersetze das Wort ins Deutsche.';
+    }
+
 }
   
     els.promptLabel.textContent = currentQ.from==='de'?'Deutsch':'Englisch'; 
