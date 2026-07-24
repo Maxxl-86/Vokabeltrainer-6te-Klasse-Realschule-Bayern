@@ -70,6 +70,10 @@ main{
     margin-top: 0;
     font-size: 1.1rem;
 }
+.blocks{
+
+    opacity:0.9;
+}
 
 .blocks .checklist label{
     display: inline-flex;
@@ -509,4 +513,12 @@ button.highlight{
     font-size:15px;
 
     font-weight:600;
+}
+.future-rewards{
+
+    margin-top:10px;
+
+    font-size:14px;
+
+    color:#aab4c7;
 }
