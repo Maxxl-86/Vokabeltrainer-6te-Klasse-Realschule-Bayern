@@ -219,7 +219,9 @@ function onAnswerOnce(userInput){
     let ok = exact; 
     let msg = exact ? '✅ Richtig!' : diffFeedback(userInput, currentQ.answer); 
     els.feedback.innerHTML = msg; 
-    record(currentQ.origin, currentQ.item, ok); 
+    if(currentQ.type !== 'sentence'){
+    record(currentQ.origin, currentQ.item, ok);
+}
     disableInputsAfterAnswer(); 
     showHint(ok); 
     sessionCompleted++; // NEU: Fortschritt erhöhen
