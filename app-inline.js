@@ -237,7 +237,46 @@ function unlockAchievement(id){
     );
 
 }
+function showCollection(){
 
+    const player =
+        loadPlayer();
+
+    const cards =
+        player.ownedCards || [];
+
+    if(
+        !cards.length
+    ){
+
+        alert(
+            'Noch keine Karten gesammelt.'
+        );
+
+        return;
+    }
+
+    const names =
+        cards.map(id => {
+
+            const card =
+                CARDS_DATA.find(
+                    c => c.id === id
+                );
+
+            return card
+                ? card.name
+                : id;
+
+        });
+
+    alert(
+        'Deine Sammlung:\n\n' +
+        names.join('\n')
+    );
+
+}
+``
 
 function openCardPack(){
 
