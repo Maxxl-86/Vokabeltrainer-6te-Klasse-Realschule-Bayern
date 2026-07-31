@@ -1,0 +1,16 @@
+{
+  "first_steps": {
+    "title": "🏆 First Steps",
+    "description": "Erste richtige Antwort"
+  },
+
+  "rising_star": {
+    "title": "⭐ Rising Star",
+    "description": "Level 2 erreicht"
+  },
+
+  "getting_started": {
+    "title": "📚 Getting Started",
+    "description": "10 richtige Antworten"
+  }
+}
