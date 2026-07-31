@@ -236,6 +236,8 @@ function unlockAchievement(id){
 ``
 function openCardPack(){
 
+    console.log(4        'PACK BUTTON GEKLICKT'5    );
+
     const player =
         loadPlayer();
 
