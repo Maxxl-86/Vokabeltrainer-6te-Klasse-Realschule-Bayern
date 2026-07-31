@@ -335,7 +335,9 @@ button.highlight{
     color:white;
 }
 .exercise-header{
-    margin-bottom:20px;
+
+    margin-top:15px;
+
 }
 
 .exercise-type{
@@ -583,6 +585,7 @@ button.highlight{
 .achievement-list{
 
     margin-top:15px;
+    margin-bottom:25px;
 
     padding-top:10px;
 
