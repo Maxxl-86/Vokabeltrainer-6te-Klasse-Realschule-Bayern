@@ -395,7 +395,14 @@ if(
         xpFill.style.width =
             `${currentXP}%`;
     }
+if(
+    els.cardPackCounter
+){
 
+    els.cardPackCounter.textContent =
+        player.cardPacks || 0;
+
+}
 }
 function recentlyAsked(text){ return lastPrompts.some(t=> normalize(t)===normalize(text)); }
 function pushHistory(text){ lastPrompts.unshift(text); if(lastPrompts.length>2) lastPrompts.pop(); }
