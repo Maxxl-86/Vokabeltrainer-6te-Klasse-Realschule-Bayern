@@ -25,6 +25,10 @@ const ACHIEVEMENTS_URL =
     './vocab/achievements.json';
 
 let ACHIEVEMENTS_DATA = {};
+const CARDS_URL =
+    './vocab/cards.json';
+
+let CARDS_DATA = [];
 
 let HINTS_DICT = {};
 let deferredPrompt = null; 
