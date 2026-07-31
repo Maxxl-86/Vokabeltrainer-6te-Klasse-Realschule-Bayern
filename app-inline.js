@@ -296,6 +296,13 @@ if(sentences) SENTENCES_DATA = sentences;
 if(achievements)
     ACHIEVEMENTS_DATA =
         achievements;
+const cards =
+    await fetchJSON(
+        CARDS_URL
+    );
+
+if(cards)
+    CARDS_DATA = cards;
 console.log(
     'Achievements geladen:',
     ACHIEVEMENTS_DATA
