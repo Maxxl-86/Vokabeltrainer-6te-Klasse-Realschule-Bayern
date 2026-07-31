@@ -132,10 +132,10 @@ function saveSync(m){
 function loadPlayer(){
 
     try{
-        return JSON.parse(
-            localStorage.getItem(LS_PLAYER)
-            || '{"xp":0}'
-        );
+    return JSON.parse(
+    localStorage.getItem(LS_PLAYER)
+    || '{"xp":0,"correctAnswers":0}'
+);
     }catch(e){
         return {xp:0};
     }
