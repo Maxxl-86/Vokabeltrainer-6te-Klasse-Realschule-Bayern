@@ -132,6 +132,9 @@ els.cardResult =
 els.collectionContent =
     $("collectionContent");
 
+  els.collectionCounter =
+    $("collectionCounter");
+
 els.closeCollectionBtn =
     $("closeCollectionBtn");
 
@@ -252,6 +255,15 @@ function showCollection(){
 
     const cards =
         player.ownedCards || [];
+
+  if(
+    els.collectionCounter
+){
+
+    els.collectionCounter.textContent =
+        `(${cards.length}/${CARDS_DATA.length})`;
+
+}
 
     if(
         !cards.length
