@@ -541,3 +541,42 @@ button.highlight{
 
     color:white;
 }
+.achievement-popup{
+
+    margin-top:15px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    background:#1f4330;
+
+    border-left:5px solid #5dff9a;
+
+    color:white;
+
+    animation:achievementPop .4s ease;
+}
+
+.achievement-title{
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+    color:#5dff9a;
+}
+
+@keyframes achievementPop{
+
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
