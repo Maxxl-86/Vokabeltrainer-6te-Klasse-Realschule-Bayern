@@ -257,34 +257,51 @@ function showCollection(){
         !cards.length
     ){
 
-        alert(
-            'Noch keine Karten gesammelt.'
-        );
+        els.collectionContent.innerHTML =
+            'Noch keine Karten gesammelt.';
 
-        return;
+    }else{
+
+        const html =
+            cards.map(id => {
+
+                const card =
+                    CARDS_DATA.find(
+                        c => c.id === id
+                    );
+
+                if(!card)
+                    return '';
+
+                return `
+                    <div>
+
+                        ${card.name}
+
+                        <br>
+
+                        <small>
+                            ${card.rarity}
+                        </small>
+
+                    </div>
+
+                    <br>
+                `;
+
+            }).join('');
+
+        els.collectionContent.innerHTML =
+            html;
+
     }
 
-    const names =
-        cards.map(id => {
-
-            const card =
-                CARDS_DATA.find(
-                    c => c.id === id
-                );
-
-            return card
-                ? card.name
-                : id;
-
-        });
-
-    alert(
-        'Deine Sammlung:\n\n' +
-        names.join('\n')
-    );
+    els.collectionPopup
+        .classList.remove(
+            'hidden'
+        );
 
 }
-``
 
 function openCardPack(){
 
