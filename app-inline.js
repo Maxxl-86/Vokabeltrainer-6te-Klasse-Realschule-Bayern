@@ -881,7 +881,7 @@ if(currentQ.type === 'sentence'){
     els.promptText.textContent=currentQ.prompt; 
     pushHistory(currentQ.prompt); 
 
-  if(
+if(
     currentQ.type === 'builder'
 ){
 
@@ -915,7 +915,47 @@ if(currentQ.type === 'sentence'){
                 'freeInput'
             );
 
+        const oldCheckBtn =
+            els.checkBtn;
+
+        els.checkBtn =
+            oldCheckBtn
+                ? oldCheckBtn.cloneNode(true)
+                : document.createElement('button');
+
+        if(oldCheckBtn){
+            oldCheckBtn.replaceWith(
+                els.checkBtn
+            );
+        }
+
         if(input){
+
+            const answerCheckHandler =
+                (e) => {
+
+                    if(
+                        e.type === 'keydown' &&
+                        e.key !== 'Enter'
+                    ){
+                        return;
+                    }
+
+                    onAnswerOnce(
+                        input.value.trim()
+                    );
+
+                };
+
+            input.addEventListener(
+                'keydown',
+                answerCheckHandler
+            );
+
+            els.checkBtn.addEventListener(
+                'click',
+                answerCheckHandler
+            );
 
             input.focus();
 
