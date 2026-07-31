@@ -126,6 +126,14 @@ els.cardResult =
     $("cardResult");
   els.closeCardPackBtn =
     $("closeCardPackBtn");
+  els.collectionPopup =
+    $("collectionPopup");
+
+els.collectionContent =
+    $("collectionContent");
+
+els.closeCollectionBtn =
+    $("closeCollectionBtn");
 
   els.achievementToggle =
     $("achievementToggle");
