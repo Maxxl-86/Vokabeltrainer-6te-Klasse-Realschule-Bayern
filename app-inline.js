@@ -304,6 +304,11 @@ const cards =
 if(cards)
     CARDS_DATA = cards;
 console.log(
+    'Cards geladen:',
+    CARDS_DATA
+);
+                                 
+console.log(
     'Achievements geladen:',
     ACHIEVEMENTS_DATA
 );
