@@ -204,7 +204,7 @@ function unlockAchievement(id){
 
     saveAchievements(unlocked);
   renderAchievements();
-``
+
 
     const achievement =
         ACHIEVEMENTS_DATA[id];
@@ -233,7 +233,7 @@ function unlockAchievement(id){
 
 }
 
-``
+
 function openCardPack(){
 
    
@@ -789,7 +789,7 @@ els.openPackBtn &&
         'click',
         openCardPack
     );
-        }
+        
     // Installations-Logik (unverändert)
     if (els.installBtn) {
         window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; });
@@ -813,6 +813,7 @@ els.openPackBtn &&
             els.installBtn.classList.remove('hidden');
         }
     }
+}
 function applyPreset(val){ const ranges={ 'u1_2':['u1','u2'], 'u1_3':['u1','u2','u3'], 'u3_4':['u3','u4'], 'u1_6':['u1','u2','u3','u4','u5','u6'] }; els.blockChecklist.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=false ); (ranges[val]||[]).forEach(id=>{ const cb=els.blockChecklist.querySelector(`input[value=\"${id}\"]`); if(cb) cb.checked=true; }); syncActiveBlockIds(); }
 
 function displayVersion() {
