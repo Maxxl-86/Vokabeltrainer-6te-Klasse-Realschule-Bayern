@@ -1,0 +1,31 @@
+[
+  {
+    "id":"card001",
+    "name":"Technology Rookie",
+    "rarity":"common"
+  },
+
+  {
+    "id":"card002",
+    "name":"Ireland Explorer",
+    "rarity":"rare"
+  },
+
+  {
+    "id":"card003",
+    "name":"History Hunter",
+    "rarity":"common"
+  },
+
+  {
+    "id":"card004",
+    "name":"Animal Lover",
+    "rarity":"rare"
+  },
+
+  {
+    "id":"card005",
+    "name":"Environment Hero",
+    "rarity":"epic"
+  }
+]
