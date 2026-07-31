@@ -627,7 +627,46 @@ function pickQuestion(){
     if(!sentences.length){
         return null;
     }
+if(mode === 'builder'){
 
+    if(!BUILDER_DATA.length){
+        return null;
+    }
+
+    const item =
+        BUILDER_DATA[
+            Math.floor(
+                Math.random() *
+                BUILDER_DATA.length
+            )
+        ];
+
+    const words =
+        item.sentence
+            .replace('.', '')
+            .split(' ');
+
+    const shuffled =
+        shuffle(
+            [...words]
+        );
+
+    currentQ = {
+
+        type: 'builder',
+
+        prompt:
+            shuffled.join(' '),
+
+        answer:
+            item.sentence,
+
+        answered: false
+
+    };
+
+    return currentQ;
+}
     const randomSentence =
         sentences[Math.floor(Math.random() * sentences.length)];
 
