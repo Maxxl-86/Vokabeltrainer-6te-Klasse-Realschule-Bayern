@@ -790,7 +790,6 @@ els.openPackBtn &&
         openCardPack
     );
         }
-    );
     // Installations-Logik (unverändert)
     if (els.installBtn) {
         window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; });
