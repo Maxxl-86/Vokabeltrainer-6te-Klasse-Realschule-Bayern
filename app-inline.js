@@ -878,6 +878,18 @@ els.openPackBtn &&
         'click',
         showCollection
     );
+  els.closeCollectionBtn &&
+    els.closeCollectionBtn.addEventListener(
+        'click',
+        () => {
+
+            els.collectionPopup
+                .classList.add(
+                    'hidden'
+                );
+
+        }
+    );
   els.closeCardPackBtn &&
     els.closeCardPackBtn.addEventListener(
         'click',
