@@ -236,9 +236,7 @@ function unlockAchievement(id){
 ``
 function openCardPack(){
 
-   console.log(
-    'PACK BUTTON GEKLICKT'
-);
+   
     const player =
         loadPlayer();
 
@@ -773,7 +771,7 @@ els.modeSelect && els.modeSelect.addEventListener('change', () => {
     }
 
 });
-  els.achievementToggle &&
+els.achievementToggle &&
     els.achievementToggle.addEventListener(
         'click',
         () => {
@@ -782,10 +780,10 @@ els.modeSelect && els.modeSelect.addEventListener('change', () => {
                 .classList.toggle(
                     'hidden'
                 );
-console.log(
-    'OpenPack Button:',
-    els.openPackBtn
-);
+
+        }
+    );
+
 els.openPackBtn &&
     els.openPackBtn.addEventListener(
         'click',
