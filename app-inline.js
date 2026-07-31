@@ -227,6 +227,22 @@ function renderAchievements(){
 
     const unlocked =
         loadAchievements();
+  const unlockedCount =
+    Object.keys(
+        unlocked
+    ).length;
+
+const totalCount =
+    Object.keys(
+        ACHIEVEMENTS_DATA
+    ).length;
+
+if(
+    els.achievementCounter
+){
+    els.achievementCounter.textContent =
+        `${unlockedCount} / ${totalCount}`;
+}
 
     els.achievementList.innerHTML = '';
 
