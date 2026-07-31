@@ -125,7 +125,15 @@ function loadPlayer(){
 }
 
 function savePlayer(player){
-  function loadAchievements(){
+
+    localStorage.setItem(
+        LS_PLAYER,
+        JSON.stringify(player)
+    );
+
+}
+
+function loadAchievements(){
 
     try{
 
@@ -151,6 +159,7 @@ function saveAchievements(data){
     );
 
 }
+
 function unlockAchievement(id){
 
     const unlocked =
@@ -168,11 +177,6 @@ function unlockAchievement(id){
         id
     );
 
-}
-    localStorage.setItem(
-        LS_PLAYER,
-        JSON.stringify(player)
-    );
 }
 ``
 async function fetchJSON(url){ try{ const res=await fetch(url,{cache:'no-store'}); if(!res.ok) throw new Error('HTTP '+res.status); return await res.json(); } catch(e){ console.warn('Fetch fehlgeschlagen:', url, e); return null; } }
