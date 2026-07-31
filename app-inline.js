@@ -20,7 +20,10 @@ const CENTRAL_URL = './vocab/vocab.json';
 const HINTS_URL = './vocab/hints.json';
 
 const SENTENCES_URL = './vocab/sentences.json';
+const BUILDER_URL =
+    './vocab/sentence_builder.json';
 let SENTENCES_DATA = {};
+let BUILDER_DATA = [];
 const ACHIEVEMENTS_URL =
     './vocab/achievements.json';
 
