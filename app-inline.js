@@ -788,14 +788,16 @@ function onAnswerOnce(userInput){
     }
 
     els.feedback.innerHTML = msg;
-
-    if(currentQ.type !== 'sentence'){
-        record(
-            currentQ.origin,
-            currentQ.item,
-            ok
-        );
-    }
+if(
+    currentQ.type !== 'sentence' &&
+    currentQ.type !== 'builder'
+){
+    record(
+        currentQ.origin,
+        currentQ.item,
+        ok
+    );
+}
 
     disableInputsAfterAnswer();
 
