@@ -114,6 +114,14 @@ function bindEls(){
     $("achievementCounter");
   els.cardPackCounter =
     $("cardPackCounter");
+  els.openPackBtn =
+    $("openPackBtn");
+
+els.cardPackPopup =
+    $("cardPackPopup");
+
+els.cardResult =
+    $("cardResult");
   els.achievementToggle =
     $("achievementToggle");
 
