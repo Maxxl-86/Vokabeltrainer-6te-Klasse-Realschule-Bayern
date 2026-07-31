@@ -627,7 +627,22 @@ function pickQuestion(){
     if(!sentences.length){
         return null;
     }
-if(mode === 'builder'){
+
+    const randomSentence =
+        sentences[Math.floor(Math.random() * sentences.length)];
+
+   currentQ = {
+    type: 'sentence',
+    from: 'en',
+    to: 'de',
+    prompt: randomSentence.en,
+    answer: randomSentence.de,
+    answered: false
+    };
+
+    return currentQ;
+}
+  if(mode === 'builder'){
 
     if(!BUILDER_DATA.length){
         return null;
@@ -663,20 +678,6 @@ if(mode === 'builder'){
 
         answered: false
 
-    };
-
-    return currentQ;
-}
-    const randomSentence =
-        sentences[Math.floor(Math.random() * sentences.length)];
-
-   currentQ = {
-    type: 'sentence',
-    from: 'en',
-    to: 'de',
-    prompt: randomSentence.en,
-    answer: randomSentence.de,
-    answered: false
     };
 
     return currentQ;
