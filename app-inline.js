@@ -779,6 +779,10 @@ els.modeSelect && els.modeSelect.addEventListener('change', () => {
                 .classList.toggle(
                     'hidden'
                 );
+console.log(
+    'OpenPack Button:',
+    els.openPackBtn
+);
 els.openPackBtn &&
     els.openPackBtn.addEventListener(
         'click',
