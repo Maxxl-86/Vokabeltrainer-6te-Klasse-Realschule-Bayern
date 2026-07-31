@@ -106,6 +106,8 @@ function bindEls(){
   els.sessionProgress = $("sessionProgress");
   els.achievementList =
     $("achievementList");
+  els.achievementCounter =
+    $("achievementCounter");
   els.achievementToggle =
     $("achievementToggle");
 
