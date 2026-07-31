@@ -104,6 +104,14 @@ function bindEls(){
   // NEUE ELEMENTE BINDEN
   els.showAnswerBtn = $("showAnswerBtn"); 
   els.sessionProgress = $("sessionProgress");
+  els.achievementPopup =
+    $("achievementPopup");
+
+els.achievementName =
+    $("achievementName");
+
+els.achievementDescription =
+    $("achievementDescription");
 }
 function loadVocab(){ try{ return JSON.parse(localStorage.getItem(LS_VOCAB)||'{}'); }catch(e){ return {}; } }
 function saveVocab(v){ localStorage.setItem(LS_VOCAB, JSON.stringify(v)); }
@@ -172,11 +180,32 @@ function unlockAchievement(id){
 
     saveAchievements(unlocked);
 
+    const achievement =
+        ACHIEVEMENTS_DATA[id];
+
+    if(
+        achievement &&
+        els.achievementPopup
+    ){
+
+        els.achievementName.textContent =
+            achievement.title;
+
+        els.achievementDescription.textContent =
+            achievement.description;
+
+        els.achievementPopup.classList.remove(
+            'hidden'
+        );
+
+    }
+
     console.log(
         'Achievement freigeschaltet:',
         id
     );
 
+}
 }
 ``
 async function fetchJSON(url){ try{ const res=await fetch(url,{cache:'no-store'}); if(!res.ok) throw new Error('HTTP '+res.status); return await res.json(); } catch(e){ console.warn('Fetch fehlgeschlagen:', url, e); return null; } }
@@ -441,6 +470,10 @@ function handleShowAnswer(){
 }
 function renderQuestion(){ 
     if(!currentQ) return; 
+  els.achievementPopup &&
+    els.achievementPopup.classList.add(
+        'hidden'
+    );
     els.feedback.textContent=''; 
     els.hintArea && els.hintArea.classList.add('hidden'); 
     
