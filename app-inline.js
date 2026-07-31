@@ -752,17 +752,7 @@ function bindControls(){
             if(q) renderQuestion(); 
             else { els.promptText.textContent='Glückwunsch! Die aktuelle Session ist abgeschlossen.'; updateProgressUI();}
         }
-      els.closeCardPackBtn &&
-    els.closeCardPackBtn.addEventListener(
-        'click',
-        () => {
-
-            els.cardPackPopup
-                .classList.add(
-                    'hidden'
-                );
-
-        }
+ 
     );
     }); 
     
@@ -803,6 +793,18 @@ els.openPackBtn &&
     els.openPackBtn.addEventListener(
         'click',
         openCardPack
+    );
+  els.closeCardPackBtn &&
+    els.closeCardPackBtn.addEventListener(
+        'click',
+        () => {
+
+            els.cardPackPopup
+                .classList.add(
+                    'hidden'
+                );
+
+        }
     );
         
     // Installations-Logik (unverändert)
