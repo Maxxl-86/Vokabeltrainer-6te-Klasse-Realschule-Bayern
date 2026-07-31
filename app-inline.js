@@ -106,6 +106,11 @@ function bindEls(){
   els.sessionProgress = $("sessionProgress");
   els.achievementList =
     $("achievementList");
+  els.achievementToggle =
+    $("achievementToggle");
+
+els.achievementListWrapper =
+    $("achievementListWrapper");
   els.achievementPopup =
     $("achievementPopup");
 
