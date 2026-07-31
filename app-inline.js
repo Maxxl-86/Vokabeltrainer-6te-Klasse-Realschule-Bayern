@@ -122,6 +122,9 @@ els.cardPackPopup =
 
 els.cardResult =
     $("cardResult");
+  els.closeCardPackBtn =
+    $("closeCardPackBtn");
+
   els.achievementToggle =
     $("achievementToggle");
 
@@ -749,6 +752,18 @@ function bindControls(){
             if(q) renderQuestion(); 
             else { els.promptText.textContent='Glückwunsch! Die aktuelle Session ist abgeschlossen.'; updateProgressUI();}
         }
+      els.closeCardPackBtn &&
+    els.closeCardPackBtn.addEventListener(
+        'click',
+        () => {
+
+            els.cardPackPopup
+                .classList.add(
+                    'hidden'
+                );
+
+        }
+    );
     }); 
     
     // NEU: Lösung anzeigen Button binden
