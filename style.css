@@ -681,3 +681,51 @@ button.highlight{
 
     color: #ffd966;
 }
+.rarity-common{
+    color:#bdbdbd;
+}
+
+.rarity-uncommon{
+    color:#4caf50;
+}
+
+.rarity-rare{
+    color:#2196f3;
+}
+
+.rarity-epic{
+    color:#9c27b0;
+}
+
+.rarity-legendary{
+    color:#ff9800;
+}
+
+.rarity-mythical{
+    color:#f44336;
+}
+
+.rarity-secret{
+    color:#111111;
+    text-shadow:
+        0 0 6px #ffd700;
+}
+
+.rarity-godly{
+
+    background:
+        linear-gradient(
+            90deg,
+            red,
+            orange,
+            yellow,
+            green,
+            blue,
+            indigo,
+            violet
+        );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+}
