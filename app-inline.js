@@ -475,8 +475,19 @@ function onAnswerOnce(userInput){
             loadPlayer();
 
         player.xp += xpEarned;
+      player.correctAnswers =
+    (player.correctAnswers || 0) + 1;
 
         savePlayer(player);
+      if(
+    player.correctAnswers >= 10
+){
+
+    unlockAchievement(
+        'getting_started'
+    );
+
+}
 
       unlockAchievement(
     'first_steps'
