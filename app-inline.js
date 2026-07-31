@@ -779,7 +779,11 @@ els.modeSelect && els.modeSelect.addEventListener('change', () => {
                 .classList.toggle(
                     'hidden'
                 );
-
+els.openPackBtn &&
+    els.openPackBtn.addEventListener(
+        'click',
+        openCardPack
+    );
         }
     );
     // Installations-Logik (unverändert)
