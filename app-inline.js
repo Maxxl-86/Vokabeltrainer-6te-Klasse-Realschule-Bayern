@@ -339,6 +339,19 @@ function resetSessionQueue(){
 
     const level =
         Math.floor(player.xp / 100) + 1;
+    const packsEarned =
+    Math.floor(level / 5);
+
+if(
+    packsEarned >
+    (player.cardPacks || 0)
+){
+
+    player.cardPacks =
+        packsEarned;
+
+    savePlayer(player);
+}
 
     if(level >= 2){
 
