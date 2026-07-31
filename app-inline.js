@@ -264,6 +264,21 @@ function openCardPack(){
         ];
 
     player.cardPacks--;
+  if(
+    !player.ownedCards
+){
+    player.ownedCards = [];
+}
+
+if(
+    !player.ownedCards.includes(
+        randomCard.id
+    )
+){
+    player.ownedCards.push(
+        randomCard.id
+    );
+}
 
     savePlayer(player);
 
