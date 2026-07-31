@@ -752,8 +752,6 @@ function bindControls(){
             if(q) renderQuestion(); 
             else { els.promptText.textContent='Glückwunsch! Die aktuelle Session ist abgeschlossen.'; updateProgressUI();}
         }
- 
-    );
     }); 
     
     // NEU: Lösung anzeigen Button binden
