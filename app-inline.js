@@ -116,6 +116,8 @@ function bindEls(){
     $("cardPackCounter");
   els.openPackBtn =
     $("openPackBtn");
+  els.showCollectionBtn =
+    $("showCollectionBtn");
 
 els.cardPackPopup =
     $("cardPackPopup");
