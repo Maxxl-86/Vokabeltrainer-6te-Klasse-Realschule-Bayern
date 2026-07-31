@@ -273,21 +273,23 @@ function showCollection(){
                 if(!card)
                     return '';
 
-                return `
-                    <div>
+               return `
+    <div class="rarity-${card.rarity}">
 
-                        ${card.name}
+        <strong>
+            ${card.name}
+        </strong>
 
-                        <br>
+        <br>
 
-                        <small>
-                            ${card.rarity}
-                        </small>
+        <small>
+            ${card.rarity.toUpperCase()}
+        </small>
 
-                    </div>
+    </div>
 
-                    <br>
-                `;
+    <br>
+`;
 
             }).join('');
 
@@ -355,19 +357,25 @@ if(
         els.cardResult
     ){
 
-        els.cardResult.innerHTML =
-            `
+    els.cardResult.innerHTML =
+`
+    <div
+        class="rarity-${randomCard.rarity}">
+
+        <h3>
             🎉 Neue Karte!
+        </h3>
 
-            <br><br>
-
+        <strong>
             ${randomCard.name}
+        </strong>
 
-            <br><br>
+        <br><br>
 
-            Seltenheit:
-            ${randomCard.rarity}
-            `;
+        ${randomCard.rarity.toUpperCase()}
+
+    </div>
+`;
 
         els.cardPackPopup
             .classList.remove(
