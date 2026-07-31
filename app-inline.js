@@ -19,6 +19,10 @@ const HINTS_URL = './vocab/hints.json';
 
 const SENTENCES_URL = './vocab/sentences.json';
 let SENTENCES_DATA = {};
+const ACHIEVEMENTS_URL =
+    './vocab/achievements.json';
+
+let ACHIEVEMENTS_DATA = {};
 
 let HINTS_DICT = {};
 let deferredPrompt = null; 
@@ -132,6 +136,14 @@ async function initCentralSync(){ const central = await fetchJSON(CENTRAL_URL); 
   const hints = await fetchJSON(HINTS_URL); if(hints) HINTS_DICT = hints;
   const sentences = await fetchJSON(SENTENCES_URL);
 if(sentences) SENTENCES_DATA = sentences;
+    const achievements =
+    await fetchJSON(
+        ACHIEVEMENTS_URL
+    );
+
+if(achievements)
+    ACHIEVEMENTS_DATA =
+        achievements;
 }
 function initStats(){ const stats=loadStats(); if(!stats.blocks) stats.blocks={}; if(!stats.words) stats.words={}; const vocab=loadVocab(); UNIT_META.forEach(u=>{ if(!stats.blocks[u.id]) stats.blocks[u.id]={correct:0,wrong:0}; if(!stats.words[u.id]) stats.words[u.id]={}; (vocab[u.id]||[]).forEach(w=>{ const k=key(w); if(!stats.words[u.id][k]) stats.words[u.id][k]={correct:0,wrong:0}; }); }); saveStats(stats); }
 function updateStatsUI(){ els.weightInfo && (els.weightInfo.textContent = els.weightedEnabled?.checked ? 'aktiv' : 'aus'); if(!activeBlockIds.length){ els.statCorrect.textContent='0'; els.statWrong.textContent='0'; return; } const stats=loadStats(); const agg=activeBlockIds.reduce((acc,id)=>{ const s=stats.blocks[id]||{correct:0,wrong:0}; acc.correct+=s.correct; acc.wrong+=s.wrong; return acc; },{correct:0,wrong:0}); els.statCorrect.textContent=agg.correct; els.statWrong.textContent=agg.wrong; }
