@@ -151,7 +151,7 @@ function loadPlayer(){
     try{
     return JSON.parse(
     localStorage.getItem(LS_PLAYER)
- || '{"xp":0,"correctAnswers":0,"cardPacks":0}'
+|| '{"xp":0,"correctAnswers":0,"cardPacks":0,"ownedCards":[]}'
 );
     }catch(e){
         return {xp:0};
