@@ -104,6 +104,8 @@ function bindEls(){
   // NEUE ELEMENTE BINDEN
   els.showAnswerBtn = $("showAnswerBtn"); 
   els.sessionProgress = $("sessionProgress");
+  els.achievementList =
+    $("achievementList");
   els.achievementPopup =
     $("achievementPopup");
 
@@ -180,6 +182,8 @@ function unlockAchievement(id){
     unlocked[id] = true;
 
     saveAchievements(unlocked);
+  renderAchievements();
+``
 
     const achievement =
         ACHIEVEMENTS_DATA[id];
@@ -209,6 +213,46 @@ function unlockAchievement(id){
 }
 
 ``
+function renderAchievements(){
+
+    if(!els.achievementList)
+        return;
+
+    const unlocked =
+        loadAchievements();
+
+    els.achievementList.innerHTML = '';
+
+    Object.entries(
+        ACHIEVEMENTS_DATA
+    ).forEach(([id,data]) => {
+
+        const div =
+            document.createElement(
+                'div'
+            );
+
+        const isUnlocked =
+            !!unlocked[id];
+
+        div.className =
+            'achievement-entry ' +
+            (isUnlocked
+                ? 'achievement-unlocked'
+                : 'achievement-locked');
+
+        div.textContent =
+            (isUnlocked ? '✅ ' : '⬜ ') +
+            data.title;
+
+        els.achievementList.appendChild(
+            div
+        );
+
+    });
+
+}
+
 async function fetchJSON(url){ try{ const res=await fetch(url,{cache:'no-store'}); if(!res.ok) throw new Error('HTTP '+res.status); return await res.json(); } catch(e){ console.warn('Fetch fehlgeschlagen:', url, e); return null; } }
 async function initCentralSync(){ const central = await fetchJSON(CENTRAL_URL); if(central){ const newVersion=central.version||'unknown'; const meta=loadSync(); if(newVersion!==meta.version){ // merge
   const local=loadVocab(); const out={...local}; const src=central.units||{}; for(const unit of Object.keys(src)){ const list=Array.isArray(src[unit])?src[unit]:[]; if(!out[unit]) out[unit]=[]; const existing=new Set(out[unit].map(key)); list.forEach(w=>{ if(!existing.has(key(w))) out[unit].push(w); }); } saveVocab(out); saveSync({version:newVersion}); initStats(); } }
@@ -416,6 +460,7 @@ function onAnswerOnce(userInput){
 );
 
         updatePlayerUI();
+     
 
         msg =
             `✅ Richtig! (+${xpEarned} XP)`;
@@ -631,6 +676,7 @@ function displayVersion() {
     displayVersion(); 
     updateProgressUI(); // NEU: Initialen Fortschritt setzen
   updatePlayerUI();
+  renderAchievements();
 
     // Initialen Zustand setzen
     els.promptText.textContent='Wähle mindestens einen Block und starte.';
