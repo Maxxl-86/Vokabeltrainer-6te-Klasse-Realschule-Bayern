@@ -473,6 +473,18 @@ async function initCentralSync(){ const central = await fetchJSON(CENTRAL_URL); 
   const hints = await fetchJSON(HINTS_URL); if(hints) HINTS_DICT = hints;
   const sentences = await fetchJSON(SENTENCES_URL);
 if(sentences) SENTENCES_DATA = sentences;
+const builder =
+    await fetchJSON(
+        BUILDER_URL
+    );
+
+if(builder)
+    BUILDER_DATA =
+        builder;
+    console.log(
+    'Builder geladen:',
+    BUILDER_DATA
+);
     const achievements =
     await fetchJSON(
         ACHIEVEMENTS_URL
