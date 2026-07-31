@@ -108,6 +108,8 @@ function bindEls(){
     $("achievementList");
   els.achievementCounter =
     $("achievementCounter");
+  els.cardPackCounter =
+    $("cardPackCounter");
   els.achievementToggle =
     $("achievementToggle");
 
