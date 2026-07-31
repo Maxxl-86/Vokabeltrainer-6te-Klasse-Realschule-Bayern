@@ -14,6 +14,8 @@ const LS_VOCAB = 'vocab-data-v1';
 const LS_STATS = 'vocab-trainer-stats-v4';
 const LS_SYNC = 'vocab-central-meta';
 const LS_PLAYER = 'english-coach-player-v1';
+const LS_ACHIEVEMENTS =
+    'english-coach-achievements-v1';
 const CENTRAL_URL = './vocab/vocab.json';
 const HINTS_URL = './vocab/hints.json';
 
@@ -123,7 +125,50 @@ function loadPlayer(){
 }
 
 function savePlayer(player){
+  function loadAchievements(){
 
+    try{
+
+        return JSON.parse(
+            localStorage.getItem(
+                LS_ACHIEVEMENTS
+            ) || '{}'
+        );
+
+    }catch(e){
+
+        return {};
+
+    }
+
+}
+
+function saveAchievements(data){
+
+    localStorage.setItem(
+        LS_ACHIEVEMENTS,
+        JSON.stringify(data)
+    );
+
+}
+function unlockAchievement(id){
+
+    const unlocked =
+        loadAchievements();
+
+    if(unlocked[id])
+        return;
+
+    unlocked[id] = true;
+
+    saveAchievements(unlocked);
+
+    console.log(
+        'Achievement freigeschaltet:',
+        id
+    );
+
+}
     localStorage.setItem(
         LS_PLAYER,
         JSON.stringify(player)
@@ -189,6 +234,14 @@ function resetSessionQueue(){
 
     const level =
         Math.floor(player.xp / 100) + 1;
+
+    if(level >= 2){
+
+    unlockAchievement(
+        'rising_star'
+    );
+
+}
 
     const currentXP =
         player.xp % 100;
@@ -319,6 +372,10 @@ function onAnswerOnce(userInput){
         player.xp += xpEarned;
 
         savePlayer(player);
+
+      unlockAchievement(
+    'first_steps'
+);
 
         updatePlayerUI();
 
