@@ -206,7 +206,7 @@ function unlockAchievement(id){
     );
 
 }
-}
+
 ``
 async function fetchJSON(url){ try{ const res=await fetch(url,{cache:'no-store'}); if(!res.ok) throw new Error('HTTP '+res.status); return await res.json(); } catch(e){ console.warn('Fetch fehlgeschlagen:', url, e); return null; } }
 async function initCentralSync(){ const central = await fetchJSON(CENTRAL_URL); if(central){ const newVersion=central.version||'unknown'; const meta=loadSync(); if(newVersion!==meta.version){ // merge
