@@ -848,6 +848,11 @@ els.openPackBtn &&
         'click',
         openCardPack
     );
+  els.showCollectionBtn &&
+    els.showCollectionBtn.addEventListener(
+        'click',
+        showCollection
+    );
   els.closeCardPackBtn &&
     els.closeCardPackBtn.addEventListener(
         'click',
