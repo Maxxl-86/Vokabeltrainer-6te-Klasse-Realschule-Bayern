@@ -234,6 +234,64 @@ function unlockAchievement(id){
 }
 
 ``
+function openCardPack(){
+
+    const player =
+        loadPlayer();
+
+    if(
+        !player.cardPacks ||
+        player.cardPacks <= 0
+    ){
+
+        alert(
+            'Keine Kartenpacks vorhanden.'
+        );
+
+        return;
+    }
+
+    const randomCard =
+        CARDS_DATA[
+            Math.floor(
+                Math.random() *
+                CARDS_DATA.length
+            )
+        ];
+
+    player.cardPacks--;
+
+    savePlayer(player);
+
+    updatePlayerUI();
+
+    if(
+        els.cardPackPopup &&
+        els.cardResult
+    ){
+
+        els.cardResult.innerHTML =
+            `
+            🎉 Neue Karte!
+
+            <br><br>
+
+            ${randomCard.name}
+
+            <br><br>
+
+            Seltenheit:
+            ${randomCard.rarity}
+            `;
+
+        els.cardPackPopup
+            .classList.remove(
+                'hidden'
+            );
+
+    }
+
+}
 function renderAchievements(){
 
     if(!els.achievementList)
