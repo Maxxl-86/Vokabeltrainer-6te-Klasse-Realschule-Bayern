@@ -615,3 +615,26 @@ button.highlight{
 
     color:#888;
 }
+.achievement-toggle{
+
+    width:100%;
+
+    padding:10px;
+
+    border-radius:10px;
+
+    border:none;
+
+    cursor:pointer;
+
+    background:#1d2b44;
+
+    color:white;
+
+    font-weight:600;
+}
+
+.achievement-toggle:hover{
+
+    background:#273958;
+}
