@@ -262,36 +262,47 @@ function showCollection(){
 
     }else{
 
-        const html =
-            cards.map(id => {
+const html =
+    CARDS_DATA.map(card => {
 
-                const card =
-                    CARDS_DATA.find(
-                        c => c.id === id
-                    );
+        const owned =
+            cards.includes(
+                card.id
+            );
 
-                if(!card)
-                    return '';
+        if(!owned){
 
-               return `
-    <div class="rarity-${card.rarity}">
+            return `
+                <div>
 
-        <strong>
-            ${card.name}
-        </strong>
+                    ❔ Unbekannte Karte
 
-        <br>
+                </div>
 
-        <small>
-            ${card.rarity.toUpperCase()}
-        </small>
+                <br>
+            `;
+        }
 
-    </div>
+        return `
+            <div
+                class="rarity-${card.rarity}">
 
-    <br>
-`;
+                <strong>
+                    ${card.name}
+                </strong>
 
-            }).join('');
+                <br>
+
+                <small>
+                    ${card.rarity.toUpperCase()}
+                </small>
+
+            </div>
+
+            <br>
+        `;
+
+    }).join('');
 
         els.collectionContent.innerHTML =
             html;
