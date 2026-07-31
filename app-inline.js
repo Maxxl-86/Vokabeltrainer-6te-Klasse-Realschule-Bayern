@@ -169,10 +169,7 @@ function saveAchievements(data){
 }
 
 function unlockAchievement(id){
-  console.log(
-    'Achievement Test:',
-    id
-);
+
 
     const unlocked =
         loadAchievements();
