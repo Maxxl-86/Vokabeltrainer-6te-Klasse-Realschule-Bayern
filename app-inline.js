@@ -847,6 +847,18 @@ if(currentQ.type === 'sentence'){
 
     els.exerciseDescription.textContent =
         'Übersetze den kompletten Satz ins Deutsche.';
+  }else if(
+    currentQ.type === 'builder'
+){
+
+    els.exerciseType.textContent =
+        '🧩 Satzbau';
+
+    els.exerciseType.style.color =
+        '#ffd966';
+
+    els.exerciseDescription.textContent =
+        'Ordne die Wörter zu einem korrekten Satz.';
 
 }else{
 
