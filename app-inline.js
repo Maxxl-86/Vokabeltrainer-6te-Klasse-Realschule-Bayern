@@ -637,6 +637,18 @@ els.modeSelect && els.modeSelect.addEventListener('change', () => {
     }
 
 });
+  els.achievementToggle &&
+    els.achievementToggle.addEventListener(
+        'click',
+        () => {
+
+            els.achievementListWrapper
+                .classList.toggle(
+                    'hidden'
+                );
+
+        }
+    );
     // Installations-Logik (unverändert)
     if (els.installBtn) {
         window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; });
