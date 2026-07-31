@@ -879,7 +879,52 @@ if(currentQ.type === 'sentence'){
     els.promptLabel.textContent = '';
     els.promptText.textContent=currentQ.prompt; 
     pushHistory(currentQ.prompt); 
-    
+
+  if(
+    currentQ.type === 'builder'
+){
+
+    els.mcArea.classList.add(
+        'hidden'
+    );
+
+    els.optionsList.innerHTML = '';
+
+    els.checkBtn &&
+        els.checkBtn.classList.remove(
+            'hidden'
+        );
+
+    els.promptText.innerHTML =
+        `
+        ${currentQ.prompt}
+
+        <br><br>
+
+        <input
+            id="freeInput"
+            class="option-btn"
+            placeholder="Satz eingeben..." />
+        `;
+
+    setTimeout(() => {
+
+        const input =
+            document.getElementById(
+                'freeInput'
+            );
+
+        if(input){
+
+            input.focus();
+
+        }
+
+    },0);
+
+    return;
+}
+  
     if(els.mcEnabled?.checked){ 
         els.mcArea.classList.remove('hidden'); 
         els.optionsList.innerHTML=''; 
