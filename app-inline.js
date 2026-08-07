@@ -979,11 +979,29 @@ setTimeout(() => {
                     chip.textContent =
     btn.textContent.trim();
 
-                    sentenceArea.appendChild(
-                        chip
-                    );
+                   sentenceArea.appendChild(
+    chip
+);
 
-                    btn.disabled = true;
+btn.disabled = true;
+
+chip.addEventListener(
+    'click',
+    () => {
+
+        if(
+            !currentQ ||
+            currentQ.answered
+        ){
+            return;
+        }
+
+        btn.disabled = false;
+
+        chip.remove();
+
+    }
+);
 
                 }
             );
