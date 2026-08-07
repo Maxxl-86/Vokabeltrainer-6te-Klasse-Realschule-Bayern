@@ -903,17 +903,17 @@ if(
             'hidden'
         );
 
-    els.promptText.innerHTML =
-        `
-        ${currentQ.prompt}
+  els.promptText.innerHTML =
+`
+<div id="builderWords"></div>
 
-        <br><br>
+<br>
 
-        <input
-            id="freeInput"
-            class="option-btn"
-            placeholder="Satz eingeben..." />
-        `;
+<input
+    id="freeInput"
+    class="option-btn"
+    placeholder="Satz eingeben..." />
+`;
 
     setTimeout(() => {
 
@@ -935,7 +935,23 @@ if(
                 els.checkBtn
             );
         }
+const wordArea =
+    document.getElementById(
+        'builderWords'
+    );
 
+if(wordArea){
+
+    wordArea.innerHTML =
+        currentQ.words
+            .map(word =>
+                `<button class="builder-word">
+                    ${word}
+                </button>`
+            )
+            .join(' ');
+
+}
         if(input){
 
             const answerCheckHandler =
