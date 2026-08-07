@@ -903,16 +903,33 @@ if(
             'hidden'
         );
 
-  els.promptText.innerHTML =
+els.promptText.innerHTML =
 `
-<div id="builderWords"></div>
+<div>
+
+    <strong>
+        Verfügbare Wörter
+    </strong>
+
+</div>
 
 <br>
 
-<input
-    id="freeInput"
-    class="option-btn"
-    placeholder="Satz eingeben..." />
+<div id="builderWords"></div>
+
+<br><br>
+
+<div>
+
+    <strong>
+        Dein Satz
+    </strong>
+
+</div>
+
+<br>
+
+<div id="builderSentence"></div>
 `;
 
     setTimeout(() => {
