@@ -1041,10 +1041,6 @@ els.checkBtn.onclick =
         
         setTimeout(()=>{ 
             const input=document.getElementById('freeInput'); 
-            
-            const oldCheckBtn = els.checkBtn;
-            els.checkBtn = oldCheckBtn ? oldCheckBtn.cloneNode(true) : document.createElement('button');
-            if(oldCheckBtn) oldCheckBtn.replaceWith(els.checkBtn);
 
             if(input){ 
                 const answerCheckHandler = (e) => {
