@@ -666,19 +666,19 @@ function pickQuestion(){
             [...words]
         );
 
-    currentQ = {
+   currentQ = {
 
-        type: 'builder',
+    type: 'builder',
 
-        prompt:
-            shuffled.join(' '),
+    prompt:
+        shuffled,
 
-        answer:
-            item.sentence,
+    answer:
+        item.sentence,
 
-        answered: false
+    answered: false
 
-    };
+};
 
     return currentQ;
 }
