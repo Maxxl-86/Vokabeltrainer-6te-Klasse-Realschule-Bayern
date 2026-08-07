@@ -977,7 +977,7 @@ setTimeout(() => {
                         'builder-word';
 
                     chip.textContent =
-                        btn.textContent;
+    btn.textContent.trim();
 
                     sentenceArea.appendChild(
                         chip
@@ -1001,21 +1001,37 @@ els.checkBtn.onclick =
     document.getElementById(
         'builderSentence'
     );
-        const builtSentence =
-            Array.from(
-                sentenceArea.children
-            )
-            .map(
-                chip =>
-                    chip.textContent
-            )
-            .join(' ');
+       const builtSentence =
+    Array.from(
+        sentenceArea.children
+    )
+    .map(chip =>
+        chip.textContent.trim()
+    )
+    .filter(Boolean)
+    .join(' ');
 
         onAnswerOnce(
             builtSentence + '.'
         );
 
     };
+  sentenceArea.tabIndex = 0;
+
+sentenceArea.onkeydown =
+    (event) => {
+
+        if(event.key === 'Enter'){
+
+            event.preventDefault();
+
+            els.checkBtn.click();
+
+        }
+
+    };
+
+sentenceArea.focus();
     return;
 }
   
