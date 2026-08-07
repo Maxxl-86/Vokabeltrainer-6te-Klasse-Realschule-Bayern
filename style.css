@@ -729,3 +729,24 @@ button.highlight{
 
     -webkit-text-fill-color:transparent;
 }
+.builder-word{
+
+    margin:4px;
+
+    padding:8px 12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#253a5a;
+
+    color:white;
+
+    cursor:pointer;
+}
+
+.builder-word:hover{
+
+    background:#36527c;
+}
