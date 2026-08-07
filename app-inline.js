@@ -1036,6 +1036,10 @@ if(wordArea){
             );
 
             input.focus();
+          const sentenceArea =
+    document.getElementById(
+        'builderSentence'
+    );
 
         }
 
