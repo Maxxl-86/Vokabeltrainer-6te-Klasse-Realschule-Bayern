@@ -952,6 +952,44 @@ if(wordArea){
             .join(' ');
 
 }
+      wordArea
+    .querySelectorAll(
+        '.builder-word'
+    )
+    .forEach(btn => {
+
+        btn.addEventListener(
+            'click',
+            () => {
+
+                const input =
+                    document.getElementById(
+                        'freeInput'
+                    );
+
+                if(!input)
+                    return;
+
+                if(
+                    input.value.trim()
+                ){
+
+                    input.value +=
+                        ' ' +
+                        btn.textContent;
+
+                }else{
+
+                    input.value =
+                        btn.textContent;
+
+                }
+
+            }
+        );
+
+    });
+``
         if(input){
 
             const answerCheckHandler =
