@@ -746,10 +746,19 @@ function onAnswerOnce(userInput){
 
     if(exact){
 
-        xpEarned =
-            currentQ.type === 'sentence'
-            ? 10
-            : 5;
+       if(currentQ.type === 'builder'){
+
+    xpEarned = 15;
+
+}else if(currentQ.type === 'sentence'){
+
+    xpEarned = 10;
+
+}else{
+
+    xpEarned = 5;
+
+}
 
         const player =
             loadPlayer();
