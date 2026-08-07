@@ -991,7 +991,24 @@ setTimeout(() => {
         });
 
 },0);
+els.checkBtn.onclick =
+    () => {
 
+        const builtSentence =
+            Array.from(
+                sentenceArea.children
+            )
+            .map(
+                chip =>
+                    chip.textContent
+            )
+            .join(' ');
+
+        onAnswerOnce(
+            builtSentence + '.'
+        );
+
+    };
     return;
 }
   
