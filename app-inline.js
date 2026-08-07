@@ -1016,22 +1016,26 @@ els.checkBtn.onclick =
         );
 
     };
-  sentenceArea.tabIndex = 0;
-
-sentenceArea.onkeydown =
+  els.promptText.onkeydown =
     (event) => {
 
-        if(event.key === 'Enter'){
-
-            event.preventDefault();
-
-            els.checkBtn.click();
-
+        if(event.key !== 'Enter'){
+            return;
         }
 
-    };
+        event.preventDefault();
 
-sentenceArea.focus();
+        if(
+            !currentQ ||
+            currentQ.answered
+        ){
+            return;
+        }
+
+        els.checkBtn.click();
+
+    };
+ 
     return;
 }
   
