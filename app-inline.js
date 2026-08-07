@@ -1016,25 +1016,7 @@ els.checkBtn.onclick =
         );
 
     };
-  els.promptText.onkeydown =
-    (event) => {
 
-        if(event.key !== 'Enter'){
-            return;
-        }
-
-        event.preventDefault();
-
-        if(
-            !currentQ ||
-            currentQ.answered
-        ){
-            return;
-        }
-
-        els.checkBtn.click();
-
-    };
  
     return;
 }
@@ -1089,6 +1071,38 @@ function bindControls(){
     
     // NEU: Lösung anzeigen Button binden
     els.showAnswerBtn && els.showAnswerBtn.addEventListener('click', handleShowAnswer);
+  document.addEventListener(
+    'keydown',
+    (event) => {
+
+        if(event.key !== 'Enter'){
+            return;
+        }
+
+        if(
+            !els.modeSelect ||
+            els.modeSelect.value !== 'builder'
+        ){
+            return;
+        }
+
+        if(
+            !currentQ ||
+            currentQ.answered
+        ){
+            return;
+        }
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        if(els.checkBtn){
+            els.checkBtn.click();
+        }
+
+    },
+    true
+);
 
     els.resetSelectedBtn && els.resetSelectedBtn.addEventListener('click', ()=> resetSelected()); 
     els.resetAllBtn && els.resetAllBtn.addEventListener('click', ()=> resetAll()); 
