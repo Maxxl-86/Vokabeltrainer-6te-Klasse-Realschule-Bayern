@@ -750,3 +750,21 @@ button.highlight{
 
     background:#36527c;
 }
+#builderSentence{
+
+    min-height:60px;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    background:#1d2f4d;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+}
