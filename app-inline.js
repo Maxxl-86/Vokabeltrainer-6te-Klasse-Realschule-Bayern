@@ -992,8 +992,11 @@ setTimeout(() => {
 
 },0);
 els.checkBtn.onclick =
-    () => {
 
+    () => {
+  console.log(
+    'PRUEFEN GEKLICKT'
+);
         const builtSentence =
             Array.from(
                 sentenceArea.children
