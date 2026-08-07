@@ -1,17 +1,56 @@
 [
   {
-    "sentence": "I play football."
+    "id": "g6_u1_b001",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "difficulty": 1,
+    "sentence": "I use my camera every day.",
+    "de": "Ich benutze jeden Tag meine Kamera."
   },
   {
-    "sentence": "She likes animals."
+    "id": "g6_u2_b001",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "nature",
+    "difficulty": 1,
+    "sentence": "We walk along the path.",
+    "de": "Wir gehen den Weg entlang."
   },
   {
-    "sentence": "We live in Germany."
+    "id": "g6_u3_b001",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "city",
+    "difficulty": 1,
+    "sentence": "London is a multicultural city.",
+    "de": "London ist eine multikulturelle Stadt."
   },
   {
-    "sentence": "My friend is funny."
+    "id": "g6_u4_b001",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "culture",
+    "difficulty": 1,
+    "sentence": "The Highlands are in Scotland.",
+    "de": "Die Highlands liegen in Schottland."
   },
   {
-    "sentence": "They go to school."
+    "id": "g6_u5_b001",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "travel",
+    "difficulty": 1,
+    "sentence": "The flight is delayed.",
+    "de": "Der Flug ist verspätet."
+  },
+  {
+    "id": "g6_u6_b001",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "sports",
+    "difficulty": 1,
+    "sentence": "I play football three times a week.",
+    "de": "Ich spiele dreimal pro Woche Fußball."
   }
 ]
