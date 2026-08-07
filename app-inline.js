@@ -932,118 +932,65 @@ els.promptText.innerHTML =
 <div id="builderSentence"></div>
 `;
 
-    setTimeout(() => {
+setTimeout(() => {
 
-        const input =
-            document.getElementById(
-                'freeInput'
-            );
+    const wordArea =
+        document.getElementById(
+            'builderWords'
+        );
 
-        const oldCheckBtn =
-            els.checkBtn;
+    const sentenceArea =
+        document.getElementById(
+            'builderSentence'
+        );
 
-        els.checkBtn =
-            oldCheckBtn
-                ? oldCheckBtn.cloneNode(true)
-                : document.createElement('button');
-
-        if(oldCheckBtn){
-            oldCheckBtn.replaceWith(
-                els.checkBtn
-            );
-        }
-const wordArea =
-    document.getElementById(
-        'builderWords'
-    );
-
-if(wordArea){
+    if(
+        !wordArea ||
+        !sentenceArea
+    ){
+        return;
+    }
 
     wordArea.innerHTML =
         currentQ.words
             .map(word =>
-                `<button class="builder-word">
-                    ${word}
-                </button>`
+                `<button class="builder-word">${word}</button>`
             )
-            .join(' ');
+            .join('');
 
-}
-      wordArea
-    .querySelectorAll(
-        '.builder-word'
-    )
-    .forEach(btn => {
+    wordArea
+        .querySelectorAll(
+            '.builder-word'
+        )
+        .forEach(btn => {
 
-        btn.addEventListener(
-            'click',
-            () => {
+            btn.addEventListener(
+                'click',
+                () => {
 
-                const input =
-                    document.getElementById(
-                        'freeInput'
+                    const chip =
+                        document.createElement(
+                            'button'
+                        );
+
+                    chip.className =
+                        'builder-word';
+
+                    chip.textContent =
+                        btn.textContent;
+
+                    sentenceArea.appendChild(
+                        chip
                     );
 
-                if(!input)
-                    return;
-
-                if(
-                    input.value.trim()
-                ){
-
-                    input.value +=
-                        ' ' +
-                        btn.textContent;
-
-                }else{
-
-                    input.value =
-                        btn.textContent;
+                    btn.disabled = true;
 
                 }
-
-            }
-        );
-
-    });
-``
-        if(input){
-
-            const answerCheckHandler =
-                (e) => {
-
-                    if(
-                        e.type === 'keydown' &&
-                        e.key !== 'Enter'
-                    ){
-                        return;
-                    }
-
-                    onAnswerOnce(
-                        input.value.trim()
-                    );
-
-                };
-
-            input.addEventListener(
-                'keydown',
-                answerCheckHandler
             );
 
-            els.checkBtn.addEventListener(
-                'click',
-                answerCheckHandler
-            );
+        });
 
-            input.focus();
-          const sentenceArea =
-    document.getElementById(
-        'builderSentence'
-    );
-
-        }
-
-    },0);
+},0);
 
     return;
 }
