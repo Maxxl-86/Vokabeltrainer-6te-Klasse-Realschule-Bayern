@@ -672,6 +672,8 @@ function pickQuestion(){
 
     prompt:
         shuffled,
+     words:
+    shuffled,
 
     answer:
         item.sentence,
