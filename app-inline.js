@@ -642,17 +642,43 @@ function pickQuestion(){
 
     return currentQ;
 }
-  if(mode === 'builder'){
+if(mode === 'builder'){
 
-    if(!BUILDER_DATA.length){
+    const selectedGrade =
+        els.gradeSelect
+        ? els.gradeSelect.value
+        : 'all';
+
+    const allowedUnits =
+        activeBlockIds.length
+        ? activeBlockIds
+        : UNIT_META.map(u => u.id);
+
+    const builderPool =
+        BUILDER_DATA.filter(item => {
+
+            const gradeMatches =
+                selectedGrade === 'all' ||
+                String(item.grade) === selectedGrade;
+
+            const unitMatches =
+                allowedUnits.includes(
+                    item.unit
+                );
+
+            return gradeMatches && unitMatches;
+
+        });
+
+    if(!builderPool.length){
         return null;
     }
 
     const item =
-        BUILDER_DATA[
+        builderPool[
             Math.floor(
                 Math.random() *
-                BUILDER_DATA.length
+                builderPool.length
             )
         ];
 
