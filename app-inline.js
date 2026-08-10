@@ -985,7 +985,7 @@ setTimeout(() => {
     ){
         return;
     }
-
+currentQ.builderWords = [];
     wordArea.innerHTML =
         currentQ.words
             .map(word =>
@@ -1011,11 +1011,18 @@ setTimeout(() => {
                     chip.className =
                         'builder-word';
 
-                    chip.textContent =
+const selectedWord =
     btn.textContent.trim();
 
-                   sentenceArea.appendChild(
+chip.textContent =
+    selectedWord;
+
+sentenceArea.appendChild(
     chip
+);
+
+currentQ.builderWords.push(
+    selectedWord
 );
 
 btn.disabled = true;
@@ -1033,7 +1040,21 @@ chip.addEventListener(
 
         btn.disabled = false;
 
-        chip.remove();
+const index =
+    currentQ.builderWords.indexOf(
+        selectedWord
+    );
+
+if(index > -1){
+
+    currentQ.builderWords.splice(
+        index,
+        1
+    );
+
+}
+
+chip.remove();
 
     }
 );
@@ -1054,15 +1075,9 @@ els.checkBtn.onclick =
     document.getElementById(
         'builderSentence'
     );
-       const builtSentence =
-    Array.from(
-        sentenceArea.children
-    )
-    .map(chip =>
-        chip.textContent.trim()
-    )
-    .filter(Boolean)
-    .join(' ');
+      const builtSentence =
+    (currentQ.builderWords || [])
+        .join(' ');
 
         onAnswerOnce(
             builtSentence + '.'
