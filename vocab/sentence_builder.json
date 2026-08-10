@@ -9,6 +9,42 @@
     "de": "Ich benutze jeden Tag meine Kamera."
   },
   {
+    "id": "g6_u1_b002",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "difficulty": 1,
+    "sentence": "I download games to my phone.",
+    "de": "Ich lade Spiele auf mein Handy herunter."
+  },
+  {
+    "id": "g6_u1_b003",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "difficulty": 1,
+    "sentence": "The screen is very big.",
+    "de": "Der Bildschirm ist sehr groß."
+  },
+  {
+    "id": "g6_u1_b004",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "difficulty": 1,
+    "sentence": "The game is exciting.",
+    "de": "Das Spiel ist aufregend."
+  },
+  {
+    "id": "g6_u1_b005",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "media",
+    "difficulty": 1,
+    "sentence": "I watch the news on TV.",
+    "de": "Ich schaue die Nachrichten im Fernsehen."
+  },
+  {
     "id": "g6_u2_b001",
     "grade": 6,
     "unit": "u2",
@@ -16,6 +52,42 @@
     "difficulty": 1,
     "sentence": "We walk along the path.",
     "de": "Wir gehen den Weg entlang."
+  },
+  {
+    "id": "g6_u2_b002",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "nature",
+    "difficulty": 1,
+    "sentence": "The river is near the forest.",
+    "de": "Der Fluss ist in der Nähe des Waldes."
+  },
+  {
+    "id": "g6_u2_b003",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "nature",
+    "difficulty": 1,
+    "sentence": "I see a fox in the field.",
+    "de": "Ich sehe einen Fuchs auf dem Feld."
+  },
+  {
+    "id": "g6_u2_b004",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "outdoor",
+    "difficulty": 1,
+    "sentence": "You need a map for the hike.",
+    "de": "Du brauchst eine Karte für die Wanderung."
+  },
+  {
+    "id": "g6_u2_b005",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "outdoor",
+    "difficulty": 1,
+    "sentence": "Do not feed the animals.",
+    "de": "Füttere die Tiere nicht."
   },
   {
     "id": "g6_u3_b001",
@@ -27,6 +99,42 @@
     "de": "London ist eine multikulturelle Stadt."
   },
   {
+    "id": "g6_u3_b002",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "city",
+    "difficulty": 1,
+    "sentence": "The underground is very busy.",
+    "de": "Die U-Bahn ist sehr belebt."
+  },
+  {
+    "id": "g6_u3_b003",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "city",
+    "difficulty": 1,
+    "sentence": "The passenger gets on the bus.",
+    "de": "Der Fahrgast steigt in den Bus ein."
+  },
+  {
+    "id": "g6_u3_b004",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "city",
+    "difficulty": 1,
+    "sentence": "The exit is over there.",
+    "de": "Der Ausgang ist dort drüben."
+  },
+  {
+    "id": "g6_u3_b005",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "city",
+    "difficulty": 1,
+    "sentence": "This department store is too expensive.",
+    "de": "Dieses Kaufhaus ist zu teuer."
+  },
+  {
     "id": "g6_u4_b001",
     "grade": 6,
     "unit": "u4",
@@ -34,6 +142,42 @@
     "difficulty": 1,
     "sentence": "The Highlands are in Scotland.",
     "de": "Die Highlands liegen in Schottland."
+  },
+  {
+    "id": "g6_u4_b002",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "food",
+    "difficulty": 1,
+    "sentence": "I like homemade soup.",
+    "de": "Ich mag hausgemachte Suppe."
+  },
+  {
+    "id": "g6_u4_b003",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "food",
+    "difficulty": 1,
+    "sentence": "The recipe is simple.",
+    "de": "Das Rezept ist einfach."
+  },
+  {
+    "id": "g6_u4_b004",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "home",
+    "difficulty": 1,
+    "sentence": "I need to load the dishwasher.",
+    "de": "Ich muss die Spülmaschine einräumen."
+  },
+  {
+    "id": "g6_u4_b005",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "home",
+    "difficulty": 1,
+    "sentence": "She hangs up the washing.",
+    "de": "Sie hängt die Wäsche auf."
   },
   {
     "id": "g6_u5_b001",
@@ -45,6 +189,42 @@
     "de": "Der Flug ist verspätet."
   },
   {
+    "id": "g6_u5_b002",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "travel",
+    "difficulty": 1,
+    "sentence": "I have my passport with me.",
+    "de": "Ich habe meinen Pass dabei."
+  },
+  {
+    "id": "g6_u5_b003",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "travel",
+    "difficulty": 1,
+    "sentence": "The airport is very big.",
+    "de": "Der Flughafen ist sehr groß."
+  },
+  {
+    "id": "g6_u5_b004",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "animals",
+    "difficulty": 1,
+    "sentence": "The bear is very heavy.",
+    "de": "Der Bär ist sehr schwer."
+  },
+  {
+    "id": "g6_u5_b005",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "emergency",
+    "difficulty": 1,
+    "sentence": "The police officer helps people.",
+    "de": "Der Polizeibeamte hilft Menschen."
+  },
+  {
     "id": "g6_u6_b001",
     "grade": 6,
     "unit": "u6",
@@ -52,5 +232,41 @@
     "difficulty": 1,
     "sentence": "I play football three times a week.",
     "de": "Ich spiele dreimal pro Woche Fußball."
+  },
+  {
+    "id": "g6_u6_b002",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "sports",
+    "difficulty": 1,
+    "sentence": "Our coach is very good.",
+    "de": "Unser Trainer ist sehr gut."
+  },
+  {
+    "id": "g6_u6_b003",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "school",
+    "difficulty": 1,
+    "sentence": "My schedule is full.",
+    "de": "Mein Stundenplan ist voll."
+  },
+  {
+    "id": "g6_u6_b004",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "health",
+    "difficulty": 1,
+    "sentence": "I have a sore throat.",
+    "de": "Ich habe Halsschmerzen."
+  },
+  {
+    "id": "g6_u6_b005",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "health",
+    "difficulty": 1,
+    "sentence": "The nurse gives me medicine.",
+    "de": "Der Krankenpfleger gibt mir Medizin."
   }
 ]
