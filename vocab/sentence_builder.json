@@ -268,5 +268,95 @@
     "difficulty": 1,
     "sentence": "The nurse gives me medicine.",
     "de": "Der Krankenpfleger gibt mir Medizin."
+  },
+    {
+    "id": "g7_u1_b001",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sentence": "I go to a boarding school.",
+    "de": "Ich gehe auf ein Internat."
+  },
+  {
+    "id": "g7_u1_b002",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sentence": "My roommate is very friendly.",
+    "de": "Mein Zimmergenosse ist sehr freundlich."
+  },
+  {
+    "id": "g7_u1_b003",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sentence": "The facilities are very good.",
+    "de": "Die Einrichtungen sind sehr gut."
+  },
+  {
+    "id": "g7_u1_b004",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "friendship",
+    "difficulty": 2,
+    "sentence": "I want to make new friends.",
+    "de": "Ich möchte neue Freunde finden."
+  },
+  {
+    "id": "g7_u1_b005",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "technology",
+    "difficulty": 2,
+    "sentence": "There is Wi-Fi in every room.",
+    "de": "Es gibt WLAN in jedem Zimmer."
+  },
+  {
+    "id": "g7_u1_b006",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sentence": "Please fill in the form.",
+    "de": "Bitte fülle das Formular aus."
+  },
+  {
+    "id": "g7_u1_b007",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sentence": "The exam starts in the morning.",
+    "de": "Die Prüfung beginnt am Morgen."
+  },
+  {
+    "id": "g7_u1_b008",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "communication",
+    "difficulty": 2,
+    "sentence": "I make a phone call after school.",
+    "de": "Ich mache nach der Schule einen Anruf."
+  },
+  {
+    "id": "g7_u1_b009",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sentence": "The choir sings in the chapel.",
+    "de": "Der Chor singt in der Kapelle."
+  },
+  {
+    "id": "g7_u1_b010",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "activities",
+    "difficulty": 2,
+    "sentence": "I want to join a club.",
+    "de": "Ich möchte einem Club beitreten."
   }
 ]
