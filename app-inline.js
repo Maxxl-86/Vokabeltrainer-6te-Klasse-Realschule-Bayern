@@ -1174,6 +1174,29 @@ els.modeSelect && els.modeSelect.addEventListener('change', () => {
     }
 
 });
+  els.gradeSelect &&
+    els.gradeSelect.addEventListener(
+        'change',
+        () => {
+
+            currentQ = null;
+
+            const q =
+                pickQuestion();
+
+            if(q){
+
+                renderQuestion();
+
+            }else{
+
+                els.promptText.textContent =
+                    'Für diese Auswahl sind noch keine Aufgaben vorhanden.';
+
+            }
+
+        }
+    );
 els.achievementToggle &&
     els.achievementToggle.addEventListener(
         'click',
