@@ -1170,7 +1170,54 @@ els.modeSelect && els.modeSelect.addEventListener('change', () => {
     const q = pickQuestion();
 
     if(q){
+
         renderQuestion();
+
+    }else{
+
+        els.feedback.textContent = '';
+
+        els.hintArea &&
+            els.hintArea.classList.add(
+                'hidden'
+            );
+
+        els.promptText.textContent =
+            'Für diese Auswahl sind noch keine Aufgaben vorhanden.';
+
+        els.checkBtn &&
+            els.checkBtn.classList.add(
+                'hidden'
+            );
+
+        els.showAnswerBtn &&
+            els.showAnswerBtn.classList.add(
+                'hidden'
+            );
+
+        els.nextBtn &&
+            els.nextBtn.classList.remove(
+                'hidden'
+            );
+
+        els.nextBtn.textContent =
+            'Start';
+
+        if(
+            els.modeSelect.value === 'builder'
+        ){
+
+            els.exerciseType.textContent =
+                '🧩 Satzbau';
+
+            els.exerciseType.style.color =
+                '#ffd966';
+
+            els.exerciseDescription.textContent =
+                'Ordne die Wörter zu einem korrekten Satz.';
+
+        }
+
     }
 
 });
