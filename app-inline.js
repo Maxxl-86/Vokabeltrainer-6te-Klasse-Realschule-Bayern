@@ -108,6 +108,11 @@ els.presetSelect = $("presetSelect"); els.modeSelect = $("modeSelect"); els.grad
   els.resetSelectedBtn = $("resetSelectedBtn");
   els.resetAllBtn = $("resetAllBtn");
   els.installBtn = $("installBtn");
+  els.exportSaveBtn =
+    $("exportSaveBtn");
+
+els.importSaveInput =
+    $("importSaveInput");
   // NEUE ELEMENTE BINDEN
   els.showAnswerBtn = $("showAnswerBtn"); 
   els.sessionProgress = $("sessionProgress");
@@ -209,6 +214,92 @@ function saveAchievements(data){
     );
 
 }
+function exportSavegame(){
+
+    const data = {
+
+        version: APP_VERSION,
+
+        exportedAt:
+            new Date().toISOString(),
+
+        player:
+            loadPlayer(),
+
+        achievements:
+            loadAchievements(),
+
+        stats:
+            loadStats()
+
+    };
+
+    const blob =
+        new Blob(
+            [
+                JSON.stringify(
+                    data,
+                    null,
+                    2
+                )
+            ],
+            {
+                type: 'application/json'
+            }
+        );
+
+    const url =
+        URL.createObjectURL(
+            blob
+        );
+
+    const a =
+        document.createElement(
+            'a'
+        );
+
+    a.href = url;
+
+    a.download =
+        'english-coach-savegame.json';
+
+    document.body.appendChild(a);
+
+    a.click();
+
+    document.body.removeChild(a);
+
+    URL.revokeObjectURL(
+        url
+    );
+
+}
+function importSavegame(file){
+
+    const reader =
+        new FileReader();
+
+    reader.onload =
+        () => {
+
+            try{
+
+                const data =
+                    JSON.parse(
+                        reader.result
+                    );
+
+                if(data.player){
+
+                    savePlayer(
+                        data.player
+                    );
+
+                }
+
+                if(data.achievements){
+
+    
 
 function unlockAchievement(id){
 
@@ -1210,6 +1301,32 @@ function bindControls(){
     
     // NEU: Lösung anzeigen Button binden
     els.showAnswerBtn && els.showAnswerBtn.addEventListener('click', handleShowAnswer);
+  els.exportSaveBtn &&
+    els.exportSaveBtn.addEventListener(
+        'click',
+        exportSavegame
+    );
+
+els.importSaveInput &&
+    els.importSaveInput.addEventListener(
+        'change',
+        (event) => {
+
+            const file =
+                event.target.files[0];
+
+            if(!file){
+                return;
+            }
+
+            importSavegame(
+                file
+            );
+
+            event.target.value = '';
+
+        }
+    );
   document.addEventListener(
     'keydown',
     (event) => {
