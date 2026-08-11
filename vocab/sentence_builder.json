@@ -448,5 +448,95 @@
     "difficulty": 2,
     "sentence": "I need to concentrate on my homework.",
     "de": "Ich muss mich auf meine Hausaufgaben konzentrieren."
+  },
+    {
+    "id": "g7_u3_b001",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sentence": "The Romans invaded Britain.",
+    "de": "Die Römer marschierten in Britannien ein."
+  },
+  {
+    "id": "g7_u3_b002",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sentence": "The Vikings settled in Britain.",
+    "de": "Die Wikinger ließen sich in Britannien nieder."
+  },
+  {
+    "id": "g7_u3_b003",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sentence": "The Normans built many castles.",
+    "de": "Die Normannen bauten viele Burgen."
+  },
+  {
+    "id": "g7_u3_b004",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sentence": "A soldier carried a knife.",
+    "de": "Ein Soldat trug ein Messer."
+  },
+  {
+    "id": "g7_u3_b005",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sentence": "The emperor had a daughter.",
+    "de": "Der Kaiser hatte eine Tochter."
+  },
+  {
+    "id": "g7_u3_b006",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sentence": "People traded precious metal.",
+    "de": "Menschen handelten mit Edelmetall."
+  },
+  {
+    "id": "g7_u3_b007",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sentence": "They discovered an ancient object.",
+    "de": "Sie entdeckten einen uralten Gegenstand."
+  },
+  {
+    "id": "g7_u3_b008",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sentence": "The castle was near the river.",
+    "de": "Die Burg war in der Nähe des Flusses."
+  },
+  {
+    "id": "g7_u3_b009",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sentence": "The tribe lived on the land.",
+    "de": "Der Stamm lebte auf dem Land."
+  },
+  {
+    "id": "g7_u3_b010",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sentence": "The king divided up the empire.",
+    "de": "Der König teilte das Reich auf."
   }
 ]
