@@ -1135,9 +1135,27 @@ els.checkBtn.onclick =
     document.getElementById(
         'builderSentence'
     );
-      const builtSentence =
+  let builtSentence =
     (currentQ.builderWords || [])
+        .map(word => word.trim())
+        .filter(Boolean)
         .join(' ');
+
+if(!builtSentence){
+
+    builtSentence =
+        Array.from(
+            document.querySelectorAll(
+                '#builderSentence .builder-word'
+            )
+        )
+        .map(chip =>
+            chip.textContent.trim()
+        )
+        .filter(Boolean)
+        .join(' ');
+
+}
 
         onAnswerOnce(
             builtSentence + '.'
