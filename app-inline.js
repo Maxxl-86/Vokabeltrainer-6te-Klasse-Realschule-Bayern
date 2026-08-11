@@ -299,6 +299,51 @@ function importSavegame(file){
 
                 if(data.achievements){
 
+                    saveAchievements(
+                        data.achievements
+                    );
+
+                }
+
+                if(data.stats){
+
+                    saveStats(
+                        data.stats
+                    );
+
+                }
+
+                updatePlayerUI();
+
+                updateStatsUI();
+
+                renderAchievements();
+
+                alert(
+                    'Spielstand wurde erfolgreich importiert.'
+                );
+
+            }catch(e){
+
+                alert(
+                    'Import fehlgeschlagen. Die Datei konnte nicht gelesen werden.'
+                );
+
+                console.error(
+                    'Savegame Import Fehler:',
+                    e
+                );
+
+            }
+
+        };
+
+    reader.readAsText(
+        file
+    );
+
+}
+
     
 
 function unlockAchievement(id){
