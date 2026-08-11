@@ -1126,37 +1126,32 @@ chip.remove();
 
 },0);
 els.checkBtn.onclick =
-
     () => {
 
-      const sentenceArea =
-    document.getElementById(
-        'builderSentence'
-    );
-  let builtSentence =
-    (currentQ.builderWords || [])
-        .map(word => word.trim())
-        .filter(Boolean)
-        .join(' ');
-
-if(!builtSentence){
-
-    builtSentence =
-        Array.from(
+        const chips =
             document.querySelectorAll(
                 '#builderSentence .builder-word'
-            )
-        )
-        .map(chip =>
-            chip.textContent.trim()
-        )
-        .filter(Boolean)
-        .join(' ');
+            );
 
-}
+        const builtSentence =
+            Array.from(chips)
+                .map(chip =>
+                    chip.textContent.trim()
+                )
+                .filter(Boolean)
+                .join(' ');
+
+        if(!builtSentence){
+
+            els.feedback.textContent =
+                'Baue zuerst einen Satz.';
+
+            return;
+
+        }
 
         onAnswerOnce(
-            builtSentence + '.'
+            builtSentence
         );
 
     };
