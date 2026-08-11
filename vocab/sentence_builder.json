@@ -358,5 +358,95 @@
     "difficulty": 2,
     "sentence": "I want to join a club.",
     "de": "Ich möchte einem Club beitreten."
+  },
+    {
+    "id": "g7_u2_b001",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "daily life",
+    "difficulty": 2,
+    "sentence": "I do my chores every weekday.",
+    "de": "Ich erledige meine Hausarbeiten jeden Werktag."
+  },
+  {
+    "id": "g7_u2_b002",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "school",
+    "difficulty": 2,
+    "sentence": "Please take notes in class.",
+    "de": "Bitte mache im Unterricht Notizen."
+  },
+  {
+    "id": "g7_u2_b003",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "movie",
+    "difficulty": 2,
+    "sentence": "The hero wears a mask.",
+    "de": "Der Held trägt eine Maske."
+  },
+  {
+    "id": "g7_u2_b004",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "movie",
+    "difficulty": 2,
+    "sentence": "The prince escapes from the castle.",
+    "de": "Der Prinz entkommt aus dem Schloss."
+  },
+  {
+    "id": "g7_u2_b005",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "story",
+    "difficulty": 2,
+    "sentence": "The character changes into a hero.",
+    "de": "Die Figur verwandelt sich in einen Helden."
+  },
+  {
+    "id": "g7_u2_b006",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "home",
+    "difficulty": 2,
+    "sentence": "I set the table before dinner.",
+    "de": "Ich decke vor dem Abendessen den Tisch."
+  },
+  {
+    "id": "g7_u2_b007",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "home",
+    "difficulty": 2,
+    "sentence": "She loads the dishwasher after lunch.",
+    "de": "Sie räumt nach dem Mittagessen die Spülmaschine ein."
+  },
+  {
+    "id": "g7_u2_b008",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "business",
+    "difficulty": 2,
+    "sentence": "The young CEO starts a business.",
+    "de": "Der junge Geschäftsführer gründet ein Geschäft."
+  },
+  {
+    "id": "g7_u2_b009",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "fashion",
+    "difficulty": 2,
+    "sentence": "He designs a creative bow tie.",
+    "de": "Er entwirft eine kreative Fliege."
+  },
+  {
+    "id": "g7_u2_b010",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "study",
+    "difficulty": 2,
+    "sentence": "I need to concentrate on my homework.",
+    "de": "Ich muss mich auf meine Hausaufgaben konzentrieren."
   }
 ]
