@@ -999,6 +999,10 @@ setTimeout(() => {
         document.getElementById(
             'builderSentence'
         );
+  const resetBuilderBtn =
+    document.getElementById(
+        'resetBuilderBtn'
+    );
 
     if(
         !wordArea ||
@@ -1006,6 +1010,41 @@ setTimeout(() => {
     ){
         return;
     }
+  if(resetBuilderBtn){
+
+    resetBuilderBtn.addEventListener(
+        'click',
+        () => {
+
+            if(
+                !currentQ ||
+                currentQ.answered
+            ){
+                return;
+            }
+
+            currentQ.builderWords = [];
+
+            sentenceArea.innerHTML = '';
+
+            wordArea
+                .querySelectorAll(
+                    '.builder-word'
+                )
+                .forEach(btn => {
+
+                    btn.disabled = false;
+
+                    btn.classList.remove(
+                        'disabled'
+                    );
+
+                });
+
+        }
+    );
+
+}
 currentQ.builderWords = [];
     wordArea.innerHTML =
         currentQ.words
