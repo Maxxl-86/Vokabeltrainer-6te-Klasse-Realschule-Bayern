@@ -768,3 +768,10 @@ button.highlight{
 
     gap:8px;
 }
+.builder-word.disabled,
+.builder-word:disabled{
+
+    opacity:0.45;
+
+    cursor:not-allowed;
+}
