@@ -976,6 +976,16 @@ els.promptText.innerHTML =
 <br>
 
 <div id="builderSentence"></div>
+
+<br>
+
+<button
+    id="resetBuilderBtn"
+    class="secondary">
+
+    Satz zurücksetzen
+
+</button>
 `;
 
 setTimeout(() => {
