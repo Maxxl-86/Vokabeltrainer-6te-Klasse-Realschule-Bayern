@@ -737,15 +737,26 @@ if(mode === 'builder'){
 }
 function diffFeedback(user, correct){ const {ua,ub} = simpleDiffLine(user, correct); return `Fast richtig – **Schreibweise prüfen**:<div class="diffline">Dein Wort: ${ua}</div><div class="diffline">Richtig: ${ub}</div>`; }
 function disableInputsAfterAnswer(){ 
-  console.log(
-    'disableInputsAfterAnswer läuft'
-);
+
     els.optionsList.querySelectorAll('button.option-btn').forEach(btn=>{ btn.disabled=true; btn.classList.add('disabled'); }); 
     const free=document.getElementById('freeInput'); 
     if(free){ free.disabled=true; } 
     els.checkBtn && (els.checkBtn.disabled=true); 
     els.checkBtn && els.checkBtn.classList.add('hidden'); 
     els.showAnswerBtn && els.showAnswerBtn.classList.add('hidden'); // Lösung-Button ausblenden
+  document
+    .querySelectorAll(
+        '#builderWords .builder-word, #builderSentence .builder-word'
+    )
+    .forEach(btn => {
+
+        btn.disabled = true;
+
+        btn.classList.add(
+            'disabled'
+        );
+
+    });
     prepareNextUX(); 
 }
 function prepareNextUX(){ 
