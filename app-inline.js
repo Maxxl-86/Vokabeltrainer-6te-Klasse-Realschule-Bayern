@@ -1128,9 +1128,7 @@ chip.remove();
 els.checkBtn.onclick =
 
     () => {
-  console.log(
-    'PRUEFEN GEKLICKT'
-);
+
       const sentenceArea =
     document.getElementById(
         'builderSentence'
