@@ -233,8 +233,13 @@
     </section>
   </main>
   <script>
+ <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js').catch(console.error);
+      navigator.serviceWorker
+        .register('./sw.js', {
+          updateViaCache: 'none'
+        })
+        .catch(console.error);
     }
   </script>
 <script src="app-inline.js?v=14"></script>
