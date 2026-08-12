@@ -775,3 +775,19 @@ button.highlight{
 
     cursor:not-allowed;
 }
+.builder-translation{
+
+    padding:12px;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,0.04);
+
+    border-left:4px solid #ffd966;
+
+    color:#e8ecf5;
+
+    font-size:18px;
+
+    line-height:1.4;
+}
