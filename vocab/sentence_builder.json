@@ -538,5 +538,95 @@
     "difficulty": 2,
     "sentence": "The king divided up the empire.",
     "de": "Der König teilte das Reich auf."
+  },
+    {
+    "id": "g7_u4_b001",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland",
+    "difficulty": 2,
+    "sentence": "Ireland has many old traditions.",
+    "de": "Irland hat viele alte Traditionen."
+  },
+  {
+    "id": "g7_u4_b002",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland",
+    "difficulty": 2,
+    "sentence": "The hostel is near the city centre.",
+    "de": "Die Jugendherberge ist in der Nähe des Stadtzentrums."
+  },
+  {
+    "id": "g7_u4_b003",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland",
+    "difficulty": 2,
+    "sentence": "I can recommend this hostel.",
+    "de": "Ich kann diese Jugendherberge empfehlen."
+  },
+  {
+    "id": "g7_u4_b004",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "culture",
+    "difficulty": 2,
+    "sentence": "The musician plays in a pub.",
+    "de": "Der Musiker spielt in einem Pub."
+  },
+  {
+    "id": "g7_u4_b005",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "history",
+    "difficulty": 2,
+    "sentence": "The famine was a terrible time.",
+    "de": "Die Hungersnot war eine schreckliche Zeit."
+  },
+  {
+    "id": "g7_u4_b006",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "history",
+    "difficulty": 2,
+    "sentence": "Many people emigrated from Ireland.",
+    "de": "Viele Menschen wanderten aus Irland aus."
+  },
+  {
+    "id": "g7_u4_b007",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "culture",
+    "difficulty": 2,
+    "sentence": "The shamrock is an Irish symbol.",
+    "de": "Das Kleeblatt ist ein irisches Symbol."
+  },
+  {
+    "id": "g7_u4_b008",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "story",
+    "difficulty": 2,
+    "sentence": "The surprise was inside the cave.",
+    "de": "Die Überraschung war in der Höhle."
+  },
+  {
+    "id": "g7_u4_b009",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "food",
+    "difficulty": 2,
+    "sentence": "We bake bread with flour.",
+    "de": "Wir backen Brot mit Mehl."
+  },
+  {
+    "id": "g7_u4_b010",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "travel",
+    "difficulty": 2,
+    "sentence": "The review says the hostel is clean.",
+    "de": "Die Bewertung sagt, dass die Jugendherberge sauber ist."
   }
 ]
