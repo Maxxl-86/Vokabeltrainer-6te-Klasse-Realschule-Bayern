@@ -828,17 +828,21 @@ if(mode === 'builder'){
             [...words]
         );
 
-   currentQ = {
+  currentQ = {
 
     type: 'builder',
 
     prompt:
         shuffled,
-     words:
-    shuffled,
+
+    words:
+        shuffled,
 
     answer:
         item.sentence,
+
+    de:
+        item.de || '',
 
     answered: false
 
@@ -1087,6 +1091,20 @@ if(
 
 els.promptText.innerHTML =
 `
+<div class="builder-translation">
+
+    <strong>
+        Deutsch:
+    </strong>
+
+    <br>
+
+    ${currentQ.de}
+
+</div>
+
+<br>
+
 <div>
 
     <strong>
@@ -1094,8 +1112,6 @@ els.promptText.innerHTML =
     </strong>
 
 </div>
-
-<br>
 
 <div id="builderWords"></div>
 
