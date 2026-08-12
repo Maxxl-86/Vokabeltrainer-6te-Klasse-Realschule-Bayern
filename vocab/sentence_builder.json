@@ -628,5 +628,95 @@
     "difficulty": 2,
     "sentence": "The review says the hostel is clean.",
     "de": "Die Bewertung sagt, dass die Jugendherberge sauber ist."
+  },
+    {
+    "id": "g7_u5_b001",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "internet",
+    "difficulty": 2,
+    "sentence": "This webpage has many views.",
+    "de": "Diese Webseite hat viele Aufrufe."
+  },
+  {
+    "id": "g7_u5_b002",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "internet",
+    "difficulty": 2,
+    "sentence": "The founder has many subscribers.",
+    "de": "Der Gründer hat viele Abonnenten."
+  },
+  {
+    "id": "g7_u5_b003",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "friendship",
+    "difficulty": 2,
+    "sentence": "Friendship is important for happiness.",
+    "de": "Freundschaft ist wichtig für Glück."
+  },
+  {
+    "id": "g7_u5_b004",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology",
+    "difficulty": 2,
+    "sentence": "Digital skills are very useful.",
+    "de": "Digitale Fähigkeiten sind sehr nützlich."
+  },
+  {
+    "id": "g7_u5_b005",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "business",
+    "difficulty": 2,
+    "sentence": "A mentor can help young people.",
+    "de": "Ein Mentor kann jungen Menschen helfen."
+  },
+  {
+    "id": "g7_u5_b006",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "business",
+    "difficulty": 2,
+    "sentence": "The economy can crash quickly.",
+    "de": "Die Wirtschaft kann schnell zusammenbrechen."
+  },
+  {
+    "id": "g7_u5_b007",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "environment",
+    "difficulty": 2,
+    "sentence": "We should recycle plastic.",
+    "de": "Wir sollten Plastik wiederverwerten."
+  },
+  {
+    "id": "g7_u5_b008",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "environment",
+    "difficulty": 2,
+    "sentence": "Plastic is bad for the environment.",
+    "de": "Plastik ist schlecht für die Umwelt."
+  },
+  {
+    "id": "g7_u5_b009",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "animals",
+    "difficulty": 2,
+    "sentence": "A dolphin is an intelligent animal.",
+    "de": "Ein Delfin ist ein intelligentes Tier."
+  },
+  {
+    "id": "g7_u5_b010",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "learning",
+    "difficulty": 2,
+    "sentence": "Revision helps with pronunciation.",
+    "de": "Wiederholung hilft bei der Aussprache."
   }
 ]
