@@ -1,0 +1,4562 @@
+[
+  {
+    "id": "g7_u1_001",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 167,
+    "en": "boarder",
+    "de": "Internatsschüler/in"
+  },
+  {
+    "id": "g7_u1_002",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 167,
+    "en": "choir",
+    "de": "Chor"
+  },
+  {
+    "id": "g7_u1_003",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 167,
+    "en": "(to) code",
+    "de": "kodieren; programmieren (Computer)"
+  },
+  {
+    "id": "g7_u1_004",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 167,
+    "en": "(to) fence",
+    "de": "fechten (Sport)"
+  },
+  {
+    "id": "g7_u1_005",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 167,
+    "en": "(to) knit",
+    "de": "stricken"
+  },
+  {
+    "id": "g7_u1_006",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 167,
+    "en": "orchestra",
+    "de": "Orchester"
+  },
+  {
+    "id": "g7_u1_007",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 167,
+    "en": "self-defence",
+    "de": "Selbstverteidigung"
+  },
+  {
+    "id": "g7_u1_008",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 167,
+    "en": "sign language",
+    "de": "Zeichensprache; Gebärdensprache"
+  },
+  {
+    "id": "g7_u1_009",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 167,
+    "en": "roommate",
+    "de": "Zimmergenosse/-genossin"
+  },
+  {
+    "id": "g7_u1_010",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 167,
+    "en": "facilities",
+    "de": "Einrichtungen; Geräte"
+  },
+  {
+    "id": "g7_u1_011",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 167,
+    "en": "tennis court",
+    "de": "Tennisplatz"
+  },
+  {
+    "id": "g7_u1_012",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 167,
+    "en": "Wi-Fi",
+    "de": "WLAN; kabellose Datenübertragung"
+  },
+  {
+    "id": "g7_u1_013",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 167,
+    "en": "chapel",
+    "de": "Kapelle (kleiner kirchlicher Raum)"
+  },
+  {
+    "id": "g7_u1_014",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 167,
+    "en": "examination; exam",
+    "de": "Prüfung"
+  },
+  {
+    "id": "g7_u1_015",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 167,
+    "en": "culture",
+    "de": "Kultur"
+  },
+  {
+    "id": "g7_u1_016",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 167,
+    "en": "phone call; call",
+    "de": "(Telefon-)Anruf"
+  },
+  {
+    "id": "g7_u1_017",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 167,
+    "en": "(to) make friends",
+    "de": "Freunde finden"
+  },
+  {
+    "id": "g7_u1_018",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 168,
+    "en": "nut",
+    "de": "Nuss"
+  },
+  {
+    "id": "g7_u1_019",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 168,
+    "en": "(to) be/feel homesick",
+    "de": "Heimweh haben"
+  },
+  {
+    "id": "g7_u1_020",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 168,
+    "en": "sports that I have never done before",
+    "de": "Sportarten, die ich noch nie gemacht habe"
+  },
+  {
+    "id": "g7_u1_021",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 168,
+    "en": "net",
+    "de": "Netz"
+  },
+  {
+    "id": "g7_u1_022",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 168,
+    "en": "(to) appear",
+    "de": "auftauchen; erscheinen; scheinen"
+  },
+  {
+    "id": "g7_u1_023",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 168,
+    "en": "by magic",
+    "de": "durch Zauberei"
+  },
+  {
+    "id": "g7_u1_024",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 168,
+    "en": "magic",
+    "de": "Zauberei; Magie"
+  },
+  {
+    "id": "g7_u1_025",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 168,
+    "en": "(to) show",
+    "de": "zeigen"
+  },
+  {
+    "id": "g7_u1_026",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 168,
+    "en": "my own room",
+    "de": "mein/ein eigenes Zimmer"
+  },
+  {
+    "id": "g7_u1_027",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 168,
+    "en": "beginning",
+    "de": "Anfang"
+  },
+  {
+    "id": "g7_u1_028",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 168,
+    "en": "in the beginning",
+    "de": "am Anfang"
+  },
+  {
+    "id": "g7_u1_029",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 168,
+    "en": "(to) say hi to everyone",
+    "de": "alle grüßen"
+  },
+  {
+    "id": "g7_u1_030",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 168,
+    "en": "secret",
+    "de": "Geheimnis; geheim"
+  },
+  {
+    "id": "g7_u1_031",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 168,
+    "en": "in a loud voice",
+    "de": "mit lauter Stimme"
+  },
+  {
+    "id": "g7_u1_032",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 168,
+    "en": "lights out",
+    "de": "Nachtruhe; Licht aus"
+  },
+  {
+    "id": "g7_u1_033",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 168,
+    "en": "lie",
+    "de": "Lüge"
+  },
+  {
+    "id": "g7_u1_034",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 168,
+    "en": "(to) lie",
+    "de": "lügen"
+  },
+  {
+    "id": "g7_u1_035",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 168,
+    "en": "(to) keep sth. secret",
+    "de": "etwas geheim halten"
+  },
+  {
+    "id": "g7_u1_036",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 169,
+    "en": "(to) paraphrase",
+    "de": "umschreiben; mit anderen Worten sagen"
+  },
+  {
+    "id": "g7_u1_037",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 169,
+    "en": "useful",
+    "de": "nützlich; hilfreich"
+  },
+  {
+    "id": "g7_u1_038",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 169,
+    "en": "phrase",
+    "de": "Ausdruck; Redewendung"
+  },
+  {
+    "id": "g7_u1_039",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 169,
+    "en": "(to) add",
+    "de": "hinzufügen; addieren"
+  },
+  {
+    "id": "g7_u1_040",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 169,
+    "en": "dummy",
+    "de": "Schnuller"
+  },
+  {
+    "id": "g7_u1_041",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 169,
+    "en": "polite",
+    "de": "höflich"
+  },
+  {
+    "id": "g7_u1_042",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 169,
+    "en": "description",
+    "de": "Beschreibung"
+  },
+  {
+    "id": "g7_u1_043",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 169,
+    "en": "independent of/from",
+    "de": "unabhängig von"
+  },
+  {
+    "id": "g7_u1_044",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 169,
+    "en": "notebook",
+    "de": "Notizbuch"
+  },
+  {
+    "id": "g7_u1_045",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 169,
+    "en": "bully",
+    "de": "Mobber/in; Tyrann/in"
+  },
+  {
+    "id": "g7_u1_046",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 169,
+    "en": "junior high school",
+    "de": "Schule für Kinder zwischen 12 und 14 Jahren"
+  },
+  {
+    "id": "g7_u1_047",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 169,
+    "en": "mirror",
+    "de": "Spiegel"
+  },
+  {
+    "id": "g7_u1_048",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 169,
+    "en": "argument",
+    "de": "Streit; Argument"
+  },
+  {
+    "id": "g7_u1_049",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 169,
+    "en": "inside out",
+    "de": "verkehrt herum; auf links (Kleidung)"
+  },
+  {
+    "id": "g7_u1_050",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 169,
+    "en": "detention",
+    "de": "Nachsitzen"
+  },
+  {
+    "id": "g7_u1_051",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 169,
+    "en": "vocabulary; vocab",
+    "de": "Vokabeln; Vokabelverzeichnis; Wortschatz"
+  },
+  {
+    "id": "g7_u1_052",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 169,
+    "en": "(to) copy",
+    "de": "kopieren; abschreiben"
+  },
+  {
+    "id": "g7_u1_053",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 169,
+    "en": "gobbledygook",
+    "de": "Kauderwelsch"
+  },
+  {
+    "id": "g7_u1_054",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 169,
+    "en": "police",
+    "de": "Polizei"
+  },
+  {
+    "id": "g7_u1_055",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 170,
+    "en": "(to) compare to/with",
+    "de": "vergleichen mit"
+  },
+  {
+    "id": "g7_u1_056",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 170,
+    "en": "(to) discuss sth.",
+    "de": "über etwas diskutieren; etwas besprechen"
+  },
+  {
+    "id": "g7_u1_057",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 170,
+    "en": "advantage",
+    "de": "Vorteil"
+  },
+  {
+    "id": "g7_u1_058",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 170,
+    "en": "disadvantage",
+    "de": "Nachteil"
+  },
+  {
+    "id": "g7_u1_059",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 170,
+    "en": "(to) belong",
+    "de": "gehören"
+  },
+  {
+    "id": "g7_u1_060",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 170,
+    "en": "enemy",
+    "de": "Feind/in"
+  },
+  {
+    "id": "g7_u1_061",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 170,
+    "en": "(to) marry",
+    "de": "heiraten"
+  },
+  {
+    "id": "g7_u1_062",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 170,
+    "en": "(to) kill",
+    "de": "töten"
+  },
+  {
+    "id": "g7_u1_063",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 170,
+    "en": "each other",
+    "de": "einander; sich gegenseitig"
+  },
+  {
+    "id": "g7_u1_064",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 170,
+    "en": "boyfriend",
+    "de": "(fester) Freund"
+  },
+  {
+    "id": "g7_u1_065",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 170,
+    "en": "girlfriend",
+    "de": "(feste) Freundin"
+  },
+  {
+    "id": "g7_u1_066",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 170,
+    "en": "(to) get sth.",
+    "de": "etwas verstehen; mitbekommen"
+  },
+  {
+    "id": "g7_u1_067",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 170,
+    "en": "application",
+    "de": "Antrag; Bewerbung"
+  },
+  {
+    "id": "g7_u1_068",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 170,
+    "en": "capital letter",
+    "de": "Großbuchstabe"
+  },
+  {
+    "id": "g7_u1_069",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 170,
+    "en": "date of birth",
+    "de": "Geburtsdatum"
+  },
+  {
+    "id": "g7_u1_070",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 170,
+    "en": "gender",
+    "de": "Geschlecht (als soziales Merkmal)"
+  },
+  {
+    "id": "g7_u1_071",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "male",
+    "de": "männlich; Mann"
+  },
+  {
+    "id": "g7_u1_072",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "female",
+    "de": "weiblich; Frau"
+  },
+  {
+    "id": "g7_u1_073",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "unspecified",
+    "de": "nicht angegeben; keine Angabe"
+  },
+  {
+    "id": "g7_u1_074",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "guardian",
+    "de": "Vormund"
+  },
+  {
+    "id": "g7_u1_075",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "(to) join a club",
+    "de": "in einen Klub eintreten"
+  },
+  {
+    "id": "g7_u1_076",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "(to) look forward to sth.",
+    "de": "sich auf etwas freuen"
+  },
+  {
+    "id": "g7_u1_077",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "(to) look forward to doing sth.",
+    "de": "sich darauf freuen, etwas zu tun"
+  },
+  {
+    "id": "g7_u1_078",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "signature",
+    "de": "Unterschrift"
+  },
+  {
+    "id": "g7_u1_079",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "full",
+    "de": "vollständig; voll"
+  },
+  {
+    "id": "g7_u1_080",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "address",
+    "de": "Adresse"
+  },
+  {
+    "id": "g7_u1_081",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "careful",
+    "de": "aufmerksam; sorgfältig"
+  },
+  {
+    "id": "g7_u1_082",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "instruction",
+    "de": "Anweisung"
+  },
+  {
+    "id": "g7_u1_083",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "(to) follow",
+    "de": "befolgen; verfolgen"
+  },
+  {
+    "id": "g7_u1_084",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "immigrant",
+    "de": "Einwanderer/Einwanderin"
+  },
+  {
+    "id": "g7_u1_085",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "Caribbean",
+    "de": "Karibik; karibisch"
+  },
+  {
+    "id": "g7_u1_086",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "refugee",
+    "de": "Flüchtling"
+  },
+  {
+    "id": "g7_u1_087",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "one half",
+    "de": "ein Halb"
+  },
+  {
+    "id": "g7_u1_088",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "one third",
+    "de": "ein Drittel"
+  },
+  {
+    "id": "g7_u1_089",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "one quarter; one fourth",
+    "de": "ein Viertel"
+  },
+  {
+    "id": "g7_u1_090",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "mother tongue",
+    "de": "Muttersprache"
+  },
+  {
+    "id": "g7_u1_091",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "government",
+    "de": "Regierung"
+  },
+  {
+    "id": "g7_u1_092",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "lorry",
+    "de": "Lastwagen; LKW"
+  },
+  {
+    "id": "g7_u1_093",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "(to) freeze; froze; frozen",
+    "de": "(ge)frieren; erstarren"
+  },
+  {
+    "id": "g7_u1_094",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "channel",
+    "de": "Kanal"
+  },
+  {
+    "id": "g7_u1_095",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "sourcePage": 171,
+    "en": "tunnel",
+    "de": "Tunnel"
+  },
+  {
+    "id": "g7_u2_001",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "daily life",
+    "difficulty": 1,
+    "sourcePage": 173,
+    "en": "daily",
+    "de": "täglich"
+  },
+  {
+    "id": "g7_u2_002",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "daily life",
+    "difficulty": 1,
+    "sourcePage": 173,
+    "en": "(to) exchange",
+    "de": "austauschen"
+  },
+  {
+    "id": "g7_u2_003",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "daily life",
+    "difficulty": 2,
+    "sourcePage": 173,
+    "en": "exchange",
+    "de": "(Aus-)Tausch; Schüleraustausch"
+  },
+  {
+    "id": "g7_u2_004",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "chores",
+    "difficulty": 1,
+    "sourcePage": 173,
+    "en": "chore",
+    "de": "(Haus-)Arbeit; lästige Pflicht"
+  },
+  {
+    "id": "g7_u2_005",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "chores",
+    "difficulty": 1,
+    "sourcePage": 173,
+    "en": "(to) do chores",
+    "de": "Hausarbeiten erledigen"
+  },
+  {
+    "id": "g7_u2_006",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "study skills",
+    "difficulty": 1,
+    "sourcePage": 173,
+    "en": "(to) take notes",
+    "de": "sich Notizen machen"
+  },
+  {
+    "id": "g7_u2_007",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "difficulty": 1,
+    "sourcePage": 173,
+    "en": "scene",
+    "de": "Szene"
+  },
+  {
+    "id": "g7_u2_008",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "difficulty": 1,
+    "sourcePage": 173,
+    "en": "script",
+    "de": "Drehbuch"
+  },
+  {
+    "id": "g7_u2_009",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "daily life",
+    "difficulty": 1,
+    "sourcePage": 173,
+    "en": "(to) relax",
+    "de": "sich entspannen"
+  },
+  {
+    "id": "g7_u2_010",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "study skills",
+    "difficulty": 2,
+    "sourcePage": 173,
+    "en": "(to) concentrate on",
+    "de": "sich auf etwas konzentrieren"
+  },
+  {
+    "id": "g7_u2_011",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "daily life",
+    "difficulty": 1,
+    "sourcePage": 173,
+    "en": "weekday",
+    "de": "Werktag; Wochentag"
+  },
+  {
+    "id": "g7_u2_012",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "communication",
+    "difficulty": 1,
+    "sourcePage": 173,
+    "en": "(to) text somebody",
+    "de": "jemandem eine SMS schicken"
+  },
+  {
+    "id": "g7_u2_013",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "sports",
+    "difficulty": 1,
+    "sourcePage": 173,
+    "en": "(to) play sports",
+    "de": "Sport treiben"
+  },
+  {
+    "id": "g7_u2_014",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "difficulty": 1,
+    "sourcePage": 173,
+    "en": "hero",
+    "de": "Held; Heldin"
+  },
+  {
+    "id": "g7_u2_015",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "difficulty": 1,
+    "sourcePage": 173,
+    "en": "suit",
+    "de": "Anzug; Kostüm"
+  },
+  {
+    "id": "g7_u2_016",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "difficulty": 2,
+    "sourcePage": 173,
+    "en": "evil",
+    "de": "böse; das Böse"
+  },
+  {
+    "id": "g7_u2_017",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "difficulty": 1,
+    "sourcePage": 173,
+    "en": "power",
+    "de": "Kraft; Macht"
+  },
+  {
+    "id": "g7_u2_018",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "difficulty": 2,
+    "sourcePage": 173,
+    "en": "(to) catch",
+    "de": "fangen; erwischen; ein Verkehrsmittel nehmen"
+  },
+  {
+    "id": "g7_u2_019",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "clothing",
+    "difficulty": 1,
+    "sourcePage": 173,
+    "en": "scarf",
+    "de": "Schal"
+  },
+  {
+    "id": "g7_u2_020",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "difficulty": 2,
+    "sourcePage": 173,
+    "en": "(to) escape from",
+    "de": "aus etwas entkommen; vor etwas fliehen"
+  },
+  {
+    "id": "g7_u2_021",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "difficulty": 1,
+    "sourcePage": 173,
+    "en": "prince",
+    "de": "Prinz"
+  },
+  {
+    "id": "g7_u2_022",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "difficulty": 1,
+    "sourcePage": 174,
+    "en": "thunder",
+    "de": "Donner"
+  },
+  {
+    "id": "g7_u2_023",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "difficulty": 2,
+    "sourcePage": 174,
+    "en": "stolen",
+    "de": "gestohlen"
+  },
+  {
+    "id": "g7_u2_024",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "difficulty": 2,
+    "sourcePage": 174,
+    "en": "plot",
+    "de": "Handlung; Handlungsverlauf"
+  },
+  {
+    "id": "g7_u2_025",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "family",
+    "difficulty": 1,
+    "sourcePage": 177,
+    "en": "twin",
+    "de": "Zwilling"
+  },
+  {
+    "id": "g7_u2_026",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "family",
+    "difficulty": 1,
+    "sourcePage": 177,
+    "en": "twin brother",
+    "de": "Zwillingsbruder"
+  },
+  {
+    "id": "g7_u2_027",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "family",
+    "difficulty": 1,
+    "sourcePage": 177,
+    "en": "twin sister",
+    "de": "Zwillingsschwester"
+  },
+  {
+    "id": "g7_u2_028",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "chores",
+    "difficulty": 1,
+    "sourcePage": 177,
+    "en": "(to) vacuum",
+    "de": "Staub saugen"
+  },
+  {
+    "id": "g7_u2_029",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "chores",
+    "difficulty": 1,
+    "sourcePage": 177,
+    "en": "vacuum cleaner",
+    "de": "Staubsauger"
+  },
+  {
+    "id": "g7_u2_030",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "grammar",
+    "difficulty": 1,
+    "sourcePage": 177,
+    "en": "because of",
+    "de": "wegen"
+  },
+  {
+    "id": "g7_u2_031",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "chores",
+    "difficulty": 1,
+    "sourcePage": 177,
+    "en": "(to) set the table",
+    "de": "den Tisch decken"
+  },
+  {
+    "id": "g7_u2_032",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "chores",
+    "difficulty": 1,
+    "sourcePage": 177,
+    "en": "(to) load the dishwasher",
+    "de": "die Spülmaschine einräumen"
+  },
+  {
+    "id": "g7_u2_033",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "chores",
+    "difficulty": 1,
+    "sourcePage": 177,
+    "en": "trash",
+    "de": "Abfall; Müll"
+  },
+  {
+    "id": "g7_u2_034",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "communication",
+    "difficulty": 1,
+    "sourcePage": 177,
+    "en": "comment",
+    "de": "Kommentar"
+  },
+  {
+    "id": "g7_u2_035",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "communication",
+    "difficulty": 2,
+    "sourcePage": 177,
+    "en": "(to) comment on something",
+    "de": "etwas kommentieren"
+  },
+  {
+    "id": "g7_u2_036",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "chores",
+    "difficulty": 1,
+    "sourcePage": 177,
+    "en": "(to) cut",
+    "de": "schneiden; den Rasen mähen"
+  },
+  {
+    "id": "g7_u2_037",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "modals",
+    "difficulty": 1,
+    "sourcePage": 177,
+    "en": "mustn't",
+    "de": "nicht dürfen"
+  },
+  {
+    "id": "g7_u2_038",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "modals",
+    "difficulty": 1,
+    "sourcePage": 177,
+    "en": "needn't",
+    "de": "nicht brauchen"
+  },
+  {
+    "id": "g7_u2_039",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "food",
+    "difficulty": 2,
+    "sourcePage": 177,
+    "en": "potluck dinner",
+    "de": "Essen, zu dem alle etwas mitbringen"
+  },
+  {
+    "id": "g7_u2_040",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "food",
+    "difficulty": 1,
+    "sourcePage": 177,
+    "en": "macaroni",
+    "de": "Makkaroni"
+  },
+  {
+    "id": "g7_u2_041",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "descriptions",
+    "difficulty": 2,
+    "sourcePage": 177,
+    "en": "sloppy",
+    "de": "schlampig; nachlässig; schludrig"
+  },
+  {
+    "id": "g7_u2_042",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "study skills",
+    "difficulty": 2,
+    "sourcePage": 177,
+    "en": "(to) listen for something",
+    "de": "beim Zuhören auf etwas achten"
+  },
+  {
+    "id": "g7_u2_043",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "communication",
+    "difficulty": 1,
+    "sourcePage": 177,
+    "en": "(to) ask for something",
+    "de": "um etwas bitten; nach etwas fragen"
+  },
+  {
+    "id": "g7_u2_044",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "communication",
+    "difficulty": 1,
+    "sourcePage": 177,
+    "en": "voice message",
+    "de": "Sprachnachricht"
+  },
+  {
+    "id": "g7_u2_045",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "places",
+    "difficulty": 1,
+    "sourcePage": 177,
+    "en": "hall",
+    "de": "Halle; Saal; Flur; Diele"
+  },
+  {
+    "id": "g7_u2_046",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "descriptions",
+    "difficulty": 1,
+    "sourcePage": 176,
+    "en": "creative",
+    "de": "kreativ"
+  },
+  {
+    "id": "g7_u2_047",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "descriptions",
+    "difficulty": 1,
+    "sourcePage": 176,
+    "en": "sporty",
+    "de": "sportlich"
+  },
+  {
+    "id": "g7_u2_048",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "study skills",
+    "difficulty": 1,
+    "sourcePage": 176,
+    "en": "heading",
+    "de": "Überschrift"
+  },
+  {
+    "id": "g7_u2_049",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "communication",
+    "difficulty": 2,
+    "sourcePage": 176,
+    "en": "(to) express",
+    "de": "ausdrücken; zum Ausdruck bringen"
+  },
+  {
+    "id": "g7_u2_050",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "communication",
+    "difficulty": 2,
+    "sourcePage": 176,
+    "en": "(to) express yourself",
+    "de": "sich ausdrücken"
+  },
+  {
+    "id": "g7_u2_051",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "grammar",
+    "difficulty": 3,
+    "sourcePage": 176,
+    "en": "(to) make somebody do something",
+    "de": "jemanden dazu bringen, etwas zu tun"
+  },
+  {
+    "id": "g7_u2_052",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "fashion",
+    "difficulty": 1,
+    "sourcePage": 176,
+    "en": "(to) sew",
+    "de": "nähen"
+  },
+  {
+    "id": "g7_u2_053",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "fashion",
+    "difficulty": 1,
+    "sourcePage": 176,
+    "en": "sewing machine",
+    "de": "Nähmaschine"
+  },
+  {
+    "id": "g7_u2_054",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "fashion",
+    "difficulty": 1,
+    "sourcePage": 176,
+    "en": "material",
+    "de": "Stoff; Material"
+  },
+  {
+    "id": "g7_u2_055",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "business",
+    "difficulty": 2,
+    "sourcePage": 176,
+    "en": "(to) start a business",
+    "de": "ein Geschäft gründen oder eröffnen"
+  },
+  {
+    "id": "g7_u2_056",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "business",
+    "difficulty": 2,
+    "sourcePage": 176,
+    "en": "CEO",
+    "de": "Geschäftsführer; Geschäftsführerin"
+  },
+  {
+    "id": "g7_u2_057",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "business",
+    "difficulty": 1,
+    "sourcePage": 176,
+    "en": "customer",
+    "de": "Kunde; Kundin"
+  },
+  {
+    "id": "g7_u2_058",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "business",
+    "difficulty": 1,
+    "sourcePage": 176,
+    "en": "successful",
+    "de": "erfolgreich"
+  },
+  {
+    "id": "g7_u2_059",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "business",
+    "difficulty": 1,
+    "sourcePage": 176,
+    "en": "profit",
+    "de": "Gewinn; Profit"
+  },
+  {
+    "id": "g7_u2_060",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "communication",
+    "difficulty": 1,
+    "sourcePage": 176,
+    "en": "advice",
+    "de": "Rat; Ratschlag"
+  },
+  {
+    "id": "g7_u2_061",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "business",
+    "difficulty": 1,
+    "sourcePage": 176,
+    "en": "president",
+    "de": "Präsident; Präsidentin"
+  },
+  {
+    "id": "g7_u2_062",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "time",
+    "difficulty": 1,
+    "sourcePage": 176,
+    "en": "future",
+    "de": "Zukunft; zukünftig"
+  },
+  {
+    "id": "g7_u2_063",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "fashion",
+    "difficulty": 1,
+    "sourcePage": 176,
+    "en": "fashion",
+    "de": "Mode"
+  },
+  {
+    "id": "g7_u2_064",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "fashion",
+    "difficulty": 1,
+    "sourcePage": 176,
+    "en": "(to) design",
+    "de": "entwerfen; gestalten"
+  },
+  {
+    "id": "g7_u2_065",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "time",
+    "difficulty": 2,
+    "sourcePage": 176,
+    "en": "at the age of",
+    "de": "im Alter von"
+  },
+  {
+    "id": "g7_u2_066",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "study skills",
+    "difficulty": 2,
+    "sourcePage": 176,
+    "en": "(to) find out about",
+    "de": "etwas herausfinden; sich über etwas informieren"
+  },
+  {
+    "id": "g7_u2_067",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "fashion",
+    "difficulty": 1,
+    "sourcePage": 176,
+    "en": "(to) tie",
+    "de": "binden; zubinden"
+  },
+  {
+    "id": "g7_u3_001",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "vote",
+    "de": "Abstimmung; Votum"
+  },
+  {
+    "id": "g7_u3_002",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "(to) have a vote on sth.",
+    "de": "über etwas abstimmen"
+  },
+  {
+    "id": "g7_u3_003",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "(to) vote on sth.",
+    "de": "wählen; über etwas abstimmen"
+  },
+  {
+    "id": "g7_u3_004",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "(to) link to/with",
+    "de": "verbinden mit"
+  },
+  {
+    "id": "g7_u3_005",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "capsule",
+    "de": "Kapsel"
+  },
+  {
+    "id": "g7_u3_006",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "ancient",
+    "de": "uralt; historisch"
+  },
+  {
+    "id": "g7_u3_007",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "Briton",
+    "de": "Brite/Britin"
+  },
+  {
+    "id": "g7_u3_008",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "Roman",
+    "de": "Römer/in; römisch"
+  },
+  {
+    "id": "g7_u3_009",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "Viking",
+    "de": "Wikinger/in"
+  },
+  {
+    "id": "g7_u3_010",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "the Angles",
+    "de": "die Angeln (germanisches Volk)"
+  },
+  {
+    "id": "g7_u3_011",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "Saxon",
+    "de": "Sachse/Sächsin; sächsisch"
+  },
+  {
+    "id": "g7_u3_012",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "Norman",
+    "de": "Normanne/Normannin; normannisch"
+  },
+  {
+    "id": "g7_u3_013",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "about",
+    "de": "ungefähr; von/über"
+  },
+  {
+    "id": "g7_u3_014",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "750 BC",
+    "de": "750 v. Chr."
+  },
+  {
+    "id": "g7_u3_015",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "400 AD",
+    "de": "400 n. Chr."
+  },
+  {
+    "id": "g7_u3_016",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "tribe",
+    "de": "(Volks-)Stamm"
+  },
+  {
+    "id": "g7_u3_017",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "land",
+    "de": "Land; Grund und Boden"
+  },
+  {
+    "id": "g7_u3_018",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "(to) settle",
+    "de": "sich niederlassen; sich ansiedeln"
+  },
+  {
+    "id": "g7_u3_019",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "settler",
+    "de": "Siedler/in"
+  },
+  {
+    "id": "g7_u3_020",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "(to) conquer",
+    "de": "erobern"
+  },
+  {
+    "id": "g7_u3_021",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "castle",
+    "de": "Burg; Schloss"
+  },
+  {
+    "id": "g7_u3_022",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "(to) divide up into",
+    "de": "aufteilen/einteilen in"
+  },
+  {
+    "id": "g7_u3_023",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "empire",
+    "de": "Reich; Kaiserreich"
+  },
+  {
+    "id": "g7_u3_024",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 178,
+    "en": "bath",
+    "de": "Bad; Badewanne"
+  },
+  {
+    "id": "g7_u3_025",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "precious metal",
+    "de": "Edelmetall"
+  },
+  {
+    "id": "g7_u3_026",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "army",
+    "de": "Armee; Heer"
+  },
+  {
+    "id": "g7_u3_027",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "trade",
+    "de": "Handel"
+  },
+  {
+    "id": "g7_u3_028",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "emperor",
+    "de": "Kaiser"
+  },
+  {
+    "id": "g7_u3_029",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "empress",
+    "de": "Kaiserin"
+  },
+  {
+    "id": "g7_u3_030",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "daughter",
+    "de": "Tochter"
+  },
+  {
+    "id": "g7_u3_031",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "wool",
+    "de": "Wolle"
+  },
+  {
+    "id": "g7_u3_032",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "linen",
+    "de": "Leinen"
+  },
+  {
+    "id": "g7_u3_033",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "husband",
+    "de": "Ehemann"
+  },
+  {
+    "id": "g7_u3_034",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "soldier",
+    "de": "Soldat/in"
+  },
+  {
+    "id": "g7_u3_035",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "side",
+    "de": "Seite"
+  },
+  {
+    "id": "g7_u3_036",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "bone",
+    "de": "Knochen"
+  },
+  {
+    "id": "g7_u3_037",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "boneless",
+    "de": "knochenlos"
+  },
+  {
+    "id": "g7_u3_038",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "(to) create",
+    "de": "erschaffen; erstellen"
+  },
+  {
+    "id": "g7_u3_039",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "object",
+    "de": "Objekt; Gegenstand"
+  },
+  {
+    "id": "g7_u3_040",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "knife; knives",
+    "de": "Messer"
+  },
+  {
+    "id": "g7_u3_041",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "silver",
+    "de": "Silber; silbern"
+  },
+  {
+    "id": "g7_u3_042",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "son",
+    "de": "Sohn"
+  },
+  {
+    "id": "g7_u3_043",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "axe",
+    "de": "Axt; Beil"
+  },
+  {
+    "id": "g7_u3_044",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "kind of",
+    "de": "Art von"
+  },
+  {
+    "id": "g7_u3_045",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 179,
+    "en": "(to) dig; dug; dug",
+    "de": "graben; gegraben"
+  },
+  {
+    "id": "g7_u3_046",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 180,
+    "en": "exact",
+    "de": "genau; exakt"
+  },
+  {
+    "id": "g7_u3_047",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 180,
+    "en": "fantasy",
+    "de": "Fantasie; Fantasy"
+  },
+  {
+    "id": "g7_u3_048",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 180,
+    "en": "(to) kneel; knelt; knelt",
+    "de": "knien"
+  },
+  {
+    "id": "g7_u3_049",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 180,
+    "en": "plough",
+    "de": "Pflug"
+  },
+  {
+    "id": "g7_u3_050",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 180,
+    "en": "(to) touch",
+    "de": "anfassen; berühren"
+  },
+  {
+    "id": "g7_u3_051",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 180,
+    "en": "(to) scrape",
+    "de": "kratzen; schaben"
+  },
+  {
+    "id": "g7_u3_052",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 180,
+    "en": "a bit",
+    "de": "ein bisschen; ein Stückchen"
+  },
+  {
+    "id": "g7_u3_053",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 180,
+    "en": "(to) lean",
+    "de": "sich lehnen"
+  },
+  {
+    "id": "g7_u3_054",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 180,
+    "en": "forward",
+    "de": "vorwärts; nach vorne"
+  },
+  {
+    "id": "g7_u3_055",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 180,
+    "en": "way",
+    "de": "Weg; Art und Weise"
+  },
+  {
+    "id": "g7_u3_056",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 180,
+    "en": "although; though",
+    "de": "obwohl"
+  },
+  {
+    "id": "g7_u3_057",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 180,
+    "en": "(to) explode",
+    "de": "explodieren"
+  },
+  {
+    "id": "g7_u3_058",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 180,
+    "en": "explosion",
+    "de": "Explosion"
+  },
+  {
+    "id": "g7_u3_059",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 180,
+    "en": "soft",
+    "de": "weich; leise"
+  },
+  {
+    "id": "g7_u3_060",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 180,
+    "en": "spade",
+    "de": "Spaten; Schaufel"
+  },
+  {
+    "id": "g7_u3_061",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 181,
+    "en": "deep",
+    "de": "tief"
+  },
+  {
+    "id": "g7_u3_062",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 181,
+    "en": "(to) throw; threw; thrown",
+    "de": "werfen"
+  },
+  {
+    "id": "g7_u3_063",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 181,
+    "en": "in a deep voice",
+    "de": "mit tiefer Stimme"
+  },
+  {
+    "id": "g7_u3_064",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 181,
+    "en": "at last",
+    "de": "endlich; schließlich"
+  },
+  {
+    "id": "g7_u3_065",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 181,
+    "en": "round",
+    "de": "rund; Runde; um ... herum"
+  },
+  {
+    "id": "g7_u3_066",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 181,
+    "en": "plate",
+    "de": "Teller"
+  },
+  {
+    "id": "g7_u3_067",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 181,
+    "en": "(to) turn sth. over",
+    "de": "etwas umdrehen"
+  },
+  {
+    "id": "g7_u3_068",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 181,
+    "en": "excitement",
+    "de": "Aufregung; Spannung"
+  },
+  {
+    "id": "g7_u3_069",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 181,
+    "en": "(to) boil",
+    "de": "kochen (in Wasser); sieden"
+  },
+  {
+    "id": "g7_u3_070",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 181,
+    "en": "(to) hide; hid; hidden",
+    "de": "verstecken; sich verstecken"
+  },
+  {
+    "id": "g7_u3_071",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 181,
+    "en": "upset",
+    "de": "aufgebracht; verärgert"
+  },
+  {
+    "id": "g7_u3_072",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 181,
+    "en": "greedy",
+    "de": "gierig; habgierig"
+  },
+  {
+    "id": "g7_u3_073",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 181,
+    "en": "century",
+    "de": "Jahrhundert"
+  },
+  {
+    "id": "g7_u3_074",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 181,
+    "en": "factory",
+    "de": "Fabrik"
+  },
+  {
+    "id": "g7_u3_075",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 181,
+    "en": "stranger",
+    "de": "Fremde/r"
+  },
+  {
+    "id": "g7_u3_076",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 181,
+    "en": "date of death",
+    "de": "Todesdatum"
+  },
+  {
+    "id": "g7_u3_077",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 181,
+    "en": "death",
+    "de": "Tod"
+  },
+  {
+    "id": "g7_u3_078",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 181,
+    "en": "(to) structure sth.",
+    "de": "etwas strukturieren"
+  },
+  {
+    "id": "g7_u3_079",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "(to) point sth. out",
+    "de": "auf etwas hinweisen; aufmerksam machen"
+  },
+  {
+    "id": "g7_u3_080",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "confident",
+    "de": "selbstsicher; zuversichtlich"
+  },
+  {
+    "id": "g7_u3_081",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "source",
+    "de": "Quelle"
+  },
+  {
+    "id": "g7_u3_082",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "fact",
+    "de": "Tatsache"
+  },
+  {
+    "id": "g7_u3_083",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "(to) highlight",
+    "de": "hervorheben; unterstreichen"
+  },
+  {
+    "id": "g7_u3_084",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "main",
+    "de": "Haupt-; wichtigste/r/s"
+  },
+  {
+    "id": "g7_u3_085",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "royal",
+    "de": "königlich"
+  },
+  {
+    "id": "g7_u3_086",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "symbol of",
+    "de": "Symbol für"
+  },
+  {
+    "id": "g7_u3_087",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "flyer",
+    "de": "Flieger/in"
+  },
+  {
+    "id": "g7_u3_088",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "visit",
+    "de": "Besuch"
+  },
+  {
+    "id": "g7_u3_089",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "visitor",
+    "de": "Besucher/in"
+  },
+  {
+    "id": "g7_u3_090",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "rug",
+    "de": "Teppich; Läufer"
+  },
+  {
+    "id": "g7_u3_091",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "ground",
+    "de": "(Erd-)Boden"
+  },
+  {
+    "id": "g7_u3_092",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "(to) spin; spun; spun",
+    "de": "sich drehen"
+  },
+  {
+    "id": "g7_u3_093",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "(to) arrive",
+    "de": "ankommen"
+  },
+  {
+    "id": "g7_u3_094",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "a few",
+    "de": "ein paar; einige"
+  },
+  {
+    "id": "g7_u3_095",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "(to) nod",
+    "de": "nicken; jemandem zunicken"
+  },
+  {
+    "id": "g7_u3_096",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "disappointed with",
+    "de": "enttäuscht von"
+  },
+  {
+    "id": "g7_u3_097",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "(to) disappoint sb.",
+    "de": "jemanden enttäuschen"
+  },
+  {
+    "id": "g7_u3_098",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "duck",
+    "de": "Ente"
+  },
+  {
+    "id": "g7_u3_099",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "difficulty": 2,
+    "sourcePage": 182,
+    "en": "towards; toward",
+    "de": "nach; auf ... zu; in Richtung"
+  },
+  {
+    "id": "g7_u4_001",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 183,
+    "en": "(to) continue",
+    "de": "fortfahren; weitermachen; sich fortsetzen"
+  },
+  {
+    "id": "g7_u4_002",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 183,
+    "en": "light",
+    "de": "leicht; hell; Licht; Lampe"
+  },
+  {
+    "id": "g7_u4_003",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 183,
+    "en": "rude",
+    "de": "unhöflich; frech"
+  },
+  {
+    "id": "g7_u4_004",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 183,
+    "en": "distance",
+    "de": "Entfernung; Distanz"
+  },
+  {
+    "id": "g7_u4_005",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 183,
+    "en": "in the distance",
+    "de": "in der Ferne"
+  },
+  {
+    "id": "g7_u4_006",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 183,
+    "en": "halfway",
+    "de": "auf halbem Weg"
+  },
+  {
+    "id": "g7_u4_007",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 183,
+    "en": "below",
+    "de": "unterhalb von; unten"
+  },
+  {
+    "id": "g7_u4_008",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 183,
+    "en": "hardly",
+    "de": "kaum"
+  },
+  {
+    "id": "g7_u4_009",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 183,
+    "en": "caption",
+    "de": "Bildunterschrift"
+  },
+  {
+    "id": "g7_u4_010",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 183,
+    "en": "entry",
+    "de": "Eintritt; Zutritt; Eintrag"
+  },
+  {
+    "id": "g7_u4_011",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 183,
+    "en": "interest in",
+    "de": "Interesse an"
+  },
+  {
+    "id": "g7_u4_012",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 183,
+    "en": "(to) decorate",
+    "de": "dekorieren; schmücken"
+  },
+  {
+    "id": "g7_u4_013",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 183,
+    "en": "similar to sb./sth.",
+    "de": "ähnlich wie jemand/etwas"
+  },
+  {
+    "id": "g7_u4_014",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 184,
+    "en": "musician",
+    "de": "Musiker/in"
+  },
+  {
+    "id": "g7_u4_015",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 184,
+    "en": "famine",
+    "de": "Hungersnot"
+  },
+  {
+    "id": "g7_u4_016",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 184,
+    "en": "memorial to sb./sth.",
+    "de": "Denkmal; Gedenkstätte für jemanden/etwas"
+  },
+  {
+    "id": "g7_u4_017",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 184,
+    "en": "(to) skim a text",
+    "de": "einen Text überfliegen"
+  },
+  {
+    "id": "g7_u4_018",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 184,
+    "en": "population",
+    "de": "Bevölkerung; Einwohnerzahl"
+  },
+  {
+    "id": "g7_u4_019",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 184,
+    "en": "(to) choose to do sth.",
+    "de": "sich entscheiden, etwas zu tun"
+  },
+  {
+    "id": "g7_u4_020",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 184,
+    "en": "(to) starve",
+    "de": "verhungern"
+  },
+  {
+    "id": "g7_u4_021",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 184,
+    "en": "disease",
+    "de": "Krankheit"
+  },
+  {
+    "id": "g7_u4_022",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 184,
+    "en": "illness",
+    "de": "Krankheit; Erkrankung"
+  },
+  {
+    "id": "g7_u4_023",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 184,
+    "en": "crowded",
+    "de": "überfüllt; voller Menschen"
+  },
+  {
+    "id": "g7_u4_024",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 184,
+    "en": "crowd",
+    "de": "Menschenmenge"
+  },
+  {
+    "id": "g7_u4_025",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 184,
+    "en": "deck",
+    "de": "Deck"
+  },
+  {
+    "id": "g7_u4_026",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 184,
+    "en": "bucket",
+    "de": "Eimer"
+  },
+  {
+    "id": "g7_u4_027",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 184,
+    "en": "(to) spread; spread; spread",
+    "de": "verbreiten; sich ausbreiten"
+  },
+  {
+    "id": "g7_u4_028",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 184,
+    "en": "coffin",
+    "de": "Sarg"
+  },
+  {
+    "id": "g7_u4_029",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 184,
+    "en": "shark",
+    "de": "Hai"
+  },
+  {
+    "id": "g7_u4_030",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 184,
+    "en": "(to) manage",
+    "de": "schaffen; bewältigen"
+  },
+  {
+    "id": "g7_u4_031",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 185,
+    "en": "(to) attack",
+    "de": "angreifen"
+  },
+  {
+    "id": "g7_u4_032",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 185,
+    "en": "(to) make sure that",
+    "de": "sicherstellen, dass"
+  },
+  {
+    "id": "g7_u4_033",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 185,
+    "en": "pub",
+    "de": "Kneipe; Pub"
+  },
+  {
+    "id": "g7_u4_034",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 185,
+    "en": "Gaelic",
+    "de": "Gälisch"
+  },
+  {
+    "id": "g7_u4_035",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 185,
+    "en": "shamrock",
+    "de": "Kleeblatt"
+  },
+  {
+    "id": "g7_u4_036",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 185,
+    "en": "priest",
+    "de": "Priester"
+  },
+  {
+    "id": "g7_u4_037",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 185,
+    "en": "monument",
+    "de": "Denkmal; Monument"
+  },
+  {
+    "id": "g7_u4_038",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 185,
+    "en": "tradition",
+    "de": "Tradition"
+  },
+  {
+    "id": "g7_u4_039",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 185,
+    "en": "legend",
+    "de": "Legende"
+  },
+  {
+    "id": "g7_u4_040",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 185,
+    "en": "emigrant",
+    "de": "Auswanderer/Auswanderin"
+  },
+  {
+    "id": "g7_u4_041",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 185,
+    "en": "(to) emigrate",
+    "de": "auswandern"
+  },
+  {
+    "id": "g7_u4_042",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 185,
+    "en": "immigrant",
+    "de": "Einwanderer/Einwanderin"
+  },
+  {
+    "id": "g7_u4_043",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 185,
+    "en": "(to) immigrate",
+    "de": "einwandern"
+  },
+  {
+    "id": "g7_u4_044",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 186,
+    "en": "dish",
+    "de": "Schüssel; Schale; Gericht"
+  },
+  {
+    "id": "g7_u4_045",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 186,
+    "en": "bowl",
+    "de": "Schüssel; Schale"
+  },
+  {
+    "id": "g7_u4_046",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 186,
+    "en": "baking sheet",
+    "de": "Backblech"
+  },
+  {
+    "id": "g7_u4_047",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 186,
+    "en": "made of wood",
+    "de": "aus Holz hergestellt"
+  },
+  {
+    "id": "g7_u4_048",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 186,
+    "en": "(to) cool",
+    "de": "abkühlen; kühlen"
+  },
+  {
+    "id": "g7_u4_049",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 186,
+    "en": "(to) knead",
+    "de": "kneten"
+  },
+  {
+    "id": "g7_u4_050",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 186,
+    "en": "oyster",
+    "de": "Auster"
+  },
+  {
+    "id": "g7_u4_051",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 186,
+    "en": "beer",
+    "de": "Bier"
+  },
+  {
+    "id": "g7_u4_052",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 186,
+    "en": "flour",
+    "de": "Mehl"
+  },
+  {
+    "id": "g7_u4_053",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 186,
+    "en": "wholemeal",
+    "de": "Vollkorn"
+  },
+  {
+    "id": "g7_u4_054",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 186,
+    "en": "teaspoon",
+    "de": "Teelöffel"
+  },
+  {
+    "id": "g7_u4_055",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 186,
+    "en": "(to) bake",
+    "de": "backen"
+  },
+  {
+    "id": "g7_u4_056",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 186,
+    "en": "recipe",
+    "de": "Rezept"
+  },
+  {
+    "id": "g7_u4_057",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 186,
+    "en": "ingredient",
+    "de": "Zutat"
+  },
+  {
+    "id": "g7_u4_058",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 186,
+    "en": "oven",
+    "de": "Backofen"
+  },
+  {
+    "id": "g7_u4_059",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 187,
+    "en": "impatient",
+    "de": "ungeduldig"
+  },
+  {
+    "id": "g7_u4_060",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 187,
+    "en": "patient",
+    "de": "geduldig"
+  },
+  {
+    "id": "g7_u4_061",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 187,
+    "en": "(to) stand up straight",
+    "de": "gerade stehen; sich gerade hinstellen"
+  },
+  {
+    "id": "g7_u4_062",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 187,
+    "en": "(to) tap sth.",
+    "de": "an etwas klopfen; etwas antippen"
+  },
+  {
+    "id": "g7_u4_063",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 187,
+    "en": "(to) frown",
+    "de": "die Stirn runzeln"
+  },
+  {
+    "id": "g7_u4_064",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 187,
+    "en": "(to) shrug your shoulders",
+    "de": "mit den Schultern zucken"
+  },
+  {
+    "id": "g7_u4_065",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 187,
+    "en": "elbow",
+    "de": "Ellbogen"
+  },
+  {
+    "id": "g7_u4_066",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 187,
+    "en": "(to) roll",
+    "de": "rollen"
+  },
+  {
+    "id": "g7_u4_067",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 187,
+    "en": "(to) roll your eyes",
+    "de": "die Augen verdrehen"
+  },
+  {
+    "id": "g7_u4_068",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 187,
+    "en": "I don't care.",
+    "de": "Es ist mir egal."
+  },
+  {
+    "id": "g7_u4_069",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 187,
+    "en": "(to) care about sb.",
+    "de": "jemandem wichtig sein; sich um jemanden kümmern"
+  },
+  {
+    "id": "g7_u4_070",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 187,
+    "en": "(to) annoy sb.",
+    "de": "jemanden ärgern"
+  },
+  {
+    "id": "g7_u4_071",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 187,
+    "en": "lonely",
+    "de": "einsam"
+  },
+  {
+    "id": "g7_u4_072",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 187,
+    "en": "unsure",
+    "de": "unsicher"
+  },
+  {
+    "id": "g7_u4_073",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 187,
+    "en": "movement",
+    "de": "Bewegung"
+  },
+  {
+    "id": "g7_u4_074",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 187,
+    "en": "hostel",
+    "de": "Jugendherberge; günstige Unterkunft"
+  },
+  {
+    "id": "g7_u4_075",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 187,
+    "en": "(to) emphasize",
+    "de": "betonen; deutlich machen"
+  },
+  {
+    "id": "g7_u4_076",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 187,
+    "en": "review",
+    "de": "Kritik; Bewertung; Rezension"
+  },
+  {
+    "id": "g7_u4_077",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 187,
+    "en": "(to) review",
+    "de": "besprechen; rezensieren"
+  },
+  {
+    "id": "g7_u4_078",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "ireland-and-everyday-life",
+    "difficulty": 2,
+    "sourcePage": 187,
+    "en": "(to) recommend sth. to sb.",
+    "de": "jemandem etwas empfehlen"
+  },
+  {
+    "id": "g7_u5_001",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "farming",
+    "de": "Landwirtschaft"
+  },
+  {
+    "id": "g7_u5_002",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "European Union (EU)",
+    "de": "Europäische Union (EU)"
+  },
+  {
+    "id": "g7_u5_003",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "economy",
+    "de": "(Volks-)Wirtschaft"
+  },
+  {
+    "id": "g7_u5_004",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "economic",
+    "de": "wirtschaftlich; Wirtschafts-"
+  },
+  {
+    "id": "g7_u5_005",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "(to) crash",
+    "de": "abstürzen; zusammenbrechen; zusammenstoßen"
+  },
+  {
+    "id": "g7_u5_006",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "profile",
+    "de": "Profil; Beschreibung; Porträt"
+  },
+  {
+    "id": "g7_u5_007",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "mentor",
+    "de": "Mentor/in; Ratgeber/in"
+  },
+  {
+    "id": "g7_u5_008",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "(to) mentor",
+    "de": "als Mentor/in betreuen"
+  },
+  {
+    "id": "g7_u5_009",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "award",
+    "de": "Preis; Auszeichnung"
+  },
+  {
+    "id": "g7_u5_010",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "award-winning",
+    "de": "preisgekrönt"
+  },
+  {
+    "id": "g7_u5_011",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "award-winner",
+    "de": "Preisträger/in"
+  },
+  {
+    "id": "g7_u5_012",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "digital",
+    "de": "digital"
+  },
+  {
+    "id": "g7_u5_013",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "skill",
+    "de": "Fähigkeit; Fertigkeit"
+  },
+  {
+    "id": "g7_u5_014",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "(to) suggest",
+    "de": "vorschlagen"
+  },
+  {
+    "id": "g7_u5_015",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "(to) develop",
+    "de": "entwickeln; sich entwickeln"
+  },
+  {
+    "id": "g7_u5_016",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "especially",
+    "de": "insbesondere; besonders"
+  },
+  {
+    "id": "g7_u5_017",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "(to) set sth. up",
+    "de": "etwas einrichten; aufbauen"
+  },
+  {
+    "id": "g7_u5_018",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "according to",
+    "de": "laut; zufolge"
+  },
+  {
+    "id": "g7_u5_019",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "(to) imagine sth.",
+    "de": "sich etwas vorstellen"
+  },
+  {
+    "id": "g7_u5_020",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "(to) be allowed to",
+    "de": "etwas tun dürfen"
+  },
+  {
+    "id": "g7_u5_021",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 188,
+    "en": "dolphin",
+    "de": "Delfin"
+  },
+  {
+    "id": "g7_u5_022",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "strategy",
+    "de": "Strategie"
+  },
+  {
+    "id": "g7_u5_023",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "webpage",
+    "de": "Webseite"
+  },
+  {
+    "id": "g7_u5_024",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "happiness",
+    "de": "Glück; Zufriedenheit"
+  },
+  {
+    "id": "g7_u5_025",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "skate park",
+    "de": "Skatepark"
+  },
+  {
+    "id": "g7_u5_026",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "(to) prefer sth. to sth.",
+    "de": "etwas einer anderen Sache vorziehen"
+  },
+  {
+    "id": "g7_u5_027",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "biking",
+    "de": "Radfahren"
+  },
+  {
+    "id": "g7_u5_028",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "friendship",
+    "de": "Freundschaft"
+  },
+  {
+    "id": "g7_u5_029",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "best friend",
+    "de": "beste Freundin; bester Freund"
+  },
+  {
+    "id": "g7_u5_030",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "What/Where the heck ...?",
+    "de": "Was/Wo zum Teufel ...?; Was/Wo denn nur ...?"
+  },
+  {
+    "id": "g7_u5_031",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "blog",
+    "de": "Blog"
+  },
+  {
+    "id": "g7_u5_032",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "sponsor",
+    "de": "Sponsor/in; Geldgeber/in"
+  },
+  {
+    "id": "g7_u5_033",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "subscriber",
+    "de": "Abonnent/in"
+  },
+  {
+    "id": "g7_u5_034",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "(to) subscribe to sth.",
+    "de": "etwas abonnieren"
+  },
+  {
+    "id": "g7_u5_035",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "total",
+    "de": "Gesamt-; Gesamtmenge; Gesamtzahl"
+  },
+  {
+    "id": "g7_u5_036",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "view",
+    "de": "Aufruf; Ansicht; Ausblick"
+  },
+  {
+    "id": "g7_u5_037",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "(to) view",
+    "de": "anschauen"
+  },
+  {
+    "id": "g7_u5_038",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "site",
+    "de": "Seite; Website; Stelle"
+  },
+  {
+    "id": "g7_u5_039",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "founder",
+    "de": "Gründer/in"
+  },
+  {
+    "id": "g7_u5_040",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "quality",
+    "de": "Qualität"
+  },
+  {
+    "id": "g7_u5_041",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "silly",
+    "de": "dumm; albern"
+  },
+  {
+    "id": "g7_u5_042",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "since then",
+    "de": "seitdem"
+  },
+  {
+    "id": "g7_u5_043",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "(to) entertain",
+    "de": "unterhalten"
+  },
+  {
+    "id": "g7_u5_044",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 189,
+    "en": "giraffe",
+    "de": "Giraffe"
+  },
+  {
+    "id": "g7_u5_045",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 190,
+    "en": "chewing gum",
+    "de": "Kaugummi"
+  },
+  {
+    "id": "g7_u5_046",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 190,
+    "en": "however",
+    "de": "jedoch; allerdings"
+  },
+  {
+    "id": "g7_u5_047",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 190,
+    "en": "firstly",
+    "de": "erstens"
+  },
+  {
+    "id": "g7_u5_048",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 190,
+    "en": "secondly",
+    "de": "zweitens"
+  },
+  {
+    "id": "g7_u5_049",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 190,
+    "en": "thirdly",
+    "de": "drittens"
+  },
+  {
+    "id": "g7_u5_050",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 190,
+    "en": "crowdfunding",
+    "de": "Schwarmfinanzierung; Crowdfunding"
+  },
+  {
+    "id": "g7_u5_051",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 190,
+    "en": "funding",
+    "de": "Finanzierung"
+  },
+  {
+    "id": "g7_u5_052",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 190,
+    "en": "advertising",
+    "de": "Werbung; Reklame"
+  },
+  {
+    "id": "g7_u5_053",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 190,
+    "en": "(to) advertise",
+    "de": "werben"
+  },
+  {
+    "id": "g7_u5_054",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 190,
+    "en": "square",
+    "de": "Quadrat; Platz"
+  },
+  {
+    "id": "g7_u5_055",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 190,
+    "en": "block",
+    "de": "Block; Klotz"
+  },
+  {
+    "id": "g7_u5_056",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 190,
+    "en": "handover",
+    "de": "Übergabe"
+  },
+  {
+    "id": "g7_u5_057",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 191,
+    "en": "single",
+    "de": "Einzel-; alleinstehend"
+  },
+  {
+    "id": "g7_u5_058",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 191,
+    "en": "multiplayer",
+    "de": "Mehrspieler-"
+  },
+  {
+    "id": "g7_u5_059",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 191,
+    "en": "plastic",
+    "de": "Plastik; Kunststoff"
+  },
+  {
+    "id": "g7_u5_060",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 191,
+    "en": "environment",
+    "de": "Umwelt"
+  },
+  {
+    "id": "g7_u5_061",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 191,
+    "en": "effect",
+    "de": "Wirkung; Effekt"
+  },
+  {
+    "id": "g7_u5_062",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 191,
+    "en": "likely",
+    "de": "wahrscheinlich"
+  },
+  {
+    "id": "g7_u5_063",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 191,
+    "en": "(to) recycle",
+    "de": "wiederverwerten; recyceln"
+  },
+  {
+    "id": "g7_u5_064",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 191,
+    "en": "ban",
+    "de": "Verbot"
+  },
+  {
+    "id": "g7_u5_065",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 191,
+    "en": "(to) ban",
+    "de": "verbieten"
+  },
+  {
+    "id": "g7_u5_066",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 191,
+    "en": "switch on/off",
+    "de": "ein-/ausschalten"
+  },
+  {
+    "id": "g7_u5_067",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "meaning",
+    "de": "Bedeutung"
+  },
+  {
+    "id": "g7_u5_068",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "pronunciation",
+    "de": "Aussprache"
+  },
+  {
+    "id": "g7_u5_069",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "(to) revise",
+    "de": "Lernstoff wiederholen"
+  },
+  {
+    "id": "g7_u5_070",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "revision",
+    "de": "Wiederholung von Lernstoff"
+  },
+  {
+    "id": "g7_u5_071",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "statistics",
+    "de": "Statistik; Statistiken"
+  },
+  {
+    "id": "g7_u5_072",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "on the go",
+    "de": "unterwegs"
+  },
+  {
+    "id": "g7_u5_073",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "postcode",
+    "de": "Postleitzahl"
+  },
+  {
+    "id": "g7_u5_074",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "yum",
+    "de": "lecker"
+  },
+  {
+    "id": "g7_u5_075",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "(to) chill out",
+    "de": "sich entspannen; abhängen"
+  },
+  {
+    "id": "g7_u5_076",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "solution to a problem",
+    "de": "Lösung eines Problems"
+  },
+  {
+    "id": "g7_u5_077",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "notification",
+    "de": "Benachrichtigung; Mitteilung"
+  },
+  {
+    "id": "g7_u5_078",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "(to) go off",
+    "de": "klingeln; losgehen"
+  },
+  {
+    "id": "g7_u5_079",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "(to) click on",
+    "de": "auf etwas klicken"
+  },
+  {
+    "id": "g7_u5_080",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "terror",
+    "de": "panische Angst"
+  },
+  {
+    "id": "g7_u5_081",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "all over the world",
+    "de": "überall auf der Welt; weltweit"
+  },
+  {
+    "id": "g7_u5_082",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "nowhere",
+    "de": "nirgendwo; nirgendwohin"
+  },
+  {
+    "id": "g7_u5_083",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "(to) pour",
+    "de": "strömen; gießen; schütten"
+  },
+  {
+    "id": "g7_u5_084",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "pressure",
+    "de": "Druck"
+  },
+  {
+    "id": "g7_u5_085",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "(to) put pressure on sb.",
+    "de": "jemanden unter Druck setzen"
+  },
+  {
+    "id": "g7_u5_086",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "(to) breathe in/out",
+    "de": "ein-/ausatmen"
+  },
+  {
+    "id": "g7_u5_087",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 192,
+    "en": "fairy tale",
+    "de": "Märchen"
+  },
+  {
+    "id": "g7_u5_088",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "a couple of",
+    "de": "ein paar"
+  },
+  {
+    "id": "g7_u5_089",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "negative",
+    "de": "negativ"
+  },
+  {
+    "id": "g7_u5_090",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "none",
+    "de": "keine/r/s"
+  },
+  {
+    "id": "g7_u5_091",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "(to) call sb. names",
+    "de": "jemanden beschimpfen"
+  },
+  {
+    "id": "g7_u5_092",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "identity",
+    "de": "Identität"
+  },
+  {
+    "id": "g7_u5_093",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "record",
+    "de": "Aufzeichnung; Schallplatte"
+  },
+  {
+    "id": "g7_u5_094",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "record deal",
+    "de": "Plattenvertrag"
+  },
+  {
+    "id": "g7_u5_095",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "relationship",
+    "de": "Beziehung; Verhältnis"
+  },
+  {
+    "id": "g7_u5_096",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "shallow",
+    "de": "flach; seicht; oberflächlich"
+  },
+  {
+    "id": "g7_u5_097",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "choice",
+    "de": "Auswahl; Wahl"
+  },
+  {
+    "id": "g7_u5_098",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "(to) delete",
+    "de": "löschen"
+  },
+  {
+    "id": "g7_u5_099",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "sadness",
+    "de": "Traurigkeit"
+  },
+  {
+    "id": "g7_u5_100",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "not ... any more",
+    "de": "nicht mehr"
+  },
+  {
+    "id": "g7_u5_101",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "aka (also known as)",
+    "de": "alias; auch bekannt als"
+  },
+  {
+    "id": "g7_u5_102",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "weak",
+    "de": "schwach"
+  },
+  {
+    "id": "g7_u5_103",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "(to) give in",
+    "de": "nachgeben"
+  },
+  {
+    "id": "g7_u5_104",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "(to) judge",
+    "de": "beurteilen"
+  },
+  {
+    "id": "g7_u5_105",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "judge",
+    "de": "Richter/in"
+  },
+  {
+    "id": "g7_u5_106",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "(to) stand; stood; stood",
+    "de": "stehen"
+  },
+  {
+    "id": "g7_u5_107",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "(to) swim; swam; swum",
+    "de": "schwimmen"
+  },
+  {
+    "id": "g7_u5_108",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "(to) choose; chose; chosen",
+    "de": "wählen; auswählen"
+  },
+  {
+    "id": "g7_u5_109",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "(to) hit; hit; hit",
+    "de": "schlagen; treffen"
+  },
+  {
+    "id": "g7_u5_110",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "(to) think; thought; thought",
+    "de": "denken"
+  },
+  {
+    "id": "g7_u5_111",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "(to) know; knew; known",
+    "de": "wissen; kennen"
+  },
+  {
+    "id": "g7_u5_112",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "(to) understand; understood; understood",
+    "de": "verstehen"
+  },
+  {
+    "id": "g7_u5_113",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "(to) leave; left; left",
+    "de": "verlassen; abfahren"
+  },
+  {
+    "id": "g7_u5_114",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "(to) wear; wore; worn",
+    "de": "tragen (Kleidung)"
+  },
+  {
+    "id": "g7_u5_115",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "(to) write; wrote; written",
+    "de": "schreiben"
+  },
+  {
+    "id": "g7_u5_116",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "(to) read; read; read",
+    "de": "lesen"
+  },
+  {
+    "id": "g7_u5_117",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology-environment-and-life",
+    "difficulty": 2,
+    "sourcePage": 193,
+    "en": "(to) sit; sat; sat",
+    "de": "sitzen"
+  }
+]
