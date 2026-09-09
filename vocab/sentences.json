@@ -1,54 +1,272 @@
-{
-  "u1": [
-    {
-      "id": "u1s1",
-      "en": "I use my camera every day.",
-      "de": "Ich benutze jeden Tag meine Kamera."
-    },
-    {
-      "id": "u1s2",
-      "en": "I download games to my phone.",
-      "de": "Ich lade Spiele auf mein Handy herunter."
-    },
-    {
-      "id": "u1s3",
-      "en": "The game is exciting.",
-      "de": "Das Spiel ist aufregend."
-    },
-    {
-      "id": "u1s4",
-      "en": "I watch TV every evening.",
-      "de": "Ich sehe jeden Abend fern."
-    },
-    {
-      "id": "u1s5",
-      "en": "My friend is a gamer.",
-      "de": "Mein Freund ist ein Spieler."
-    },
-    {
-      "id": "u1s6",
-      "en": "The screen is very big.",
-      "de": "Der Bildschirm ist sehr groß."
-    },
-    {
-      "id": "u1s7",
-      "en": "I phone my friend after school.",
-      "de": "Ich rufe meinen Freund nach der Schule an."
-    },
-    {
-      "id": "u1s8",
-      "en": "The news is on TV tonight.",
-      "de": "Die Nachrichten kommen heute Abend im Fernsehen."
-    },
-    {
-      "id": "u1s9",
-      "en": "I upload my pictures to the internet.",
-      "de": "Ich lade meine Bilder ins Internet hoch."
-    },
-    {
-      "id": "u1s10",
-      "en": "Many young people use social media.",
-      "de": "Viele junge Menschen nutzen soziale Medien."
-    }
-  ]
-}
+[
+  {
+    "id": "g6_u1_s001",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "difficulty": 1,
+    "en": "I use my camera every day.",
+    "de": "Ich benutze jeden Tag meine Kamera."
+  },
+  {
+    "id": "g6_u1_s002",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "difficulty": 1,
+    "en": "I download games to my phone.",
+    "de": "Ich lade Spiele auf mein Handy herunter."
+  },
+  {
+    "id": "g6_u1_s003",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "games",
+    "difficulty": 1,
+    "en": "The game is exciting.",
+    "de": "Das Spiel ist aufregend."
+  },
+  {
+    "id": "g6_u1_s004",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "media",
+    "difficulty": 1,
+    "en": "I watch TV every evening.",
+    "de": "Ich sehe jeden Abend fern."
+  },
+  {
+    "id": "g6_u1_s005",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "games",
+    "difficulty": 1,
+    "en": "My friend is a gamer.",
+    "de": "Mein Freund ist ein Spieler."
+  },
+  {
+    "id": "g6_u1_s006",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "difficulty": 1,
+    "en": "The screen is very big.",
+    "de": "Der Bildschirm ist sehr groß."
+  },
+  {
+    "id": "g6_u1_s007",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "communication",
+    "difficulty": 1,
+    "en": "I phone my friend after school.",
+    "de": "Ich rufe meinen Freund nach der Schule an."
+  },
+  {
+    "id": "g6_u1_s008",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "media",
+    "difficulty": 1,
+    "en": "The news is on TV tonight.",
+    "de": "Die Nachrichten kommen heute Abend im Fernsehen."
+  },
+  {
+    "id": "g6_u1_s009",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "difficulty": 1,
+    "en": "I upload my pictures to the internet.",
+    "de": "Ich lade meine Bilder ins Internet hoch."
+  },
+  {
+    "id": "g6_u1_s010",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "media",
+    "difficulty": 2,
+    "en": "Many young people use social media.",
+    "de": "Viele junge Menschen nutzen soziale Medien."
+  },
+  {
+    "id": "g6_u1_s011",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "media",
+    "difficulty": 1,
+    "en": "My favourite programme starts at seven.",
+    "de": "Meine Lieblingssendung beginnt um sieben Uhr."
+  },
+  {
+    "id": "g6_u1_s012",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "media",
+    "difficulty": 2,
+    "en": "We watch a documentary at school.",
+    "de": "Wir sehen in der Schule einen Dokumentarfilm."
+  },
+  {
+    "id": "g6_u1_s013",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "media",
+    "difficulty": 2,
+    "en": "My parents like detective series.",
+    "de": "Meine Eltern mögen Krimiserien."
+  },
+  {
+    "id": "g6_u1_s014",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "media",
+    "difficulty": 2,
+    "en": "The detective wants to solve the crime.",
+    "de": "Der Detektiv möchte das Verbrechen aufklären."
+  },
+  {
+    "id": "g6_u1_s015",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "media",
+    "difficulty": 1,
+    "en": "This programme is not real.",
+    "de": "Diese Sendung ist nicht echt."
+  },
+  {
+    "id": "g6_u1_s016",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 2,
+    "en": "We count the answers in the survey.",
+    "de": "Wir zählen die Antworten in der Umfrage."
+  },
+  {
+    "id": "g6_u1_s017",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "communication",
+    "difficulty": 1,
+    "en": "I chat with my friends online.",
+    "de": "Ich chatte online mit meinen Freunden."
+  },
+  {
+    "id": "g6_u1_s018",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "internet safety",
+    "difficulty": 2,
+    "en": "You must be safe on the internet.",
+    "de": "Du musst im Internet vorsichtig sein."
+  },
+  {
+    "id": "g6_u1_s019",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "appearance",
+    "difficulty": 1,
+    "en": "My friend has curly hair and glasses.",
+    "de": "Mein Freund hat lockige Haare und eine Brille."
+  },
+  {
+    "id": "g6_u1_s020",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "appearance",
+    "difficulty": 1,
+    "en": "The young boy is very shy.",
+    "de": "Der junge Junge ist sehr schüchtern."
+  },
+  {
+    "id": "g6_u1_s021",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 1,
+    "en": "Please put your phone away.",
+    "de": "Bitte lege dein Handy weg."
+  },
+  {
+    "id": "g6_u1_s022",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 1,
+    "en": "Please put up your hand.",
+    "de": "Bitte melde dich."
+  },
+  {
+    "id": "g6_u1_s023",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 1,
+    "en": "Repeat the sentence after me.",
+    "de": "Sprich den Satz nach mir."
+  },
+  {
+    "id": "g6_u1_s024",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "school",
+    "difficulty": 1,
+    "en": "What is our homework for tomorrow?",
+    "de": "Was haben wir für morgen als Hausaufgabe auf?"
+  },
+  {
+    "id": "g6_u1_s025",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "story",
+    "difficulty": 2,
+    "en": "We find a message in a bottle.",
+    "de": "Wir finden eine Flaschenpost."
+  },
+  {
+    "id": "g6_u1_s026",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "story",
+    "difficulty": 2,
+    "en": "A piece of paper lies on the path.",
+    "de": "Ein Stück Papier liegt auf dem Weg."
+  },
+  {
+    "id": "g6_u1_s027",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "story",
+    "difficulty": 2,
+    "en": "The writing is difficult to read.",
+    "de": "Die Schrift ist schwer zu lesen."
+  },
+  {
+    "id": "g6_u1_s028",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "story",
+    "difficulty": 2,
+    "en": "The writer is in danger.",
+    "de": "Der Autor ist in Gefahr."
+  },
+  {
+    "id": "g6_u1_s029",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "experiment",
+    "difficulty": 2,
+    "en": "We test the experiment at school.",
+    "de": "Wir testen das Experiment in der Schule."
+  },
+  {
+    "id": "g6_u1_s030",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "experiment",
+    "difficulty": 2,
+    "en": "The experiment proves that wood can float.",
+    "de": "Das Experiment beweist, dass Holz schwimmen kann."
+  }
+]
