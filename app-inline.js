@@ -757,74 +757,75 @@ function recentlyAsked(text){ return lastPrompts.some(t=> normalize(t)===normali
 function pushHistory(text){ lastPrompts.unshift(text); if(lastPrompts.length>2) lastPrompts.pop(); }
 function pickQuestion(){ 
   const mode=els.modeSelect.value;
- if(mode === 'sentences'){
+if(mode === 'sentences'){
 
     const selectedGrade =
         els.gradeSelect
             ? els.gradeSelect.value
-            : '6';
+            : 'all';
 
     const allowedUnits =
         activeBlockIds.length
             ? activeBlockIds
             : UNIT_META.map(unit => unit.id);
 
-    let sentencePool = [];
+    let allSentences = [];
 
-    /*
-     * Die bestehende sentences.json gehört zunächst
-     * zur 6. Klasse und bleibt vollständig kompatibel.
-     */
-    if(
-        selectedGrade === '6' ||
-        selectedGrade === 'all'
-    ){
+    if(Array.isArray(SENTENCES_DATA)){
 
-        allowedUnits.forEach(unitId => {
+        allSentences =
+            SENTENCES_DATA;
 
-            const unitSentences =
-                SENTENCES_DATA?.[unitId] || [];
+    }else{
 
-            if(Array.isArray(unitSentences)){
+        Object.entries(
+            SENTENCES_DATA || {}
+        )
+        .forEach(([unit, sentences]) => {
 
-                sentencePool.push(
-                    ...unitSentences
-                );
-
+            if(!Array.isArray(sentences)){
+                return;
             }
+
+            sentences.forEach(sentence => {
+
+                allSentences.push({
+
+                    ...sentence,
+
+                    grade:
+                        sentence.grade || 6,
+
+                    unit:
+                        sentence.unit || unit
+
+                });
+
+            });
 
         });
 
     }
 
-    /*
-     * Vorbereitung für die spätere V2-Struktur:
-     * {
-     *   "grade6": { "u1": [...] },
-     *   "grade7": { "u1": [...] }
-     * }
-     */
-    if(
-        selectedGrade === '7' ||
-        selectedGrade === 'all'
-    ){
+    const sentencePool =
+        allSentences.filter(sentence => {
 
-        allowedUnits.forEach(unitId => {
+            const gradeMatches =
+                selectedGrade === 'all' ||
+                String(sentence.grade) ===
+                    selectedGrade;
 
-            const unitSentences =
-                SENTENCES_DATA?.grade7?.[unitId] || [];
-
-            if(Array.isArray(unitSentences)){
-
-                sentencePool.push(
-                    ...unitSentences
+            const unitMatches =
+                allowedUnits.includes(
+                    sentence.unit
                 );
 
-            }
+            return (
+                gradeMatches &&
+                unitMatches
+            );
 
         });
-
-    }
 
     if(!sentencePool.length){
         return null;
@@ -851,6 +852,21 @@ function pickQuestion(){
 
         answer:
             randomSentence.de,
+
+        itemId:
+            randomSentence.id,
+
+        grade:
+            randomSentence.grade,
+
+        unit:
+            randomSentence.unit,
+
+        topic:
+            randomSentence.topic || '',
+
+        difficulty:
+            randomSentence.difficulty || 1,
 
         answered: false
 
