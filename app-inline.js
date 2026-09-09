@@ -1,5 +1,5 @@
 // Vokabeltrainer – Auto-Repair Blocks + UX + Tippfehler-Diff + Lern-Hinweise (Beta)
-const APP_VERSION = 'v14'; // <--- AKTUALISIERT AUF V12
+const APP_VERSION = 'v15'; // <--- AKTUALISIERT AUF V12
 const UNIT_META = [
 // ... (UNIT_META bleibt unverändert) ...
 // ... (Hilfsfunktionen bleiben unverändert) ...
@@ -757,23 +757,103 @@ function recentlyAsked(text){ return lastPrompts.some(t=> normalize(t)===normali
 function pushHistory(text){ lastPrompts.unshift(text); if(lastPrompts.length>2) lastPrompts.pop(); }
 function pickQuestion(){ 
   const mode=els.modeSelect.value;
-  if(mode === 'sentences'){
-    const sentences = SENTENCES_DATA?.u1 || [];
+ if(mode === 'sentences'){
 
-    if(!sentences.length){
+    const selectedGrade =
+        els.gradeSelect
+            ? els.gradeSelect.value
+            : '6';
+
+    const allowedUnits =
+        activeBlockIds.length
+            ? activeBlockIds
+            : UNIT_META.map(unit => unit.id);
+
+    let sentencePool = [];
+
+    /*
+     * Die bestehende sentences.json gehört zunächst
+     * zur 6. Klasse und bleibt vollständig kompatibel.
+     */
+    if(
+        selectedGrade === '6' ||
+        selectedGrade === 'all'
+    ){
+
+        allowedUnits.forEach(unitId => {
+
+            const unitSentences =
+                SENTENCES_DATA?.[unitId] || [];
+
+            if(Array.isArray(unitSentences)){
+
+                sentencePool.push(
+                    ...unitSentences
+                );
+
+            }
+
+        });
+
+    }
+
+    /*
+     * Vorbereitung für die spätere V2-Struktur:
+     * {
+     *   "grade6": { "u1": [...] },
+     *   "grade7": { "u1": [...] }
+     * }
+     */
+    if(
+        selectedGrade === '7' ||
+        selectedGrade === 'all'
+    ){
+
+        allowedUnits.forEach(unitId => {
+
+            const unitSentences =
+                SENTENCES_DATA?.grade7?.[unitId] || [];
+
+            if(Array.isArray(unitSentences)){
+
+                sentencePool.push(
+                    ...unitSentences
+                );
+
+            }
+
+        });
+
+    }
+
+    if(!sentencePool.length){
         return null;
     }
 
     const randomSentence =
-        sentences[Math.floor(Math.random() * sentences.length)];
+        sentencePool[
+            Math.floor(
+                Math.random() *
+                sentencePool.length
+            )
+        ];
 
-   currentQ = {
-    type: 'sentence',
-    from: 'en',
-    to: 'de',
-    prompt: randomSentence.en,
-    answer: randomSentence.de,
-    answered: false
+    currentQ = {
+
+        type: 'sentence',
+
+        from: 'en',
+
+        to: 'de',
+
+        prompt:
+            randomSentence.en,
+
+        answer:
+            randomSentence.de,
+
+        answered: false
+
     };
 
     return currentQ;
