@@ -1690,6 +1690,31 @@ els.modeSelect && els.modeSelect.addEventListener('change', () => {
 
         }
     );
+  els.sentenceDirectionSelect &&
+    els.sentenceDirectionSelect.addEventListener(
+        'change',
+        () => {
+            if(
+                !els.modeSelect ||
+                els.modeSelect.value !== 'sentences'
+            ){
+                return;
+            }
+
+            currentQ = null;
+            sentenceQueue = [];
+            sentenceQueueKey = '';
+
+            const q = pickQuestion();
+
+            if(q){
+                renderQuestion();
+            }else{
+                els.promptText.textContent =
+                    'Fuer diese Auswahl sind noch keine Aufgaben vorhanden.';
+            }
+        }
+    );
 els.achievementToggle &&
     els.achievementToggle.addEventListener(
         'click',
