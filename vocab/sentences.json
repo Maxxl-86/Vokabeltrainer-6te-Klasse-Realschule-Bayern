@@ -1634,8 +1634,8 @@
     "unit": "u1",
     "topic": "Away at school",
     "difficulty": 2,
-    "en": "Please fill in the application form.",
-    "de": "Bitte fülle das Anmeldeformular aus."
+    "en": "The boarding school has excellent facilities.",
+    "de": "Das Internat hat ausgezeichnete Einrichtungen."
   },
   {
     "id": "g7_u1_s003",
@@ -1661,8 +1661,8 @@
     "unit": "u1",
     "topic": "Away at school",
     "difficulty": 2,
-    "en": "The boarding school has excellent facilities.",
-    "de": "Das Internat hat ausgezeichnete Einrichtungen."
+    "en": "We practise self-defence after school.",
+    "de": "Wir üben nach der Schule Selbstverteidigung."
   },
   {
     "id": "g7_u1_s006",
@@ -1670,8 +1670,8 @@
     "unit": "u1",
     "topic": "Away at school",
     "difficulty": 2,
-    "en": "I look forward to making new friends.",
-    "de": "Ich freue mich darauf, neue Freunde zu finden."
+    "en": "I sometimes feel homesick at night.",
+    "de": "Manchmal habe ich nachts Heimweh."
   },
   {
     "id": "g7_u1_s007",
@@ -1688,8 +1688,8 @@
     "unit": "u1",
     "topic": "Away at school",
     "difficulty": 2,
-    "en": "The students practise self-defence after school.",
-    "de": "Die Schüler üben nach der Schule Selbstverteidigung."
+    "en": "I look forward to making new friends.",
+    "de": "Ich freue mich darauf, neue Freunde zu finden."
   },
   {
     "id": "g7_u1_s009",
@@ -1697,8 +1697,8 @@
     "unit": "u1",
     "topic": "Away at school",
     "difficulty": 2,
-    "en": "I sometimes feel homesick at night.",
-    "de": "Manchmal habe ich nachts Heimweh."
+    "en": "The chapel is next to the tennis court.",
+    "de": "Die Kapelle liegt neben dem Tennisplatz."
   },
   {
     "id": "g7_u1_s010",
@@ -1706,7 +1706,7 @@
     "unit": "u1",
     "topic": "Away at school",
     "difficulty": 2,
-    "en": "The exam starts on Monday morning.",
+    "en": "The examination starts on Monday morning.",
     "de": "Die Prüfung beginnt am Montagmorgen."
   },
   {
@@ -1715,8 +1715,8 @@
     "unit": "u1",
     "topic": "Away at school",
     "difficulty": 2,
-    "en": "We share a room on the second floor.",
-    "de": "Wir teilen uns ein Zimmer im zweiten Stock."
+    "en": "Please follow the instructions carefully.",
+    "de": "Bitte befolge die Anweisungen sorgfältig."
   },
   {
     "id": "g7_u1_s012",
@@ -1724,8 +1724,8 @@
     "unit": "u1",
     "topic": "Away at school",
     "difficulty": 2,
-    "en": "The school offers many activities.",
-    "de": "Die Schule bietet viele Aktivitäten an."
+    "en": "Write your full address in capital letters.",
+    "de": "Schreibe deine vollständige Adresse in Großbuchstaben."
   },
   {
     "id": "g7_u1_s013",
@@ -1733,8 +1733,8 @@
     "unit": "u1",
     "topic": "Away at school",
     "difficulty": 2,
-    "en": "I make a phone call after dinner.",
-    "de": "Ich telefoniere nach dem Abendessen."
+    "en": "A guardian must sign the application.",
+    "de": "Ein Vormund muss den Antrag unterschreiben."
   },
   {
     "id": "g7_u1_s014",
@@ -1742,56 +1742,11 @@
     "unit": "u1",
     "topic": "Away at school",
     "difficulty": 2,
-    "en": "The chapel is next to the main building.",
-    "de": "Die Kapelle liegt neben dem Hauptgebäude."
+    "en": "My mother tongue is German.",
+    "de": "Meine Muttersprache ist Deutsch."
   },
   {
     "id": "g7_u1_s015",
-    "grade": 7,
-    "unit": "u1",
-    "topic": "Away at school",
-    "difficulty": 2,
-    "en": "Our teacher explains the school rules.",
-    "de": "Unser Lehrer erklärt die Schulregeln."
-  },
-  {
-    "id": "g7_u1_s016",
-    "grade": 7,
-    "unit": "u1",
-    "topic": "Away at school",
-    "difficulty": 2,
-    "en": "I miss my family during the first week.",
-    "de": "Ich vermisse meine Familie in der ersten Woche."
-  },
-  {
-    "id": "g7_u1_s017",
-    "grade": 7,
-    "unit": "u1",
-    "topic": "Away at school",
-    "difficulty": 2,
-    "en": "The dining hall opens at seven o’clock.",
-    "de": "Der Speisesaal öffnet um sieben Uhr."
-  },
-  {
-    "id": "g7_u1_s018",
-    "grade": 7,
-    "unit": "u1",
-    "topic": "Away at school",
-    "difficulty": 2,
-    "en": "Students must keep their rooms tidy.",
-    "de": "Die Schüler müssen ihre Zimmer ordentlich halten."
-  },
-  {
-    "id": "g7_u1_s019",
-    "grade": 7,
-    "unit": "u1",
-    "topic": "Away at school",
-    "difficulty": 2,
-    "en": "My parents visit me at the weekend.",
-    "de": "Meine Eltern besuchen mich am Wochenende."
-  },
-  {
-    "id": "g7_u1_s020",
     "grade": 7,
     "unit": "u1",
     "topic": "Away at school",
@@ -1800,13 +1755,58 @@
     "de": "Der neue Schüler findet schnell Freunde."
   },
   {
+    "id": "g7_u1_s016",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "Away at school",
+    "difficulty": 2,
+    "en": "Please keep this secret.",
+    "de": "Bitte halte das geheim."
+  },
+  {
+    "id": "g7_u1_s017",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "Away at school",
+    "difficulty": 2,
+    "en": "The bully has detention after school.",
+    "de": "Der Mobber muss nach der Schule nachsitzen."
+  },
+  {
+    "id": "g7_u1_s018",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "Away at school",
+    "difficulty": 2,
+    "en": "Do not copy your roommate’s vocabulary.",
+    "de": "Schreibe die Vokabeln deines Zimmergenossen nicht ab."
+  },
+  {
+    "id": "g7_u1_s019",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "Away at school",
+    "difficulty": 2,
+    "en": "The students say hi to everyone.",
+    "de": "Die Schüler grüßen alle."
+  },
+  {
+    "id": "g7_u1_s020",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "Away at school",
+    "difficulty": 2,
+    "en": "Lights out is at ten o’clock.",
+    "de": "Um zehn Uhr ist Nachtruhe."
+  },
+  {
     "id": "g7_u1_s021",
     "grade": 7,
     "unit": "u1",
     "topic": "Away at school",
     "difficulty": 2,
-    "en": "We practise music in the afternoon.",
-    "de": "Wir üben am Nachmittag Musik."
+    "en": "I have my own room at the boarding school.",
+    "de": "Ich habe im Internat mein eigenes Zimmer."
   },
   {
     "id": "g7_u1_s022",
@@ -1814,8 +1814,8 @@
     "unit": "u1",
     "topic": "Away at school",
     "difficulty": 2,
-    "en": "The school library is open until six.",
-    "de": "Die Schulbibliothek ist bis sechs Uhr geöffnet."
+    "en": "The orchestra plays in the chapel.",
+    "de": "Das Orchester spielt in der Kapelle."
   },
   {
     "id": "g7_u1_s023",
@@ -1823,8 +1823,8 @@
     "unit": "u1",
     "topic": "Away at school",
     "difficulty": 2,
-    "en": "I send an email to my roommate.",
-    "de": "Ich sende meinem Zimmergenossen eine E-Mail."
+    "en": "The room has good Wi-Fi facilities.",
+    "de": "Das Zimmer hat eine gute WLAN-Ausstattung."
   },
   {
     "id": "g7_u1_s024",
@@ -1832,8 +1832,8 @@
     "unit": "u1",
     "topic": "Away at school",
     "difficulty": 2,
-    "en": "The facilities include a swimming pool.",
-    "de": "Zu den Einrichtungen gehört ein Schwimmbad."
+    "en": "Please use a polite phrase.",
+    "de": "Bitte verwende eine höfliche Redewendung."
   },
   {
     "id": "g7_u1_s025",
@@ -1841,8 +1841,8 @@
     "unit": "u1",
     "topic": "Away at school",
     "difficulty": 2,
-    "en": "Please hand in the form tomorrow.",
-    "de": "Bitte gib das Formular morgen ab."
+    "en": "This description is useful for the application.",
+    "de": "Diese Beschreibung ist für den Antrag nützlich."
   },
   {
     "id": "g7_u1_s026",
@@ -1850,8 +1850,8 @@
     "unit": "u1",
     "topic": "Away at school",
     "difficulty": 2,
-    "en": "Our choir performs in the chapel.",
-    "de": "Unser Chor tritt in der Kapelle auf."
+    "en": "The school is independent of the government.",
+    "de": "Die Schule ist von der Regierung unabhängig."
   },
   {
     "id": "g7_u1_s027",
@@ -1859,8 +1859,8 @@
     "unit": "u1",
     "topic": "Away at school",
     "difficulty": 2,
-    "en": "I feel more confident now.",
-    "de": "Ich fühle mich jetzt selbstbewusster."
+    "en": "The police talk to the guardian.",
+    "de": "Die Polizei spricht mit dem Vormund."
   },
   {
     "id": "g7_u1_s028",
@@ -1868,8 +1868,8 @@
     "unit": "u1",
     "topic": "Away at school",
     "difficulty": 2,
-    "en": "The students prepare for an important exam.",
-    "de": "Die Schüler bereiten sich auf eine wichtige Prüfung vor."
+    "en": "One third of the students are boarders.",
+    "de": "Ein Drittel der Schüler sind Internatsschüler."
   },
   {
     "id": "g7_u1_s029",
@@ -1877,8 +1877,8 @@
     "unit": "u1",
     "topic": "Away at school",
     "difficulty": 2,
-    "en": "We are not allowed to use phones in class.",
-    "de": "Wir dürfen im Unterricht keine Handys benutzen."
+    "en": "The lorry drives through the tunnel.",
+    "de": "Der Lastwagen fährt durch den Tunnel."
   },
   {
     "id": "g7_u1_s030",
@@ -1886,8 +1886,8 @@
     "unit": "u1",
     "topic": "Away at school",
     "difficulty": 2,
-    "en": "Life at the boarding school is never boring.",
-    "de": "Das Leben im Internat ist nie langweilig."
+    "en": "The channel froze during the cold night.",
+    "de": "Der Kanal fror in der kalten Nacht zu."
   },
   {
     "id": "g7_u2_s001",
@@ -1896,7 +1896,7 @@
     "topic": "Jesse’s World",
     "difficulty": 2,
     "en": "I have to do my chores every weekday.",
-    "de": "Ich muss jeden Werktag meine Hausarbeiten erledigen."
+    "de": "Ich muss jeden Wochentag meine Hausarbeiten erledigen."
   },
   {
     "id": "g7_u2_s002",
@@ -1913,20 +1913,11 @@
     "unit": "u2",
     "topic": "Jesse’s World",
     "difficulty": 2,
-    "en": "The hero changes into a powerful animal.",
-    "de": "Der Held verwandelt sich in ein mächtiges Tier."
+    "en": "The script describes an exciting scene.",
+    "de": "Das Drehbuch beschreibt eine spannende Szene."
   },
   {
     "id": "g7_u2_s004",
-    "grade": 7,
-    "unit": "u2",
-    "topic": "Jesse’s World",
-    "difficulty": 2,
-    "en": "The prince escapes from the castle.",
-    "de": "Der Prinz entkommt aus der Burg."
-  },
-  {
-    "id": "g7_u2_s005",
     "grade": 7,
     "unit": "u2",
     "topic": "Jesse’s World",
@@ -1935,7 +1926,106 @@
     "de": "Ich muss mich auf meine Hausaufgaben konzentrieren."
   },
   {
+    "id": "g7_u2_s005",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "Jesse’s World",
+    "difficulty": 2,
+    "en": "The hero changes into a powerful animal.",
+    "de": "Der Held verwandelt sich in ein mächtiges Tier."
+  },
+  {
     "id": "g7_u2_s006",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "Jesse’s World",
+    "difficulty": 2,
+    "en": "The prince escapes from the castle.",
+    "de": "Der Prinz entkommt aus der Burg."
+  },
+  {
+    "id": "g7_u2_s007",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "Jesse’s World",
+    "difficulty": 2,
+    "en": "Please answer the phone.",
+    "de": "Bitte geh ans Telefon."
+  },
+  {
+    "id": "g7_u2_s008",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "Jesse’s World",
+    "difficulty": 2,
+    "en": "The ordinary caller notices something strange.",
+    "de": "Der gewöhnliche Anrufer bemerkt etwas Seltsames."
+  },
+  {
+    "id": "g7_u2_s009",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "Jesse’s World",
+    "difficulty": 2,
+    "en": "The hero wears a mask and has sharp claws.",
+    "de": "Der Held trägt eine Maske und hat scharfe Klauen."
+  },
+  {
+    "id": "g7_u2_s010",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "Jesse’s World",
+    "difficulty": 2,
+    "en": "The police catch the evil king.",
+    "de": "Die Polizei fängt den bösen König."
+  },
+  {
+    "id": "g7_u2_s011",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "Jesse’s World",
+    "difficulty": 2,
+    "en": "She sews the material with a sewing machine.",
+    "de": "Sie näht den Stoff mit einer Nähmaschine."
+  },
+  {
+    "id": "g7_u2_s012",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "Jesse’s World",
+    "difficulty": 2,
+    "en": "The creative student starts a business.",
+    "de": "Der kreative Schüler gründet ein Unternehmen."
+  },
+  {
+    "id": "g7_u2_s013",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "Jesse’s World",
+    "difficulty": 2,
+    "en": "The CEO gives useful advice.",
+    "de": "Der Geschäftsführer gibt einen nützlichen Rat."
+  },
+  {
+    "id": "g7_u2_s014",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "Jesse’s World",
+    "difficulty": 2,
+    "en": "The business makes a profit.",
+    "de": "Das Unternehmen macht Gewinn."
+  },
+  {
+    "id": "g7_u2_s015",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "Jesse’s World",
+    "difficulty": 2,
+    "en": "The customer likes the sporty style.",
+    "de": "Dem Kunden gefällt der sportliche Stil."
+  },
+  {
+    "id": "g7_u2_s016",
     "grade": 7,
     "unit": "u2",
     "topic": "Jesse’s World",
@@ -1944,7 +2034,7 @@
     "de": "Wir decken vor dem Abendessen den Tisch."
   },
   {
-    "id": "g7_u2_s007",
+    "id": "g7_u2_s017",
     "grade": 7,
     "unit": "u2",
     "topic": "Jesse’s World",
@@ -1953,61 +2043,7 @@
     "de": "Sie räumt nach dem Mittagessen die Spülmaschine ein."
   },
   {
-    "id": "g7_u2_s008",
-    "grade": 7,
-    "unit": "u2",
-    "topic": "Jesse’s World",
-    "difficulty": 2,
-    "en": "The young designer starts a successful business.",
-    "de": "Der junge Designer gründet ein erfolgreiches Unternehmen."
-  },
-  {
-    "id": "g7_u2_s009",
-    "grade": 7,
-    "unit": "u2",
-    "topic": "Jesse’s World",
-    "difficulty": 2,
-    "en": "The film has an exciting plot.",
-    "de": "Der Film hat eine spannende Handlung."
-  },
-  {
-    "id": "g7_u2_s010",
-    "grade": 7,
-    "unit": "u2",
-    "topic": "Jesse’s World",
-    "difficulty": 2,
-    "en": "This chair is comfortable but not very stylish.",
-    "de": "Dieser Stuhl ist bequem, aber nicht besonders stilvoll."
-  },
-  {
-    "id": "g7_u2_s011",
-    "grade": 7,
-    "unit": "u2",
-    "topic": "Jesse’s World",
-    "difficulty": 2,
-    "en": "The main character wears a black mask.",
-    "de": "Die Hauptfigur trägt eine schwarze Maske."
-  },
-  {
-    "id": "g7_u2_s012",
-    "grade": 7,
-    "unit": "u2",
-    "topic": "Jesse’s World",
-    "difficulty": 2,
-    "en": "The script describes an exciting scene.",
-    "de": "Das Drehbuch beschreibt eine spannende Szene."
-  },
-  {
-    "id": "g7_u2_s013",
-    "grade": 7,
-    "unit": "u2",
-    "topic": "Jesse’s World",
-    "difficulty": 2,
-    "en": "I tidy my room before school.",
-    "de": "Ich räume mein Zimmer vor der Schule auf."
-  },
-  {
-    "id": "g7_u2_s014",
+    "id": "g7_u2_s018",
     "grade": 7,
     "unit": "u2",
     "topic": "Jesse’s World",
@@ -2016,49 +2052,13 @@
     "de": "Mein Bruder bringt den Müll hinaus."
   },
   {
-    "id": "g7_u2_s015",
-    "grade": 7,
-    "unit": "u2",
-    "topic": "Jesse’s World",
-    "difficulty": 2,
-    "en": "The hero must protect the village.",
-    "de": "Der Held muss das Dorf beschützen."
-  },
-  {
-    "id": "g7_u2_s016",
-    "grade": 7,
-    "unit": "u2",
-    "topic": "Jesse’s World",
-    "difficulty": 2,
-    "en": "The actor learns every line carefully.",
-    "de": "Der Schauspieler lernt jede Zeile sorgfältig."
-  },
-  {
-    "id": "g7_u2_s017",
-    "grade": 7,
-    "unit": "u2",
-    "topic": "Jesse’s World",
-    "difficulty": 2,
-    "en": "We discuss the film in class.",
-    "de": "Wir besprechen den Film im Unterricht."
-  },
-  {
-    "id": "g7_u2_s018",
-    "grade": 7,
-    "unit": "u2",
-    "topic": "Jesse’s World",
-    "difficulty": 2,
-    "en": "The story has a surprising ending.",
-    "de": "Die Geschichte hat ein überraschendes Ende."
-  },
-  {
     "id": "g7_u2_s019",
     "grade": 7,
     "unit": "u2",
     "topic": "Jesse’s World",
     "difficulty": 2,
-    "en": "I cannot concentrate when the music is loud.",
-    "de": "Ich kann mich nicht konzentrieren, wenn die Musik laut ist."
+    "en": "The twins vacuum the living room.",
+    "de": "Die Zwillinge saugen das Wohnzimmer."
   },
   {
     "id": "g7_u2_s020",
@@ -2066,8 +2066,8 @@
     "unit": "u2",
     "topic": "Jesse’s World",
     "difficulty": 2,
-    "en": "She designs clothes for young people.",
-    "de": "Sie entwirft Kleidung für junge Menschen."
+    "en": "We have a potluck dinner tonight.",
+    "de": "Heute Abend haben wir ein Essen, zu dem jeder etwas mitbringt."
   },
   {
     "id": "g7_u2_s021",
@@ -2075,8 +2075,8 @@
     "unit": "u2",
     "topic": "Jesse’s World",
     "difficulty": 2,
-    "en": "The business sells colourful bow ties.",
-    "de": "Das Unternehmen verkauft bunte Fliegen."
+    "en": "The macaroni looks a little sloppy.",
+    "de": "Die Makkaroni sehen etwas schlabberig aus."
   },
   {
     "id": "g7_u2_s022",
@@ -2084,8 +2084,8 @@
     "unit": "u2",
     "topic": "Jesse’s World",
     "difficulty": 2,
-    "en": "The customer likes the creative design.",
-    "de": "Dem Kunden gefällt das kreative Design."
+    "en": "Listen for the emergency signal.",
+    "de": "Achte beim Zuhören auf das Notsignal."
   },
   {
     "id": "g7_u2_s023",
@@ -2093,8 +2093,8 @@
     "unit": "u2",
     "topic": "Jesse’s World",
     "difficulty": 2,
-    "en": "Please turn off the light before you leave.",
-    "de": "Bitte schalte das Licht aus, bevor du gehst."
+    "en": "The phone rings, but nobody answers it.",
+    "de": "Das Telefon klingelt, aber niemand geht ran."
   },
   {
     "id": "g7_u2_s024",
@@ -2102,8 +2102,8 @@
     "unit": "u2",
     "topic": "Jesse’s World",
     "difficulty": 2,
-    "en": "The character becomes stronger during the story.",
-    "de": "Die Figur wird im Verlauf der Geschichte stärker."
+    "en": "Please plug the lamp in.",
+    "de": "Bitte schließe die Lampe an."
   },
   {
     "id": "g7_u2_s025",
@@ -2111,8 +2111,8 @@
     "unit": "u2",
     "topic": "Jesse’s World",
     "difficulty": 2,
-    "en": "We watch the final scene twice.",
-    "de": "Wir sehen uns die letzte Szene zweimal an."
+    "en": "The accountant checks the profit.",
+    "de": "Der Buchhalter prüft den Gewinn."
   },
   {
     "id": "g7_u2_s026",
@@ -2120,8 +2120,8 @@
     "unit": "u2",
     "topic": "Jesse’s World",
     "difficulty": 2,
-    "en": "The young hero solves the problem alone.",
-    "de": "Der junge Held löst das Problem allein."
+    "en": "The designer expresses new ideas through clothes.",
+    "de": "Der Designer drückt neue Ideen durch Kleidung aus."
   },
   {
     "id": "g7_u2_s027",
@@ -2129,8 +2129,8 @@
     "unit": "u2",
     "topic": "Jesse’s World",
     "difficulty": 2,
-    "en": "I finish my chores before meeting my friends.",
-    "de": "Ich erledige meine Aufgaben, bevor ich meine Freunde treffe."
+    "en": "This creative style is very successful.",
+    "de": "Dieser kreative Stil ist sehr erfolgreich."
   },
   {
     "id": "g7_u2_s028",
@@ -2138,8 +2138,8 @@
     "unit": "u2",
     "topic": "Jesse’s World",
     "difficulty": 2,
-    "en": "The film is based on a popular story.",
-    "de": "Der Film basiert auf einer beliebten Geschichte."
+    "en": "The emergency weapon is hidden under the scarf.",
+    "de": "Die Notfallwaffe ist unter dem Schal versteckt."
   },
   {
     "id": "g7_u2_s029",
@@ -2147,8 +2147,8 @@
     "unit": "u2",
     "topic": "Jesse’s World",
     "difficulty": 2,
-    "en": "Her creative idea becomes a success.",
-    "de": "Ihre kreative Idee wird ein Erfolg."
+    "en": "The quick hero cracks the problem.",
+    "de": "Der schnelle Held löst das Problem."
   },
   {
     "id": "g7_u2_s030",
@@ -2156,8 +2156,8 @@
     "unit": "u2",
     "topic": "Jesse’s World",
     "difficulty": 2,
-    "en": "The audience waits for the next episode.",
-    "de": "Das Publikum wartet auf die nächste Folge."
+    "en": "Because of the rubbish, we must clean the hall.",
+    "de": "Wegen des Mülls müssen wir den Flur reinigen."
   },
   {
     "id": "g7_u3_s001",
@@ -2165,8 +2165,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "The Romans invaded Britain many centuries ago.",
-    "de": "Die Römer marschierten vor vielen Jahrhunderten in Britannien ein."
+    "en": "The class has a vote on the best topic.",
+    "de": "Die Klasse stimmt über das beste Thema ab."
   },
   {
     "id": "g7_u3_s002",
@@ -2174,11 +2174,20 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "The Vikings settled near the coast.",
-    "de": "Die Wikinger ließen sich in der Nähe der Küste nieder."
+    "en": "The Romans conquered large parts of Britain.",
+    "de": "Die Römer eroberten große Teile Britanniens."
   },
   {
     "id": "g7_u3_s003",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "People of Britain",
+    "difficulty": 2,
+    "en": "The Vikings settled near the coast.",
+    "de": "Die Wikinger siedelten sich nahe der Küste an."
+  },
+  {
+    "id": "g7_u3_s004",
     "grade": 7,
     "unit": "u3",
     "topic": "People of Britain",
@@ -2187,16 +2196,34 @@
     "de": "Die Normannen bauten große Burgen."
   },
   {
-    "id": "g7_u3_s004",
+    "id": "g7_u3_s005",
     "grade": 7,
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "The soldier carried a silver knife.",
-    "de": "Der Soldat trug ein silbernes Messer."
+    "en": "An ancient tribe lived on this land.",
+    "de": "Ein uralter Stamm lebte auf diesem Land."
   },
   {
-    "id": "g7_u3_s005",
+    "id": "g7_u3_s006",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "People of Britain",
+    "difficulty": 2,
+    "en": "The emperor ruled a large empire.",
+    "de": "Der Kaiser herrschte über ein großes Reich."
+  },
+  {
+    "id": "g7_u3_s007",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "People of Britain",
+    "difficulty": 2,
+    "en": "The army carried weapons made of silver.",
+    "de": "Die Armee trug Waffen aus Silber."
+  },
+  {
+    "id": "g7_u3_s008",
     "grade": 7,
     "unit": "u3",
     "topic": "People of Britain",
@@ -2205,40 +2232,13 @@
     "de": "Die Menschen handelten mit Wolle und Edelmetall."
   },
   {
-    "id": "g7_u3_s006",
-    "grade": 7,
-    "unit": "u3",
-    "topic": "People of Britain",
-    "difficulty": 2,
-    "en": "They discovered an ancient object in the earth.",
-    "de": "Sie entdeckten einen uralten Gegenstand in der Erde."
-  },
-  {
-    "id": "g7_u3_s007",
-    "grade": 7,
-    "unit": "u3",
-    "topic": "People of Britain",
-    "difficulty": 2,
-    "en": "The emperor had a son and a daughter.",
-    "de": "Der Kaiser hatte einen Sohn und eine Tochter."
-  },
-  {
-    "id": "g7_u3_s008",
-    "grade": 7,
-    "unit": "u3",
-    "topic": "People of Britain",
-    "difficulty": 2,
-    "en": "The tribe lived on this land.",
-    "de": "Der Stamm lebte auf diesem Land."
-  },
-  {
     "id": "g7_u3_s009",
     "grade": 7,
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "Please highlight the main facts in the source.",
-    "de": "Bitte markiere die wichtigsten Fakten in der Quelle."
+    "en": "The soldier carried an axe and a knife.",
+    "de": "Der Soldat trug eine Axt und ein Messer."
   },
   {
     "id": "g7_u3_s010",
@@ -2246,8 +2246,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "The king divided the empire into smaller parts.",
-    "de": "Der König teilte das Reich in kleinere Teile auf."
+    "en": "They dug a deep hole in the ground.",
+    "de": "Sie gruben ein tiefes Loch in den Boden."
   },
   {
     "id": "g7_u3_s011",
@@ -2255,8 +2255,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "Roman soldiers built roads across Britain.",
-    "de": "Römische Soldaten bauten Straßen durch Britannien."
+    "en": "The exact date is still unknown.",
+    "de": "Das genaue Datum ist noch unbekannt."
   },
   {
     "id": "g7_u3_s012",
@@ -2264,8 +2264,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "The Saxons arrived after the Romans left.",
-    "de": "Die Sachsen kamen, nachdem die Römer gegangen waren."
+    "en": "The worker knelt beside the plough.",
+    "de": "Der Arbeiter kniete neben dem Pflug."
   },
   {
     "id": "g7_u3_s013",
@@ -2273,8 +2273,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "The archaeologist examined the ancient coin.",
-    "de": "Der Archäologe untersuchte die antike Münze."
+    "en": "Do not touch the ancient object.",
+    "de": "Berühre den uralten Gegenstand nicht."
   },
   {
     "id": "g7_u3_s014",
@@ -2282,8 +2282,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "The castle protected the people nearby.",
-    "de": "Die Burg schützte die Menschen in der Umgebung."
+    "en": "She scraped the soil with a spade.",
+    "de": "Sie schabte die Erde mit einem Spaten weg."
   },
   {
     "id": "g7_u3_s015",
@@ -2291,8 +2291,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "The invaders crossed the sea in small boats.",
-    "de": "Die Eindringlinge überquerten das Meer in kleinen Booten."
+    "en": "The explosion threw the plate across the room.",
+    "de": "Die Explosion schleuderte den Teller durch den Raum."
   },
   {
     "id": "g7_u3_s016",
@@ -2300,8 +2300,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "The tribe defended its land bravely.",
-    "de": "Der Stamm verteidigte sein Land tapfer."
+    "en": "Please turn the object over carefully.",
+    "de": "Bitte drehe den Gegenstand vorsichtig um."
   },
   {
     "id": "g7_u3_s017",
@@ -2309,8 +2309,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "We compare two historical sources.",
-    "de": "Wir vergleichen zwei historische Quellen."
+    "en": "The greedy stranger hid the silver plate.",
+    "de": "Der gierige Fremde versteckte den silbernen Teller."
   },
   {
     "id": "g7_u3_s018",
@@ -2318,8 +2318,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "The emperor ruled a large area.",
-    "de": "Der Kaiser herrschte über ein großes Gebiet."
+    "en": "The factory was built in the last century.",
+    "de": "Die Fabrik wurde im letzten Jahrhundert gebaut."
   },
   {
     "id": "g7_u3_s019",
@@ -2327,8 +2327,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "The Normans won an important battle.",
-    "de": "Die Normannen gewannen eine wichtige Schlacht."
+    "en": "Please structure the facts clearly.",
+    "de": "Bitte strukturiere die Tatsachen klar."
   },
   {
     "id": "g7_u3_s020",
@@ -2336,8 +2336,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "People buried valuable objects in the ground.",
-    "de": "Die Menschen vergruben wertvolle Gegenstände im Boden."
+    "en": "The source points out the main facts.",
+    "de": "Die Quelle weist auf die wichtigsten Tatsachen hin."
   },
   {
     "id": "g7_u3_s021",
@@ -2345,8 +2345,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "The museum displays weapons from the past.",
-    "de": "Das Museum stellt Waffen aus der Vergangenheit aus."
+    "en": "Highlight the main information in the source.",
+    "de": "Hebe die wichtigsten Informationen in der Quelle hervor."
   },
   {
     "id": "g7_u3_s022",
@@ -2354,8 +2354,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "The settlers built houses near the river.",
-    "de": "Die Siedler bauten Häuser in der Nähe des Flusses."
+    "en": "The royal symbol was found on the ground.",
+    "de": "Das königliche Symbol wurde auf dem Boden gefunden."
   },
   {
     "id": "g7_u3_s023",
@@ -2363,8 +2363,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "The king gave land to his soldiers.",
-    "de": "Der König gab seinen Soldaten Land."
+    "en": "A few visitors arrived at the castle.",
+    "de": "Ein paar Besucher kamen an der Burg an."
   },
   {
     "id": "g7_u3_s024",
@@ -2372,8 +2372,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "The source tells us about everyday life.",
-    "de": "Die Quelle erzählt uns etwas über das Alltagsleben."
+    "en": "The guide nodded towards the monument.",
+    "de": "Der Führer nickte in Richtung des Denkmals."
   },
   {
     "id": "g7_u3_s025",
@@ -2381,8 +2381,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "The ancient object was made of gold.",
-    "de": "Der antike Gegenstand bestand aus Gold."
+    "en": "The child was disappointed with the visit.",
+    "de": "Das Kind war von dem Besuch enttäuscht."
   },
   {
     "id": "g7_u3_s026",
@@ -2390,8 +2390,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "The army moved towards the castle.",
-    "de": "Die Armee bewegte sich auf die Burg zu."
+    "en": "A duck sat on the rug.",
+    "de": "Eine Ente saß auf dem Teppich."
   },
   {
     "id": "g7_u3_s027",
@@ -2399,8 +2399,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "Historians disagree about this event.",
-    "de": "Historiker sind sich über dieses Ereignis uneinig."
+    "en": "The wheel began to spin quickly.",
+    "de": "Das Rad begann sich schnell zu drehen."
   },
   {
     "id": "g7_u3_s028",
@@ -2408,8 +2408,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "The Viking ship carried many warriors.",
-    "de": "Das Wikingerschiff transportierte viele Krieger."
+    "en": "The settlers divided the land into smaller parts.",
+    "de": "Die Siedler teilten das Land in kleinere Teile auf."
   },
   {
     "id": "g7_u3_s029",
@@ -2417,8 +2417,8 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "The people paid taxes to the ruler.",
-    "de": "Die Menschen zahlten dem Herrscher Steuern."
+    "en": "The empress created a royal object.",
+    "de": "Die Kaiserin erschuf einen königlichen Gegenstand."
   },
   {
     "id": "g7_u3_s030",
@@ -2426,20 +2426,11 @@
     "unit": "u3",
     "topic": "People of Britain",
     "difficulty": 2,
-    "en": "This discovery changed our view of history.",
-    "de": "Diese Entdeckung veränderte unsere Sicht auf die Geschichte."
+    "en": "The confident visitor explained the source.",
+    "de": "Der selbstsichere Besucher erklärte die Quelle."
   },
   {
     "id": "g7_u4_s001",
-    "grade": 7,
-    "unit": "u4",
-    "topic": "Irish Stories",
-    "difficulty": 2,
-    "en": "Ireland has many old traditions.",
-    "de": "Irland hat viele alte Traditionen."
-  },
-  {
-    "id": "g7_u4_s002",
     "grade": 7,
     "unit": "u4",
     "topic": "Irish Stories",
@@ -2448,7 +2439,7 @@
     "de": "Der Musiker spielt in einem kleinen Pub."
   },
   {
-    "id": "g7_u4_s003",
+    "id": "g7_u4_s002",
     "grade": 7,
     "unit": "u4",
     "topic": "Irish Stories",
@@ -2457,7 +2448,7 @@
     "de": "Viele Menschen wanderten während der Hungersnot aus."
   },
   {
-    "id": "g7_u4_s004",
+    "id": "g7_u4_s003",
     "grade": 7,
     "unit": "u4",
     "topic": "Irish Stories",
@@ -2466,79 +2457,7 @@
     "de": "Das Kleeblatt ist ein berühmtes irisches Symbol."
   },
   {
-    "id": "g7_u4_s005",
-    "grade": 7,
-    "unit": "u4",
-    "topic": "Irish Stories",
-    "difficulty": 2,
-    "en": "The hostel is close to the city centre.",
-    "de": "Die Jugendherberge liegt nahe am Stadtzentrum."
-  },
-  {
-    "id": "g7_u4_s006",
-    "grade": 7,
-    "unit": "u4",
-    "topic": "Irish Stories",
-    "difficulty": 2,
-    "en": "I can recommend this clean hostel.",
-    "de": "Ich kann diese saubere Jugendherberge empfehlen."
-  },
-  {
-    "id": "g7_u4_s007",
-    "grade": 7,
-    "unit": "u4",
-    "topic": "Irish Stories",
-    "difficulty": 2,
-    "en": "The scientist found an old coin in the cave.",
-    "de": "Der Wissenschaftler fand eine alte Münze in der Höhle."
-  },
-  {
-    "id": "g7_u4_s008",
-    "grade": 7,
-    "unit": "u4",
-    "topic": "Irish Stories",
-    "difficulty": 2,
-    "en": "We bake the bread with wholemeal flour.",
-    "de": "Wir backen das Brot mit Vollkornmehl."
-  },
-  {
-    "id": "g7_u4_s009",
-    "grade": 7,
-    "unit": "u4",
-    "topic": "Irish Stories",
-    "difficulty": 2,
-    "en": "The disease spread through the crowded ship.",
-    "de": "Die Krankheit verbreitete sich auf dem überfüllten Schiff."
-  },
-  {
-    "id": "g7_u4_s010",
-    "grade": 7,
-    "unit": "u4",
-    "topic": "Irish Stories",
-    "difficulty": 2,
-    "en": "The review says that the rooms are comfortable.",
-    "de": "Die Bewertung sagt, dass die Zimmer bequem sind."
-  },
-  {
-    "id": "g7_u4_s011",
-    "grade": 7,
-    "unit": "u4",
-    "topic": "Irish Stories",
-    "difficulty": 2,
-    "en": "The guide tells us an Irish legend.",
-    "de": "Der Führer erzählt uns eine irische Legende."
-  },
-  {
-    "id": "g7_u4_s012",
-    "grade": 7,
-    "unit": "u4",
-    "topic": "Irish Stories",
-    "difficulty": 2,
-    "en": "A priest lived near the old monument.",
-    "de": "Ein Priester lebte in der Nähe des alten Denkmals."
-  },
-  {
-    "id": "g7_u4_s013",
+    "id": "g7_u4_s004",
     "grade": 7,
     "unit": "u4",
     "topic": "Irish Stories",
@@ -2547,13 +2466,94 @@
     "de": "Viele Menschen sprechen noch heute Gälisch."
   },
   {
+    "id": "g7_u4_s005",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "Irish Stories",
+    "difficulty": 2,
+    "en": "A priest lived near the old monument.",
+    "de": "Ein Priester lebte in der Nähe des alten Denkmals."
+  },
+  {
+    "id": "g7_u4_s006",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "Irish Stories",
+    "difficulty": 2,
+    "en": "The hostel is close to the monument.",
+    "de": "Die Jugendherberge liegt nahe am Denkmal."
+  },
+  {
+    "id": "g7_u4_s007",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "Irish Stories",
+    "difficulty": 2,
+    "en": "I can recommend this hostel.",
+    "de": "Ich kann diese Jugendherberge empfehlen."
+  },
+  {
+    "id": "g7_u4_s008",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "Irish Stories",
+    "difficulty": 2,
+    "en": "The review says that the rooms are comfortable.",
+    "de": "In der Bewertung steht, dass die Zimmer bequem sind."
+  },
+  {
+    "id": "g7_u4_s009",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "Irish Stories",
+    "difficulty": 2,
+    "en": "The guide continues the Irish legend.",
+    "de": "Der Führer erzählt die irische Legende weiter."
+  },
+  {
+    "id": "g7_u4_s010",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "Irish Stories",
+    "difficulty": 2,
+    "en": "Look at the caption below the picture.",
+    "de": "Sieh dir die Bildunterschrift unter dem Bild an."
+  },
+  {
+    "id": "g7_u4_s011",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "Irish Stories",
+    "difficulty": 2,
+    "en": "Entry to the memorial is free.",
+    "de": "Der Eintritt zur Gedenkstätte ist frei."
+  },
+  {
+    "id": "g7_u4_s012",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "Irish Stories",
+    "difficulty": 2,
+    "en": "The two stories are similar.",
+    "de": "Die beiden Geschichten sind ähnlich."
+  },
+  {
+    "id": "g7_u4_s013",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "Irish Stories",
+    "difficulty": 2,
+    "en": "The crowded ship had a serious disease on board.",
+    "de": "Auf dem überfüllten Schiff gab es eine schwere Krankheit."
+  },
+  {
     "id": "g7_u4_s014",
     "grade": 7,
     "unit": "u4",
     "topic": "Irish Stories",
     "difficulty": 2,
-    "en": "The travellers stay in a youth hostel.",
-    "de": "Die Reisenden übernachten in einer Jugendherberge."
+    "en": "The disease spread quickly across the deck.",
+    "de": "Die Krankheit breitete sich schnell über das Deck aus."
   },
   {
     "id": "g7_u4_s015",
@@ -2561,8 +2561,8 @@
     "unit": "u4",
     "topic": "Irish Stories",
     "difficulty": 2,
-    "en": "The cave is hidden behind the waterfall.",
-    "de": "Die Höhle ist hinter dem Wasserfall verborgen."
+    "en": "The bucket stands next to the coffin.",
+    "de": "Der Eimer steht neben dem Sarg."
   },
   {
     "id": "g7_u4_s016",
@@ -2570,8 +2570,8 @@
     "unit": "u4",
     "topic": "Irish Stories",
     "difficulty": 2,
-    "en": "The musician performs a traditional song.",
-    "de": "Der Musiker trägt ein traditionelles Lied vor."
+    "en": "A shark swims beside the ship.",
+    "de": "Ein Hai schwimmt neben dem Schiff."
   },
   {
     "id": "g7_u4_s017",
@@ -2579,8 +2579,8 @@
     "unit": "u4",
     "topic": "Irish Stories",
     "difficulty": 2,
-    "en": "We read a positive review online.",
-    "de": "Wir lesen im Internet eine positive Bewertung."
+    "en": "We bake the bread with wholemeal flour.",
+    "de": "Wir backen das Brot mit Vollkornmehl."
   },
   {
     "id": "g7_u4_s018",
@@ -2588,8 +2588,8 @@
     "unit": "u4",
     "topic": "Irish Stories",
     "difficulty": 2,
-    "en": "The monument stands on a green hill.",
-    "de": "Das Denkmal steht auf einem grünen Hügel."
+    "en": "Add one teaspoon of flour.",
+    "de": "Füge einen Teelöffel Mehl hinzu."
   },
   {
     "id": "g7_u4_s019",
@@ -2597,8 +2597,8 @@
     "unit": "u4",
     "topic": "Irish Stories",
     "difficulty": 2,
-    "en": "The family emigrated to another country.",
-    "de": "Die Familie wanderte in ein anderes Land aus."
+    "en": "Knead the dough before you bake it.",
+    "de": "Knete den Teig, bevor du ihn backst."
   },
   {
     "id": "g7_u4_s020",
@@ -2606,8 +2606,8 @@
     "unit": "u4",
     "topic": "Irish Stories",
     "difficulty": 2,
-    "en": "The hostel provides breakfast for its guests.",
-    "de": "Die Jugendherberge bietet ihren Gästen Frühstück an."
+    "en": "Let the bread cool on the baking sheet.",
+    "de": "Lass das Brot auf dem Backblech abkühlen."
   },
   {
     "id": "g7_u4_s021",
@@ -2615,8 +2615,8 @@
     "unit": "u4",
     "topic": "Irish Stories",
     "difficulty": 2,
-    "en": "The story begins on a stormy night.",
-    "de": "Die Geschichte beginnt in einer stürmischen Nacht."
+    "en": "The oyster is served in a small bowl.",
+    "de": "Die Auster wird in einer kleinen Schüssel serviert."
   },
   {
     "id": "g7_u4_s022",
@@ -2624,8 +2624,8 @@
     "unit": "u4",
     "topic": "Irish Stories",
     "difficulty": 2,
-    "en": "The old tradition is still important.",
-    "de": "Die alte Tradition ist noch immer wichtig."
+    "en": "The recipe includes beer and flour.",
+    "de": "Das Rezept enthält Bier und Mehl."
   },
   {
     "id": "g7_u4_s023",
@@ -2633,8 +2633,8 @@
     "unit": "u4",
     "topic": "Irish Stories",
     "difficulty": 2,
-    "en": "We use flour to bake fresh bread.",
-    "de": "Wir verwenden Mehl, um frisches Brot zu backen."
+    "en": "Please stand up straight.",
+    "de": "Bitte stehe gerade."
   },
   {
     "id": "g7_u4_s024",
@@ -2642,8 +2642,8 @@
     "unit": "u4",
     "topic": "Irish Stories",
     "difficulty": 2,
-    "en": "The scientist studies a rare disease.",
-    "de": "Der Wissenschaftler untersucht eine seltene Krankheit."
+    "en": "Do not tap your fingers on the table.",
+    "de": "Klopfe nicht mit den Fingern auf den Tisch."
   },
   {
     "id": "g7_u4_s025",
@@ -2651,8 +2651,8 @@
     "unit": "u4",
     "topic": "Irish Stories",
     "difficulty": 2,
-    "en": "The visitors explore the dark cave.",
-    "de": "Die Besucher erkunden die dunkle Höhle."
+    "en": "She frowned and shrugged her shoulders.",
+    "de": "Sie runzelte die Stirn und zuckte mit den Schultern."
   },
   {
     "id": "g7_u4_s026",
@@ -2660,8 +2660,8 @@
     "unit": "u4",
     "topic": "Irish Stories",
     "difficulty": 2,
-    "en": "The shamrock has three green leaves.",
-    "de": "Das Kleeblatt hat drei grüne Blätter."
+    "en": "He rolled his eyes impatiently.",
+    "de": "Er verdrehte ungeduldig die Augen."
   },
   {
     "id": "g7_u4_s027",
@@ -2669,8 +2669,8 @@
     "unit": "u4",
     "topic": "Irish Stories",
     "difficulty": 2,
-    "en": "The priest helps the people in the village.",
-    "de": "Der Priester hilft den Menschen im Dorf."
+    "en": "The lonely traveller felt unsure.",
+    "de": "Der einsame Reisende fühlte sich unsicher."
   },
   {
     "id": "g7_u4_s028",
@@ -2678,8 +2678,8 @@
     "unit": "u4",
     "topic": "Irish Stories",
     "difficulty": 2,
-    "en": "I would recommend this trip to Ireland.",
-    "de": "Ich würde diese Reise nach Irland empfehlen."
+    "en": "His rude comment annoyed me.",
+    "de": "Sein unhöflicher Kommentar ärgerte mich."
   },
   {
     "id": "g7_u4_s029",
@@ -2687,8 +2687,8 @@
     "unit": "u4",
     "topic": "Irish Stories",
     "difficulty": 2,
-    "en": "The hostel receives an excellent review.",
-    "de": "Die Jugendherberge erhält eine ausgezeichnete Bewertung."
+    "en": "Please emphasize the main point.",
+    "de": "Bitte betone den wichtigsten Punkt."
   },
   {
     "id": "g7_u4_s030",
@@ -2696,8 +2696,8 @@
     "unit": "u4",
     "topic": "Irish Stories",
     "difficulty": 2,
-    "en": "The legend explains the name of the place.",
-    "de": "Die Legende erklärt den Namen des Ortes."
+    "en": "The impatient visitor waited halfway down the street.",
+    "de": "Der ungeduldige Besucher wartete auf halbem Weg die Straße hinunter."
   },
   {
     "id": "g7_u5_s001",
@@ -2705,8 +2705,8 @@
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
     "difficulty": 2,
-    "en": "This webpage has thousands of views.",
-    "de": "Diese Webseite hat Tausende Aufrufe."
+    "en": "Farming is important for the economy.",
+    "de": "Landwirtschaft ist wichtig für die Wirtschaft."
   },
   {
     "id": "g7_u5_s002",
@@ -2714,20 +2714,11 @@
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
     "difficulty": 2,
-    "en": "The founder has many subscribers.",
-    "de": "Der Gründer hat viele Abonnenten."
+    "en": "The European Union supports digital skills.",
+    "de": "Die Europäische Union unterstützt digitale Fähigkeiten."
   },
   {
     "id": "g7_u5_s003",
-    "grade": 7,
-    "unit": "u5",
-    "topic": "My Life, Internet und Umwelt",
-    "difficulty": 2,
-    "en": "Digital skills are useful for the future.",
-    "de": "Digitale Fähigkeiten sind für die Zukunft nützlich."
-  },
-  {
-    "id": "g7_u5_s004",
     "grade": 7,
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
@@ -2736,70 +2727,7 @@
     "de": "Ein guter Mentor kann jungen Menschen helfen."
   },
   {
-    "id": "g7_u5_s005",
-    "grade": 7,
-    "unit": "u5",
-    "topic": "My Life, Internet und Umwelt",
-    "difficulty": 2,
-    "en": "We should recycle plastic to protect the environment.",
-    "de": "Wir sollten Plastik recyceln, um die Umwelt zu schützen."
-  },
-  {
-    "id": "g7_u5_s006",
-    "grade": 7,
-    "unit": "u5",
-    "topic": "My Life, Internet und Umwelt",
-    "difficulty": 2,
-    "en": "The notification goes off every morning.",
-    "de": "Die Benachrichtigung ertönt jeden Morgen."
-  },
-  {
-    "id": "g7_u5_s007",
-    "grade": 7,
-    "unit": "u5",
-    "topic": "My Life, Internet und Umwelt",
-    "difficulty": 2,
-    "en": "Friendship is important for happiness.",
-    "de": "Freundschaft ist wichtig für Glück."
-  },
-  {
-    "id": "g7_u5_s008",
-    "grade": 7,
-    "unit": "u5",
-    "topic": "My Life, Internet und Umwelt",
-    "difficulty": 2,
-    "en": "A dolphin is an intelligent animal.",
-    "de": "Ein Delfin ist ein intelligentes Tier."
-  },
-  {
-    "id": "g7_u5_s009",
-    "grade": 7,
-    "unit": "u5",
-    "topic": "My Life, Internet und Umwelt",
-    "difficulty": 2,
-    "en": "Revision helps with vocabulary and pronunciation.",
-    "de": "Wiederholung hilft beim Wortschatz und bei der Aussprache."
-  },
-  {
-    "id": "g7_u5_s010",
-    "grade": 7,
-    "unit": "u5",
-    "topic": "My Life, Internet und Umwelt",
-    "difficulty": 2,
-    "en": "People should not judge others too quickly.",
-    "de": "Menschen sollten andere nicht zu schnell beurteilen."
-  },
-  {
-    "id": "g7_u5_s011",
-    "grade": 7,
-    "unit": "u5",
-    "topic": "My Life, Internet und Umwelt",
-    "difficulty": 2,
-    "en": "The website attracts new subscribers every week.",
-    "de": "Die Webseite gewinnt jede Woche neue Abonnenten."
-  },
-  {
-    "id": "g7_u5_s012",
+    "id": "g7_u5_s004",
     "grade": 7,
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
@@ -2808,13 +2736,85 @@
     "de": "Der Gründer erhält eine wichtige Auszeichnung."
   },
   {
+    "id": "g7_u5_s005",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "My Life, Internet und Umwelt",
+    "difficulty": 2,
+    "en": "She suggests setting up a new webpage.",
+    "de": "Sie schlägt vor, eine neue Webseite einzurichten."
+  },
+  {
+    "id": "g7_u5_s006",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "My Life, Internet und Umwelt",
+    "difficulty": 2,
+    "en": "According to the profile, the business developed well.",
+    "de": "Laut dem Profil entwickelte sich das Unternehmen gut."
+  },
+  {
+    "id": "g7_u5_s007",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "My Life, Internet und Umwelt",
+    "difficulty": 2,
+    "en": "Can you imagine being a dolphin?",
+    "de": "Kannst du dir vorstellen, ein Delfin zu sein?"
+  },
+  {
+    "id": "g7_u5_s008",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "My Life, Internet und Umwelt",
+    "difficulty": 2,
+    "en": "Are we allowed to use this site?",
+    "de": "Dürfen wir diese Website benutzen?"
+  },
+  {
+    "id": "g7_u5_s009",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "My Life, Internet und Umwelt",
+    "difficulty": 2,
+    "en": "This webpage has thousands of views.",
+    "de": "Diese Webseite hat Tausende Aufrufe."
+  },
+  {
+    "id": "g7_u5_s010",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "My Life, Internet und Umwelt",
+    "difficulty": 2,
+    "en": "The site has many subscribers.",
+    "de": "Die Website hat viele Abonnenten."
+  },
+  {
+    "id": "g7_u5_s011",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "My Life, Internet und Umwelt",
+    "difficulty": 2,
+    "en": "Friendship is important for happiness.",
+    "de": "Freundschaft ist wichtig für Glück."
+  },
+  {
+    "id": "g7_u5_s012",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "My Life, Internet und Umwelt",
+    "difficulty": 2,
+    "en": "I prefer biking to skating.",
+    "de": "Ich fahre lieber Rad als Skateboard."
+  },
+  {
     "id": "g7_u5_s013",
     "grade": 7,
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
     "difficulty": 2,
-    "en": "My mentor gives me useful advice.",
-    "de": "Mein Mentor gibt mir nützliche Ratschläge."
+    "en": "The sponsor supports the crowdfunding project.",
+    "de": "Der Sponsor unterstützt das Crowdfunding-Projekt."
   },
   {
     "id": "g7_u5_s014",
@@ -2822,8 +2822,8 @@
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
     "difficulty": 2,
-    "en": "The company sells digital products online.",
-    "de": "Das Unternehmen verkauft digitale Produkte im Internet."
+    "en": "Advertising can increase the total number of views.",
+    "de": "Werbung kann die Gesamtzahl der Aufrufe erhöhen."
   },
   {
     "id": "g7_u5_s015",
@@ -2831,8 +2831,8 @@
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
     "difficulty": 2,
-    "en": "Plastic waste harms animals in the ocean.",
-    "de": "Plastikmüll schadet Tieren im Meer."
+    "en": "The handover takes place in the town square.",
+    "de": "Die Übergabe findet auf dem Stadtplatz statt."
   },
   {
     "id": "g7_u5_s016",
@@ -2840,8 +2840,8 @@
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
     "difficulty": 2,
-    "en": "We separate our rubbish at home.",
-    "de": "Wir trennen zu Hause unseren Müll."
+    "en": "Plastic has a negative effect on the environment.",
+    "de": "Plastik hat eine negative Wirkung auf die Umwelt."
   },
   {
     "id": "g7_u5_s017",
@@ -2849,8 +2849,8 @@
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
     "difficulty": 2,
-    "en": "The economy affects many young businesses.",
-    "de": "Die Wirtschaft beeinflusst viele junge Unternehmen."
+    "en": "We should recycle plastic to protect the environment.",
+    "de": "Wir sollten Plastik recyceln, um die Umwelt zu schützen."
   },
   {
     "id": "g7_u5_s018",
@@ -2858,8 +2858,8 @@
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
     "difficulty": 2,
-    "en": "My friend creates content for a website.",
-    "de": "Mein Freund erstellt Inhalte für eine Webseite."
+    "en": "The school plans to ban single-use plastic.",
+    "de": "Die Schule plant, Einwegplastik zu verbieten."
   },
   {
     "id": "g7_u5_s019",
@@ -2867,8 +2867,8 @@
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
     "difficulty": 2,
-    "en": "The video gets more views every day.",
-    "de": "Das Video erhält jeden Tag mehr Aufrufe."
+    "en": "Please switch the computer off.",
+    "de": "Bitte schalte den Computer aus."
   },
   {
     "id": "g7_u5_s020",
@@ -2876,8 +2876,8 @@
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
     "difficulty": 2,
-    "en": "The mentor encourages the young founder.",
-    "de": "Der Mentor ermutigt den jungen Gründer."
+    "en": "Revision helps with meaning and pronunciation.",
+    "de": "Wiederholung hilft bei Bedeutung und Aussprache."
   },
   {
     "id": "g7_u5_s021",
@@ -2885,8 +2885,8 @@
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
     "difficulty": 2,
-    "en": "We should use less plastic packaging.",
-    "de": "Wir sollten weniger Plastikverpackungen verwenden."
+    "en": "The statistics show a likely result.",
+    "de": "Die Statistiken zeigen ein wahrscheinliches Ergebnis."
   },
   {
     "id": "g7_u5_s022",
@@ -2894,8 +2894,8 @@
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
     "difficulty": 2,
-    "en": "The app sends a useful notification.",
-    "de": "Die App sendet eine nützliche Benachrichtigung."
+    "en": "I read the notification while I was on the go.",
+    "de": "Ich las die Benachrichtigung, während ich unterwegs war."
   },
   {
     "id": "g7_u5_s023",
@@ -2903,8 +2903,8 @@
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
     "difficulty": 2,
-    "en": "Good pronunciation needs regular practice.",
-    "de": "Eine gute Aussprache braucht regelmäßige Übung."
+    "en": "My alarm goes off at six o’clock.",
+    "de": "Mein Wecker klingelt um sechs Uhr."
   },
   {
     "id": "g7_u5_s024",
@@ -2912,8 +2912,8 @@
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
     "difficulty": 2,
-    "en": "The dolphin swims close to the boat.",
-    "de": "Der Delfin schwimmt nahe am Boot."
+    "en": "Click on the solution to open it.",
+    "de": "Klicke auf die Lösung, um sie zu öffnen."
   },
   {
     "id": "g7_u5_s025",
@@ -2921,8 +2921,8 @@
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
     "difficulty": 2,
-    "en": "The customer writes a positive review.",
-    "de": "Der Kunde schreibt eine positive Bewertung."
+    "en": "People all over the world saw the message.",
+    "de": "Menschen auf der ganzen Welt sahen die Nachricht."
   },
   {
     "id": "g7_u5_s026",
@@ -2930,8 +2930,8 @@
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
     "difficulty": 2,
-    "en": "The business earns a small profit.",
-    "de": "Das Unternehmen erzielt einen kleinen Gewinn."
+    "en": "The child ran away in terror.",
+    "de": "Das Kind rannte in panischer Angst davon."
   },
   {
     "id": "g7_u5_s027",
@@ -2939,8 +2939,8 @@
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
     "difficulty": 2,
-    "en": "The website explains how to recycle correctly.",
-    "de": "Die Webseite erklärt, wie man richtig recycelt."
+    "en": "Do not put pressure on your best friend.",
+    "de": "Setze deinen besten Freund nicht unter Druck."
   },
   {
     "id": "g7_u5_s028",
@@ -2948,8 +2948,8 @@
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
     "difficulty": 2,
-    "en": "Our environment needs better protection.",
-    "de": "Unsere Umwelt braucht besseren Schutz."
+    "en": "Take a deep breath and breathe out slowly.",
+    "de": "Atme tief ein und langsam aus."
   },
   {
     "id": "g7_u5_s029",
@@ -2957,8 +2957,8 @@
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
     "difficulty": 2,
-    "en": "True friendship can last for many years.",
-    "de": "Wahre Freundschaft kann viele Jahre halten."
+    "en": "Your identity is part of every relationship.",
+    "de": "Deine Identität ist Teil jeder Beziehung."
   },
   {
     "id": "g7_u5_s030",
@@ -2966,7 +2966,7 @@
     "unit": "u5",
     "topic": "My Life, Internet und Umwelt",
     "difficulty": 2,
-    "en": "The award motivates the whole team.",
-    "de": "Die Auszeichnung motiviert das gesamte Team."
+    "en": "Do not judge someone because of one bad choice.",
+    "de": "Beurteile niemanden wegen einer schlechten Entscheidung."
   }
 ]
