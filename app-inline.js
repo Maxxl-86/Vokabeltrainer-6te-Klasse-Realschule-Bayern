@@ -913,6 +913,7 @@ if(actualDirection === 'de2en'){
 }
 
 return currentQ;
+  }
 if(mode === 'builder'){
 
     const selectedGrade =
