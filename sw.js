@@ -1,13 +1,13 @@
 // Service Worker – English Coach Cache Strategy
 
-const CACHE_VERSION = 'v14';
+const CACHE_VERSION = 'v15';
 const STATIC_CACHE = `static-${CACHE_VERSION}`;
 
 const STATIC_ASSETS = [
   './',
   './index.html',
   './style.css',
-  './app-inline.js?v=14',
+  './app-inline.js?v=15',
   './manifest.webmanifest',
   './icon-192.png',
   './icon-512.png',
