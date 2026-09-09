@@ -857,7 +857,7 @@ if(
 const randomSentence =
     sentenceQueue.shift();
 
-  const selectedDirection =
+const selectedDirection =
     els.sentenceDirectionSelect
         ? els.sentenceDirectionSelect.value
         : 'en2de';
@@ -873,67 +873,30 @@ const actualDirection =
 
 if(actualDirection === 'de2en'){
 
-const selectedDirection =
-    els.sentenceDirectionSelect
-        ? els.sentenceDirectionSelect.value
-        : 'en2de';
-
-let actualDirection =
-    selectedDirection;
-
-if(selectedDirection === 'mixed'){
-
-    actualDirection =
-        Math.random() < 0.5
-            ? 'en2de'
-            : 'de2en';
-
-}
-
-if(actualDirection === 'de2en'){
-
     currentQ = {
-
         type: 'sentence',
-
         from: 'de',
-
         to: 'en',
-
-        prompt:
-            randomSentence.de,
-
-        answer:
-            randomSentence.en,
-
+        prompt: randomSentence.de,
+        answer: randomSentence.en,
         answered: false
-
     };
 
 }else{
 
     currentQ = {
-
         type: 'sentence',
-
         from: 'en',
-
         to: 'de',
-
-        prompt:
-            randomSentence.en,
-
-        answer:
-            randomSentence.de,
-
+        prompt: randomSentence.en,
+        answer: randomSentence.de,
         answered: false
-
     };
 
 }
 
 return currentQ;
-  }
+}
 if(mode === 'builder'){
 
     const selectedGrade =
