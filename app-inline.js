@@ -98,7 +98,7 @@ sec.innerHTML = `
 }
 function bindEls(){
   els.blockChecklist = $("blockChecklist"); els.selectAllBtn = $("selectAllBtn"); els.clearAllBtn = $("clearAllBtn");
-els.presetSelect = $("presetSelect"); els.modeSelect = $("modeSelect"); els.gradeSelect = $("gradeSelect"); els.mcEnabled = $("mcEnabled");
+els.presetSelect = $("presetSelect"); els.modeSelect = $("modeSelect"); els.gradeSelect = $("gradeSelect"); els.sentenceDirectionSelect = $("sentenceDirectionSelect"); els.mcEnabled = $("mcEnabled");
   els.weightedEnabled = $("weightedEnabled"); els.hintsEnabled = $("hintsEnabled");
   els.nextBtn = $("nextBtn"); els.checkBtn = $("checkBtn"); els.promptLabel = $("promptLabel"); els.exerciseType = $("exerciseType");
   els.exerciseDescription = $("exerciseDescription");
