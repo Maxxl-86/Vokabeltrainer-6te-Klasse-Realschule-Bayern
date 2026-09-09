@@ -1432,13 +1432,58 @@ els.checkBtn.onclick =
 
 function bindControls(){ 
     // ... (Andere Controls bleiben unverändert) ...
-    els.nextBtn && els.nextBtn.addEventListener('click', ()=>{ 
-        if(!currentQ || currentQ.answered){
-            const q=pickQuestion(); 
-            if(q) renderQuestion(); 
-            else { els.promptText.textContent='Glückwunsch! Die aktuelle Session ist abgeschlossen.'; updateProgressUI();}
+  els.nextBtn &&
+    els.nextBtn.addEventListener(
+        'click',
+        () => {
+
+            if(
+                !currentQ ||
+                currentQ.answered
+            ){
+
+                const q =
+                    pickQuestion();
+
+                if(q){
+
+                    renderQuestion();
+
+                    return;
+
+                }
+
+                currentQ = null;
+
+                els.feedback.textContent = '';
+
+                els.hintArea &&
+                    els.hintArea.classList.add(
+                        'hidden'
+                    );
+
+                els.promptText.textContent =
+                    'Für diese Auswahl sind noch keine Aufgaben vorhanden.';
+
+                els.checkBtn &&
+                    els.checkBtn.classList.add(
+                        'hidden'
+                    );
+
+                els.showAnswerBtn &&
+                    els.showAnswerBtn.classList.add(
+                        'hidden'
+                    );
+
+                els.nextBtn.textContent =
+                    'Start';
+
+                updateProgressUI();
+
+            }
+
         }
-    }); 
+    );
     
     // NEU: Lösung anzeigen Button binden
     els.showAnswerBtn && els.showAnswerBtn.addEventListener('click', handleShowAnswer);
