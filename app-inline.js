@@ -1,5 +1,5 @@
 // Vokabeltrainer – Auto-Repair Blocks + UX + Tippfehler-Diff + Lern-Hinweise (Beta)
-const APP_VERSION = 'v15'; // <--- AKTUALISIERT AUF V12
+const APP_VERSION = 'v16'; // <--- AKTUALISIERT AUF V12
 const UNIT_META = [
 // ... (UNIT_META bleibt unverändert) ...
 // ... (Hilfsfunktionen bleiben unverändert) ...
@@ -17,6 +17,7 @@ const LS_PLAYER = 'english-coach-player-v1';
 const LS_ACHIEVEMENTS =
     'english-coach-achievements-v1';
 const CENTRAL_URL = './vocab/vocab.json';
+const GRADE7_VOCAB_URL = './vocab/vocab_grade7.json';
 const HINTS_URL = './vocab/hints.json';
 
 const SENTENCES_URL = './vocab/sentences.json';
@@ -606,48 +607,46 @@ if(
 }
 
 async function fetchJSON(url){ try{ const res=await fetch(url,{cache:'no-store'}); if(!res.ok) throw new Error('HTTP '+res.status); return await res.json(); } catch(e){ console.warn('Fetch fehlgeschlagen:', url, e); return null; } }
-async function initCentralSync(){ const central = await fetchJSON(CENTRAL_URL); if(central){ const newVersion=central.version||'unknown'; const meta=loadSync(); if(newVersion!==meta.version){ // merge
-  const local=loadVocab(); const out={...local}; const src=central.units||{}; for(const unit of Object.keys(src)){ const list=Array.isArray(src[unit])?src[unit]:[]; if(!out[unit]) out[unit]=[]; const existing=new Set(out[unit].map(key)); list.forEach(w=>{ if(!existing.has(key(w))) out[unit].push(w); }); } saveVocab(out); saveSync({version:newVersion}); initStats(); } }
-  const hints = await fetchJSON(HINTS_URL); if(hints) HINTS_DICT = hints;
+async function initCentralSync(){
+  const central = await fetchJSON(CENTRAL_URL);
+  const grade7 = await fetchJSON(GRADE7_VOCAB_URL);
+  const out = {};
+
+  if(central && central.units){
+    Object.entries(central.units).forEach(([unit, list]) => {
+      if(!Array.isArray(list)) return;
+      out[unit] = list.map(word => ({...word, grade:6, unit}));
+    });
+  }
+
+  if(Array.isArray(grade7)){
+    grade7.forEach(word => {
+      if(!word.unit) return;
+      if(!out[word.unit]) out[word.unit] = [];
+      out[word.unit].push({...word, grade:7});
+    });
+  }
+
+  if(Object.keys(out).length){
+    saveVocab(out);
+    saveSync({
+      version: central?.version || 'unknown',
+      grade7Count: Array.isArray(grade7) ? grade7.length : 0
+    });
+  }
+
+  const hints = await fetchJSON(HINTS_URL);
+  if(hints) HINTS_DICT = hints;
   const sentences = await fetchJSON(SENTENCES_URL);
-if(sentences) SENTENCES_DATA = sentences;
-const builder =
-    await fetchJSON(
-        BUILDER_URL
-    );
-
-if(builder)
-    BUILDER_DATA =
-        builder;
-    console.log(
-    'Builder geladen:',
-    BUILDER_DATA
-);
-    const achievements =
-    await fetchJSON(
-        ACHIEVEMENTS_URL
-    );
-
-if(achievements)
-    ACHIEVEMENTS_DATA =
-        achievements;
-const cards =
-    await fetchJSON(
-        CARDS_URL
-    );
-
-if(cards)
-    CARDS_DATA = cards;
-console.log(
-    'Cards geladen:',
-    CARDS_DATA
-);
-                                 
-console.log(
-    'Achievements geladen:',
-    ACHIEVEMENTS_DATA
-);
+  if(sentences) SENTENCES_DATA = sentences;
+  const builder = await fetchJSON(BUILDER_URL);
+  if(builder) BUILDER_DATA = builder;
+  const achievements = await fetchJSON(ACHIEVEMENTS_URL);
+  if(achievements) ACHIEVEMENTS_DATA = achievements;
+  const cards = await fetchJSON(CARDS_URL);
+  if(cards) CARDS_DATA = cards;
 }
+
 function initStats(){ const stats=loadStats(); if(!stats.blocks) stats.blocks={}; if(!stats.words) stats.words={}; const vocab=loadVocab(); UNIT_META.forEach(u=>{ if(!stats.blocks[u.id]) stats.blocks[u.id]={correct:0,wrong:0}; if(!stats.words[u.id]) stats.words[u.id]={}; (vocab[u.id]||[]).forEach(w=>{ const k=key(w); if(!stats.words[u.id][k]) stats.words[u.id][k]={correct:0,wrong:0}; }); }); saveStats(stats); }
 function updateStatsUI(){ els.weightInfo && (els.weightInfo.textContent = els.weightedEnabled?.checked ? 'aktiv' : 'aus'); if(!activeBlockIds.length){ els.statCorrect.textContent='0'; els.statWrong.textContent='0'; return; } const stats=loadStats(); const agg=activeBlockIds.reduce((acc,id)=>{ const s=stats.blocks[id]||{correct:0,wrong:0}; acc.correct+=s.correct; acc.wrong+=s.wrong; return acc; },{correct:0,wrong:0}); els.statCorrect.textContent=agg.correct; els.statWrong.textContent=agg.wrong; }
 function record(originBlockId,item,ok){ const stats=loadStats(); const bs=stats.blocks[originBlockId]; const ws=stats.words[originBlockId][key(item)]; if(ok){ bs.correct++; ws.correct++; }else{ bs.wrong++; ws.correct++; } saveStats(stats); updateStatsUI(); }
@@ -668,7 +667,20 @@ function renderChecklist(){ try{ els.blockChecklist.innerHTML=''; UNIT_META.forE
     els.blockChecklist.appendChild(label); 
 }); const first=els.blockChecklist.querySelector('input[value="u1"]'); if(first){ first.checked=true; syncActiveBlockIds(); } }catch(e){ console.error('[Blocks] renderChecklist fehlgeschlagen:', e); }}
 function syncActiveBlockIds(){ activeBlockIds = Array.from(els.blockChecklist.querySelectorAll('input[type=checkbox]:checked')).map(el=>el.value); const names = activeBlockIds.map(id=> UNIT_META.find(u=>u.id===id)?.name).filter(Boolean); els.currentBlocksLabel.textContent = names.length ? names.join(', ') : '–'; updateStatsUI(); resetSessionQueue(); els.presetSelect && (els.presetSelect.value='custom'); }
-function buildPool(){ const vocab=loadVocab(); const pool=[]; activeBlockIds.forEach(id=> (vocab[id]||[]).forEach(w=> pool.push({w,origin:id})) ); return pool; }
+function buildPool(){
+  const vocab = loadVocab();
+  const selectedGrade = els.gradeSelect ? els.gradeSelect.value : 'all';
+  const pool = [];
+  activeBlockIds.forEach(id => {
+    (vocab[id] || []).forEach(w => {
+      const wordGrade = String(w.grade || 6);
+      if(selectedGrade === 'all' || wordGrade === selectedGrade){
+        pool.push({w, origin:id});
+      }
+    });
+  });
+  return pool;
+}
 function resetSessionQueue(){ 
   const base=buildPool(); 
   const weighted=[]; 
@@ -1655,6 +1667,9 @@ els.modeSelect && els.modeSelect.addEventListener('change', () => {
         () => {
 
             currentQ = null;
+            sentenceQueue = [];
+            sentenceQueueKey = '';
+            resetSessionQueue();
 
             const q =
                 pickQuestion();
