@@ -1,5 +1,5 @@
 // Vokabeltrainer – Auto-Repair Blocks + UX + Tippfehler-Diff + Lern-Hinweise (Beta)
-const APP_VERSION = 'v16'; // <--- AKTUALISIERT AUF V12
+const APP_VERSION = 'v17'; // <--- AKTUALISIERT AUF V12
 const UNIT_META = [
 // ... (UNIT_META bleibt unverändert) ...
 // ... (Hilfsfunktionen bleiben unverändert) ...
@@ -42,6 +42,41 @@ let sessionCompleted = 0; // NEU: Bereits beantwortete Fragen (auch übersprunge
 function normalize(s){ return String(s||'').trim().toLowerCase(); }
 function softNorm(s){ return normalize(s).replace(/[^a-zäöüß\-\s]/g,'').replace(/\s+/g,' ').trim(); }
 function key(w){ return normalize(w.de)+'\n'+normalize(w.en); }
+
+function answerNorm(value){
+  return softNorm(value)
+    .replace(/^\(to\)\s+/, '')
+    .replace(/^to\s+/, '')
+    .replace(/\bsth\b/g, 'something')
+    .replace(/\bsb\b/g, 'somebody')
+    .replace(/\bsb's\b/g, "somebody's")
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function acceptedAnswers(answer){
+  const raw = String(answer || '').trim();
+  const variants = new Set([answerNorm(raw)]);
+
+  raw.split(';').forEach(part => {
+    const normalized = answerNorm(part);
+    if(normalized) variants.add(normalized);
+  });
+
+  return [...variants].filter(Boolean);
+}
+
+function isAcceptedAnswer(userInput, answer){
+  const user = answerNorm(userInput);
+  return acceptedAnswers(answer).includes(user);
+}
+
+function displayAnswer(answer){
+  return String(answer || '')
+    .replace(/^\(to\)\s+/, 'to ')
+    .replace(/\bsth\./g, 'something')
+    .replace(/\bsb\./g, 'somebody');
+}
 function shuffle(arr){ for(let i=arr.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]];} return arr; }
 function simpleDiffLine(a,b){
   const aa = softNorm(a), bb = softNorm(b);
@@ -1006,7 +1041,7 @@ if(mode === 'builder'){
   currentQ={ origin, from, to, prompt, answer, options, item, answered:false }; 
   return currentQ; 
 }
-function diffFeedback(user, correct){ const {ua,ub} = simpleDiffLine(user, correct); return `Fast richtig – **Schreibweise prüfen**:<div class="diffline">Dein Wort: ${ua}</div><div class="diffline">Richtig: ${ub}</div>`; }
+function diffFeedback(user, correct){ const {ua,ub} = simpleDiffLine(user, displayAnswer(correct)); return `Fast richtig – <strong>Schreibweise prüfen</strong>:<div class="diffline">Dein Wort: ${ua}</div><div class="diffline">Richtig: ${ub}</div>`; }
 function disableInputsAfterAnswer(){ 
 
     els.optionsList.querySelectorAll('button.option-btn').forEach(btn=>{ btn.disabled=true; btn.classList.add('disabled'); }); 
@@ -1045,8 +1080,10 @@ function onAnswerOnce(userInput){
     currentQ.answered = true;
 
     const exact =
-        softNorm(userInput) ===
-        softNorm(currentQ.answer);
+        isAcceptedAnswer(
+            userInput,
+            currentQ.answer
+        );
 
     let ok = exact;
     let msg = '';
@@ -1141,7 +1178,7 @@ function updateProgressUI(){
 function handleShowAnswer(){
     if(!currentQ || currentQ.answered) return;
     currentQ.answered = true;
-    els.feedback.innerHTML = `Lösung: **${currentQ.answer}**`;
+    els.feedback.innerHTML = `Lösung: <strong>${displayAnswer(currentQ.answer)}</strong>`;
     
     // Keine Statistik-Änderung, da es ein Überspringen ist
     
