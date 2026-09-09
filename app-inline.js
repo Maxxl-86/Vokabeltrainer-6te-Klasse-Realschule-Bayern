@@ -855,6 +855,42 @@ if(
 const randomSentence =
     sentenceQueue.shift();
 
+  const selectedDirection =
+    els.sentenceDirectionSelect
+        ? els.sentenceDirectionSelect.value
+        : 'en2de';
+
+const actualDirection =
+    selectedDirection === 'mixed'
+        ? (
+            Math.random() < 0.5
+                ? 'en2de'
+                : 'de2en'
+        )
+        : selectedDirection;
+
+if(actualDirection === 'de2en'){
+
+    currentQ = {
+
+        type: 'sentence',
+
+        from: 'de',
+
+        to: 'en',
+
+        prompt:
+            randomSentence.de,
+
+        answer:
+            randomSentence.en,
+
+        answered: false
+
+    };
+
+}else{
+
     currentQ = {
 
         type: 'sentence',
@@ -869,27 +905,13 @@ const randomSentence =
         answer:
             randomSentence.de,
 
-        itemId:
-            randomSentence.id,
-
-        grade:
-            randomSentence.grade,
-
-        unit:
-            randomSentence.unit,
-
-        topic:
-            randomSentence.topic || '',
-
-        difficulty:
-            randomSentence.difficulty || 1,
-
         answered: false
 
     };
 
-    return currentQ;
 }
+
+return currentQ;
 if(mode === 'builder'){
 
     const selectedGrade =
