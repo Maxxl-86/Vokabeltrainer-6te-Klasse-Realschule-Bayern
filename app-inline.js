@@ -69,7 +69,7 @@ function pickHint(en,de,mode){
   return parts.length ? parts.join(' · ') : null;
 }
 const els = {};
-let activeBlockIds = [], lastPrompts = [], sessionQueue = [], currentQ = null;
+let activeBlockIds = [], lastPrompts = [], sessionQueue = [], sentenceQueue = [], sentenceQueueKey = '', currentQ = null;
 function $(id){ return document.getElementById(id); }
 function ensureBlocksSection(){
   // ... (ensureBlocksSection bleibt unverändert) ...
@@ -827,17 +827,33 @@ if(mode === 'sentences'){
 
         });
 
-    if(!sentencePool.length){
-        return null;
-    }
+  if(!sentencePool.length){
+    return null;
+}
 
-    const randomSentence =
-        sentencePool[
-            Math.floor(
-                Math.random() *
-                sentencePool.length
-            )
-        ];
+const currentSentenceQueueKey =
+    [
+        selectedGrade,
+        ...allowedUnits.slice().sort()
+    ].join('|');
+
+if(
+    sentenceQueueKey !== currentSentenceQueueKey ||
+    !sentenceQueue.length
+){
+
+    sentenceQueue =
+        shuffle(
+            [...sentencePool]
+        );
+
+    sentenceQueueKey =
+        currentSentenceQueueKey;
+
+}
+
+const randomSentence =
+    sentenceQueue.shift();
 
     currentQ = {
 
