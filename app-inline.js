@@ -1190,6 +1190,11 @@ function handleShowAnswer(){
 }
 function renderQuestion(){ 
     if(!currentQ) return; 
+  if(els.checkBtn){
+        const cleanCheckBtn = els.checkBtn.cloneNode(true);
+        els.checkBtn.replaceWith(cleanCheckBtn);
+        els.checkBtn = cleanCheckBtn;
+    }
   els.achievementPopup &&
     els.achievementPopup.classList.add(
         'hidden'
