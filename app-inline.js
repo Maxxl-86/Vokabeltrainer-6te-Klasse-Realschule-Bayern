@@ -873,6 +873,25 @@ const actualDirection =
 
 if(actualDirection === 'de2en'){
 
+const selectedDirection =
+    els.sentenceDirectionSelect
+        ? els.sentenceDirectionSelect.value
+        : 'en2de';
+
+let actualDirection =
+    selectedDirection;
+
+if(selectedDirection === 'mixed'){
+
+    actualDirection =
+        Math.random() < 0.5
+            ? 'en2de'
+            : 'de2en';
+
+}
+
+if(actualDirection === 'de2en'){
+
     currentQ = {
 
         type: 'sentence',
