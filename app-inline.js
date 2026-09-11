@@ -1,5 +1,5 @@
 // Vokabeltrainer – Auto-Repair Blocks + UX + Tippfehler-Diff + Lern-Hinweise (Beta)
-const APP_VERSION = 'v26'; // <--- AKTUALISIERT AUF V12
+const APP_VERSION = 'v27'; // <--- AKTUALISIERT AUF V12
 const UNIT_META = [
 // ... (UNIT_META bleibt unverändert) ...
 // ... (Hilfsfunktionen bleiben unverändert) ...
@@ -699,7 +699,7 @@ async function initCentralSync(){
 
 function initStats(){ const stats=loadStats(); if(!stats.blocks) stats.blocks={}; if(!stats.words) stats.words={}; const vocab=loadVocab(); UNIT_META.forEach(u=>{ if(!stats.blocks[u.id]) stats.blocks[u.id]={correct:0,wrong:0}; if(!stats.words[u.id]) stats.words[u.id]={}; (vocab[u.id]||[]).forEach(w=>{ const k=key(w); if(!stats.words[u.id][k]) stats.words[u.id][k]={correct:0,wrong:0}; }); }); saveStats(stats); }
 function updateStatsUI(){ els.weightInfo && (els.weightInfo.textContent = els.weightedEnabled?.checked ? 'aktiv' : 'aus'); if(!activeBlockIds.length){ els.statCorrect.textContent='0'; els.statWrong.textContent='0'; return; } const stats=loadStats(); const agg=activeBlockIds.reduce((acc,id)=>{ const s=stats.blocks[id]||{correct:0,wrong:0}; acc.correct+=s.correct; acc.wrong+=s.wrong; return acc; },{correct:0,wrong:0}); els.statCorrect.textContent=agg.correct; els.statWrong.textContent=agg.wrong; }
-function record(originBlockId,item,ok){ const stats=loadStats(); const bs=stats.blocks[originBlockId]; const ws=stats.words[originBlockId][key(item)]; if(ok){ bs.correct++; ws.correct++; }else{ bs.wrong++; ws.correct++; } saveStats(stats); updateStatsUI(); }
+function record(originBlockId,item,ok){ const stats=loadStats(); const bs=stats.blocks[originBlockId]; const ws=stats.words[originBlockId][key(item)]; if(ok){ bs.correct++; ws.correct++; }else{ bs.wrong++; ws.wrong++; } saveStats(stats); updateStatsUI(); }
 function resetBlock(blockId){ const stats=loadStats(); if(!stats.blocks[blockId]) return; stats.blocks[blockId]={correct:0,wrong:0}; Object.keys(stats.words[blockId]||{}).forEach(k=> stats.words[blockId][k]={correct:0,wrong:0}); saveStats(stats); updateStatsUI(); }
 function resetSelected(){ 
   const confirmed = window.confirm("Möchten Sie die Statistik für die aktuell ausgewählten Blöcke wirklich zurücksetzen (Richtig/Falsch = 0)?");
@@ -1373,8 +1373,8 @@ function updateProgressUI(){
     if(!els.sessionProgress) return;
     if(sessionTotalSize > 0){
         // Zeigt "Frage 5 von 45" oder "5 / 45"
-        const remaining = sessionTotalSize - sessionQueue.length;
-       els.sessionProgress.textContent = '';
+        const currentNumber = Math.min(sessionCompleted + 1, sessionTotalSize);
+        els.sessionProgress.textContent = `Frage ${currentNumber} von ${sessionTotalSize}`;
         els.sessionProgress.classList.remove('hidden');
     } else {
         els.sessionProgress.classList.add('hidden');
@@ -1705,7 +1705,7 @@ els.checkBtn.onclick =
     return;
 }
   
-    if(els.mcEnabled?.checked){ 
+    if(els.mcEnabled?.checked && Array.isArray(currentQ.options) && currentQ.options.length > 0){ 
         els.mcArea.classList.remove('hidden'); 
         els.optionsList.innerHTML=''; 
         els.checkBtn && els.checkBtn.classList.add('hidden'); 
