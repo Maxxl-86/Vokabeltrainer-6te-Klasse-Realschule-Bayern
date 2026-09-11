@@ -1,5 +1,5 @@
 // Vokabeltrainer – Auto-Repair Blocks + UX + Tippfehler-Diff + Lern-Hinweise (Beta)
-const APP_VERSION = 'v22'; // <--- AKTUALISIERT AUF V12
+const APP_VERSION = 'v23'; // <--- AKTUALISIERT AUF V12
 const UNIT_META = [
 // ... (UNIT_META bleibt unverändert) ...
 // ... (Hilfsfunktionen bleiben unverändert) ...
@@ -864,10 +864,60 @@ function makeIrregularQuestion(item, forcedForm=null){
     isTestQuestion:!!forcedForm || !!getTestIrregularId()
   };
 }
+function ensureIrregularSelection(){
+  if(!IRREGULAR_DATA.length) return;
+
+  const availableGrades = [...new Set(
+    IRREGULAR_DATA.map(item => String(item.grade))
+  )].sort();
+
+  if(els.gradeSelect){
+    const selectedGrade = els.gradeSelect.value;
+    if(
+      selectedGrade !== 'all' &&
+      !availableGrades.includes(selectedGrade)
+    ){
+      els.gradeSelect.value = availableGrades[0];
+    }
+  }
+
+  const effectiveGrade = els.gradeSelect
+    ? els.gradeSelect.value
+    : 'all';
+
+  const availableUnits = [...new Set(
+    IRREGULAR_DATA
+      .filter(item =>
+        effectiveGrade === 'all' ||
+        String(item.grade) === effectiveGrade
+      )
+      .map(item => item.unit)
+  )];
+
+  const selectionHasTasks = activeBlockIds.some(unit =>
+    availableUnits.includes(unit)
+  );
+
+  if(!selectionHasTasks && availableUnits.length && els.blockChecklist){
+    els.blockChecklist
+      .querySelectorAll('input[type=checkbox]')
+      .forEach(cb => {
+        cb.checked = cb.value === availableUnits[0];
+      });
+    syncActiveBlockIds();
+  }
+}
 function pickIrregularQuestion(){
-  const selectedGrade = els.gradeSelect ? els.gradeSelect.value : '7';
-  if(selectedGrade === '6') return null;
-  let pool = IRREGULAR_DATA.filter(item => !activeBlockIds.length || activeBlockIds.includes(item.unit));
+  const selectedGrade = els.gradeSelect ? els.gradeSelect.value : 'all';
+  let pool = IRREGULAR_DATA.filter(item => {
+    const gradeMatches =
+      selectedGrade === 'all' ||
+      String(item.grade) === selectedGrade;
+    const unitMatches =
+      !activeBlockIds.length ||
+      activeBlockIds.includes(item.unit);
+    return gradeMatches && unitMatches;
+  });
   const testId = getTestIrregularId();
   if(testId){
     const testItem = IRREGULAR_DATA.find(item => item.id === testId);
@@ -1748,6 +1798,10 @@ els.modeSelect && els.modeSelect.addEventListener('change', () => {
 
     currentQ = null;
 
+    if(els.modeSelect.value === 'irregular'){
+        ensureIrregularSelection();
+    }
+
     const q = pickQuestion();
 
     if(q){
@@ -1811,6 +1865,13 @@ els.modeSelect && els.modeSelect.addEventListener('change', () => {
             sentenceQueue = [];
             sentenceQueueKey = '';
             resetSessionQueue();
+
+            if(
+                els.modeSelect &&
+                els.modeSelect.value === 'irregular'
+            ){
+                ensureIrregularSelection();
+            }
 
             const q =
                 pickQuestion();
