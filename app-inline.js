@@ -1,5 +1,5 @@
 // Vokabeltrainer – Auto-Repair Blocks + UX + Tippfehler-Diff + Lern-Hinweise (Beta)
-const APP_VERSION = 'v24'; // <--- AKTUALISIERT AUF V12
+const APP_VERSION = 'v25'; // <--- AKTUALISIERT AUF V12
 const UNIT_META = [
 // ... (UNIT_META bleibt unverändert) ...
 // ... (Hilfsfunktionen bleiben unverändert) ...
@@ -1330,7 +1330,8 @@ if(
     !isTestQuestion &&
     currentQ.type !== 'sentence' &&
     currentQ.type !== 'builder' &&
-    currentQ.type !== 'irregular'
+    currentQ.type !== 'irregular' &&
+    currentQ.type !== 'grammar'
 ){
     record(
         currentQ.origin,
@@ -1808,37 +1809,34 @@ els.importSaveInput &&
     );
   document.addEventListener(
     'keydown',
-    (event) => {
+    event => {
+        if(event.key !== 'Enter') return;
 
-        if(event.key !== 'Enter'){
+        if(currentQ && currentQ.answered){
+            event.preventDefault();
+            event.stopPropagation();
+            els.nextBtn && els.nextBtn.click();
             return;
         }
 
-        if(
-            !els.modeSelect ||
-            els.modeSelect.value !== 'builder'
-        ){
+        if(!currentQ) return;
+
+        if(els.modeSelect && els.modeSelect.value === 'builder'){
+            event.preventDefault();
+            event.stopPropagation();
+            els.checkBtn && els.checkBtn.click();
             return;
         }
 
-        if(
-            !currentQ ||
-            currentQ.answered
-        ){
-            return;
+        const input = document.getElementById('freeInput');
+        if(input && !input.disabled){
+            event.preventDefault();
+            event.stopPropagation();
+            onAnswerOnce(input.value.trim());
         }
-
-        event.preventDefault();
-        event.stopPropagation();
-
-        if(els.checkBtn){
-            els.checkBtn.click();
-        }
-
     },
     true
 );
-
     els.resetSelectedBtn && els.resetSelectedBtn.addEventListener('click', ()=> resetSelected()); 
     els.resetAllBtn && els.resetAllBtn.addEventListener('click', ()=> resetAll()); 
     els.weightedEnabled && els.weightedEnabled.addEventListener('change', ()=>{ updateStatsUI(); resetSessionQueue(); }); 
