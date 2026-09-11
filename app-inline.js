@@ -1,5 +1,5 @@
 // Vokabeltrainer – Auto-Repair Blocks + UX + Tippfehler-Diff + Lern-Hinweise (Beta)
-const APP_VERSION = 'v18'; // <--- AKTUALISIERT AUF V12
+const APP_VERSION = 'v19'; // <--- AKTUALISIERT AUF V12
 const UNIT_META = [
 // ... (UNIT_META bleibt unverändert) ...
 // ... (Hilfsfunktionen bleiben unverändert) ...
@@ -56,14 +56,17 @@ function answerNorm(value){
 
 function acceptedAnswers(answer){
   const raw = String(answer || '').trim();
-  const variants = new Set([answerNorm(raw)]);
+  const variants = new Set();
 
-  raw.split(';').forEach(part => {
-    const normalized = answerNorm(part);
+  const addVariant = value => {
+    const normalized = answerNorm(value);
     if(normalized) variants.add(normalized);
-  });
+  };
 
-  return [...variants].filter(Boolean);
+  addVariant(raw);
+  raw.split(/\s*;\s*/).forEach(addVariant);
+
+  return [...variants];
 }
 
 function isAcceptedAnswer(userInput, answer){
@@ -1010,6 +1013,12 @@ if(mode === 'builder'){
     de:
         item.de || '',
 
+    tense:
+        item.tense || '',
+
+    tenseLabel:
+        item.tenseLabel || '',
+
     answered: false
 
 };
@@ -1265,6 +1274,10 @@ if(
 els.promptText.innerHTML =
 `
 <div class="builder-translation">
+
+    ${currentQ.tenseLabel
+        ? `<div class="builder-tense"><strong>Zeitform:</strong> ${currentQ.tenseLabel}</div><br>`
+        : ''}
 
     <strong>
         Deutsch:
