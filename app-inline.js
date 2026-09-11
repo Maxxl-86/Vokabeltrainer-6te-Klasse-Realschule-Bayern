@@ -1,5 +1,5 @@
 // Vokabeltrainer – Auto-Repair Blocks + UX + Tippfehler-Diff + Lern-Hinweise (Beta)
-const APP_VERSION = 'v17'; // <--- AKTUALISIERT AUF V12
+const APP_VERSION = 'v18'; // <--- AKTUALISIERT AUF V12
 const UNIT_META = [
 // ... (UNIT_META bleibt unverändert) ...
 // ... (Hilfsfunktionen bleiben unverändert) ...
@@ -1010,6 +1010,12 @@ if(mode === 'builder'){
     de:
         item.de || '',
 
+    tense:
+        item.tense || '',
+
+    tenseLabel:
+        item.tenseLabel || '',
+
     answered: false
 
 };
@@ -1265,6 +1271,10 @@ if(
 els.promptText.innerHTML =
 `
 <div class="builder-translation">
+
+    ${currentQ.tenseLabel
+        ? `<div class="builder-tense"><strong>Zeitform:</strong> ${currentQ.tenseLabel}</div><br>`
+        : ''}
 
     <strong>
         Deutsch:
