@@ -926,8 +926,8 @@
     "topic": "school",
     "difficulty": 2,
     "sourcePage": 171,
-    "en": "(to) freeze; froze; frozen",
-    "de": "(ge)frieren; erstarren"
+    "en": "(to) freeze",
+    "de": "frieren; erstarren"
   },
   {
     "id": "g7_u1_094",
@@ -2066,8 +2066,8 @@
     "topic": "history",
     "difficulty": 2,
     "sourcePage": 179,
-    "en": "(to) dig; dug; dug",
-    "de": "graben; gegraben"
+    "en": "(to) dig",
+    "de": "graben"
   },
   {
     "id": "g7_u3_046",
@@ -2096,7 +2096,7 @@
     "topic": "history",
     "difficulty": 2,
     "sourcePage": 180,
-    "en": "(to) kneel; knelt; knelt",
+    "en": "(to) kneel",
     "de": "knien"
   },
   {
@@ -2236,7 +2236,7 @@
     "topic": "history",
     "difficulty": 2,
     "sourcePage": 181,
-    "en": "(to) throw; threw; thrown",
+    "en": "(to) throw",
     "de": "werfen"
   },
   {
@@ -2316,7 +2316,7 @@
     "topic": "history",
     "difficulty": 2,
     "sourcePage": 181,
-    "en": "(to) hide; hid; hidden",
+    "en": "(to) hide",
     "de": "verstecken; sich verstecken"
   },
   {
@@ -2536,7 +2536,7 @@
     "topic": "history",
     "difficulty": 2,
     "sourcePage": 182,
-    "en": "(to) spin; spun; spun",
+    "en": "(to) spin",
     "de": "sich drehen"
   },
   {
@@ -2876,7 +2876,7 @@
     "topic": "ireland-and-everyday-life",
     "difficulty": 2,
     "sourcePage": 184,
-    "en": "(to) spread; spread; spread",
+    "en": "(to) spread",
     "de": "verbreiten; sich ausbreiten"
   },
   {
@@ -4446,7 +4446,7 @@
     "topic": "technology-environment-and-life",
     "difficulty": 2,
     "sourcePage": 193,
-    "en": "(to) stand; stood; stood",
+    "en": "(to) stand",
     "de": "stehen"
   },
   {
@@ -4456,7 +4456,7 @@
     "topic": "technology-environment-and-life",
     "difficulty": 2,
     "sourcePage": 193,
-    "en": "(to) swim; swam; swum",
+    "en": "(to) swim",
     "de": "schwimmen"
   },
   {
@@ -4466,7 +4466,7 @@
     "topic": "technology-environment-and-life",
     "difficulty": 2,
     "sourcePage": 193,
-    "en": "(to) choose; chose; chosen",
+    "en": "(to) choose",
     "de": "wählen; auswählen"
   },
   {
@@ -4476,7 +4476,7 @@
     "topic": "technology-environment-and-life",
     "difficulty": 2,
     "sourcePage": 193,
-    "en": "(to) hit; hit; hit",
+    "en": "(to) hit",
     "de": "schlagen; treffen"
   },
   {
@@ -4486,7 +4486,7 @@
     "topic": "technology-environment-and-life",
     "difficulty": 2,
     "sourcePage": 193,
-    "en": "(to) think; thought; thought",
+    "en": "(to) think",
     "de": "denken"
   },
   {
@@ -4496,7 +4496,7 @@
     "topic": "technology-environment-and-life",
     "difficulty": 2,
     "sourcePage": 193,
-    "en": "(to) know; knew; known",
+    "en": "(to) know",
     "de": "wissen; kennen"
   },
   {
@@ -4506,7 +4506,7 @@
     "topic": "technology-environment-and-life",
     "difficulty": 2,
     "sourcePage": 193,
-    "en": "(to) understand; understood; understood",
+    "en": "(to) understand",
     "de": "verstehen"
   },
   {
@@ -4516,7 +4516,7 @@
     "topic": "technology-environment-and-life",
     "difficulty": 2,
     "sourcePage": 193,
-    "en": "(to) leave; left; left",
+    "en": "(to) leave",
     "de": "verlassen; abfahren"
   },
   {
@@ -4526,7 +4526,7 @@
     "topic": "technology-environment-and-life",
     "difficulty": 2,
     "sourcePage": 193,
-    "en": "(to) wear; wore; worn",
+    "en": "(to) wear",
     "de": "tragen (Kleidung)"
   },
   {
@@ -4536,7 +4536,7 @@
     "topic": "technology-environment-and-life",
     "difficulty": 2,
     "sourcePage": 193,
-    "en": "(to) write; wrote; written",
+    "en": "(to) write",
     "de": "schreiben"
   },
   {
@@ -4546,7 +4546,7 @@
     "topic": "technology-environment-and-life",
     "difficulty": 2,
     "sourcePage": 193,
-    "en": "(to) read; read; read",
+    "en": "(to) read",
     "de": "lesen"
   },
   {
@@ -4556,7 +4556,7 @@
     "topic": "technology-environment-and-life",
     "difficulty": 2,
     "sourcePage": 193,
-    "en": "(to) sit; sat; sat",
+    "en": "(to) sit",
     "de": "sitzen"
   }
 ]
