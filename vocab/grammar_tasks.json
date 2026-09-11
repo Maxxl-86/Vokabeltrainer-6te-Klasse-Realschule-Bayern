@@ -1,0 +1,250 @@
+[
+  {
+    "id": "gr_g6_001",
+    "grade": 6,
+    "unit": "u1",
+    "type": "tense_choice",
+    "prompt": "I use my camera every day.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Every day beschreibt eine regelmäßige Handlung."
+  },
+  {
+    "id": "gr_g6_002",
+    "grade": 6,
+    "unit": "u2",
+    "type": "verb_gap",
+    "prompt": "Yesterday, we ___ along the path.",
+    "base": "walk",
+    "answer": "walked",
+    "tenseLabel": "Simple Past",
+    "explanation": "Bei regelmäßigen Verben wird im Simple Past meist -ed angehängt."
+  },
+  {
+    "id": "gr_g6_003",
+    "grade": 6,
+    "unit": "u3",
+    "type": "transform",
+    "prompt": "The passenger gets on the bus.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The passenger got on the bus.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Get ist unregelmäßig: get, got, got."
+  },
+  {
+    "id": "gr_g6_004",
+    "grade": 6,
+    "unit": "u4",
+    "type": "negation",
+    "prompt": "She loaded the dishwasher.",
+    "instruction": "Verneine den Satz.",
+    "answer": "She did not load the dishwasher.",
+    "acceptedAnswers": [
+      "She didn't load the dishwasher."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not steht die Grundform load."
+  },
+  {
+    "id": "gr_g6_005",
+    "grade": 6,
+    "unit": "u5",
+    "type": "question",
+    "prompt": "They checked in at the airport.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did they check in at the airport?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; das Verb steht in der Grundform."
+  },
+  {
+    "id": "gr_g6_006",
+    "grade": 6,
+    "unit": "u6",
+    "type": "tense_choice",
+    "prompt": "The doctor will check my leg tomorrow.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Future",
+    "explanation": "Will plus Grundform bezeichnet hier eine zukünftige Handlung."
+  },
+  {
+    "id": "gr_g6_007",
+    "grade": 6,
+    "unit": "u1",
+    "type": "verb_gap",
+    "prompt": "Last night, I ___ the news on TV.",
+    "base": "watch",
+    "answer": "watched",
+    "tenseLabel": "Simple Past",
+    "explanation": "Watch ist regelmäßig: watched."
+  },
+  {
+    "id": "gr_g6_008",
+    "grade": 6,
+    "unit": "u2",
+    "type": "transform",
+    "prompt": "We rest beside the lake.",
+    "instruction": "Setze den Satz ins Future mit will.",
+    "answer": "We will rest beside the lake.",
+    "tenseLabel": "Future",
+    "explanation": "Das Future wird hier mit will plus Grundform gebildet."
+  },
+  {
+    "id": "gr_g6_009",
+    "grade": 6,
+    "unit": "u3",
+    "type": "negation",
+    "prompt": "The tourist asks for directions.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The tourist does not ask for directions.",
+    "acceptedAnswers": [
+      "The tourist doesn't ask for directions."
+    ],
+    "tenseLabel": "Simple Present",
+    "explanation": "Bei he, she und it verwendet man does not plus Grundform."
+  },
+  {
+    "id": "gr_g6_010",
+    "grade": 6,
+    "unit": "u6",
+    "type": "question",
+    "prompt": "The team will win the match.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Will the team win the match?",
+    "tenseLabel": "Future",
+    "explanation": "Bei einer Frage mit will steht will vor dem Subjekt."
+  },
+  {
+    "id": "gr_g7_001",
+    "grade": 7,
+    "unit": "u1",
+    "type": "tense_choice",
+    "prompt": "My roommate joined the school choir.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Past",
+    "explanation": "Joined ist die regelmäßige Vergangenheitsform von join."
+  },
+  {
+    "id": "gr_g7_002",
+    "grade": 7,
+    "unit": "u2",
+    "type": "verb_gap",
+    "prompt": "Yesterday, the phone ___ in the hall.",
+    "base": "ring",
+    "answer": "rang",
+    "tenseLabel": "Simple Past",
+    "explanation": "Ring ist unregelmäßig: ring, rang, rung."
+  },
+  {
+    "id": "gr_g7_003",
+    "grade": 7,
+    "unit": "u3",
+    "type": "transform",
+    "prompt": "The Vikings settle near the coast.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The Vikings settled near the coast.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Settle ist regelmäßig: settled."
+  },
+  {
+    "id": "gr_g7_004",
+    "grade": 7,
+    "unit": "u4",
+    "type": "negation",
+    "prompt": "The disease spread quickly.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The disease did not spread quickly.",
+    "acceptedAnswers": [
+      "The disease didn't spread quickly."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not steht die Grundform spread."
+  },
+  {
+    "id": "gr_g7_005",
+    "grade": 7,
+    "unit": "u5",
+    "type": "question",
+    "prompt": "The sponsor supported the project.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the sponsor support the project?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Did steht am Satzanfang; support bleibt in der Grundform."
+  },
+  {
+    "id": "gr_g7_006",
+    "grade": 7,
+    "unit": "u1",
+    "type": "verb_gap",
+    "prompt": "Next week, a guardian ___ the application.",
+    "base": "sign",
+    "answer": "will sign",
+    "tenseLabel": "Future",
+    "explanation": "Das Future wird mit will plus Grundform gebildet."
+  },
+  {
+    "id": "gr_g7_007",
+    "grade": 7,
+    "unit": "u2",
+    "type": "transform",
+    "prompt": "The hero wears a mask.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The hero wore a mask.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Wear ist unregelmäßig: wear, wore, worn."
+  },
+  {
+    "id": "gr_g7_008",
+    "grade": 7,
+    "unit": "u3",
+    "type": "question",
+    "prompt": "The emperor ruled a large empire.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the emperor rule a large empire?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did steht die Grundform rule."
+  },
+  {
+    "id": "gr_g7_009",
+    "grade": 7,
+    "unit": "u4",
+    "type": "negation",
+    "prompt": "The musician will play in a pub.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The musician will not play in a pub.",
+    "acceptedAnswers": [
+      "The musician won't play in a pub."
+    ],
+    "tenseLabel": "Future",
+    "explanation": "Die Verneinung von will lautet will not oder won't."
+  },
+  {
+    "id": "gr_g7_010",
+    "grade": 7,
+    "unit": "u5",
+    "type": "tense_choice",
+    "prompt": "We will recycle plastic tomorrow.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Future",
+    "explanation": "Will recycle bezeichnet eine zukünftige Handlung."
+  }
+]
