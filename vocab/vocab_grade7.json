@@ -7,7 +7,7 @@
     "difficulty": 2,
     "sourcePage": 167,
     "en": "boarder",
-    "de": "Internatsschüler/in"
+    "de": "Internatsschüler; Internatsschülerin"
   },
   {
     "id": "g7_u1_002",
@@ -87,7 +87,7 @@
     "difficulty": 2,
     "sourcePage": 167,
     "en": "roommate",
-    "de": "Zimmergenosse/-genossin"
+    "de": "Zimmergenosse; Zimmergenossin"
   },
   {
     "id": "g7_u1_010",
@@ -447,7 +447,7 @@
     "difficulty": 2,
     "sourcePage": 169,
     "en": "bully",
-    "de": "Mobber/in; Tyrann/in"
+    "de": "Mobber; Mobberin; Tyrann; Tyrannin"
   },
   {
     "id": "g7_u1_046",
@@ -597,7 +597,7 @@
     "difficulty": 2,
     "sourcePage": 170,
     "en": "enemy",
-    "de": "Feind/in"
+    "de": "Feind; Feindin"
   },
   {
     "id": "g7_u1_061",
@@ -837,7 +837,7 @@
     "difficulty": 2,
     "sourcePage": 171,
     "en": "immigrant",
-    "de": "Einwanderer/Einwanderin"
+    "de": "Einwanderer; Einwanderin"
   },
   {
     "id": "g7_u1_085",
@@ -927,7 +927,7 @@
     "difficulty": 2,
     "sourcePage": 171,
     "en": "(to) freeze",
-    "de": "frieren; erstarren"
+    "de": "(ge)frieren; erstarren"
   },
   {
     "id": "g7_u1_094",
@@ -1687,7 +1687,7 @@
     "difficulty": 2,
     "sourcePage": 178,
     "en": "Briton",
-    "de": "Brite/Britin"
+    "de": "Brite; Britin"
   },
   {
     "id": "g7_u3_008",
@@ -1697,7 +1697,7 @@
     "difficulty": 2,
     "sourcePage": 178,
     "en": "Roman",
-    "de": "Römer/in; römisch"
+    "de": "Römer; Römerin; römisch"
   },
   {
     "id": "g7_u3_009",
@@ -1707,7 +1707,7 @@
     "difficulty": 2,
     "sourcePage": 178,
     "en": "Viking",
-    "de": "Wikinger/in"
+    "de": "Wikinger; Wikingerin"
   },
   {
     "id": "g7_u3_010",
@@ -1727,7 +1727,7 @@
     "difficulty": 2,
     "sourcePage": 178,
     "en": "Saxon",
-    "de": "Sachse/Sächsin; sächsisch"
+    "de": "Sachse; Sächsin; sächsisch"
   },
   {
     "id": "g7_u3_012",
@@ -1737,7 +1737,7 @@
     "difficulty": 2,
     "sourcePage": 178,
     "en": "Norman",
-    "de": "Normanne/Normannin; normannisch"
+    "de": "Normanne; Normannin; normannisch"
   },
   {
     "id": "g7_u3_013",
@@ -1807,7 +1807,7 @@
     "difficulty": 2,
     "sourcePage": 178,
     "en": "settler",
-    "de": "Siedler/in"
+    "de": "Siedler; Siedlerin"
   },
   {
     "id": "g7_u3_020",
@@ -1957,7 +1957,7 @@
     "difficulty": 2,
     "sourcePage": 179,
     "en": "soldier",
-    "de": "Soldat/in"
+    "de": "Soldat; Soldatin"
   },
   {
     "id": "g7_u3_035",
@@ -2067,7 +2067,7 @@
     "difficulty": 2,
     "sourcePage": 179,
     "en": "(to) dig",
-    "de": "graben"
+    "de": "graben; gegraben"
   },
   {
     "id": "g7_u3_046",
@@ -2367,7 +2367,7 @@
     "difficulty": 2,
     "sourcePage": 181,
     "en": "stranger",
-    "de": "Fremde/r"
+    "de": "Fremder; Fremde"
   },
   {
     "id": "g7_u3_076",
@@ -2487,7 +2487,7 @@
     "difficulty": 2,
     "sourcePage": 182,
     "en": "flyer",
-    "de": "Flieger/in"
+    "de": "Flieger; Fliegerin"
   },
   {
     "id": "g7_u3_088",
@@ -2507,7 +2507,7 @@
     "difficulty": 2,
     "sourcePage": 182,
     "en": "visitor",
-    "de": "Besucher/in"
+    "de": "Besucher; Besucherin"
   },
   {
     "id": "g7_u3_090",
@@ -2747,7 +2747,7 @@
     "difficulty": 2,
     "sourcePage": 184,
     "en": "musician",
-    "de": "Musiker/in"
+    "de": "Musiker; Musikerin"
   },
   {
     "id": "g7_u4_015",
@@ -3007,7 +3007,7 @@
     "difficulty": 2,
     "sourcePage": 185,
     "en": "emigrant",
-    "de": "Auswanderer/Auswanderin"
+    "de": "Auswanderer; Auswanderin"
   },
   {
     "id": "g7_u4_041",
@@ -3027,7 +3027,7 @@
     "difficulty": 2,
     "sourcePage": 185,
     "en": "immigrant",
-    "de": "Einwanderer/Einwanderin"
+    "de": "Einwanderer; Einwanderin"
   },
   {
     "id": "g7_u4_043",
@@ -3457,7 +3457,7 @@
     "difficulty": 2,
     "sourcePage": 188,
     "en": "mentor",
-    "de": "Mentor/in; Ratgeber/in"
+    "de": "Mentor; Mentorin; Ratgeber; Ratgeberin"
   },
   {
     "id": "g7_u5_008",
@@ -3467,7 +3467,7 @@
     "difficulty": 2,
     "sourcePage": 188,
     "en": "(to) mentor",
-    "de": "als Mentor/in betreuen"
+    "de": "als Mentor oder Mentorin betreuen"
   },
   {
     "id": "g7_u5_009",
@@ -3497,7 +3497,7 @@
     "difficulty": 2,
     "sourcePage": 188,
     "en": "award-winner",
-    "de": "Preisträger/in"
+    "de": "Preisträger; Preisträgerin"
   },
   {
     "id": "g7_u5_012",
@@ -3707,7 +3707,7 @@
     "difficulty": 2,
     "sourcePage": 189,
     "en": "sponsor",
-    "de": "Sponsor/in; Geldgeber/in"
+    "de": "Sponsor; Sponsorin; Geldgeber; Geldgeberin"
   },
   {
     "id": "g7_u5_033",
@@ -3717,7 +3717,7 @@
     "difficulty": 2,
     "sourcePage": 189,
     "en": "subscriber",
-    "de": "Abonnent/in"
+    "de": "Abonnent; Abonnentin"
   },
   {
     "id": "g7_u5_034",
@@ -3777,7 +3777,7 @@
     "difficulty": 2,
     "sourcePage": 189,
     "en": "founder",
-    "de": "Gründer/in"
+    "de": "Gründer; Gründerin"
   },
   {
     "id": "g7_u5_040",
@@ -4437,7 +4437,7 @@
     "difficulty": 2,
     "sourcePage": 193,
     "en": "judge",
-    "de": "Richter/in"
+    "de": "Richter; Richterin"
   },
   {
     "id": "g7_u5_106",
