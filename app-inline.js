@@ -1,5 +1,5 @@
 // Vokabeltrainer – Auto-Repair Blocks + UX + Tippfehler-Diff + Lern-Hinweise (Beta)
-const APP_VERSION = 'v25'; // <--- AKTUALISIERT AUF V12
+const APP_VERSION = 'v26'; // <--- AKTUALISIERT AUF V12
 const UNIT_META = [
 // ... (UNIT_META bleibt unverändert) ...
 // ... (Hilfsfunktionen bleiben unverändert) ...
@@ -29,6 +29,9 @@ let SENTENCES_DATA = {};
 let BUILDER_DATA = [];
 let IRREGULAR_DATA = [];
 let GRAMMAR_DATA = [];
+let grammarQueue = [];
+let grammarQueueKey = '';
+let grammarTestConsumed = false;
 const ACHIEVEMENTS_URL =
     './vocab/achievements.json';
 
@@ -713,7 +716,7 @@ function renderChecklist(){ try{ els.blockChecklist.innerHTML=''; UNIT_META.forE
     label.appendChild(document.createTextNode(' '+u.name + statText)); 
     els.blockChecklist.appendChild(label); 
 }); const first=els.blockChecklist.querySelector('input[value="u1"]'); if(first){ first.checked=true; syncActiveBlockIds(); } }catch(e){ console.error('[Blocks] renderChecklist fehlgeschlagen:', e); }}
-function syncActiveBlockIds(){ activeBlockIds = Array.from(els.blockChecklist.querySelectorAll('input[type=checkbox]:checked')).map(el=>el.value); const names = activeBlockIds.map(id=> UNIT_META.find(u=>u.id===id)?.name).filter(Boolean); els.currentBlocksLabel.textContent = names.length ? names.join(', ') : '–'; updateStatsUI(); resetSessionQueue(); els.presetSelect && (els.presetSelect.value='custom'); }
+function syncActiveBlockIds(){ grammarQueue = []; grammarQueueKey = ''; activeBlockIds = Array.from(els.blockChecklist.querySelectorAll('input[type=checkbox]:checked')).map(el=>el.value); const names = activeBlockIds.map(id=> UNIT_META.find(u=>u.id===id)?.name).filter(Boolean); els.currentBlocksLabel.textContent = names.length ? names.join(', ') : '–'; updateStatsUI(); resetSessionQueue(); els.presetSelect && (els.presetSelect.value='custom'); }
 function getTestVocabId(){
   return new URLSearchParams(window.location.search).get('testVocab');
 }
@@ -953,19 +956,35 @@ function makeGrammarQuestion(item, isTestQuestion=false){
 }
 function pickGrammarQuestion(){
   const selectedGrade = els.gradeSelect ? els.gradeSelect.value : 'all';
+  const allowedUnits = activeBlockIds.length
+    ? activeBlockIds.slice().sort()
+    : UNIT_META.map(unit => unit.id);
   const testId = getTestGrammarId();
-  if(testId){
+
+  if(testId && !grammarTestConsumed){
     const testItem = GRAMMAR_DATA.find(item => item.id === testId);
-    if(testItem) return makeGrammarQuestion(testItem, true);
+    if(testItem){
+      grammarTestConsumed = true;
+      return makeGrammarQuestion(testItem, true);
+    }
   }
+
   const pool = GRAMMAR_DATA.filter(item => {
     const gradeMatches = selectedGrade === 'all' || String(item.grade) === selectedGrade;
-    const unitMatches = !activeBlockIds.length || activeBlockIds.includes(item.unit);
+    const unitMatches = allowedUnits.includes(item.unit);
     return gradeMatches && unitMatches;
   });
   if(!pool.length) return null;
-  return makeGrammarQuestion(pool[Math.floor(Math.random()*pool.length)]);
+
+  const queueKey = [selectedGrade, ...allowedUnits].join('|');
+  if(grammarQueueKey !== queueKey || !grammarQueue.length){
+    grammarQueue = shuffle([...pool]);
+    grammarQueueKey = queueKey;
+  }
+
+  return makeGrammarQuestion(grammarQueue.shift(), false);
 }
+
 function pickQuestion(){ 
   const mode=els.modeSelect.value;
   if(mode === 'irregular'){
@@ -1846,6 +1865,9 @@ els.importSaveInput &&
 els.modeSelect && els.modeSelect.addEventListener('change', () => {
 
     currentQ = null;
+    grammarQueue = [];
+    grammarQueueKey = '';
+    grammarTestConsumed = false;
 
     if(els.modeSelect.value === 'irregular'){
         ensureIrregularSelection();
@@ -1911,6 +1933,8 @@ els.modeSelect && els.modeSelect.addEventListener('change', () => {
         () => {
 
             currentQ = null;
+            grammarQueue = [];
+            grammarQueueKey = '';
             sentenceQueue = [];
             sentenceQueueKey = '';
             resetSessionQueue();
