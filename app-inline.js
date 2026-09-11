@@ -1,5 +1,5 @@
 // Vokabeltrainer – Auto-Repair Blocks + UX + Tippfehler-Diff + Lern-Hinweise (Beta)
-const APP_VERSION = 'v19'; // <--- AKTUALISIERT AUF V12
+const APP_VERSION = 'v20'; // <--- AKTUALISIERT AUF V12
 const UNIT_META = [
 // ... (UNIT_META bleibt unverändert) ...
 // ... (Hilfsfunktionen bleiben unverändert) ...
@@ -705,6 +705,23 @@ function renderChecklist(){ try{ els.blockChecklist.innerHTML=''; UNIT_META.forE
     els.blockChecklist.appendChild(label); 
 }); const first=els.blockChecklist.querySelector('input[value="u1"]'); if(first){ first.checked=true; syncActiveBlockIds(); } }catch(e){ console.error('[Blocks] renderChecklist fehlgeschlagen:', e); }}
 function syncActiveBlockIds(){ activeBlockIds = Array.from(els.blockChecklist.querySelectorAll('input[type=checkbox]:checked')).map(el=>el.value); const names = activeBlockIds.map(id=> UNIT_META.find(u=>u.id===id)?.name).filter(Boolean); els.currentBlocksLabel.textContent = names.length ? names.join(', ') : '–'; updateStatsUI(); resetSessionQueue(); els.presetSelect && (els.presetSelect.value='custom'); }
+function getTestVocabId(){
+  return new URLSearchParams(window.location.search).get('testVocab');
+}
+function findTestVocabQuestion(testId){
+  if(!testId) return null;
+  const vocab = loadVocab();
+  for(const [unit, words] of Object.entries(vocab)){
+    if(!Array.isArray(words)) continue;
+    const item = words.find(word => word.id === testId);
+    if(!item) continue;
+    const mode = els.modeSelect ? els.modeSelect.value : 'de2en';
+    const from = mode === 'en2de' ? 'en' : 'de';
+    const to = mode === 'en2de' ? 'de' : 'en';
+    return {origin:unit, from, to, prompt:item[from], answer:item[to], options:[item[to]], item, answered:false, isTestQuestion:true};
+  }
+  return null;
+}
 function buildPool(){
   const vocab = loadVocab();
   const selectedGrade = els.gradeSelect ? els.gradeSelect.value : 'all';
@@ -809,6 +826,7 @@ function recentlyAsked(text){ return lastPrompts.some(t=> normalize(t)===normali
 function pushHistory(text){ lastPrompts.unshift(text); if(lastPrompts.length>2) lastPrompts.pop(); }
 function pickQuestion(){ 
   const mode=els.modeSelect.value;
+  if(mode === 'de2en' || mode === 'en2de'){ const t=findTestVocabQuestion(getTestVocabId()); if(t){ currentQ=t; return currentQ; } }
 if(mode === 'sentences'){
 
     const selectedGrade =
@@ -1087,6 +1105,7 @@ function onAnswerOnce(userInput){
     if(!currentQ || currentQ.answered) return;
 
     currentQ.answered = true;
+    const isTestQuestion = !!currentQ.isTestQuestion;
 
     const exact =
         isAcceptedAnswer(
@@ -1117,6 +1136,7 @@ function onAnswerOnce(userInput){
         const player =
             loadPlayer();
 
+        if(isTestQuestion){ xpEarned = 0; }
         player.xp += xpEarned;
       player.correctAnswers =
     (player.correctAnswers || 0) + 1;
@@ -1154,6 +1174,7 @@ function onAnswerOnce(userInput){
 
     els.feedback.innerHTML = msg;
 if(
+    !isTestQuestion &&
     currentQ.type !== 'sentence' &&
     currentQ.type !== 'builder'
 ){
