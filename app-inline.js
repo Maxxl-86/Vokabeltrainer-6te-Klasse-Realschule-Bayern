@@ -1,5 +1,5 @@
 // Vokabeltrainer – Auto-Repair Blocks + UX + Tippfehler-Diff + Lern-Hinweise (Beta)
-const APP_VERSION = 'v20'; // <--- AKTUALISIERT AUF V12
+const APP_VERSION = 'v21'; // <--- AKTUALISIERT AUF V12
 const UNIT_META = [
 // ... (UNIT_META bleibt unverändert) ...
 // ... (Hilfsfunktionen bleiben unverändert) ...
@@ -18,6 +18,7 @@ const LS_ACHIEVEMENTS =
     'english-coach-achievements-v1';
 const CENTRAL_URL = './vocab/vocab.json';
 const GRADE7_VOCAB_URL = './vocab/vocab_grade7.json';
+const IRREGULAR_URL = './vocab/irregular_verbs_grade7.json';
 const HINTS_URL = './vocab/hints.json';
 
 const SENTENCES_URL = './vocab/sentences.json';
@@ -25,6 +26,7 @@ const BUILDER_URL =
     './vocab/sentence_builder.json';
 let SENTENCES_DATA = {};
 let BUILDER_DATA = [];
+let IRREGULAR_DATA = [];
 const ACHIEVEMENTS_URL =
     './vocab/achievements.json';
 
@@ -679,6 +681,9 @@ async function initCentralSync(){
   if(sentences) SENTENCES_DATA = sentences;
   const builder = await fetchJSON(BUILDER_URL);
   if(builder) BUILDER_DATA = builder;
+
+  const irregular = await fetchJSON(IRREGULAR_URL);
+  if(Array.isArray(irregular)) IRREGULAR_DATA = irregular;
   const achievements = await fetchJSON(ACHIEVEMENTS_URL);
   if(achievements) ACHIEVEMENTS_DATA = achievements;
   const cards = await fetchJSON(CARDS_URL);
@@ -824,8 +829,59 @@ if(
 }
 function recentlyAsked(text){ return lastPrompts.some(t=> normalize(t)===normalize(text)); }
 function pushHistory(text){ lastPrompts.unshift(text); if(lastPrompts.length>2) lastPrompts.pop(); }
+function getTestIrregularId(){
+  return new URLSearchParams(window.location.search).get('testIrregular');
+}
+function getTestVerbForm(){
+  const form = new URLSearchParams(window.location.search).get('verbForm');
+  return ['base','past','participle'].includes(form) ? form : null;
+}
+function makeIrregularQuestion(item, forcedForm=null){
+  const forms = ['base','past','participle'];
+  const target = forcedForm || forms[Math.floor(Math.random()*forms.length)];
+  const labels = {
+    base:'Grundform',
+    past:'Simple Past',
+    participle:'Past Participle'
+  };
+  let prompt = '';
+  if(target === 'base'){
+    prompt = `<strong>Deutsch:</strong><br>${item.de}<br><br><strong>Gesucht:</strong> ${labels[target]}`;
+  }else{
+    prompt = `<strong>Grundform:</strong><br>${item.base}<br><br><strong>Gesucht:</strong> ${labels[target]}`;
+  }
+  return {
+    type:'irregular',
+    origin:item.unit,
+    from:'irregular',
+    to:target,
+    prompt,
+    answer:item[target],
+    item,
+    verbForm:target,
+    verbFormLabel:labels[target],
+    answered:false,
+    isTestQuestion:!!forcedForm || !!getTestIrregularId()
+  };
+}
+function pickIrregularQuestion(){
+  const selectedGrade = els.gradeSelect ? els.gradeSelect.value : '7';
+  if(selectedGrade === '6') return null;
+  let pool = IRREGULAR_DATA.filter(item => !activeBlockIds.length || activeBlockIds.includes(item.unit));
+  const testId = getTestIrregularId();
+  if(testId){
+    const testItem = IRREGULAR_DATA.find(item => item.id === testId);
+    if(testItem) return makeIrregularQuestion(testItem, getTestVerbForm() || 'past');
+  }
+  if(!pool.length) return null;
+  return makeIrregularQuestion(pool[Math.floor(Math.random()*pool.length)]);
+}
 function pickQuestion(){ 
   const mode=els.modeSelect.value;
+  if(mode === 'irregular'){
+    currentQ = pickIrregularQuestion();
+    return currentQ;
+  }
   if(mode === 'de2en' || mode === 'en2de'){ const t=findTestVocabQuestion(getTestVocabId()); if(t){ currentQ=t; return currentQ; } }
 if(mode === 'sentences'){
 
@@ -1237,7 +1293,14 @@ function renderQuestion(){
     els.checkBtn && (els.checkBtn.disabled=false); 
     els.showAnswerBtn && els.showAnswerBtn.classList.remove('hidden'); // Lösung-Button sichtbar
 
-if(currentQ.type === 'sentence'){
+if(currentQ.type === 'irregular'){
+
+    els.exerciseType.textContent = '🔄 Unregelmäßige Verben';
+    els.exerciseType.style.color = '#c89cff';
+    els.exerciseDescription.textContent =
+        `Schreibe die verlangte Verbform: ${currentQ.verbFormLabel}.`;
+
+}else if(currentQ.type === 'sentence'){
 
     els.exerciseType.textContent = '📖 Satztrainer';
     els.exerciseType.style.color = '#5dff9a';
