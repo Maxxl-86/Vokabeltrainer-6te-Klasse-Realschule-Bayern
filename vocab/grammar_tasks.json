@@ -1,8 +1,9 @@
 [
   {
-    "id": "gr_g6_001",
+    "id": "gr_g6_u1_01_a",
     "grade": 6,
     "unit": "u1",
+    "topic": "technology",
     "type": "tense_choice",
     "prompt": "I use my camera every day.",
     "question": "Welche Zeitform wird verwendet?",
@@ -12,34 +13,1310 @@
       "Future"
     ],
     "answer": "Simple Present",
-    "explanation": "Every day beschreibt eine regelmäßige Handlung."
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
   },
   {
-    "id": "gr_g6_002",
+    "id": "gr_g6_u1_01_b",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "type": "verb_gap",
+    "prompt": "I ___ my camera yesterday.",
+    "base": "use",
+    "answer": "used",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von use im Simple Past lautet used."
+  },
+  {
+    "id": "gr_g6_u1_01_c",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "type": "transform",
+    "prompt": "I use my camera every day.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "I used my camera yesterday.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier used verwendet."
+  },
+  {
+    "id": "gr_g6_u1_01_d",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "type": "negation",
+    "prompt": "I used my camera yesterday.",
+    "instruction": "Verneine den Satz.",
+    "answer": "I did not use my camera yesterday.",
+    "acceptedAnswers": [
+      "I didn't use my camera yesterday."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u1_01_e",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "type": "question",
+    "prompt": "I used my camera yesterday.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did i use my camera yesterday?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u1_02_a",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "media",
+    "type": "tense_choice",
+    "prompt": "She watches the news online.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u1_02_b",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "media",
+    "type": "verb_gap",
+    "prompt": "She ___ the news last night.",
+    "base": "watch",
+    "answer": "watched",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von watch im Simple Past lautet watched."
+  },
+  {
+    "id": "gr_g6_u1_02_c",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "media",
+    "type": "transform",
+    "prompt": "She watches the news online.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "She watched the news last night.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier watched verwendet."
+  },
+  {
+    "id": "gr_g6_u1_02_d",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "media",
+    "type": "negation",
+    "prompt": "She watched the news last night.",
+    "instruction": "Verneine den Satz.",
+    "answer": "She did not watch the news last night.",
+    "acceptedAnswers": [
+      "She didn't watch the news last night."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u1_02_e",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "media",
+    "type": "question",
+    "prompt": "She watched the news last night.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did she watch the news last night?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u1_03_a",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "communication",
+    "type": "tense_choice",
+    "prompt": "We send messages after school.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u1_03_b",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "communication",
+    "type": "verb_gap",
+    "prompt": "We ___ messages after school.",
+    "base": "send",
+    "answer": "sent",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von send im Simple Past lautet sent."
+  },
+  {
+    "id": "gr_g6_u1_03_c",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "communication",
+    "type": "transform",
+    "prompt": "We send messages after school.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "We sent messages after school.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier sent verwendet."
+  },
+  {
+    "id": "gr_g6_u1_03_d",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "communication",
+    "type": "negation",
+    "prompt": "We sent messages after school.",
+    "instruction": "Verneine den Satz.",
+    "answer": "We did not send messages after school.",
+    "acceptedAnswers": [
+      "We didn't send messages after school."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u1_03_e",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "communication",
+    "type": "question",
+    "prompt": "We sent messages after school.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did we send messages after school?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u1_04_a",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "type": "tense_choice",
+    "prompt": "My friend takes a photo.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u1_04_b",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "type": "verb_gap",
+    "prompt": "My friend ___ a photo.",
+    "base": "take",
+    "answer": "took",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von take im Simple Past lautet took."
+  },
+  {
+    "id": "gr_g6_u1_04_c",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "type": "transform",
+    "prompt": "My friend takes a photo.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "My friend took a photo.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier took verwendet."
+  },
+  {
+    "id": "gr_g6_u1_04_d",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "type": "negation",
+    "prompt": "My friend took a photo.",
+    "instruction": "Verneine den Satz.",
+    "answer": "My friend did not take a photo.",
+    "acceptedAnswers": [
+      "My friend didn't take a photo."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u1_04_e",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "type": "question",
+    "prompt": "My friend took a photo.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did my friend take a photo?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u1_05_a",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "type": "tense_choice",
+    "prompt": "The battery lasts all day.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u1_05_b",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "type": "verb_gap",
+    "prompt": "The battery ___ all day.",
+    "base": "last",
+    "answer": "lasted",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von last im Simple Past lautet lasted."
+  },
+  {
+    "id": "gr_g6_u1_05_c",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "type": "transform",
+    "prompt": "The battery lasts all day.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The battery lasted all day.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier lasted verwendet."
+  },
+  {
+    "id": "gr_g6_u1_05_d",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "type": "negation",
+    "prompt": "The battery lasted all day.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The battery did not last all day.",
+    "acceptedAnswers": [
+      "The battery didn't last all day."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u1_05_e",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "technology",
+    "type": "question",
+    "prompt": "The battery lasted all day.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the battery last all day?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u1_06_a",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "media",
+    "type": "tense_choice",
+    "prompt": "They share the video with the class.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u1_06_b",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "media",
+    "type": "verb_gap",
+    "prompt": "They ___ the video with the class.",
+    "base": "share",
+    "answer": "shared",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von share im Simple Past lautet shared."
+  },
+  {
+    "id": "gr_g6_u1_06_c",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "media",
+    "type": "transform",
+    "prompt": "They share the video with the class.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "They shared the video with the class.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier shared verwendet."
+  },
+  {
+    "id": "gr_g6_u1_06_d",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "media",
+    "type": "negation",
+    "prompt": "They shared the video with the class.",
+    "instruction": "Verneine den Satz.",
+    "answer": "They did not share the video with the class.",
+    "acceptedAnswers": [
+      "They didn't share the video with the class."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u1_06_e",
+    "grade": 6,
+    "unit": "u1",
+    "topic": "media",
+    "type": "question",
+    "prompt": "They shared the video with the class.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did they share the video with the class?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u2_01_a",
     "grade": 6,
     "unit": "u2",
+    "topic": "nature",
+    "type": "tense_choice",
+    "prompt": "We walk along the path.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u2_01_b",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "nature",
     "type": "verb_gap",
-    "prompt": "Yesterday, we ___ along the path.",
+    "prompt": "We ___ along the path.",
     "base": "walk",
     "answer": "walked",
     "tenseLabel": "Simple Past",
-    "explanation": "Bei regelmäßigen Verben wird im Simple Past meist -ed angehängt."
+    "explanation": "Die passende Form von walk im Simple Past lautet walked."
   },
   {
-    "id": "gr_g6_003",
+    "id": "gr_g6_u2_01_c",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "nature",
+    "type": "transform",
+    "prompt": "We walk along the path.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "We walked along the path.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier walked verwendet."
+  },
+  {
+    "id": "gr_g6_u2_01_d",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "nature",
+    "type": "negation",
+    "prompt": "We walked along the path.",
+    "instruction": "Verneine den Satz.",
+    "answer": "We did not walk along the path.",
+    "acceptedAnswers": [
+      "We didn't walk along the path."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u2_01_e",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "nature",
+    "type": "question",
+    "prompt": "We walked along the path.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did we walk along the path?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u2_02_a",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "outdoor",
+    "type": "tense_choice",
+    "prompt": "The hikers cross the bridge.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u2_02_b",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "outdoor",
+    "type": "verb_gap",
+    "prompt": "The hikers ___ the bridge.",
+    "base": "cross",
+    "answer": "crossed",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von cross im Simple Past lautet crossed."
+  },
+  {
+    "id": "gr_g6_u2_02_c",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "outdoor",
+    "type": "transform",
+    "prompt": "The hikers cross the bridge.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The hikers crossed the bridge.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier crossed verwendet."
+  },
+  {
+    "id": "gr_g6_u2_02_d",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "outdoor",
+    "type": "negation",
+    "prompt": "The hikers crossed the bridge.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The hikers did not cross the bridge.",
+    "acceptedAnswers": [
+      "The hikers didn't cross the bridge."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u2_02_e",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "outdoor",
+    "type": "question",
+    "prompt": "The hikers crossed the bridge.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the hikers cross the bridge?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u2_03_a",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "outdoor",
+    "type": "tense_choice",
+    "prompt": "I carry water in my backpack.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u2_03_b",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "outdoor",
+    "type": "verb_gap",
+    "prompt": "I ___ water in my backpack.",
+    "base": "carry",
+    "answer": "carried",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von carry im Simple Past lautet carried."
+  },
+  {
+    "id": "gr_g6_u2_03_c",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "outdoor",
+    "type": "transform",
+    "prompt": "I carry water in my backpack.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "I carried water in my backpack.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier carried verwendet."
+  },
+  {
+    "id": "gr_g6_u2_03_d",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "outdoor",
+    "type": "negation",
+    "prompt": "I carried water in my backpack.",
+    "instruction": "Verneine den Satz.",
+    "answer": "I did not carry water in my backpack.",
+    "acceptedAnswers": [
+      "I didn't carry water in my backpack."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u2_03_e",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "outdoor",
+    "type": "question",
+    "prompt": "I carried water in my backpack.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did i carry water in my backpack?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u2_04_a",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "weather",
+    "type": "tense_choice",
+    "prompt": "The weather changes quickly.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u2_04_b",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "weather",
+    "type": "verb_gap",
+    "prompt": "The weather ___ quickly.",
+    "base": "change",
+    "answer": "changed",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von change im Simple Past lautet changed."
+  },
+  {
+    "id": "gr_g6_u2_04_c",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "weather",
+    "type": "transform",
+    "prompt": "The weather changes quickly.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The weather changed quickly.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier changed verwendet."
+  },
+  {
+    "id": "gr_g6_u2_04_d",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "weather",
+    "type": "negation",
+    "prompt": "The weather changed quickly.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The weather did not change quickly.",
+    "acceptedAnswers": [
+      "The weather didn't change quickly."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u2_04_e",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "weather",
+    "type": "question",
+    "prompt": "The weather changed quickly.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the weather change quickly?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u2_05_a",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "outdoor",
+    "type": "tense_choice",
+    "prompt": "We rest beside the lake.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u2_05_b",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "outdoor",
+    "type": "verb_gap",
+    "prompt": "We ___ beside the lake.",
+    "base": "rest",
+    "answer": "rested",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von rest im Simple Past lautet rested."
+  },
+  {
+    "id": "gr_g6_u2_05_c",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "outdoor",
+    "type": "transform",
+    "prompt": "We rest beside the lake.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "We rested beside the lake.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier rested verwendet."
+  },
+  {
+    "id": "gr_g6_u2_05_d",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "outdoor",
+    "type": "negation",
+    "prompt": "We rested beside the lake.",
+    "instruction": "Verneine den Satz.",
+    "answer": "We did not rest beside the lake.",
+    "acceptedAnswers": [
+      "We didn't rest beside the lake."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u2_05_e",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "outdoor",
+    "type": "question",
+    "prompt": "We rested beside the lake.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did we rest beside the lake?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u2_06_a",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "nature",
+    "type": "tense_choice",
+    "prompt": "The guide shows us the waterfall.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u2_06_b",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "nature",
+    "type": "verb_gap",
+    "prompt": "The guide ___ us the waterfall.",
+    "base": "show",
+    "answer": "showed",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von show im Simple Past lautet showed."
+  },
+  {
+    "id": "gr_g6_u2_06_c",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "nature",
+    "type": "transform",
+    "prompt": "The guide shows us the waterfall.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The guide showed us the waterfall.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier showed verwendet."
+  },
+  {
+    "id": "gr_g6_u2_06_d",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "nature",
+    "type": "negation",
+    "prompt": "The guide showed us the waterfall.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The guide did not show us the waterfall.",
+    "acceptedAnswers": [
+      "The guide didn't show us the waterfall."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u2_06_e",
+    "grade": 6,
+    "unit": "u2",
+    "topic": "nature",
+    "type": "question",
+    "prompt": "The guide showed us the waterfall.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the guide show us the waterfall?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u3_01_a",
     "grade": 6,
     "unit": "u3",
+    "topic": "transport",
+    "type": "tense_choice",
+    "prompt": "The passenger gets on the bus.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u3_01_b",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "transport",
+    "type": "verb_gap",
+    "prompt": "The passenger ___ on the bus.",
+    "base": "get",
+    "answer": "got",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von get im Simple Past lautet got."
+  },
+  {
+    "id": "gr_g6_u3_01_c",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "transport",
     "type": "transform",
     "prompt": "The passenger gets on the bus.",
     "instruction": "Setze den Satz ins Simple Past.",
     "answer": "The passenger got on the bus.",
     "tenseLabel": "Simple Past",
-    "explanation": "Get ist unregelmäßig: get, got, got."
+    "explanation": "Im Simple Past wird hier got verwendet."
   },
   {
-    "id": "gr_g6_004",
+    "id": "gr_g6_u3_01_d",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "transport",
+    "type": "negation",
+    "prompt": "The passenger got on the bus.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The passenger did not get on the bus.",
+    "acceptedAnswers": [
+      "The passenger didn't get on the bus."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u3_01_e",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "transport",
+    "type": "question",
+    "prompt": "The passenger got on the bus.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the passenger get on the bus?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u3_02_a",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "transport",
+    "type": "tense_choice",
+    "prompt": "We buy tickets at the station.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u3_02_b",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "transport",
+    "type": "verb_gap",
+    "prompt": "We ___ tickets at the station.",
+    "base": "buy",
+    "answer": "bought",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von buy im Simple Past lautet bought."
+  },
+  {
+    "id": "gr_g6_u3_02_c",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "transport",
+    "type": "transform",
+    "prompt": "We buy tickets at the station.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "We bought tickets at the station.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier bought verwendet."
+  },
+  {
+    "id": "gr_g6_u3_02_d",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "transport",
+    "type": "negation",
+    "prompt": "We bought tickets at the station.",
+    "instruction": "Verneine den Satz.",
+    "answer": "We did not buy tickets at the station.",
+    "acceptedAnswers": [
+      "We didn't buy tickets at the station."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u3_02_e",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "transport",
+    "type": "question",
+    "prompt": "We bought tickets at the station.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did we buy tickets at the station?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u3_03_a",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "city",
+    "type": "tense_choice",
+    "prompt": "The tourist asks for directions.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u3_03_b",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "city",
+    "type": "verb_gap",
+    "prompt": "The tourist ___ for directions.",
+    "base": "ask",
+    "answer": "asked",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von ask im Simple Past lautet asked."
+  },
+  {
+    "id": "gr_g6_u3_03_c",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "city",
+    "type": "transform",
+    "prompt": "The tourist asks for directions.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The tourist asked for directions.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier asked verwendet."
+  },
+  {
+    "id": "gr_g6_u3_03_d",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "city",
+    "type": "negation",
+    "prompt": "The tourist asked for directions.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The tourist did not ask for directions.",
+    "acceptedAnswers": [
+      "The tourist didn't ask for directions."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u3_03_e",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "city",
+    "type": "question",
+    "prompt": "The tourist asked for directions.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the tourist ask for directions?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u3_04_a",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "culture",
+    "type": "tense_choice",
+    "prompt": "I visit the museum with my class.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u3_04_b",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "culture",
+    "type": "verb_gap",
+    "prompt": "I ___ the museum with my class.",
+    "base": "visit",
+    "answer": "visited",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von visit im Simple Past lautet visited."
+  },
+  {
+    "id": "gr_g6_u3_04_c",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "culture",
+    "type": "transform",
+    "prompt": "I visit the museum with my class.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "I visited the museum with my class.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier visited verwendet."
+  },
+  {
+    "id": "gr_g6_u3_04_d",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "culture",
+    "type": "negation",
+    "prompt": "I visited the museum with my class.",
+    "instruction": "Verneine den Satz.",
+    "answer": "I did not visit the museum with my class.",
+    "acceptedAnswers": [
+      "I didn't visit the museum with my class."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u3_04_e",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "culture",
+    "type": "question",
+    "prompt": "I visited the museum with my class.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did i visit the museum with my class?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u3_05_a",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "transport",
+    "type": "tense_choice",
+    "prompt": "The bus stops near the market.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u3_05_b",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "transport",
+    "type": "verb_gap",
+    "prompt": "The bus ___ near the market.",
+    "base": "stop",
+    "answer": "stopped",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von stop im Simple Past lautet stopped."
+  },
+  {
+    "id": "gr_g6_u3_05_c",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "transport",
+    "type": "transform",
+    "prompt": "The bus stops near the market.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The bus stopped near the market.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier stopped verwendet."
+  },
+  {
+    "id": "gr_g6_u3_05_d",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "transport",
+    "type": "negation",
+    "prompt": "The bus stopped near the market.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The bus did not stop near the market.",
+    "acceptedAnswers": [
+      "The bus didn't stop near the market."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u3_05_e",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "transport",
+    "type": "question",
+    "prompt": "The bus stopped near the market.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the bus stop near the market?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u3_06_a",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "culture",
+    "type": "tense_choice",
+    "prompt": "We meet in front of the theatre.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u3_06_b",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "culture",
+    "type": "verb_gap",
+    "prompt": "We ___ in front of the theatre.",
+    "base": "meet",
+    "answer": "met",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von meet im Simple Past lautet met."
+  },
+  {
+    "id": "gr_g6_u3_06_c",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "culture",
+    "type": "transform",
+    "prompt": "We meet in front of the theatre.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "We met in front of the theatre.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier met verwendet."
+  },
+  {
+    "id": "gr_g6_u3_06_d",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "culture",
+    "type": "negation",
+    "prompt": "We met in front of the theatre.",
+    "instruction": "Verneine den Satz.",
+    "answer": "We did not meet in front of the theatre.",
+    "acceptedAnswers": [
+      "We didn't meet in front of the theatre."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u3_06_e",
+    "grade": 6,
+    "unit": "u3",
+    "topic": "culture",
+    "type": "question",
+    "prompt": "We met in front of the theatre.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did we meet in front of the theatre?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u4_01_a",
     "grade": 6,
     "unit": "u4",
+    "topic": "food",
+    "type": "tense_choice",
+    "prompt": "I make homemade soup.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u4_01_b",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "food",
+    "type": "verb_gap",
+    "prompt": "I ___ homemade soup.",
+    "base": "make",
+    "answer": "made",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von make im Simple Past lautet made."
+  },
+  {
+    "id": "gr_g6_u4_01_c",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "food",
+    "type": "transform",
+    "prompt": "I make homemade soup.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "I made homemade soup.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier made verwendet."
+  },
+  {
+    "id": "gr_g6_u4_01_d",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "food",
+    "type": "negation",
+    "prompt": "I made homemade soup.",
+    "instruction": "Verneine den Satz.",
+    "answer": "I did not make homemade soup.",
+    "acceptedAnswers": [
+      "I didn't make homemade soup."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u4_01_e",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "food",
+    "type": "question",
+    "prompt": "I made homemade soup.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did i make homemade soup?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u4_02_a",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "home",
+    "type": "tense_choice",
+    "prompt": "She loads the dishwasher.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u4_02_b",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "home",
+    "type": "verb_gap",
+    "prompt": "She ___ the dishwasher.",
+    "base": "load",
+    "answer": "loaded",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von load im Simple Past lautet loaded."
+  },
+  {
+    "id": "gr_g6_u4_02_c",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "home",
+    "type": "transform",
+    "prompt": "She loads the dishwasher.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "She loaded the dishwasher.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier loaded verwendet."
+  },
+  {
+    "id": "gr_g6_u4_02_d",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "home",
     "type": "negation",
     "prompt": "She loaded the dishwasher.",
     "instruction": "Verneine den Satz.",
@@ -48,122 +1325,2544 @@
       "She didn't load the dishwasher."
     ],
     "tenseLabel": "Simple Past",
-    "explanation": "Nach did not steht die Grundform load."
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
   },
   {
-    "id": "gr_g6_005",
+    "id": "gr_g6_u4_02_e",
     "grade": 6,
-    "unit": "u5",
+    "unit": "u4",
+    "topic": "home",
     "type": "question",
-    "prompt": "They checked in at the airport.",
+    "prompt": "She loaded the dishwasher.",
     "instruction": "Bilde eine Frage.",
-    "answer": "Did they check in at the airport?",
+    "answer": "Did she load the dishwasher?",
     "tenseLabel": "Simple Past",
-    "explanation": "Fragen im Simple Past beginnen mit did; das Verb steht in der Grundform."
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
   },
   {
-    "id": "gr_g6_006",
+    "id": "gr_g6_u4_03_a",
     "grade": 6,
-    "unit": "u6",
+    "unit": "u4",
+    "topic": "home",
     "type": "tense_choice",
-    "prompt": "The doctor will check my leg tomorrow.",
+    "prompt": "My brother sets the table.",
     "question": "Welche Zeitform wird verwendet?",
     "options": [
       "Simple Present",
       "Simple Past",
       "Future"
     ],
-    "answer": "Future",
-    "explanation": "Will plus Grundform bezeichnet hier eine zukünftige Handlung."
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
   },
   {
-    "id": "gr_g6_007",
+    "id": "gr_g6_u4_03_b",
     "grade": 6,
-    "unit": "u1",
+    "unit": "u4",
+    "topic": "home",
     "type": "verb_gap",
-    "prompt": "Last night, I ___ the news on TV.",
+    "prompt": "My brother ___ the table.",
+    "base": "set",
+    "answer": "set",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von set im Simple Past lautet set."
+  },
+  {
+    "id": "gr_g6_u4_03_c",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "home",
+    "type": "transform",
+    "prompt": "My brother sets the table.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "My brother set the table.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier set verwendet."
+  },
+  {
+    "id": "gr_g6_u4_03_d",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "home",
+    "type": "negation",
+    "prompt": "My brother set the table.",
+    "instruction": "Verneine den Satz.",
+    "answer": "My brother did not set the table.",
+    "acceptedAnswers": [
+      "My brother didn't set the table."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u4_03_e",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "home",
+    "type": "question",
+    "prompt": "My brother set the table.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did my brother set the table?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u4_04_a",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "food",
+    "type": "tense_choice",
+    "prompt": "We cut the vegetables carefully.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u4_04_b",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "food",
+    "type": "verb_gap",
+    "prompt": "We ___ the vegetables carefully yesterday.",
+    "base": "cut",
+    "answer": "cut",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von cut im Simple Past lautet cut."
+  },
+  {
+    "id": "gr_g6_u4_04_c",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "food",
+    "type": "transform",
+    "prompt": "We cut the vegetables carefully.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "We cut the vegetables carefully yesterday.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier cut verwendet."
+  },
+  {
+    "id": "gr_g6_u4_04_d",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "food",
+    "type": "negation",
+    "prompt": "We cut the vegetables carefully yesterday.",
+    "instruction": "Verneine den Satz.",
+    "answer": "We did not cut the vegetables carefully yesterday.",
+    "acceptedAnswers": [
+      "We didn't cut the vegetables carefully yesterday."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u4_04_e",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "food",
+    "type": "question",
+    "prompt": "We cut the vegetables carefully yesterday.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did we cut the vegetables carefully yesterday?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u4_05_a",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "travel",
+    "type": "tense_choice",
+    "prompt": "The family stays in a small cottage.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u4_05_b",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "travel",
+    "type": "verb_gap",
+    "prompt": "The family ___ in a small cottage.",
+    "base": "stay",
+    "answer": "stayed",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von stay im Simple Past lautet stayed."
+  },
+  {
+    "id": "gr_g6_u4_05_c",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "travel",
+    "type": "transform",
+    "prompt": "The family stays in a small cottage.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The family stayed in a small cottage.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier stayed verwendet."
+  },
+  {
+    "id": "gr_g6_u4_05_d",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "travel",
+    "type": "negation",
+    "prompt": "The family stayed in a small cottage.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The family did not stay in a small cottage.",
+    "acceptedAnswers": [
+      "The family didn't stay in a small cottage."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u4_05_e",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "travel",
+    "type": "question",
+    "prompt": "The family stayed in a small cottage.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the family stay in a small cottage?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u4_06_a",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "travel",
+    "type": "tense_choice",
+    "prompt": "We travel through Scotland.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u4_06_b",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "travel",
+    "type": "verb_gap",
+    "prompt": "We ___ through Scotland.",
+    "base": "travel",
+    "answer": "travelled",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von travel im Simple Past lautet travelled."
+  },
+  {
+    "id": "gr_g6_u4_06_c",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "travel",
+    "type": "transform",
+    "prompt": "We travel through Scotland.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "We travelled through Scotland.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier travelled verwendet."
+  },
+  {
+    "id": "gr_g6_u4_06_d",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "travel",
+    "type": "negation",
+    "prompt": "We travelled through Scotland.",
+    "instruction": "Verneine den Satz.",
+    "answer": "We did not travel through Scotland.",
+    "acceptedAnswers": [
+      "We didn't travel through Scotland."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u4_06_e",
+    "grade": 6,
+    "unit": "u4",
+    "topic": "travel",
+    "type": "question",
+    "prompt": "We travelled through Scotland.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did we travel through Scotland?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u5_01_a",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "travel",
+    "type": "tense_choice",
+    "prompt": "We check in at the airport.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u5_01_b",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "travel",
+    "type": "verb_gap",
+    "prompt": "We ___ in at the airport.",
+    "base": "check",
+    "answer": "checked",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von check im Simple Past lautet checked."
+  },
+  {
+    "id": "gr_g6_u5_01_c",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "travel",
+    "type": "transform",
+    "prompt": "We check in at the airport.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "We checked in at the airport.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier checked verwendet."
+  },
+  {
+    "id": "gr_g6_u5_01_d",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "travel",
+    "type": "negation",
+    "prompt": "We checked in at the airport.",
+    "instruction": "Verneine den Satz.",
+    "answer": "We did not check in at the airport.",
+    "acceptedAnswers": [
+      "We didn't check in at the airport."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u5_01_e",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "travel",
+    "type": "question",
+    "prompt": "We checked in at the airport.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did we check in at the airport?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u5_02_a",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "travel",
+    "type": "tense_choice",
+    "prompt": "I pack my suitcase carefully.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u5_02_b",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "travel",
+    "type": "verb_gap",
+    "prompt": "I ___ my suitcase carefully.",
+    "base": "pack",
+    "answer": "packed",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von pack im Simple Past lautet packed."
+  },
+  {
+    "id": "gr_g6_u5_02_c",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "travel",
+    "type": "transform",
+    "prompt": "I pack my suitcase carefully.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "I packed my suitcase carefully.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier packed verwendet."
+  },
+  {
+    "id": "gr_g6_u5_02_d",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "travel",
+    "type": "negation",
+    "prompt": "I packed my suitcase carefully.",
+    "instruction": "Verneine den Satz.",
+    "answer": "I did not pack my suitcase carefully.",
+    "acceptedAnswers": [
+      "I didn't pack my suitcase carefully."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u5_02_e",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "travel",
+    "type": "question",
+    "prompt": "I packed my suitcase carefully.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did i pack my suitcase carefully?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u5_03_a",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "animals",
+    "type": "tense_choice",
+    "prompt": "The ranger protects the animals.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u5_03_b",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "animals",
+    "type": "verb_gap",
+    "prompt": "The ranger ___ the animals.",
+    "base": "protect",
+    "answer": "protected",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von protect im Simple Past lautet protected."
+  },
+  {
+    "id": "gr_g6_u5_03_c",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "animals",
+    "type": "transform",
+    "prompt": "The ranger protects the animals.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The ranger protected the animals.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier protected verwendet."
+  },
+  {
+    "id": "gr_g6_u5_03_d",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "animals",
+    "type": "negation",
+    "prompt": "The ranger protected the animals.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The ranger did not protect the animals.",
+    "acceptedAnswers": [
+      "The ranger didn't protect the animals."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u5_03_e",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "animals",
+    "type": "question",
+    "prompt": "The ranger protected the animals.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the ranger protect the animals?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u5_04_a",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "emergency",
+    "type": "tense_choice",
+    "prompt": "The ambulance arrives quickly.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u5_04_b",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "emergency",
+    "type": "verb_gap",
+    "prompt": "The ambulance ___ quickly.",
+    "base": "arrive",
+    "answer": "arrived",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von arrive im Simple Past lautet arrived."
+  },
+  {
+    "id": "gr_g6_u5_04_c",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "emergency",
+    "type": "transform",
+    "prompt": "The ambulance arrives quickly.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The ambulance arrived quickly.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier arrived verwendet."
+  },
+  {
+    "id": "gr_g6_u5_04_d",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "emergency",
+    "type": "negation",
+    "prompt": "The ambulance arrived quickly.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The ambulance did not arrive quickly.",
+    "acceptedAnswers": [
+      "The ambulance didn't arrive quickly."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u5_04_e",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "emergency",
+    "type": "question",
+    "prompt": "The ambulance arrived quickly.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the ambulance arrive quickly?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u5_05_a",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "emergency",
+    "type": "tense_choice",
+    "prompt": "The police officer helps people.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u5_05_b",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "emergency",
+    "type": "verb_gap",
+    "prompt": "The police officer ___ people.",
+    "base": "help",
+    "answer": "helped",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von help im Simple Past lautet helped."
+  },
+  {
+    "id": "gr_g6_u5_05_c",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "emergency",
+    "type": "transform",
+    "prompt": "The police officer helps people.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The police officer helped people.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier helped verwendet."
+  },
+  {
+    "id": "gr_g6_u5_05_d",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "emergency",
+    "type": "negation",
+    "prompt": "The police officer helped people.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The police officer did not help people.",
+    "acceptedAnswers": [
+      "The police officer didn't help people."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u5_05_e",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "emergency",
+    "type": "question",
+    "prompt": "The police officer helped people.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the police officer help people?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u5_06_a",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "animals",
+    "type": "tense_choice",
+    "prompt": "We watch the animals from a safe place.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u5_06_b",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "animals",
+    "type": "verb_gap",
+    "prompt": "We ___ the animals from a safe place.",
     "base": "watch",
     "answer": "watched",
     "tenseLabel": "Simple Past",
-    "explanation": "Watch ist regelmäßig: watched."
+    "explanation": "Die passende Form von watch im Simple Past lautet watched."
   },
   {
-    "id": "gr_g6_008",
+    "id": "gr_g6_u5_06_c",
     "grade": 6,
-    "unit": "u2",
+    "unit": "u5",
+    "topic": "animals",
     "type": "transform",
-    "prompt": "We rest beside the lake.",
-    "instruction": "Setze den Satz ins Future mit will.",
-    "answer": "We will rest beside the lake.",
-    "tenseLabel": "Future",
-    "explanation": "Das Future wird hier mit will plus Grundform gebildet."
+    "prompt": "We watch the animals from a safe place.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "We watched the animals from a safe place.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier watched verwendet."
   },
   {
-    "id": "gr_g6_009",
+    "id": "gr_g6_u5_06_d",
     "grade": 6,
-    "unit": "u3",
+    "unit": "u5",
+    "topic": "animals",
     "type": "negation",
-    "prompt": "The tourist asks for directions.",
+    "prompt": "We watched the animals from a safe place.",
     "instruction": "Verneine den Satz.",
-    "answer": "The tourist does not ask for directions.",
+    "answer": "We did not watch the animals from a safe place.",
     "acceptedAnswers": [
-      "The tourist doesn't ask for directions."
+      "We didn't watch the animals from a safe place."
     ],
-    "tenseLabel": "Simple Present",
-    "explanation": "Bei he, she und it verwendet man does not plus Grundform."
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
   },
   {
-    "id": "gr_g6_010",
+    "id": "gr_g6_u5_06_e",
+    "grade": 6,
+    "unit": "u5",
+    "topic": "animals",
+    "type": "question",
+    "prompt": "We watched the animals from a safe place.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did we watch the animals from a safe place?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u6_01_a",
     "grade": 6,
     "unit": "u6",
-    "type": "question",
-    "prompt": "The team will win the match.",
-    "instruction": "Bilde eine Frage.",
-    "answer": "Will the team win the match?",
-    "tenseLabel": "Future",
-    "explanation": "Bei einer Frage mit will steht will vor dem Subjekt."
-  },
-  {
-    "id": "gr_g7_001",
-    "grade": 7,
-    "unit": "u1",
+    "topic": "sports",
     "type": "tense_choice",
-    "prompt": "My roommate joined the school choir.",
+    "prompt": "I play football three times a week.",
     "question": "Welche Zeitform wird verwendet?",
     "options": [
       "Simple Present",
       "Simple Past",
       "Future"
     ],
-    "answer": "Simple Past",
-    "explanation": "Joined ist die regelmäßige Vergangenheitsform von join."
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
   },
   {
-    "id": "gr_g7_002",
+    "id": "gr_g6_u6_01_b",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "sports",
+    "type": "verb_gap",
+    "prompt": "I ___ football yesterday.",
+    "base": "play",
+    "answer": "played",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von play im Simple Past lautet played."
+  },
+  {
+    "id": "gr_g6_u6_01_c",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "sports",
+    "type": "transform",
+    "prompt": "I play football three times a week.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "I played football yesterday.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier played verwendet."
+  },
+  {
+    "id": "gr_g6_u6_01_d",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "sports",
+    "type": "negation",
+    "prompt": "I played football yesterday.",
+    "instruction": "Verneine den Satz.",
+    "answer": "I did not play football yesterday.",
+    "acceptedAnswers": [
+      "I didn't play football yesterday."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u6_01_e",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "sports",
+    "type": "question",
+    "prompt": "I played football yesterday.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did i play football yesterday?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u6_02_a",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "sports",
+    "type": "tense_choice",
+    "prompt": "We train in the sports hall.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u6_02_b",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "sports",
+    "type": "verb_gap",
+    "prompt": "We ___ in the sports hall.",
+    "base": "train",
+    "answer": "trained",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von train im Simple Past lautet trained."
+  },
+  {
+    "id": "gr_g6_u6_02_c",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "sports",
+    "type": "transform",
+    "prompt": "We train in the sports hall.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "We trained in the sports hall.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier trained verwendet."
+  },
+  {
+    "id": "gr_g6_u6_02_d",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "sports",
+    "type": "negation",
+    "prompt": "We trained in the sports hall.",
+    "instruction": "Verneine den Satz.",
+    "answer": "We did not train in the sports hall.",
+    "acceptedAnswers": [
+      "We didn't train in the sports hall."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u6_02_e",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "sports",
+    "type": "question",
+    "prompt": "We trained in the sports hall.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did we train in the sports hall?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u6_03_a",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "sports",
+    "type": "tense_choice",
+    "prompt": "The team wins the match.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u6_03_b",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "sports",
+    "type": "verb_gap",
+    "prompt": "The team ___ the match.",
+    "base": "win",
+    "answer": "won",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von win im Simple Past lautet won."
+  },
+  {
+    "id": "gr_g6_u6_03_c",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "sports",
+    "type": "transform",
+    "prompt": "The team wins the match.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The team won the match.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier won verwendet."
+  },
+  {
+    "id": "gr_g6_u6_03_d",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "sports",
+    "type": "negation",
+    "prompt": "The team won the match.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The team did not win the match.",
+    "acceptedAnswers": [
+      "The team didn't win the match."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u6_03_e",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "sports",
+    "type": "question",
+    "prompt": "The team won the match.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the team win the match?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u6_04_a",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "school",
+    "type": "tense_choice",
+    "prompt": "I study for the test.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u6_04_b",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "school",
+    "type": "verb_gap",
+    "prompt": "I ___ for the test.",
+    "base": "study",
+    "answer": "studied",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von study im Simple Past lautet studied."
+  },
+  {
+    "id": "gr_g6_u6_04_c",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "school",
+    "type": "transform",
+    "prompt": "I study for the test.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "I studied for the test.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier studied verwendet."
+  },
+  {
+    "id": "gr_g6_u6_04_d",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "school",
+    "type": "negation",
+    "prompt": "I studied for the test.",
+    "instruction": "Verneine den Satz.",
+    "answer": "I did not study for the test.",
+    "acceptedAnswers": [
+      "I didn't study for the test."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u6_04_e",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "school",
+    "type": "question",
+    "prompt": "I studied for the test.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did i study for the test?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u6_05_a",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "health",
+    "type": "tense_choice",
+    "prompt": "The doctor checks my leg.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u6_05_b",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "health",
+    "type": "verb_gap",
+    "prompt": "The doctor ___ my leg.",
+    "base": "check",
+    "answer": "checked",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von check im Simple Past lautet checked."
+  },
+  {
+    "id": "gr_g6_u6_05_c",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "health",
+    "type": "transform",
+    "prompt": "The doctor checks my leg.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The doctor checked my leg.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier checked verwendet."
+  },
+  {
+    "id": "gr_g6_u6_05_d",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "health",
+    "type": "negation",
+    "prompt": "The doctor checked my leg.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The doctor did not check my leg.",
+    "acceptedAnswers": [
+      "The doctor didn't check my leg."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u6_05_e",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "health",
+    "type": "question",
+    "prompt": "The doctor checked my leg.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the doctor check my leg?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g6_u6_06_a",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "health",
+    "type": "tense_choice",
+    "prompt": "We drink water after training.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g6_u6_06_b",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "health",
+    "type": "verb_gap",
+    "prompt": "We ___ water after training.",
+    "base": "drink",
+    "answer": "drank",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von drink im Simple Past lautet drank."
+  },
+  {
+    "id": "gr_g6_u6_06_c",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "health",
+    "type": "transform",
+    "prompt": "We drink water after training.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "We drank water after training.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier drank verwendet."
+  },
+  {
+    "id": "gr_g6_u6_06_d",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "health",
+    "type": "negation",
+    "prompt": "We drank water after training.",
+    "instruction": "Verneine den Satz.",
+    "answer": "We did not drink water after training.",
+    "acceptedAnswers": [
+      "We didn't drink water after training."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g6_u6_06_e",
+    "grade": 6,
+    "unit": "u6",
+    "topic": "health",
+    "type": "question",
+    "prompt": "We drank water after training.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did we drink water after training?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u1_01_a",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "type": "tense_choice",
+    "prompt": "My roommate joins the school choir.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u1_01_b",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "type": "verb_gap",
+    "prompt": "My roommate ___ the school choir.",
+    "base": "join",
+    "answer": "joined",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von join im Simple Past lautet joined."
+  },
+  {
+    "id": "gr_g7_u1_01_c",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "type": "transform",
+    "prompt": "My roommate joins the school choir.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "My roommate joined the school choir.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier joined verwendet."
+  },
+  {
+    "id": "gr_g7_u1_01_d",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "type": "negation",
+    "prompt": "My roommate joined the school choir.",
+    "instruction": "Verneine den Satz.",
+    "answer": "My roommate did not join the school choir.",
+    "acceptedAnswers": [
+      "My roommate didn't join the school choir."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u1_01_e",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "type": "question",
+    "prompt": "My roommate joined the school choir.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did my roommate join the school choir?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u1_02_a",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "activities",
+    "type": "tense_choice",
+    "prompt": "We practise self-defence after school.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u1_02_b",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "activities",
+    "type": "verb_gap",
+    "prompt": "We ___ self-defence yesterday.",
+    "base": "practise",
+    "answer": "practised",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von practise im Simple Past lautet practised."
+  },
+  {
+    "id": "gr_g7_u1_02_c",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "activities",
+    "type": "transform",
+    "prompt": "We practise self-defence after school.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "We practised self-defence yesterday.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier practised verwendet."
+  },
+  {
+    "id": "gr_g7_u1_02_d",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "activities",
+    "type": "negation",
+    "prompt": "We practised self-defence yesterday.",
+    "instruction": "Verneine den Satz.",
+    "answer": "We did not practise self-defence yesterday.",
+    "acceptedAnswers": [
+      "We didn't practise self-defence yesterday."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u1_02_e",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "activities",
+    "type": "question",
+    "prompt": "We practised self-defence yesterday.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did we practise self-defence yesterday?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u1_03_a",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "type": "tense_choice",
+    "prompt": "A guardian signs the application.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u1_03_b",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "type": "verb_gap",
+    "prompt": "A guardian ___ the application.",
+    "base": "sign",
+    "answer": "signed",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von sign im Simple Past lautet signed."
+  },
+  {
+    "id": "gr_g7_u1_03_c",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "type": "transform",
+    "prompt": "A guardian signs the application.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "A guardian signed the application.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier signed verwendet."
+  },
+  {
+    "id": "gr_g7_u1_03_d",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "type": "negation",
+    "prompt": "A guardian signed the application.",
+    "instruction": "Verneine den Satz.",
+    "answer": "A guardian did not sign the application.",
+    "acceptedAnswers": [
+      "A guardian didn't sign the application."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u1_03_e",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "type": "question",
+    "prompt": "A guardian signed the application.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did a guardian sign the application?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u1_04_a",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "type": "tense_choice",
+    "prompt": "The student follows the instructions.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u1_04_b",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "type": "verb_gap",
+    "prompt": "The student ___ the instructions.",
+    "base": "follow",
+    "answer": "followed",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von follow im Simple Past lautet followed."
+  },
+  {
+    "id": "gr_g7_u1_04_c",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "type": "transform",
+    "prompt": "The student follows the instructions.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The student followed the instructions.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier followed verwendet."
+  },
+  {
+    "id": "gr_g7_u1_04_d",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "type": "negation",
+    "prompt": "The student followed the instructions.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The student did not follow the instructions.",
+    "acceptedAnswers": [
+      "The student didn't follow the instructions."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u1_04_e",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "school",
+    "type": "question",
+    "prompt": "The student followed the instructions.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the student follow the instructions?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u1_05_a",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "culture",
+    "type": "tense_choice",
+    "prompt": "The orchestra plays in the chapel.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u1_05_b",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "culture",
+    "type": "verb_gap",
+    "prompt": "The orchestra ___ in the chapel.",
+    "base": "play",
+    "answer": "played",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von play im Simple Past lautet played."
+  },
+  {
+    "id": "gr_g7_u1_05_c",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "culture",
+    "type": "transform",
+    "prompt": "The orchestra plays in the chapel.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The orchestra played in the chapel.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier played verwendet."
+  },
+  {
+    "id": "gr_g7_u1_05_d",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "culture",
+    "type": "negation",
+    "prompt": "The orchestra played in the chapel.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The orchestra did not play in the chapel.",
+    "acceptedAnswers": [
+      "The orchestra didn't play in the chapel."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u1_05_e",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "culture",
+    "type": "question",
+    "prompt": "The orchestra played in the chapel.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the orchestra play in the chapel?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u1_06_a",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "communication",
+    "type": "tense_choice",
+    "prompt": "I keep the secret.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u1_06_b",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "communication",
+    "type": "verb_gap",
+    "prompt": "I ___ the secret.",
+    "base": "keep",
+    "answer": "kept",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von keep im Simple Past lautet kept."
+  },
+  {
+    "id": "gr_g7_u1_06_c",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "communication",
+    "type": "transform",
+    "prompt": "I keep the secret.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "I kept the secret.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier kept verwendet."
+  },
+  {
+    "id": "gr_g7_u1_06_d",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "communication",
+    "type": "negation",
+    "prompt": "I kept the secret.",
+    "instruction": "Verneine den Satz.",
+    "answer": "I did not keep the secret.",
+    "acceptedAnswers": [
+      "I didn't keep the secret."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u1_06_e",
+    "grade": 7,
+    "unit": "u1",
+    "topic": "communication",
+    "type": "question",
+    "prompt": "I kept the secret.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did i keep the secret?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u2_01_a",
     "grade": 7,
     "unit": "u2",
+    "topic": "daily life",
+    "type": "tense_choice",
+    "prompt": "I do my chores every weekday.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u2_01_b",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "daily life",
     "type": "verb_gap",
-    "prompt": "Yesterday, the phone ___ in the hall.",
+    "prompt": "I ___ my chores yesterday.",
+    "base": "do",
+    "answer": "did",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von do im Simple Past lautet did."
+  },
+  {
+    "id": "gr_g7_u2_01_c",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "daily life",
+    "type": "transform",
+    "prompt": "I do my chores every weekday.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "I did my chores yesterday.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier did verwendet."
+  },
+  {
+    "id": "gr_g7_u2_01_d",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "daily life",
+    "type": "negation",
+    "prompt": "I did my chores yesterday.",
+    "instruction": "Verneine den Satz.",
+    "answer": "I did not do my chores yesterday.",
+    "acceptedAnswers": [
+      "I didn't do my chores yesterday."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u2_01_e",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "daily life",
+    "type": "question",
+    "prompt": "I did my chores yesterday.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did i do my chores yesterday?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u2_02_a",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "type": "tense_choice",
+    "prompt": "The hero wears a mask.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u2_02_b",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "type": "verb_gap",
+    "prompt": "The hero ___ a mask.",
+    "base": "wear",
+    "answer": "wore",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von wear im Simple Past lautet wore."
+  },
+  {
+    "id": "gr_g7_u2_02_c",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "type": "transform",
+    "prompt": "The hero wears a mask.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The hero wore a mask.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier wore verwendet."
+  },
+  {
+    "id": "gr_g7_u2_02_d",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "type": "negation",
+    "prompt": "The hero wore a mask.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The hero did not wear a mask.",
+    "acceptedAnswers": [
+      "The hero didn't wear a mask."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u2_02_e",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "type": "question",
+    "prompt": "The hero wore a mask.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the hero wear a mask?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u2_03_a",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "type": "tense_choice",
+    "prompt": "The prince escapes from the castle.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u2_03_b",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "type": "verb_gap",
+    "prompt": "The prince ___ from the castle.",
+    "base": "escape",
+    "answer": "escaped",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von escape im Simple Past lautet escaped."
+  },
+  {
+    "id": "gr_g7_u2_03_c",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "type": "transform",
+    "prompt": "The prince escapes from the castle.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The prince escaped from the castle.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier escaped verwendet."
+  },
+  {
+    "id": "gr_g7_u2_03_d",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "type": "negation",
+    "prompt": "The prince escaped from the castle.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The prince did not escape from the castle.",
+    "acceptedAnswers": [
+      "The prince didn't escape from the castle."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u2_03_e",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "film",
+    "type": "question",
+    "prompt": "The prince escaped from the castle.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the prince escape from the castle?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u2_04_a",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "fashion",
+    "type": "tense_choice",
+    "prompt": "She sews the material carefully.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u2_04_b",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "fashion",
+    "type": "verb_gap",
+    "prompt": "She ___ the material carefully.",
+    "base": "sew",
+    "answer": "sewed",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von sew im Simple Past lautet sewed."
+  },
+  {
+    "id": "gr_g7_u2_04_c",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "fashion",
+    "type": "transform",
+    "prompt": "She sews the material carefully.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "She sewed the material carefully.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier sewed verwendet."
+  },
+  {
+    "id": "gr_g7_u2_04_d",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "fashion",
+    "type": "negation",
+    "prompt": "She sewed the material carefully.",
+    "instruction": "Verneine den Satz.",
+    "answer": "She did not sew the material carefully.",
+    "acceptedAnswers": [
+      "She didn't sew the material carefully."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u2_04_e",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "fashion",
+    "type": "question",
+    "prompt": "She sewed the material carefully.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did she sew the material carefully?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u2_05_a",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "business",
+    "type": "tense_choice",
+    "prompt": "The business makes a profit.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u2_05_b",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "business",
+    "type": "verb_gap",
+    "prompt": "The business ___ a profit.",
+    "base": "make",
+    "answer": "made",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von make im Simple Past lautet made."
+  },
+  {
+    "id": "gr_g7_u2_05_c",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "business",
+    "type": "transform",
+    "prompt": "The business makes a profit.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The business made a profit.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier made verwendet."
+  },
+  {
+    "id": "gr_g7_u2_05_d",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "business",
+    "type": "negation",
+    "prompt": "The business made a profit.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The business did not make a profit.",
+    "acceptedAnswers": [
+      "The business didn't make a profit."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u2_05_e",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "business",
+    "type": "question",
+    "prompt": "The business made a profit.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the business make a profit?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u2_06_a",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "communication",
+    "type": "tense_choice",
+    "prompt": "The phone rings in the hall.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u2_06_b",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "communication",
+    "type": "verb_gap",
+    "prompt": "The phone ___ in the hall.",
     "base": "ring",
     "answer": "rang",
     "tenseLabel": "Simple Past",
-    "explanation": "Ring ist unregelmäßig: ring, rang, rung."
+    "explanation": "Die passende Form von ring im Simple Past lautet rang."
   },
   {
-    "id": "gr_g7_003",
+    "id": "gr_g7_u2_06_c",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "communication",
+    "type": "transform",
+    "prompt": "The phone rings in the hall.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The phone rang in the hall.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier rang verwendet."
+  },
+  {
+    "id": "gr_g7_u2_06_d",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "communication",
+    "type": "negation",
+    "prompt": "The phone rang in the hall.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The phone did not ring in the hall.",
+    "acceptedAnswers": [
+      "The phone didn't ring in the hall."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u2_06_e",
+    "grade": 7,
+    "unit": "u2",
+    "topic": "communication",
+    "type": "question",
+    "prompt": "The phone rang in the hall.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the phone ring in the hall?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u3_01_a",
     "grade": 7,
     "unit": "u3",
+    "topic": "history",
+    "type": "tense_choice",
+    "prompt": "The Romans conquer the land.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u3_01_b",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "type": "verb_gap",
+    "prompt": "The Romans ___ the land.",
+    "base": "conquer",
+    "answer": "conquered",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von conquer im Simple Past lautet conquered."
+  },
+  {
+    "id": "gr_g7_u3_01_c",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "type": "transform",
+    "prompt": "The Romans conquer the land.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The Romans conquered the land.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier conquered verwendet."
+  },
+  {
+    "id": "gr_g7_u3_01_d",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "type": "negation",
+    "prompt": "The Romans conquered the land.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The Romans did not conquer the land.",
+    "acceptedAnswers": [
+      "The Romans didn't conquer the land."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u3_01_e",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "type": "question",
+    "prompt": "The Romans conquered the land.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the Romans conquer the land?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u3_02_a",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "type": "tense_choice",
+    "prompt": "The Vikings settle near the coast.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u3_02_b",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "type": "verb_gap",
+    "prompt": "The Vikings ___ near the coast.",
+    "base": "settle",
+    "answer": "settled",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von settle im Simple Past lautet settled."
+  },
+  {
+    "id": "gr_g7_u3_02_c",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
     "type": "transform",
     "prompt": "The Vikings settle near the coast.",
     "instruction": "Setze den Satz ins Simple Past.",
     "answer": "The Vikings settled near the coast.",
     "tenseLabel": "Simple Past",
-    "explanation": "Settle ist regelmäßig: settled."
+    "explanation": "Im Simple Past wird hier settled verwendet."
   },
   {
-    "id": "gr_g7_004",
+    "id": "gr_g7_u3_02_d",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "type": "negation",
+    "prompt": "The Vikings settled near the coast.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The Vikings did not settle near the coast.",
+    "acceptedAnswers": [
+      "The Vikings didn't settle near the coast."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u3_02_e",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "type": "question",
+    "prompt": "The Vikings settled near the coast.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the Vikings settle near the coast?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u3_03_a",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "type": "tense_choice",
+    "prompt": "The emperor rules a large empire.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u3_03_b",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "type": "verb_gap",
+    "prompt": "The emperor ___ a large empire.",
+    "base": "rule",
+    "answer": "ruled",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von rule im Simple Past lautet ruled."
+  },
+  {
+    "id": "gr_g7_u3_03_c",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "type": "transform",
+    "prompt": "The emperor rules a large empire.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The emperor ruled a large empire.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier ruled verwendet."
+  },
+  {
+    "id": "gr_g7_u3_03_d",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "type": "negation",
+    "prompt": "The emperor ruled a large empire.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The emperor did not rule a large empire.",
+    "acceptedAnswers": [
+      "The emperor didn't rule a large empire."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u3_03_e",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "type": "question",
+    "prompt": "The emperor ruled a large empire.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the emperor rule a large empire?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u3_04_a",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "type": "tense_choice",
+    "prompt": "The soldier carries an axe.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u3_04_b",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "type": "verb_gap",
+    "prompt": "The soldier ___ an axe.",
+    "base": "carry",
+    "answer": "carried",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von carry im Simple Past lautet carried."
+  },
+  {
+    "id": "gr_g7_u3_04_c",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "type": "transform",
+    "prompt": "The soldier carries an axe.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The soldier carried an axe.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier carried verwendet."
+  },
+  {
+    "id": "gr_g7_u3_04_d",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "type": "negation",
+    "prompt": "The soldier carried an axe.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The soldier did not carry an axe.",
+    "acceptedAnswers": [
+      "The soldier didn't carry an axe."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u3_04_e",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "history",
+    "type": "question",
+    "prompt": "The soldier carried an axe.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the soldier carry an axe?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u3_05_a",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "archaeology",
+    "type": "tense_choice",
+    "prompt": "They dig a deep hole.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u3_05_b",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "archaeology",
+    "type": "verb_gap",
+    "prompt": "They ___ a deep hole.",
+    "base": "dig",
+    "answer": "dug",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von dig im Simple Past lautet dug."
+  },
+  {
+    "id": "gr_g7_u3_05_c",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "archaeology",
+    "type": "transform",
+    "prompt": "They dig a deep hole.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "They dug a deep hole.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier dug verwendet."
+  },
+  {
+    "id": "gr_g7_u3_05_d",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "archaeology",
+    "type": "negation",
+    "prompt": "They dug a deep hole.",
+    "instruction": "Verneine den Satz.",
+    "answer": "They did not dig a deep hole.",
+    "acceptedAnswers": [
+      "They didn't dig a deep hole."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u3_05_e",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "archaeology",
+    "type": "question",
+    "prompt": "They dug a deep hole.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did they dig a deep hole?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u3_06_a",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "action",
+    "type": "tense_choice",
+    "prompt": "The wheel spins quickly.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u3_06_b",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "action",
+    "type": "verb_gap",
+    "prompt": "The wheel ___ quickly.",
+    "base": "spin",
+    "answer": "spun",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von spin im Simple Past lautet spun."
+  },
+  {
+    "id": "gr_g7_u3_06_c",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "action",
+    "type": "transform",
+    "prompt": "The wheel spins quickly.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The wheel spun quickly.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier spun verwendet."
+  },
+  {
+    "id": "gr_g7_u3_06_d",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "action",
+    "type": "negation",
+    "prompt": "The wheel spun quickly.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The wheel did not spin quickly.",
+    "acceptedAnswers": [
+      "The wheel didn't spin quickly."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u3_06_e",
+    "grade": 7,
+    "unit": "u3",
+    "topic": "action",
+    "type": "question",
+    "prompt": "The wheel spun quickly.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the wheel spin quickly?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u4_01_a",
     "grade": 7,
     "unit": "u4",
+    "topic": "culture",
+    "type": "tense_choice",
+    "prompt": "The musician plays in a pub.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u4_01_b",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "culture",
+    "type": "verb_gap",
+    "prompt": "The musician ___ in a pub.",
+    "base": "play",
+    "answer": "played",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von play im Simple Past lautet played."
+  },
+  {
+    "id": "gr_g7_u4_01_c",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "culture",
+    "type": "transform",
+    "prompt": "The musician plays in a pub.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The musician played in a pub.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier played verwendet."
+  },
+  {
+    "id": "gr_g7_u4_01_d",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "culture",
+    "type": "negation",
+    "prompt": "The musician played in a pub.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The musician did not play in a pub.",
+    "acceptedAnswers": [
+      "The musician didn't play in a pub."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u4_01_e",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "culture",
+    "type": "question",
+    "prompt": "The musician played in a pub.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the musician play in a pub?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u4_02_a",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "history",
+    "type": "tense_choice",
+    "prompt": "Many people emigrate from Ireland.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u4_02_b",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "history",
+    "type": "verb_gap",
+    "prompt": "Many people ___ from Ireland.",
+    "base": "emigrate",
+    "answer": "emigrated",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von emigrate im Simple Past lautet emigrated."
+  },
+  {
+    "id": "gr_g7_u4_02_c",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "history",
+    "type": "transform",
+    "prompt": "Many people emigrate from Ireland.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "Many people emigrated from Ireland.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier emigrated verwendet."
+  },
+  {
+    "id": "gr_g7_u4_02_d",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "history",
+    "type": "negation",
+    "prompt": "Many people emigrated from Ireland.",
+    "instruction": "Verneine den Satz.",
+    "answer": "Many people did not emigrate from Ireland.",
+    "acceptedAnswers": [
+      "Many people didn't emigrate from Ireland."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u4_02_e",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "history",
+    "type": "question",
+    "prompt": "Many people emigrated from Ireland.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did many people emigrate from Ireland?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u4_03_a",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "travel",
+    "type": "tense_choice",
+    "prompt": "I recommend this hostel.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u4_03_b",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "travel",
+    "type": "verb_gap",
+    "prompt": "I ___ this hostel.",
+    "base": "recommend",
+    "answer": "recommended",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von recommend im Simple Past lautet recommended."
+  },
+  {
+    "id": "gr_g7_u4_03_c",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "travel",
+    "type": "transform",
+    "prompt": "I recommend this hostel.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "I recommended this hostel.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier recommended verwendet."
+  },
+  {
+    "id": "gr_g7_u4_03_d",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "travel",
+    "type": "negation",
+    "prompt": "I recommended this hostel.",
+    "instruction": "Verneine den Satz.",
+    "answer": "I did not recommend this hostel.",
+    "acceptedAnswers": [
+      "I didn't recommend this hostel."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u4_03_e",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "travel",
+    "type": "question",
+    "prompt": "I recommended this hostel.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did i recommend this hostel?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u4_04_a",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "history",
+    "type": "tense_choice",
+    "prompt": "The disease spreads quickly.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u4_04_b",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "history",
+    "type": "verb_gap",
+    "prompt": "The disease ___ quickly.",
+    "base": "spread",
+    "answer": "spread",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von spread im Simple Past lautet spread."
+  },
+  {
+    "id": "gr_g7_u4_04_c",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "history",
+    "type": "transform",
+    "prompt": "The disease spreads quickly.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The disease spread quickly.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier spread verwendet."
+  },
+  {
+    "id": "gr_g7_u4_04_d",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "history",
     "type": "negation",
     "prompt": "The disease spread quickly.",
     "instruction": "Verneine den Satz.",
@@ -172,79 +3871,554 @@
       "The disease didn't spread quickly."
     ],
     "tenseLabel": "Simple Past",
-    "explanation": "Nach did not steht die Grundform spread."
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
   },
   {
-    "id": "gr_g7_005",
-    "grade": 7,
-    "unit": "u5",
-    "type": "question",
-    "prompt": "The sponsor supported the project.",
-    "instruction": "Bilde eine Frage.",
-    "answer": "Did the sponsor support the project?",
-    "tenseLabel": "Simple Past",
-    "explanation": "Did steht am Satzanfang; support bleibt in der Grundform."
-  },
-  {
-    "id": "gr_g7_006",
-    "grade": 7,
-    "unit": "u1",
-    "type": "verb_gap",
-    "prompt": "Next week, a guardian ___ the application.",
-    "base": "sign",
-    "answer": "will sign",
-    "tenseLabel": "Future",
-    "explanation": "Das Future wird mit will plus Grundform gebildet."
-  },
-  {
-    "id": "gr_g7_007",
-    "grade": 7,
-    "unit": "u2",
-    "type": "transform",
-    "prompt": "The hero wears a mask.",
-    "instruction": "Setze den Satz ins Simple Past.",
-    "answer": "The hero wore a mask.",
-    "tenseLabel": "Simple Past",
-    "explanation": "Wear ist unregelmäßig: wear, wore, worn."
-  },
-  {
-    "id": "gr_g7_008",
-    "grade": 7,
-    "unit": "u3",
-    "type": "question",
-    "prompt": "The emperor ruled a large empire.",
-    "instruction": "Bilde eine Frage.",
-    "answer": "Did the emperor rule a large empire?",
-    "tenseLabel": "Simple Past",
-    "explanation": "Nach did steht die Grundform rule."
-  },
-  {
-    "id": "gr_g7_009",
+    "id": "gr_g7_u4_04_e",
     "grade": 7,
     "unit": "u4",
-    "type": "negation",
-    "prompt": "The musician will play in a pub.",
-    "instruction": "Verneine den Satz.",
-    "answer": "The musician will not play in a pub.",
-    "acceptedAnswers": [
-      "The musician won't play in a pub."
-    ],
-    "tenseLabel": "Future",
-    "explanation": "Die Verneinung von will lautet will not oder won't."
+    "topic": "history",
+    "type": "question",
+    "prompt": "The disease spread quickly.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the disease spread quickly?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
   },
   {
-    "id": "gr_g7_010",
+    "id": "gr_g7_u4_05_a",
     "grade": 7,
-    "unit": "u5",
+    "unit": "u4",
+    "topic": "food",
     "type": "tense_choice",
-    "prompt": "We will recycle plastic tomorrow.",
+    "prompt": "We bake bread with wholemeal flour.",
     "question": "Welche Zeitform wird verwendet?",
     "options": [
       "Simple Present",
       "Simple Past",
       "Future"
     ],
-    "answer": "Future",
-    "explanation": "Will recycle bezeichnet eine zukünftige Handlung."
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u4_05_b",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "food",
+    "type": "verb_gap",
+    "prompt": "We ___ bread with wholemeal flour.",
+    "base": "bake",
+    "answer": "baked",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von bake im Simple Past lautet baked."
+  },
+  {
+    "id": "gr_g7_u4_05_c",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "food",
+    "type": "transform",
+    "prompt": "We bake bread with wholemeal flour.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "We baked bread with wholemeal flour.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier baked verwendet."
+  },
+  {
+    "id": "gr_g7_u4_05_d",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "food",
+    "type": "negation",
+    "prompt": "We baked bread with wholemeal flour.",
+    "instruction": "Verneine den Satz.",
+    "answer": "We did not bake bread with wholemeal flour.",
+    "acceptedAnswers": [
+      "We didn't bake bread with wholemeal flour."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u4_05_e",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "food",
+    "type": "question",
+    "prompt": "We baked bread with wholemeal flour.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did we bake bread with wholemeal flour?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u4_06_a",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "food",
+    "type": "tense_choice",
+    "prompt": "She kneads the dough.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u4_06_b",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "food",
+    "type": "verb_gap",
+    "prompt": "She ___ the dough.",
+    "base": "knead",
+    "answer": "kneaded",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von knead im Simple Past lautet kneaded."
+  },
+  {
+    "id": "gr_g7_u4_06_c",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "food",
+    "type": "transform",
+    "prompt": "She kneads the dough.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "She kneaded the dough.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier kneaded verwendet."
+  },
+  {
+    "id": "gr_g7_u4_06_d",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "food",
+    "type": "negation",
+    "prompt": "She kneaded the dough.",
+    "instruction": "Verneine den Satz.",
+    "answer": "She did not knead the dough.",
+    "acceptedAnswers": [
+      "She didn't knead the dough."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u4_06_e",
+    "grade": 7,
+    "unit": "u4",
+    "topic": "food",
+    "type": "question",
+    "prompt": "She kneaded the dough.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did she knead the dough?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u5_01_a",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "business",
+    "type": "tense_choice",
+    "prompt": "A mentor helps young people.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u5_01_b",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "business",
+    "type": "verb_gap",
+    "prompt": "A mentor ___ young people.",
+    "base": "help",
+    "answer": "helped",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von help im Simple Past lautet helped."
+  },
+  {
+    "id": "gr_g7_u5_01_c",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "business",
+    "type": "transform",
+    "prompt": "A mentor helps young people.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "A mentor helped young people.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier helped verwendet."
+  },
+  {
+    "id": "gr_g7_u5_01_d",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "business",
+    "type": "negation",
+    "prompt": "A mentor helped young people.",
+    "instruction": "Verneine den Satz.",
+    "answer": "A mentor did not help young people.",
+    "acceptedAnswers": [
+      "A mentor didn't help young people."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u5_01_e",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "business",
+    "type": "question",
+    "prompt": "A mentor helped young people.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did a mentor help young people?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u5_02_a",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "internet",
+    "type": "tense_choice",
+    "prompt": "The sponsor supports the project.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u5_02_b",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "internet",
+    "type": "verb_gap",
+    "prompt": "The sponsor ___ the project.",
+    "base": "support",
+    "answer": "supported",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von support im Simple Past lautet supported."
+  },
+  {
+    "id": "gr_g7_u5_02_c",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "internet",
+    "type": "transform",
+    "prompt": "The sponsor supports the project.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "The sponsor supported the project.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier supported verwendet."
+  },
+  {
+    "id": "gr_g7_u5_02_d",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "internet",
+    "type": "negation",
+    "prompt": "The sponsor supported the project.",
+    "instruction": "Verneine den Satz.",
+    "answer": "The sponsor did not support the project.",
+    "acceptedAnswers": [
+      "The sponsor didn't support the project."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u5_02_e",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "internet",
+    "type": "question",
+    "prompt": "The sponsor supported the project.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did the sponsor support the project?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u5_03_a",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "environment",
+    "type": "tense_choice",
+    "prompt": "We recycle plastic.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u5_03_b",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "environment",
+    "type": "verb_gap",
+    "prompt": "We ___ plastic.",
+    "base": "recycle",
+    "answer": "recycled",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von recycle im Simple Past lautet recycled."
+  },
+  {
+    "id": "gr_g7_u5_03_c",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "environment",
+    "type": "transform",
+    "prompt": "We recycle plastic.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "We recycled plastic.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier recycled verwendet."
+  },
+  {
+    "id": "gr_g7_u5_03_d",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "environment",
+    "type": "negation",
+    "prompt": "We recycled plastic.",
+    "instruction": "Verneine den Satz.",
+    "answer": "We did not recycle plastic.",
+    "acceptedAnswers": [
+      "We didn't recycle plastic."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u5_03_e",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "environment",
+    "type": "question",
+    "prompt": "We recycled plastic.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did we recycle plastic?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u5_04_a",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology",
+    "type": "tense_choice",
+    "prompt": "My alarm goes off at six.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u5_04_b",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology",
+    "type": "verb_gap",
+    "prompt": "My alarm ___ off at six.",
+    "base": "go",
+    "answer": "went",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von go im Simple Past lautet went."
+  },
+  {
+    "id": "gr_g7_u5_04_c",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology",
+    "type": "transform",
+    "prompt": "My alarm goes off at six.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "My alarm went off at six.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier went verwendet."
+  },
+  {
+    "id": "gr_g7_u5_04_d",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology",
+    "type": "negation",
+    "prompt": "My alarm went off at six.",
+    "instruction": "Verneine den Satz.",
+    "answer": "My alarm did not go off at six.",
+    "acceptedAnswers": [
+      "My alarm didn't go off at six."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u5_04_e",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology",
+    "type": "question",
+    "prompt": "My alarm went off at six.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did my alarm go off at six?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u5_05_a",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology",
+    "type": "tense_choice",
+    "prompt": "People click on the notification.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u5_05_b",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology",
+    "type": "verb_gap",
+    "prompt": "People ___ on the notification.",
+    "base": "click",
+    "answer": "clicked",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von click im Simple Past lautet clicked."
+  },
+  {
+    "id": "gr_g7_u5_05_c",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology",
+    "type": "transform",
+    "prompt": "People click on the notification.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "People clicked on the notification.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier clicked verwendet."
+  },
+  {
+    "id": "gr_g7_u5_05_d",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology",
+    "type": "negation",
+    "prompt": "People clicked on the notification.",
+    "instruction": "Verneine den Satz.",
+    "answer": "People did not click on the notification.",
+    "acceptedAnswers": [
+      "People didn't click on the notification."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u5_05_e",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "technology",
+    "type": "question",
+    "prompt": "People clicked on the notification.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did people click on the notification?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
+  },
+  {
+    "id": "gr_g7_u5_06_a",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "friendship",
+    "type": "tense_choice",
+    "prompt": "Friendship brings happiness.",
+    "question": "Welche Zeitform wird verwendet?",
+    "options": [
+      "Simple Present",
+      "Simple Past",
+      "Future"
+    ],
+    "answer": "Simple Present",
+    "explanation": "Der Satz beschreibt eine regelmäßige oder gegenwärtige Handlung."
+  },
+  {
+    "id": "gr_g7_u5_06_b",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "friendship",
+    "type": "verb_gap",
+    "prompt": "Friendship ___ happiness.",
+    "base": "bring",
+    "answer": "brought",
+    "tenseLabel": "Simple Past",
+    "explanation": "Die passende Form von bring im Simple Past lautet brought."
+  },
+  {
+    "id": "gr_g7_u5_06_c",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "friendship",
+    "type": "transform",
+    "prompt": "Friendship brings happiness.",
+    "instruction": "Setze den Satz ins Simple Past.",
+    "answer": "Friendship brought happiness.",
+    "tenseLabel": "Simple Past",
+    "explanation": "Im Simple Past wird hier brought verwendet."
+  },
+  {
+    "id": "gr_g7_u5_06_d",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "friendship",
+    "type": "negation",
+    "prompt": "Friendship brought happiness.",
+    "instruction": "Verneine den Satz.",
+    "answer": "Friendship did not bring happiness.",
+    "acceptedAnswers": [
+      "Friendship didn't bring happiness."
+    ],
+    "tenseLabel": "Simple Past",
+    "explanation": "Nach did not oder didn’t steht das Verb in der Grundform."
+  },
+  {
+    "id": "gr_g7_u5_06_e",
+    "grade": 7,
+    "unit": "u5",
+    "topic": "friendship",
+    "type": "question",
+    "prompt": "Friendship brought happiness.",
+    "instruction": "Bilde eine Frage.",
+    "answer": "Did friendship bring happiness?",
+    "tenseLabel": "Simple Past",
+    "explanation": "Fragen im Simple Past beginnen mit did; danach steht die Grundform."
   }
 ]
