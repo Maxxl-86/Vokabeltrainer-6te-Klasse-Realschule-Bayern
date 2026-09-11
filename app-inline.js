@@ -1,5 +1,5 @@
 // Vokabeltrainer – Auto-Repair Blocks + UX + Tippfehler-Diff + Lern-Hinweise (Beta)
-const APP_VERSION = 'v23'; // <--- AKTUALISIERT AUF V12
+const APP_VERSION = 'v24'; // <--- AKTUALISIERT AUF V12
 const UNIT_META = [
 // ... (UNIT_META bleibt unverändert) ...
 // ... (Hilfsfunktionen bleiben unverändert) ...
@@ -19,6 +19,7 @@ const LS_ACHIEVEMENTS =
 const CENTRAL_URL = './vocab/vocab.json';
 const GRADE7_VOCAB_URL = './vocab/vocab_grade7.json';
 const IRREGULAR_URL = './vocab/irregular_verbs_grade7.json';
+const GRAMMAR_URL = './vocab/grammar_tasks.json';
 const HINTS_URL = './vocab/hints.json';
 
 const SENTENCES_URL = './vocab/sentences.json';
@@ -27,6 +28,7 @@ const BUILDER_URL =
 let SENTENCES_DATA = {};
 let BUILDER_DATA = [];
 let IRREGULAR_DATA = [];
+let GRAMMAR_DATA = [];
 const ACHIEVEMENTS_URL =
     './vocab/achievements.json';
 
@@ -684,6 +686,8 @@ async function initCentralSync(){
 
   const irregular = await fetchJSON(IRREGULAR_URL);
   if(Array.isArray(irregular)) IRREGULAR_DATA = irregular;
+  const grammar = await fetchJSON(GRAMMAR_URL);
+  if(Array.isArray(grammar)) GRAMMAR_DATA = grammar;
   const achievements = await fetchJSON(ACHIEVEMENTS_URL);
   if(achievements) ACHIEVEMENTS_DATA = achievements;
   const cards = await fetchJSON(CARDS_URL);
@@ -926,10 +930,50 @@ function pickIrregularQuestion(){
   if(!pool.length) return null;
   return makeIrregularQuestion(pool[Math.floor(Math.random()*pool.length)]);
 }
+function getTestGrammarId(){
+  return new URLSearchParams(window.location.search).get('testGrammar');
+}
+function makeGrammarQuestion(item, isTestQuestion=false){
+  const answers = [item.answer, ...(item.acceptedAnswers || [])]
+    .filter(Boolean);
+  return {
+    type:'grammar',
+    origin:item.unit,
+    prompt:item.prompt,
+    answer:answers.join('; '),
+    options:Array.isArray(item.options) ? item.options : [],
+    item,
+    grammarType:item.type,
+    instruction:item.instruction || item.question || '',
+    tenseLabel:item.tenseLabel || '',
+    explanation:item.explanation || '',
+    answered:false,
+    isTestQuestion
+  };
+}
+function pickGrammarQuestion(){
+  const selectedGrade = els.gradeSelect ? els.gradeSelect.value : 'all';
+  const testId = getTestGrammarId();
+  if(testId){
+    const testItem = GRAMMAR_DATA.find(item => item.id === testId);
+    if(testItem) return makeGrammarQuestion(testItem, true);
+  }
+  const pool = GRAMMAR_DATA.filter(item => {
+    const gradeMatches = selectedGrade === 'all' || String(item.grade) === selectedGrade;
+    const unitMatches = !activeBlockIds.length || activeBlockIds.includes(item.unit);
+    return gradeMatches && unitMatches;
+  });
+  if(!pool.length) return null;
+  return makeGrammarQuestion(pool[Math.floor(Math.random()*pool.length)]);
+}
 function pickQuestion(){ 
   const mode=els.modeSelect.value;
   if(mode === 'irregular'){
     currentQ = pickIrregularQuestion();
+    return currentQ;
+  }
+  if(mode === 'grammar'){
+    currentQ = pickGrammarQuestion();
     return currentQ;
   }
   if(mode === 'de2en' || mode === 'en2de'){ const t=findTestVocabQuestion(getTestVocabId()); if(t){ currentQ=t; return currentQ; } }
@@ -1279,6 +1323,9 @@ function onAnswerOnce(userInput){
     }
 
     els.feedback.innerHTML = msg;
+    if(currentQ.type === 'grammar' && currentQ.explanation){
+        els.feedback.innerHTML += `<div class="grammar-explanation"><strong>Erklärung:</strong> ${currentQ.explanation}</div>`;
+    }
 if(
     !isTestQuestion &&
     currentQ.type !== 'sentence' &&
@@ -1345,7 +1392,11 @@ function renderQuestion(){
     els.checkBtn && (els.checkBtn.disabled=false); 
     els.showAnswerBtn && els.showAnswerBtn.classList.remove('hidden'); // Lösung-Button sichtbar
 
-if(currentQ.type === 'irregular'){
+if(currentQ.type === 'grammar'){
+    els.exerciseType.textContent = '🧠 Grammatiktrainer';
+    els.exerciseType.style.color = '#7dc8ff';
+    els.exerciseDescription.textContent = currentQ.instruction || 'Löse die Grammatikaufgabe.';
+}else if(currentQ.type === 'irregular'){
 
     els.exerciseType.textContent = '🔄 Unregelmäßige Verben';
     els.exerciseType.style.color = '#c89cff';
