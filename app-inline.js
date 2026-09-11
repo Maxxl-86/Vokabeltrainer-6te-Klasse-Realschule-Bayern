@@ -1010,12 +1010,6 @@ if(mode === 'builder'){
     de:
         item.de || '',
 
-    tense:
-        item.tense || '',
-
-    tenseLabel:
-        item.tenseLabel || '',
-
     answered: false
 
 };
@@ -1271,10 +1265,6 @@ if(
 els.promptText.innerHTML =
 `
 <div class="builder-translation">
-
-    ${currentQ.tenseLabel
-        ? `<div class="builder-tense"><strong>Zeitform:</strong> ${currentQ.tenseLabel}</div><br>`
-        : ''}
 
     <strong>
         Deutsch:
