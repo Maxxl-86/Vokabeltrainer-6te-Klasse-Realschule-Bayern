@@ -40,11 +40,11 @@
       },
       {
         "de": "9 Uhr morgens",
-        "en": "09:00:00"
+        "en": "9 am"
       },
       {
         "de": "7 Uhr nachmittags /abends",
-        "en": "19:00:00"
+        "en": "7 pm"
       },
       {
         "de": "international",
@@ -304,7 +304,7 @@
       },
       {
         "de": "etwas aufheben (vom Boden)",
-        "en": "to pick sth. Up"
+        "en": "to pick sth. up"
       },
       {
         "de": "erscheinen",
@@ -490,7 +490,7 @@
       },
       {
         "de": "vergessen",
-        "en": "to ( forget"
+        "en": "to forget"
       },
       {
         "de": "wandern",
@@ -585,7 +585,7 @@
         "en": "sign"
       },
       {
-        "de": "Straße Straße (in Orten",
+        "de": "Straße (in Orten)",
         "en": "road"
       },
       {
@@ -824,7 +824,7 @@
       },
       {
         "de": "einsteigen (in einen Bus) aussteigen (aus einem Bus)",
-        "en": "to get on get off"
+        "en": "to get on; to get off"
       },
       {
         "de": "Rumäne / Rumänin",
@@ -880,7 +880,7 @@
       },
       {
         "de": "Rumänien",
-        "en": "Romanian"
+        "en": "Romania"
       },
       {
         "de": "Litauen",
@@ -948,7 +948,7 @@
       },
       {
         "de": "Recht haben Unrecht haben",
-        "en": "to be right be wrong)"
+        "en": "to be right; to be wrong"
       },
       {
         "de": "Rolltreppe",
@@ -1297,7 +1297,7 @@
         "en": "true"
       },
       {
-        "de": "sich Sorgen machen (wegen",
+        "de": "sich Sorgen machen (wegen)",
         "en": "to worry"
       },
       {
@@ -1322,11 +1322,11 @@
       },
       {
         "de": "jemand",
-        "en": "somebody someone"
+        "en": "somebody; someone"
       },
       {
         "de": "irgendjemand",
-        "en": "anybody anyone"
+        "en": "anybody; anyone"
       },
       {
         "de": "irgendwo(hin)",
@@ -1768,7 +1768,7 @@
       },
       {
         "de": "jm. Etwas schulden",
-        "en": "to owe sb. Sth"
+        "en": "to owe sb. sth."
       }
     ],
     "u6": [
@@ -1822,7 +1822,7 @@
       },
       {
         "de": "sogar",
-        "en": "even not even"
+        "en": "even; not even"
       },
       {
         "de": "unterstützen",
@@ -1881,7 +1881,7 @@
         "en": "football"
       },
       {
-        "de": "ganze(r",
+        "de": "ganze(r/s)",
         "en": "whole"
       },
       {
@@ -1905,7 +1905,7 @@
         "en": "final"
       },
       {
-        "de": "halbe(r",
+        "de": "halbe(r/s)",
         "en": "half"
       },
       {
