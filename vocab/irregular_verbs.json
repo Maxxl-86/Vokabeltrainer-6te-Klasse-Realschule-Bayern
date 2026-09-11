@@ -1,0 +1,192 @@
+[
+  {
+    "id": "iv_001",
+    "grade": 7,
+    "unit": "u1",
+    "sourcePage": 171,
+    "de": "frieren; erstarren",
+    "base": "freeze",
+    "past": "froze",
+    "participle": "frozen"
+  },
+  {
+    "id": "iv_002",
+    "grade": 7,
+    "unit": "u3",
+    "sourcePage": 179,
+    "de": "graben",
+    "base": "dig",
+    "past": "dug",
+    "participle": "dug"
+  },
+  {
+    "id": "iv_003",
+    "grade": 7,
+    "unit": "u3",
+    "sourcePage": 180,
+    "de": "knien",
+    "base": "kneel",
+    "past": "knelt",
+    "participle": "knelt"
+  },
+  {
+    "id": "iv_004",
+    "grade": 7,
+    "unit": "u3",
+    "sourcePage": 181,
+    "de": "werfen",
+    "base": "throw",
+    "past": "threw",
+    "participle": "thrown"
+  },
+  {
+    "id": "iv_005",
+    "grade": 7,
+    "unit": "u3",
+    "sourcePage": 181,
+    "de": "verstecken; sich verstecken",
+    "base": "hide",
+    "past": "hid",
+    "participle": "hidden"
+  },
+  {
+    "id": "iv_006",
+    "grade": 7,
+    "unit": "u3",
+    "sourcePage": 182,
+    "de": "sich drehen",
+    "base": "spin",
+    "past": "spun",
+    "participle": "spun"
+  },
+  {
+    "id": "iv_007",
+    "grade": 7,
+    "unit": "u4",
+    "sourcePage": 184,
+    "de": "verbreiten; sich ausbreiten",
+    "base": "spread",
+    "past": "spread",
+    "participle": "spread"
+  },
+  {
+    "id": "iv_008",
+    "grade": 7,
+    "unit": "u5",
+    "sourcePage": 193,
+    "de": "stehen",
+    "base": "stand",
+    "past": "stood",
+    "participle": "stood"
+  },
+  {
+    "id": "iv_009",
+    "grade": 7,
+    "unit": "u5",
+    "sourcePage": 193,
+    "de": "schwimmen",
+    "base": "swim",
+    "past": "swam",
+    "participle": "swum"
+  },
+  {
+    "id": "iv_010",
+    "grade": 7,
+    "unit": "u5",
+    "sourcePage": 193,
+    "de": "wählen; auswählen",
+    "base": "choose",
+    "past": "chose",
+    "participle": "chosen"
+  },
+  {
+    "id": "iv_011",
+    "grade": 7,
+    "unit": "u5",
+    "sourcePage": 193,
+    "de": "schlagen; treffen",
+    "base": "hit",
+    "past": "hit",
+    "participle": "hit"
+  },
+  {
+    "id": "iv_012",
+    "grade": 7,
+    "unit": "u5",
+    "sourcePage": 193,
+    "de": "denken",
+    "base": "think",
+    "past": "thought",
+    "participle": "thought"
+  },
+  {
+    "id": "iv_013",
+    "grade": 7,
+    "unit": "u5",
+    "sourcePage": 193,
+    "de": "wissen; kennen",
+    "base": "know",
+    "past": "knew",
+    "participle": "known"
+  },
+  {
+    "id": "iv_014",
+    "grade": 7,
+    "unit": "u5",
+    "sourcePage": 193,
+    "de": "verstehen",
+    "base": "understand",
+    "past": "understood",
+    "participle": "understood"
+  },
+  {
+    "id": "iv_015",
+    "grade": 7,
+    "unit": "u5",
+    "sourcePage": 193,
+    "de": "verlassen; abfahren",
+    "base": "leave",
+    "past": "left",
+    "participle": "left"
+  },
+  {
+    "id": "iv_016",
+    "grade": 7,
+    "unit": "u5",
+    "sourcePage": 193,
+    "de": "tragen (Kleidung)",
+    "base": "wear",
+    "past": "wore",
+    "participle": "worn"
+  },
+  {
+    "id": "iv_017",
+    "grade": 7,
+    "unit": "u5",
+    "sourcePage": 193,
+    "de": "schreiben",
+    "base": "write",
+    "past": "wrote",
+    "participle": "written"
+  },
+  {
+    "id": "iv_018",
+    "grade": 7,
+    "unit": "u5",
+    "sourcePage": 193,
+    "de": "lesen",
+    "base": "read",
+    "past": "read",
+    "participle": "read"
+  },
+  {
+    "id": "iv_019",
+    "grade": 7,
+    "unit": "u5",
+    "sourcePage": 193,
+    "de": "sitzen",
+    "base": "sit",
+    "past": "sat",
+    "participle": "sat"
+  }
+]
