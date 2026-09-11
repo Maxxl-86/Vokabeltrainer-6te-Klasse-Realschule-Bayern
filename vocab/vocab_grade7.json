@@ -27,7 +27,7 @@
     "difficulty": 2,
     "sourcePage": 167,
     "en": "(to) code",
-    "de": "kodieren; programmieren (Computer)"
+    "de": "kodieren; programmieren"
   },
   {
     "id": "g7_u1_004",
@@ -37,7 +37,7 @@
     "difficulty": 2,
     "sourcePage": 167,
     "en": "(to) fence",
-    "de": "fechten (Sport)"
+    "de": "fechten"
   },
   {
     "id": "g7_u1_005",
@@ -87,7 +87,7 @@
     "difficulty": 2,
     "sourcePage": 167,
     "en": "roommate",
-    "de": "Zimmergenosse; Zimmergenossin"
+    "de": "Zimmergenosse; Zimmergenossin; Mitbewohner; Mitbewohnerin"
   },
   {
     "id": "g7_u1_010",
@@ -127,7 +127,7 @@
     "difficulty": 2,
     "sourcePage": 167,
     "en": "chapel",
-    "de": "Kapelle (kleiner kirchlicher Raum)"
+    "de": "Kapelle"
   },
   {
     "id": "g7_u1_014",
@@ -157,7 +157,7 @@
     "difficulty": 2,
     "sourcePage": 167,
     "en": "phone call; call",
-    "de": "(Telefon-)Anruf"
+    "de": "Telefonanruf; Anruf"
   },
   {
     "id": "g7_u1_017",
@@ -257,7 +257,7 @@
     "difficulty": 2,
     "sourcePage": 168,
     "en": "my own room",
-    "de": "mein/ein eigenes Zimmer"
+    "de": "mein eigenes Zimmer; ein eigenes Zimmer"
   },
   {
     "id": "g7_u1_027",
@@ -267,7 +267,7 @@
     "difficulty": 2,
     "sourcePage": 168,
     "en": "beginning",
-    "de": "Anfang"
+    "de": "Anfang; Beginn"
   },
   {
     "id": "g7_u1_028",
@@ -477,7 +477,7 @@
     "difficulty": 2,
     "sourcePage": 169,
     "en": "argument",
-    "de": "Streit; Argument"
+    "de": "Streit; Argument; Auseinandersetzung"
   },
   {
     "id": "g7_u1_049",
@@ -807,7 +807,7 @@
     "difficulty": 2,
     "sourcePage": 171,
     "en": "careful",
-    "de": "aufmerksam; sorgfältig"
+    "de": "aufmerksam; sorgfältig; vorsichtig"
   },
   {
     "id": "g7_u1_082",
@@ -927,7 +927,7 @@
     "difficulty": 2,
     "sourcePage": 171,
     "en": "(to) freeze",
-    "de": "(ge)frieren; erstarren"
+    "de": "frieren; gefrieren; erstarren"
   },
   {
     "id": "g7_u1_094",
@@ -977,7 +977,7 @@
     "difficulty": 2,
     "sourcePage": 173,
     "en": "exchange",
-    "de": "(Aus-)Tausch; Schüleraustausch"
+    "de": "Austausch; Tausch; Schüleraustausch"
   },
   {
     "id": "g7_u2_004",
@@ -987,7 +987,7 @@
     "difficulty": 1,
     "sourcePage": 173,
     "en": "chore",
-    "de": "(Haus-)Arbeit; lästige Pflicht"
+    "de": "Hausarbeit; lästige Pflicht"
   },
   {
     "id": "g7_u2_005",
@@ -1747,7 +1747,7 @@
     "difficulty": 2,
     "sourcePage": 178,
     "en": "about",
-    "de": "ungefähr; von/über"
+    "de": "ungefähr; von; über"
   },
   {
     "id": "g7_u3_014",
@@ -1777,7 +1777,7 @@
     "difficulty": 2,
     "sourcePage": 178,
     "en": "tribe",
-    "de": "(Volks-)Stamm"
+    "de": "Volksstamm; Stamm"
   },
   {
     "id": "g7_u3_017",
@@ -1837,7 +1837,7 @@
     "difficulty": 2,
     "sourcePage": 178,
     "en": "(to) divide up into",
-    "de": "aufteilen/einteilen in"
+    "de": "aufteilen in; einteilen in"
   },
   {
     "id": "g7_u3_023",
@@ -2367,7 +2367,7 @@
     "difficulty": 2,
     "sourcePage": 181,
     "en": "stranger",
-    "de": "Fremder; Fremde"
+    "de": "Fremder; Fremde; Neuling"
   },
   {
     "id": "g7_u3_076",
@@ -2457,7 +2457,7 @@
     "difficulty": 2,
     "sourcePage": 182,
     "en": "main",
-    "de": "Haupt-; wichtigste/r/s"
+    "de": "Haupt-; Haupt; wichtigster; wichtigste; wichtigstes"
   },
   {
     "id": "g7_u3_085",
@@ -2527,7 +2527,7 @@
     "difficulty": 2,
     "sourcePage": 182,
     "en": "ground",
-    "de": "(Erd-)Boden"
+    "de": "Erdboden; Boden"
   },
   {
     "id": "g7_u3_092",
@@ -2737,7 +2737,7 @@
     "difficulty": 2,
     "sourcePage": 183,
     "en": "similar to sb./sth.",
-    "de": "ähnlich wie jemand/etwas"
+    "de": "ähnlich wie jemand; ähnlich wie etwas; jemandem ähnlich; etwas ähnlich"
   },
   {
     "id": "g7_u4_014",
@@ -2767,7 +2767,7 @@
     "difficulty": 2,
     "sourcePage": 184,
     "en": "memorial to sb./sth.",
-    "de": "Denkmal; Gedenkstätte für jemanden/etwas"
+    "de": "Denkmal; Gedenkstätte"
   },
   {
     "id": "g7_u4_017",
@@ -2817,7 +2817,7 @@
     "difficulty": 2,
     "sourcePage": 184,
     "en": "disease",
-    "de": "Krankheit"
+    "de": "Krankheit; Erkrankung"
   },
   {
     "id": "g7_u4_022",
@@ -2837,7 +2837,7 @@
     "difficulty": 2,
     "sourcePage": 184,
     "en": "crowded",
-    "de": "überfüllt; voller Menschen"
+    "de": "überfüllt; voller Menschen; voll"
   },
   {
     "id": "g7_u4_024",
@@ -2847,7 +2847,7 @@
     "difficulty": 2,
     "sourcePage": 184,
     "en": "crowd",
-    "de": "Menschenmenge"
+    "de": "Menschenmenge; Menge"
   },
   {
     "id": "g7_u4_025",
@@ -2997,7 +2997,7 @@
     "difficulty": 2,
     "sourcePage": 185,
     "en": "legend",
-    "de": "Legende"
+    "de": "Legende; Sage"
   },
   {
     "id": "g7_u4_040",
@@ -3047,7 +3047,7 @@
     "difficulty": 2,
     "sourcePage": 186,
     "en": "dish",
-    "de": "Schüssel; Schale; Gericht"
+    "de": "Schüssel; Schale; Gericht; Speise"
   },
   {
     "id": "g7_u4_045",
@@ -3187,7 +3187,7 @@
     "difficulty": 2,
     "sourcePage": 186,
     "en": "oven",
-    "de": "Backofen"
+    "de": "Backofen; Ofen"
   },
   {
     "id": "g7_u4_059",
@@ -3317,7 +3317,7 @@
     "difficulty": 2,
     "sourcePage": 187,
     "en": "lonely",
-    "de": "einsam"
+    "de": "einsam; allein"
   },
   {
     "id": "g7_u4_072",
@@ -3417,7 +3417,7 @@
     "difficulty": 2,
     "sourcePage": 188,
     "en": "economy",
-    "de": "(Volks-)Wirtschaft"
+    "de": "Volkswirtschaft; Wirtschaft"
   },
   {
     "id": "g7_u5_004",
@@ -3617,7 +3617,7 @@
     "difficulty": 2,
     "sourcePage": 189,
     "en": "webpage",
-    "de": "Webseite"
+    "de": "Webseite; Internetseite"
   },
   {
     "id": "g7_u5_024",
@@ -3767,7 +3767,7 @@
     "difficulty": 2,
     "sourcePage": 189,
     "en": "site",
-    "de": "Seite; Website; Stelle"
+    "de": "Seite; Website; Internetseite; Stelle; Ort"
   },
   {
     "id": "g7_u5_039",
@@ -3997,7 +3997,7 @@
     "difficulty": 2,
     "sourcePage": 191,
     "en": "effect",
-    "de": "Wirkung; Effekt"
+    "de": "Wirkung; Effekt; Auswirkung"
   },
   {
     "id": "g7_u5_062",
@@ -4047,7 +4047,7 @@
     "difficulty": 2,
     "sourcePage": 191,
     "en": "switch on/off",
-    "de": "ein-/ausschalten"
+    "de": "ein- und ausschalten; einschalten; ausschalten"
   },
   {
     "id": "g7_u5_067",
@@ -4057,7 +4057,7 @@
     "difficulty": 2,
     "sourcePage": 192,
     "en": "meaning",
-    "de": "Bedeutung"
+    "de": "Bedeutung; Sinn"
   },
   {
     "id": "g7_u5_068",
@@ -4247,7 +4247,7 @@
     "difficulty": 2,
     "sourcePage": 192,
     "en": "(to) breathe in/out",
-    "de": "ein-/ausatmen"
+    "de": "ein- und ausatmen; einatmen; ausatmen"
   },
   {
     "id": "g7_u5_087",
@@ -4287,7 +4287,7 @@
     "difficulty": 2,
     "sourcePage": 193,
     "en": "none",
-    "de": "keine/r/s"
+    "de": "keiner; keine; keines; niemand"
   },
   {
     "id": "g7_u5_091",
@@ -4357,7 +4357,7 @@
     "difficulty": 2,
     "sourcePage": 193,
     "en": "choice",
-    "de": "Auswahl; Wahl"
+    "de": "Auswahl; Wahl; Entscheidung"
   },
   {
     "id": "g7_u5_098",
@@ -4367,7 +4367,7 @@
     "difficulty": 2,
     "sourcePage": 193,
     "en": "(to) delete",
-    "de": "löschen"
+    "de": "löschen; entfernen"
   },
   {
     "id": "g7_u5_099",
@@ -4527,7 +4527,7 @@
     "difficulty": 2,
     "sourcePage": 193,
     "en": "(to) wear",
-    "de": "tragen (Kleidung)"
+    "de": "tragen"
   },
   {
     "id": "g7_u5_115",
