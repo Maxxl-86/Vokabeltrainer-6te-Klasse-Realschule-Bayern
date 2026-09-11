@@ -1,5 +1,5 @@
 // Vokabeltrainer – Auto-Repair Blocks + UX + Tippfehler-Diff + Lern-Hinweise (Beta)
-const APP_VERSION = 'v21'; // <--- AKTUALISIERT AUF V12
+const APP_VERSION = 'v22'; // <--- AKTUALISIERT AUF V12
 const UNIT_META = [
 // ... (UNIT_META bleibt unverändert) ...
 // ... (Hilfsfunktionen bleiben unverändert) ...
@@ -1232,7 +1232,8 @@ function onAnswerOnce(userInput){
 if(
     !isTestQuestion &&
     currentQ.type !== 'sentence' &&
-    currentQ.type !== 'builder'
+    currentQ.type !== 'builder' &&
+    currentQ.type !== 'irregular'
 ){
     record(
         currentQ.origin,
@@ -1240,6 +1241,7 @@ if(
         ok
     );
 }
+
 
     disableInputsAfterAnswer();
 
